@@ -133,7 +133,7 @@ jobs:
       # https://github.com/dotnet/runtime/issues/131636
       # Put the .NET 8 release first for both workflow shells and electron-builder.
       - name: Use PowerShell 7.4 for Windows ARM builds
-        if: inputs.platform == 'win' && inputs.arch == 'arm64'
+        if: inputs.platform == 'win' && runner.arch == 'ARM64'
         shell: powershell
         run: |
           $ErrorActionPreference = "Stop"
@@ -154,7 +154,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
       - name: Verify Windows ARM PowerShell selection
-        if: inputs.platform == 'win' && inputs.arch == 'arm64'
+        if: inputs.platform == 'win' && runner.arch == 'ARM64'
         shell: pwsh
         run: |
           $expectedPath = Join-Path $env:RUNNER_TEMP "powershell-7.4.20-arm64\pwsh.exe"
