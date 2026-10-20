@@ -741,3 +741,29 @@ jobs:
         if: inputs.cli_archive
         shell: bash
         run: node verify/smoke-cli-archive.mjs --archive release-cli/* --expect-version "${{ inputs.version }}"
+
+      # cargo-xwin links this binary on Linux, and nothing else runs it before users do.
+      - name: Smoke-test resource monitor
+        shell: pwsh
+        run: |
+          $startInfo = [System.Diagnostics.ProcessStartInfo]::new(
+            "verify\${{ inputs.platform }}-${{ inputs.arch }}-unpacked\resources\resource-monitor\t3-resource-monitor.exe")
+          $startInfo.UseShellExecute = $false
+          $startInfo.RedirectStandardInput = $true
+          $startInfo.RedirectStandardOutput = $true
+          $monitor = [System.Diagnostics.Process]::Start($startInfo)
+          $hello = $monitor.StandardOutput.ReadLine() | ConvertFrom-Json
+          if ($hello.type -ne "hello" -or $hello.arch -ne "${{ inputs.arch == 'arm64' && 'aarch64' || 'x86_64' }}") {
+            throw "Unexpected hello: $($hello | ConvertTo-Json -Compress)"
+          }
+          $monitor.StandardInput.WriteLine((@{ version = $hello.version; type = "configure"; rootPid = $PID; sampleIntervalMs = 1000 } | ConvertTo-Json -Compress))
+          $monitor.StandardInput.WriteLine((@{ version = $hello.version; type = "sampleNow"; requestId = "verify" } | ConvertTo-Json -Compress))
+          $monitor.StandardInput.Close()
+          $output = $monitor.StandardOutput.ReadToEnd()
+          $monitor.WaitForExit()
+          $sample = $output -split "`n" | Where-Object { $_.Trim() } | ForEach-Object { $_ | ConvertFrom-Json } |
+            Where-Object { $_.requestId -eq "verify" }
+          if ($monitor.ExitCode -ne 0 -or $sample.type -ne "snapshot" -or -not ($sample.processes | Where-Object { $_.pid -eq $PID })) {
+            throw "Resource monitor exited $($monitor.ExitCode) with: $output"
+          }
+          "Resource monitor sampled $($sample.scannedProcessCount) processes."
