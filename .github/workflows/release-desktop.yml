@@ -131,6 +131,8 @@ jobs:
           $temp = "$($tempPartition.DriveLetter):\"
           fsutil devdrv trust $env:GITHUB_WORKSPACE
           fsutil devdrv trust $temp
+          Add-MpPreference -ExclusionPath $env:GITHUB_WORKSPACE, $temp
+          Mark "defender exclusions"
           "TEMP=$temp" >> $env:GITHUB_ENV
           "TMP=$temp" >> $env:GITHUB_ENV
           "pnpm_config_store_dir=$env:GITHUB_WORKSPACE\.pnpm-store" >> $env:GITHUB_ENV
