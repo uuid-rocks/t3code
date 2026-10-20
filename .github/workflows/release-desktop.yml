@@ -64,6 +64,13 @@ on:
         required: false
         default: false
         type: boolean
+      # A runner of the target's own platform and architecture, for a `runner`
+      # that cannot execute the target. The build job skips everything that
+      # runs the packaged binaries, and a second job runs it there.
+      verify_runner:
+        required: false
+        default: ""
+        type: string
       version:
         required: true
         type: string
@@ -110,42 +117,6 @@ jobs:
       T3CODE_CLERK_CLI_OAUTH_CLIENT_ID: ${{ inputs.clerk_cli_oauth_client_id }}
       T3CODE_RELAY_URL: ${{ inputs.relay_url }}
     steps:
-      - name: Move workspace to the local NVMe disk
-        if: runner.os == 'Windows' && runner.arch == 'ARM64'
-        shell: bash
-        run: |
-          set -euo pipefail
-          start=$SECONDS
-          mark() { echo "[$((SECONDS - start))s] $1"; }
-          dp() { printf '%s\n' "$@" > "$RUNNER_TEMP/diskpart.txt"; diskpart //s "$(cygpath -w "$RUNNER_TEMP/diskpart.txt")"; }
-          dp "list disk"
-          disk=$(dp "list disk" | tr -d '\r' | awk '/^  Disk [0-9]+/ && $NF != "*" { print $2; exit }')
-          mark "list disk ($disk)"
-          if [[ -z "$disk" ]]; then echo "No raw disk; staying on C:."; exit 0; fi
-          dp "select disk $disk" "convert gpt" "create partition primary" "assign letter=W"
-          mark "partition"
-          # NTFS links pnpm's store steadily in ~10s; a ReFS Dev Drive swung 9-45s.
-          cmd //c "echo Y| format W: /FS:NTFS /Q /V:Workspace"
-          mark "format"
-          # A drive-letter root as the workspace makes pnpm skip the install, so
-          # the volume is only reachable through the workspace mount point.
-          dp "select volume W" "remove letter=W" "assign mount=\"$(cygpath -w "$GITHUB_WORKSPACE")\""
-          mark "mount"
-          echo "pnpm_config_store_dir=$(cygpath -w "$GITHUB_WORKSPACE")\\.pnpm-store" >> "$GITHUB_ENV"
-          # pnpm defaults to cores minus one; on 4 cores, 4 workers were faster.
-          echo "PNPM_MAX_WORKERS=4" >> "$GITHUB_ENV"
-          mark "workspace volume ready"
-
-      # Defender scans the new volume; the image only excludes C:\ and D:\.
-      # The first WMI call on these runners takes ~35s, so it runs alongside
-      # checkout and setup and the install waits for it.
-      - name: Exclude workspace from Defender
-        id: defender_exclusion
-        if: runner.os == 'Windows' && runner.arch == 'ARM64'
-        background: true
-        shell: powershell
-        run: Add-MpPreference -ExclusionPath $env:GITHUB_WORKSPACE
-
       # This repository is public, so Git needs no credentials. checkout's
       # credential cleanup runs submodule foreach even with submodules disabled,
       # which fails on the orphaned gitlinks in our vendored .repos tree.
@@ -165,35 +136,6 @@ jobs:
           git sparse-checkout set --no-cone '/*' '!/.repos/'
           git -c checkout.workers=0 checkout --detach FETCH_HEAD
 
-      # The runner's PowerShell 7.6/.NET 10 intermittently crashes during signing:
-      # https://github.com/dotnet/runtime/issues/131636
-      # Put the .NET 8 release first for both workflow shells and electron-builder.
-      - name: Use PowerShell 7.4 for Windows ARM builds
-        if: inputs.platform == 'win' && runner.arch == 'ARM64'
-        shell: bash
-        run: |
-          set -euo pipefail
-          version="7.4.20"
-          archive="$RUNNER_TEMP/PowerShell-$version-win-arm64.zip"
-          install_dir="$RUNNER_TEMP/powershell-$version-arm64"
-          curl -fsSL --retry 3 -o "$archive" \
-            "https://github.com/PowerShell/PowerShell/releases/download/v$version/PowerShell-$version-win-arm64.zip"
-          echo "67eff749d5dae357501c95a3eec1dcd93f669824e3ca2b1d2adcdecdebf04f35  $archive" | sha256sum -c -
-          mkdir -p "$install_dir"
-          # Windows' bsdtar reads zip archives; Git Bash's GNU tar does not.
-          /c/Windows/System32/tar.exe -xf "$(cygpath -w "$archive")" -C "$(cygpath -w "$install_dir")"
-          cygpath -w "$install_dir" >> "$GITHUB_PATH"
-          "$install_dir/pwsh.exe" -NoProfile -NonInteractive -Command '$PSVersionTable; [System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture'
-
-      - name: Verify Windows ARM PowerShell selection
-        if: inputs.platform == 'win' && runner.arch == 'ARM64'
-        shell: pwsh
-        run: |
-          $expectedPath = Join-Path $env:RUNNER_TEMP "powershell-7.4.20-arm64\pwsh.exe"
-          if ((Get-Command pwsh.exe).Source -ne $expectedPath -or $PSVersionTable.PSVersion -ne [version]"7.4.20") {
-            throw "Windows ARM builds must use the pinned PowerShell runtime"
-          }
-
       # Windows installs straight from the registry. There, linking the packages
       # takes the time, not downloading them, so a ~700 MB package cache did not
       # pay for its own restore. Across recent nightlies, restore plus install
@@ -204,7 +146,7 @@ jobs:
         uses: voidzero-dev/setup-vp@250f29ce396baf5e8f24498e17c0dfdebabc26eb # v1
         with:
           node-version-file: package.json
-          cache: ${{ inputs.platform != 'win' }}
+          cache: ${{ runner.os != 'Windows' }}
           run-install: false
 
       # pnpm checks the lockfile and policy before reusing this result. A missing
@@ -216,14 +158,10 @@ jobs:
           name: release-dependency-verification
           path: ${{ runner.temp }}/pnpm-metadata
 
-      - wait: defender_exclusion
-
       - name: Install desktop dependencies
         env:
           pnpm_config_cache_dir: ${{ runner.temp }}/pnpm-metadata
-        # --os=current skips the Linux natives the root install also selects,
-        # which costs Windows arm64 ~90 packages of disk work.
-        run: vp install --filter=@t3tools/desktop... --filter=t3... --filter=@t3tools/scripts... ${{ runner.os == 'Windows' && runner.arch == 'ARM64' && '-- --os=current' || '' }}
+        run: vp install --filter=@t3tools/desktop... --filter=t3... --filter=@t3tools/scripts...
 
       - name: Cache resource monitor
         id: resource_monitor_cache
@@ -281,7 +219,7 @@ jobs:
       # monitor, the desktop build's preflight skips its MSVC check, and node-pty
       # ships prebuilt Windows binaries, so the 30-60s install is skipped too.
       - name: Install Spectre-mitigated MSVC libs
-        if: inputs.platform == 'win' && steps.resource_monitor_cache.outputs.cache-hit != 'true'
+        if: runner.os == 'Windows' && steps.resource_monitor_cache.outputs.cache-hit != 'true'
         shell: pwsh
         run: |
           $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
@@ -299,13 +237,19 @@ jobs:
 
       # Built here rather than inside the desktop build so the CLI archive,
       # which bundles the same binary, can be built and uploaded first.
+      - name: Install cargo-xwin
+        if: runner.os != 'Windows' && inputs.platform == 'win' && steps.resource_monitor_cache.outputs.cache-hit != 'true'
+        uses: taiki-e/install-action@8cca0918f8471c33515202b73f56ab27f2bed283 # v2
+        with:
+          tool: cargo-xwin
+
       - name: Build resource monitor
         if: steps.resource_monitor_cache.outputs.cache-hit != 'true'
         shell: bash
-        run: cargo build --locked --release --manifest-path native/resource-monitor/Cargo.toml --target "${{ inputs.rust_target }}"
+        run: cargo ${{ runner.os != 'Windows' && inputs.platform == 'win' && 'xwin build' || 'build' }} --locked --release --manifest-path native/resource-monitor/Cargo.toml --target "${{ inputs.rust_target }}"
 
       - name: Prepare Azure Trusted Signing
-        if: inputs.platform == 'win'
+        if: inputs.platform == 'win' && runner.os == 'Windows'
         shell: pwsh
         env:
           AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
@@ -366,6 +310,21 @@ jobs:
             Select-Object -Unique
           "PSModulePath=$($modulePathEntries -join ';')" >> $env:GITHUB_ENV
 
+      # Off Windows, scripts/lib/windows-jsign.ts signs through jsign instead of
+      # the TrustedSigning PowerShell module.
+      - name: Install jsign
+        if: inputs.platform == 'win' && runner.os != 'Windows'
+        shell: bash
+        run: |
+          set -euo pipefail
+          dir="$RUNNER_TEMP/jsign"
+          mkdir -p "$dir"
+          curl -fsSL --retry 3 -o "$dir/jsign.jar" https://github.com/ebourg/jsign/releases/download/7.6/jsign-7.6.jar
+          echo "6cf58aa080e7ff82656f320cff8d4a3bff30408df8766806dcba3740dd839fa5  $dir/jsign.jar" | sha256sum -c -
+          printf '#!/bin/sh\nexec java -jar "%s" "$@"\n' "$dir/jsign.jar" > "$dir/jsign"
+          chmod +x "$dir/jsign"
+          echo "T3CODE_JSIGN=$dir/jsign" >> "$GITHUB_ENV"
+
       # The desktop build applies the same branding to apps/server/dist/client
       # (resolveDesktopWebAssetBrand in scripts/build-desktop-artifact.ts); the
       # CLI archive below ships that client and is now built first.
@@ -378,10 +337,10 @@ jobs:
           node scripts/apply-web-brand-assets.ts "$brand" apps/server/dist/client
 
       # The single-executable is built with a Node that supports --build-sea
-      # (25.7+); the repo itself stays on the engines.node version. It always
-      # injects into the runner's own Node: tsdown's cross-target download path
-      # runs `tar` on a drive-letter path on Windows, which GNU tar reads as a
-      # remote host, and a cross-built macOS binary cannot be smoke-tested.
+      # (25.7+); the repo itself stays on the engines.node version. A native
+      # build injects into the runner's own Node: tsdown's cross-target download
+      # path runs `tar` on a drive-letter path on Windows, which GNU tar reads as
+      # a remote host. Off Windows, a Windows target downloads its node.exe.
       - name: Build CLI single-executable
         if: inputs.cli_archive
         shell: bash
@@ -393,7 +352,7 @@ jobs:
           # The executable bundles the server again, so it needs the same stamp
           # as release.yml's JS bundle.
           T3CODE_TELEMETRY_CHANNEL: ${{ github.repository == 'pingdotgg/t3code' && inputs.release_channel || 'dev' }}
-        run: node apps/server/scripts/cli.ts build-exe --verbose
+        run: node apps/server/scripts/cli.ts build-exe --verbose ${{ runner.os != 'Windows' && inputs.platform == 'win' && format('--target win-{0}', inputs.arch) || '' }}
 
       - name: Import macOS signing certificate for the CLI archive
         if: inputs.cli_archive && inputs.platform == 'mac'
@@ -467,7 +426,7 @@ jobs:
             --output-dir release-cli
 
       - name: Smoke-test CLI archive
-        if: inputs.cli_archive
+        if: inputs.cli_archive && inputs.verify_runner == ''
         shell: bash
         run: node scripts/smoke-cli-archive.ts --archive release-cli/* --expect-version "${{ inputs.version }}"
 
@@ -589,6 +548,9 @@ jobs:
             --skip-build
             --verbose
           )
+          if [[ -n "${{ inputs.verify_runner }}" ]]; then
+            args+=(--keep-stage)
+          fi
 
           has_all() {
             for value in "$@"; do
@@ -643,6 +605,36 @@ jobs:
           fi
 
           vp run dist:desktop:artifact "${args[@]}"
+
+      # The verify job runs what this host could not: the packaged natives and
+      # the CLI. Its scripts are bundled so that job needs no install.
+      - name: Stage verification inputs
+        if: inputs.verify_runner != ''
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p verify
+          unpacked=$(ls -d "${TMPDIR:-/tmp}"/t3code-desktop-${{ inputs.platform }}-stage-*/app/dist/${{ inputs.platform }}-${{ inputs.arch }}-unpacked)
+          tar -C "$(dirname "$unpacked")" -cf verify/unpacked.tar "$(basename "$unpacked")"
+          esbuild=scripts/node_modules/.bin/esbuild
+          banner="import{createRequire as __cr}from'node:module';const require=__cr(import.meta.url);"
+          # build-desktop-artifact.ts's own import.meta.main guard must not run
+          # its CLI inside the verify bundle.
+          "$esbuild" scripts/verify-windows-desktop-artifact.ts --bundle --platform=node --format=esm \
+            --target=node24 --define:import.meta.main=false --banner:js="$banner" \
+            --outfile=verify/verify-windows-desktop-artifact.mjs
+          "$esbuild" scripts/smoke-cli-archive.ts --bundle --platform=node --format=esm \
+            --target=node24 --banner:js="$banner" --outfile=verify/smoke-cli-archive.mjs
+
+      - name: Upload verification inputs
+        if: inputs.verify_runner != ''
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: verify-${{ inputs.platform }}-${{ inputs.arch }}
+          path: verify/*
+          if-no-files-found: error
+          retention-days: 1
+          compression-level: 1
 
       - name: Collect release assets
         shell: bash
@@ -715,3 +707,37 @@ jobs:
           name: resource-monitor-${{ inputs.resource_key }}
           path: resource-monitor-publish/${{ inputs.resource_key }}/*
           if-no-files-found: error
+
+  verify:
+    name: Verify ${{ inputs.label }}
+    needs: [build]
+    if: inputs.verify_runner != ''
+    runs-on: ${{ inputs.verify_runner }}
+    timeout-minutes: 15
+    steps:
+      - name: Download verification inputs
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          name: verify-${{ inputs.platform }}-${{ inputs.arch }}
+          path: verify
+
+      - name: Download CLI archive
+        if: inputs.cli_archive
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          name: cli-${{ inputs.platform }}-${{ inputs.arch }}
+          path: release-cli
+
+      - name: Verify packaged natives
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -C verify -xf verify/unpacked.tar
+          node verify/verify-windows-desktop-artifact.mjs \
+            --app-dir "$(cygpath -w "$PWD/verify/${{ inputs.platform }}-${{ inputs.arch }}-unpacked")" \
+            --arch "${{ inputs.arch }}" --build-version "${{ inputs.version }}" --verbose
+
+      - name: Smoke-test CLI archive
+        if: inputs.cli_archive
+        shell: bash
+        run: node verify/smoke-cli-archive.mjs --archive release-cli/* --expect-version "${{ inputs.version }}"

@@ -85,203 +85,47 @@ jobs:
       resource_key: linux-arm64
       cli_archive: true
 
-  win_arm64_build:
-    name: Build Windows arm64 on Linux
+  win_arm64:
+    name: Win arm64 xbuild
     needs: [build_bundle]
-    runs-on: blacksmith-32vcpu-ubuntu-2404
-    timeout-minutes: 40
-    env:
-      VERSION: ${{ needs.build_bundle.outputs.version }}
-      # Dummy Azure config: the bench's jsign wrapper signs with a self-signed
-      # certificate so every hook call is exercised without Azure secrets.
-      AZURE_TRUSTED_SIGNING_ENDPOINT: https://eus.codesigning.azure.net/
-      AZURE_TRUSTED_SIGNING_ACCOUNT_NAME: bench
-      AZURE_TRUSTED_SIGNING_CERTIFICATE_PROFILE_NAME: bench
-      AZURE_TRUSTED_SIGNING_PUBLISHER_NAME: T3 Bench
-    steps:
-      - name: Install jsign with a self-signed test certificate
-        run: |
-          set -euo pipefail
-          dir="$RUNNER_TEMP/jsign"
-          mkdir -p "$dir"
-          curl -fsSL -o "$dir/jsign.jar" https://github.com/ebourg/jsign/releases/download/7.6/jsign-7.6.jar
-          echo "6cf58aa080e7ff82656f320cff8d4a3bff30408df8766806dcba3740dd839fa5  $dir/jsign.jar" | sha256sum -c -
-          java -version
-          openssl req -x509 -newkey rsa:2048 -nodes -days 2 -subj "/CN=T3 Bench" \
-            -addext "extendedKeyUsage=codeSigning" -keyout "$dir/key.pem" -out "$dir/cert.pem"
-          openssl pkcs12 -export -name t3 -passout pass:bench -inkey "$dir/key.pem" -in "$dir/cert.pem" -out "$dir/bench.p12"
-          cat > "$dir/jsign" <<EOS
-          #!/usr/bin/env bash
-          set -euo pipefail
-          echo "jsign \$*" >> "$dir/calls.log"
-          exec java -jar "$dir/jsign.jar" --storetype PKCS12 --keystore "$dir/bench.p12" --storepass bench --alias t3 --alg SHA-256 --replace "\${@: -1}"
-          EOS
-          chmod +x "$dir/jsign"
-          echo "T3CODE_JSIGN=$dir/jsign" >> "$GITHUB_ENV"
-      - uses: actions/checkout@v6
-        with:
-          sparse-checkout: |
-            /*
-            !/.repos/
-          sparse-checkout-cone-mode: false
-      - uses: voidzero-dev/setup-vp@v1
-        with:
-          node-version-file: package.json
-          cache: true
-          run-install: false
-      - name: Download dependency verification
-        continue-on-error: true
-        uses: actions/download-artifact@v8
-        with:
-          name: release-dependency-verification
-          path: ${{ runner.temp }}/pnpm-metadata
-      - name: Install desktop dependencies
-        env:
-          pnpm_config_cache_dir: ${{ runner.temp }}/pnpm-metadata
-        run: vp install --filter=@t3tools/desktop... --filter=t3... --filter=@t3tools/scripts...
+    uses: ./.github/workflows/release-desktop.yml
+    with:
+      version: ${{ needs.build_bundle.outputs.version }}
+      ref: ${{ github.sha }}
+      release_channel: nightly
+      relay_client_tracing: false
+      clerk_publishable_key: pk_live_Y2xlcmsudDMuY29kZXMk
+      clerk_jwt_template: t3-relay
+      clerk_cli_oauth_client_id: bench
+      relay_url: https://relay.t3.codes
+      label: Windows arm64
+      runner: blacksmith-32vcpu-ubuntu-2404
+      verify_runner: windows-11-arm
+      platform: win
+      target: nsis
+      arch: arm64
+      rust_target: aarch64-pc-windows-msvc
+      resource_key: win32-arm64
+      cli_archive: true
 
-      - name: Cache resource monitor
-        id: resource_monitor_cache
-        uses: actions/cache@v6
-        with:
-          path: native/resource-monitor/target/aarch64-pc-windows-msvc/release/t3-resource-monitor.exe
-          key: resource-monitor-xwin-aarch64-pc-windows-msvc-${{ hashFiles('native/resource-monitor/Cargo.lock', 'native/resource-monitor/Cargo.toml', 'native/resource-monitor/src/**') }}
-      - name: Setup Rust
-        if: steps.resource_monitor_cache.outputs.cache-hit != 'true'
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: aarch64-pc-windows-msvc
-      - name: Install cargo-xwin
-        if: steps.resource_monitor_cache.outputs.cache-hit != 'true'
-        uses: taiki-e/install-action@v2
-        with:
-          tool: cargo-xwin
-      - name: Build resource monitor
-        if: steps.resource_monitor_cache.outputs.cache-hit != 'true'
-        run: cargo xwin build --locked --release --manifest-path native/resource-monitor/Cargo.toml --target aarch64-pc-windows-msvc
-
-      - name: Align package versions to release version
-        run: node scripts/update-release-package-versions.ts "$VERSION"
-      - name: Download JS bundle
-        uses: actions/download-artifact@v8
-        with:
-          name: js-bundle
-          path: apps
-      - name: Apply web client branding
-        run: node scripts/apply-web-brand-assets.ts nightly apps/server/dist/client
-
-      - name: Build CLI single-executable
-        env:
-          VP_NODE_VERSION: "26.8.2"
-        run: node apps/server/scripts/cli.ts build-exe --target win-arm64 --verbose
-      - name: Build CLI archive
-        run: |
-          mkdir -p "$RUNNER_TEMP/cli-resource-monitor/win32-arm64"
-          cp native/resource-monitor/target/aarch64-pc-windows-msvc/release/t3-resource-monitor.exe "$RUNNER_TEMP/cli-resource-monitor/win32-arm64/"
-          node scripts/build-cli-archive.ts --platform win --arch arm64 --version "$VERSION" \
-            --resource-monitor-dir "$RUNNER_TEMP/cli-resource-monitor" --output-dir release-cli
-          unzip -l release-cli/*.zip | tail -n +1 | awk '{print $4}' | grep -E "\.node$|\.exe$|\.dll$" || true
-      - uses: actions/upload-artifact@v7
-        with:
-          name: cli-win-arm64
-          path: release-cli/*
-          if-no-files-found: error
-
-      - name: Bundle verify scripts
-        run: |
-          mkdir -p verify
-          esbuild=scripts/node_modules/.bin/esbuild
-          banner="import{createRequire as __cr}from'node:module';const require=__cr(import.meta.url);"
-          "$esbuild" scripts/verify-windows-desktop-artifact.ts --bundle --platform=node --format=esm --target=node24 \
-            --define:import.meta.main=false --banner:js="$banner" --outfile=verify/verify-windows-desktop-artifact.mjs
-          "$esbuild" scripts/smoke-cli-archive.ts --bundle --platform=node --format=esm --target=node24 \
-            --banner:js="$banner" --outfile=verify/smoke-cli-archive.mjs
-      - uses: actions/upload-artifact@v7
-        with:
-          name: verify-scripts
-          path: verify/*
-
-      - name: Wait for Linux CLI archive
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          until gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=cli-linux-arm64" --jq '.total_count' | grep -q '^[1-9]'; do
-            sleep 5
-          done
-      - name: Download Linux CLI archive for WSL
-        uses: actions/download-artifact@v8
-        with:
-          name: cli-linux-arm64
-          path: wsl-runtime
-
-      - name: Build desktop artifact
-        env:
-          T3CODE_DESKTOP_REUSE_RESOURCE_MONITOR: "true"
-          TMPDIR: ${{ runner.temp }}/stage
-        run: |
-          mkdir -p "$TMPDIR"
-          vp run dist:desktop:artifact --platform win --target nsis --arch arm64 --build-version "$VERSION" \
-            --skip-build --keep-stage --verbose --signed --wsl-runtime "$GITHUB_WORKSPACE"/wsl-runtime/t3-*-linux-arm64.tar.gz
-          unpacked=$(ls -d "$TMPDIR"/*/app/dist/win-arm64-unpacked)
-          tar -C "$(dirname "$unpacked")" -cf "$RUNNER_TEMP/win-arm64-unpacked.tar" win-arm64-unpacked
-          echo "jsign calls: $(wc -l < "$RUNNER_TEMP/jsign/calls.log")"
-          awk '{print $NF}' "$RUNNER_TEMP/jsign/calls.log" | xargs -n1 basename
-      - uses: actions/upload-artifact@v7
-        with:
-          name: desktop-win-arm64-unpacked
-          path: ${{ runner.temp }}/win-arm64-unpacked.tar
-          compression-level: 1
-      - uses: actions/upload-artifact@v7
-        with:
-          name: desktop-win-arm64
-          path: release/*.exe
-
-  win_arm64_verify:
-    name: Verify Windows arm64
+  win_arm64_base:
+    name: Win arm64 BASE
     needs: [build_bundle]
-    runs-on: windows-11-arm
-    timeout-minutes: 30
-    env:
-      VERSION: ${{ needs.build_bundle.outputs.version }}
-    steps:
-      - name: Wait for the Linux-built artifacts
-        shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          until gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=desktop-win-arm64-unpacked" --jq '.total_count' | grep -q '^[1-9]'; do
-            sleep 5
-          done
-      - uses: actions/download-artifact@v8
-        with:
-          name: verify-scripts
-          path: verify
-      - uses: actions/download-artifact@v8
-        with:
-          name: cli-win-arm64
-          path: release-cli
-      - uses: actions/download-artifact@v8
-        with:
-          name: desktop-win-arm64-unpacked
-          path: unpacked
-      - name: Verify desktop natives
-        shell: bash
-        run: |
-          tar -C unpacked -xf unpacked/win-arm64-unpacked.tar
-          node verify/verify-windows-desktop-artifact.mjs --app-dir "$(cygpath -w "$PWD/unpacked/win-arm64-unpacked")" \
-            --arch arm64 --build-version "$VERSION" --verbose
-      - name: Smoke-test CLI archive
-        shell: bash
-        run: node verify/smoke-cli-archive.mjs --archive release-cli/* --expect-version "$VERSION"
-      - uses: actions/download-artifact@v8
-        with:
-          name: desktop-win-arm64
-          path: installer
-      - name: Check Authenticode signatures
-        shell: pwsh
-        run: |
-          Expand-Archive (Get-ChildItem release-cli/*.zip).FullName -DestinationPath cli
-          $files = @(Get-ChildItem unpacked/win-arm64-unpacked, cli, installer -Recurse -Include *.exe, *.dll, *.node)
-          $unsigned = @($files | Where-Object { -not (Get-AuthenticodeSignature $_.FullName).SignerCertificate })
-          "$($files.Count) PE files, $($unsigned.Count) unsigned"
-          $unsigned | ForEach-Object { "UNSIGNED: $($_.FullName)" }
+    uses: ./.github/workflows/bench-release-desktop-base.yml
+    with:
+      version: ${{ needs.build_bundle.outputs.version }}
+      ref: ${{ github.sha }}
+      release_channel: nightly
+      relay_client_tracing: false
+      clerk_publishable_key: pk_live_Y2xlcmsudDMuY29kZXMk
+      clerk_jwt_template: t3-relay
+      clerk_cli_oauth_client_id: bench
+      relay_url: https://relay.t3.codes
+      label: Windows arm64
+      runner: windows-11-arm
+      platform: win
+      target: nsis
+      arch: arm64
+      rust_target: aarch64-pc-windows-msvc
+      resource_key: win32-arm64
+      cli_archive: true
