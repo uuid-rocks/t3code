@@ -1,0 +1,112 @@
+# TEMPORARY: benchmark harness for the Windows arm64 desktop build. Removed before merge.
+name: Win ARM bench
+
+on:
+  push:
+    branches: [ci/win-arm-speed]
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: win-arm-bench-${{ github.run_id }}
+
+jobs:
+  build_bundle:
+    name: Build JS bundle
+    runs-on: blacksmith-32vcpu-ubuntu-2404
+    timeout-minutes: 30
+    env:
+      T3CODE_CLERK_PUBLISHABLE_KEY: pk_live_Y2xlcmsudDMuY29kZXMk
+      T3CODE_CLERK_JWT_TEMPLATE: t3-relay
+      T3CODE_CLERK_CLI_OAUTH_CLIENT_ID: bench
+      T3CODE_RELAY_URL: https://relay.t3.codes
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            /*
+            !/.repos/
+          sparse-checkout-cone-mode: false
+      - uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version-file: package.json
+          cache: true
+          run-install: false
+      - name: Install bundle dependencies
+        env:
+          pnpm_config_cache_dir: ${{ runner.temp }}/pnpm-metadata
+        run: vp install --filter=t3... --filter=@t3tools/web... --filter=@t3tools/desktop... --filter=@t3tools/scripts...
+      - name: Upload dependency verification
+        uses: actions/upload-artifact@v7
+        with:
+          name: release-dependency-verification
+          path: ${{ runner.temp }}/pnpm-metadata/lockfile-verified.jsonl
+      - id: version
+        run: echo "version=0.1.1-nightly.$(date -u +%Y%m%d).${{ github.run_number }}${{ github.run_attempt }}" >> "$GITHUB_OUTPUT"
+      - run: node scripts/update-release-package-versions.ts "${{ steps.version.outputs.version }}"
+      - uses: ./.github/actions/setup-apt-mirrors
+      - run: sudo apt-get update && sudo apt-get install -y libsecret-1-dev pkg-config
+      - run: vp run build:desktop
+      - uses: actions/upload-artifact@v7
+        with:
+          name: js-bundle
+          path: |
+            apps/server/dist
+            apps/desktop/dist-electron
+          if-no-files-found: error
+          retention-days: 1
+
+  linux_arm64:
+    name: Linux arm64
+    needs: [build_bundle]
+    uses: ./.github/workflows/release-desktop.yml
+    with:
+      version: ${{ needs.build_bundle.outputs.version }}
+      ref: ${{ github.sha }}
+      release_channel: nightly
+      relay_client_tracing: false
+      clerk_publishable_key: pk_live_Y2xlcmsudDMuY29kZXMk
+      clerk_jwt_template: t3-relay
+      clerk_cli_oauth_client_id: bench
+      relay_url: https://relay.t3.codes
+      label: Linux arm64
+      runner: blacksmith-16vcpu-ubuntu-2404-arm
+      platform: linux
+      target: AppImage
+      arch: arm64
+      rust_target: aarch64-unknown-linux-gnu
+      resource_key: linux-arm64
+      cli_archive: true
+
+  win_arm64:
+    name: Win arm64 (${{ matrix.runner }})
+    needs: [build_bundle]
+    # Variants upload same-named artifacts; only the first upload wins, so a
+    # late "Upload ..." failure here does not invalidate the timings.
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [windows-11-arm]
+    uses: ./.github/workflows/release-desktop.yml
+    with:
+      version: ${{ needs.build_bundle.outputs.version }}
+      ref: ${{ github.sha }}
+      release_channel: nightly
+      relay_client_tracing: false
+      clerk_publishable_key: pk_live_Y2xlcmsudDMuY29kZXMk
+      clerk_jwt_template: t3-relay
+      clerk_cli_oauth_client_id: bench
+      relay_url: https://relay.t3.codes
+      label: Windows arm64
+      runner: ${{ matrix.runner }}
+      platform: win
+      target: nsis
+      arch: arm64
+      rust_target: aarch64-pc-windows-msvc
+      resource_key: win32-arm64
+      cli_archive: true
