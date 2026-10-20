@@ -3017,8 +3017,16 @@ export const createBuildConfig = Effect.fn("createBuildConfig")(function* (
       // packaged executable with Electron's stock icon.
       signAndEditExecutable: true,
     };
-    if (signed) {
+    if (signed && (yield* HostProcess.Platform) === "win32") {
       winConfig.azureSignOptions = yield* AzureTrustedSigningOptionsConfig;
+    } else if (signed) {
+      const path = yield* Path.Path;
+      const { publisherName } = yield* AzureTrustedSigningOptionsConfig;
+      winConfig.signtoolOptions = {
+        sign: yield* path.fromFileUrl(new URL("./lib/windows-jsign.ts", import.meta.url)),
+        signingHashAlgorithms: ["sha256"],
+        publisherName: [publisherName],
+      };
     }
     buildConfig.win = winConfig;
   }
@@ -4012,6 +4020,13 @@ const buildDesktopArtifactUnlocked = Effect.fn("buildDesktopArtifactUnlocked")(f
     // fpm compresses the .deb with the system xz through tar. Threaded mode
     // takes seconds on a many-core runner instead of about two minutes.
     buildEnv.XZ_DEFAULTS = "-T0";
+  }
+  if (options.platform === "win") {
+    // Windows signs only through Azure Trusted Signing. Off Windows,
+    // electron-builder's signtool manager would read CSC_LINK (the macOS
+    // certificate) as a Windows certificate.
+    delete buildEnv.CSC_LINK;
+    delete buildEnv.CSC_KEY_PASSWORD;
   }
   if (!options.signed) {
     buildEnv.CSC_IDENTITY_AUTO_DISCOVERY = "false";

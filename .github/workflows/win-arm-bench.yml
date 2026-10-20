@@ -92,7 +92,32 @@ jobs:
     timeout-minutes: 40
     env:
       VERSION: ${{ needs.build_bundle.outputs.version }}
+      # Dummy Azure config: the bench's jsign wrapper signs with a self-signed
+      # certificate so every hook call is exercised without Azure secrets.
+      AZURE_TRUSTED_SIGNING_ENDPOINT: https://eus.codesigning.azure.net/
+      AZURE_TRUSTED_SIGNING_ACCOUNT_NAME: bench
+      AZURE_TRUSTED_SIGNING_CERTIFICATE_PROFILE_NAME: bench
+      AZURE_TRUSTED_SIGNING_PUBLISHER_NAME: T3 Bench
     steps:
+      - name: Install jsign with a self-signed test certificate
+        run: |
+          set -euo pipefail
+          dir="$RUNNER_TEMP/jsign"
+          mkdir -p "$dir"
+          curl -fsSL -o "$dir/jsign.jar" https://github.com/ebourg/jsign/releases/download/7.6/jsign-7.6.jar
+          echo "6cf58aa080e7ff82656f320cff8d4a3bff30408df8766806dcba3740dd839fa5  $dir/jsign.jar" | sha256sum -c -
+          java -version
+          openssl req -x509 -newkey rsa:2048 -nodes -days 2 -subj "/CN=T3 Bench" \
+            -addext "extendedKeyUsage=codeSigning" -keyout "$dir/key.pem" -out "$dir/cert.pem"
+          openssl pkcs12 -export -name t3 -passout pass:bench -inkey "$dir/key.pem" -in "$dir/cert.pem" -out "$dir/bench.p12"
+          cat > "$dir/jsign" <<EOS
+          #!/usr/bin/env bash
+          set -euo pipefail
+          echo "jsign \$*" >> "$dir/calls.log"
+          exec java -jar "$dir/jsign.jar" --storetype PKCS12 --keystore "$dir/bench.p12" --storepass bench --alias t3 --alg SHA-256 --replace "\${@: -1}"
+          EOS
+          chmod +x "$dir/jsign"
+          echo "T3CODE_JSIGN=$dir/jsign" >> "$GITHUB_ENV"
       - uses: actions/checkout@v6
         with:
           sparse-checkout: |
@@ -196,9 +221,11 @@ jobs:
         run: |
           mkdir -p "$TMPDIR"
           vp run dist:desktop:artifact --platform win --target nsis --arch arm64 --build-version "$VERSION" \
-            --skip-build --keep-stage --verbose --wsl-runtime "$GITHUB_WORKSPACE"/wsl-runtime/t3-*-linux-arm64.tar.gz
+            --skip-build --keep-stage --verbose --signed --wsl-runtime "$GITHUB_WORKSPACE"/wsl-runtime/t3-*-linux-arm64.tar.gz
           unpacked=$(ls -d "$TMPDIR"/*/app/dist/win-arm64-unpacked)
           tar -C "$(dirname "$unpacked")" -cf "$RUNNER_TEMP/win-arm64-unpacked.tar" win-arm64-unpacked
+          echo "jsign calls: $(wc -l < "$RUNNER_TEMP/jsign/calls.log")"
+          awk '{print $NF}' "$RUNNER_TEMP/jsign/calls.log" | xargs -n1 basename
       - uses: actions/upload-artifact@v7
         with:
           name: desktop-win-arm64-unpacked
@@ -246,3 +273,15 @@ jobs:
       - name: Smoke-test CLI archive
         shell: bash
         run: node verify/smoke-cli-archive.mjs --archive release-cli/* --expect-version "$VERSION"
+      - uses: actions/download-artifact@v8
+        with:
+          name: desktop-win-arm64
+          path: installer
+      - name: Check Authenticode signatures
+        shell: pwsh
+        run: |
+          Expand-Archive (Get-ChildItem release-cli/*.zip).FullName -DestinationPath cli
+          $files = @(Get-ChildItem unpacked/win-arm64-unpacked, cli, installer -Recurse -Include *.exe, *.dll, *.node)
+          $unsigned = @($files | Where-Object { -not (Get-AuthenticodeSignature $_.FullName).SignerCertificate })
+          "$($files.Count) PE files, $($unsigned.Count) unsigned"
+          $unsigned | ForEach-Object { "UNSIGNED: $($_.FullName)" }
