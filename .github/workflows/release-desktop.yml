@@ -117,27 +117,24 @@ jobs:
           $ErrorActionPreference = "Stop"
           $sw = [Diagnostics.Stopwatch]::StartNew()
           function Mark($label) { Write-Host ("[{0,6:N1}s] {1}" -f $sw.Elapsed.TotalSeconds, $label) }
-          Set-Location $env:RUNNER_TEMP
-          Get-MpComputerStatus | Select-Object RealTimeProtectionEnabled, AMRunningMode | Out-String | Write-Host
-          (Get-MpPreference).ExclusionPath | Out-String | Write-Host
-          Mark "defender status"
           $disk = Get-Disk | Where-Object PartitionStyle -eq "RAW" | Sort-Object Size -Descending | Select-Object -First 1
           Mark "get-disk"
           if (-not $disk) { Write-Host "No raw disk; staying on C:."; exit 0 }
-          $partition = $disk | Initialize-Disk -PartitionStyle GPT -PassThru | New-Partition -UseMaximumSize -AssignDriveLetter
+          $disk | Initialize-Disk -PartitionStyle GPT
+          $workspacePartition = New-Partition -DiskNumber $disk.Number -Size 120GB
+          $tempPartition = New-Partition -DiskNumber $disk.Number -UseMaximumSize -AssignDriveLetter
           Mark "partition"
-          $partition | Format-Volume -DevDrive -NewFileSystemLabel DevDrive -Confirm:$false -Force | Out-Null
+          $workspacePartition | Format-Volume -DevDrive -NewFileSystemLabel Workspace -Confirm:$false -Force | Out-Null
+          $tempPartition | Format-Volume -DevDrive -NewFileSystemLabel Temp -Confirm:$false -Force | Out-Null
           Mark "format"
-          $drive = "$($partition.DriveLetter):"
-          fsutil devdrv trust $drive
-          $workspace = $env:GITHUB_WORKSPACE
-          New-Item -ItemType Directory -Force "$drive\ws", "$drive\tmp", "$drive\pnpm-store" | Out-Null
-          Remove-Item -Force -Recurse $workspace
-          New-Item -ItemType Junction -Path $workspace -Target "$drive\ws" | Out-Null
-          "TEMP=$drive\tmp" >> $env:GITHUB_ENV
-          "TMP=$drive\tmp" >> $env:GITHUB_ENV
-          "pnpm_config_store_dir=$drive\pnpm-store" >> $env:GITHUB_ENV
-          Mark "Dev Drive $drive ready"
+          $workspacePartition | Add-PartitionAccessPath -AccessPath $env:GITHUB_WORKSPACE
+          $temp = "$($tempPartition.DriveLetter):\"
+          fsutil devdrv trust $env:GITHUB_WORKSPACE
+          fsutil devdrv trust $temp
+          "TEMP=$temp" >> $env:GITHUB_ENV
+          "TMP=$temp" >> $env:GITHUB_ENV
+          "pnpm_config_store_dir=$env:GITHUB_WORKSPACE\.pnpm-store" >> $env:GITHUB_ENV
+          Mark "Dev Drive ready"
 
       # This repository is public, so Git needs no credentials. checkout's
       # credential cleanup runs submodule foreach even with submodules disabled,
