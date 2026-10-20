@@ -115,26 +115,20 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          start=$SECONDS
-          mark() { echo "[$((SECONDS - start))s] $1"; }
           dp() { printf '%s\n' "$@" > "$RUNNER_TEMP/diskpart.txt"; diskpart //s "$(cygpath -w "$RUNNER_TEMP/diskpart.txt")"; }
-          dp "list disk"
+          # The runner's unused local NVMe disk is the only one without a GPT
+          # partition table; the workspace otherwise sits on the slow OS disk.
           disk=$(dp "list disk" | tr -d '\r' | awk '/^  Disk [0-9]+/ && $NF != "*" { print $2; exit }')
-          mark "list disk ($disk)"
           if [[ -z "$disk" ]]; then echo "No raw disk; staying on C:."; exit 0; fi
           dp "select disk $disk" "convert gpt" "create partition primary" "assign letter=W"
-          mark "partition"
           # NTFS links pnpm's store steadily in ~10s; a ReFS Dev Drive swung 9-45s.
           cmd //c "echo Y| format W: /FS:NTFS /Q /V:Workspace"
-          mark "format"
           # A drive-letter root as the workspace makes pnpm skip the install, so
           # the volume is only reachable through the workspace mount point.
           dp "select volume W" "remove letter=W" "assign mount=\"$(cygpath -w "$GITHUB_WORKSPACE")\""
-          mark "mount"
           echo "pnpm_config_store_dir=$(cygpath -w "$GITHUB_WORKSPACE")\\.pnpm-store" >> "$GITHUB_ENV"
           # pnpm defaults to cores minus one; on 4 cores, 4 workers were faster.
           echo "PNPM_MAX_WORKERS=4" >> "$GITHUB_ENV"
-          mark "workspace volume ready"
 
       # Defender scans the new volume; the image only excludes C:\ and D:\.
       # The first WMI call on these runners takes ~35s, so it runs alongside
