@@ -3354,9 +3354,9 @@ export const verifyWindowsPrimaryFffNativeLoad = Effect.fn(
 });
 
 /**
- * Both probes load the packaged natives, so they run only on a host of the
- * target's own platform and architecture. A cross build defers them to
- * scripts/verify-windows-desktop-artifact.ts on such a host.
+ * The fff probe needs a host of the target's platform and architecture; the
+ * bundle self-check needs a Windows host. A cross build defers both to
+ * scripts/verify-windows-desktop-artifact.ts.
  */
 export const verifyWindowsPackagedRuntime = Effect.fn(
   "desktopArtifact.verifyWindowsPackagedRuntime",
@@ -3370,10 +3370,9 @@ export const verifyWindowsPackagedRuntime = Effect.fn(
   const asarPath = path.join(input.packagedAppDir, "resources", WINDOWS_SERVER_ASAR_RESOURCE);
   yield* verifyWindowsPrimaryFffNativeLoad({ ...input, asarPath });
   const hostPlatform = yield* HostProcess.Platform;
-  const hostArchitecture = yield* HostProcess.Architecture;
-  if (hostPlatform !== "win32" || hostArchitecture !== input.targetArch) {
+  if (hostPlatform !== "win32") {
     yield* Effect.log(
-      `[desktop-artifact] Skipped the bundle self-check on a ${hostPlatform}-${hostArchitecture} host.`,
+      `[desktop-artifact] Skipped the bundle self-check on a ${hostPlatform} host.`,
     );
     return;
   }
