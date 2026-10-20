@@ -112,31 +112,24 @@ jobs:
     steps:
       - name: Move workspace to the local NVMe Dev Drive
         if: runner.os == 'Windows' && runner.arch == 'ARM64'
-        shell: powershell
+        shell: bash
         run: |
-          $ErrorActionPreference = "Stop"
-          $sw = [Diagnostics.Stopwatch]::StartNew()
-          function Mark($label) { Write-Host ("[{0,6:N1}s] {1}" -f $sw.Elapsed.TotalSeconds, $label) }
-          $disk = Get-Disk | Where-Object PartitionStyle -eq "RAW" | Sort-Object Size -Descending | Select-Object -First 1
-          Mark "get-disk"
-          if (-not $disk) { Write-Host "No raw disk; staying on C:."; exit 0 }
-          $disk | Initialize-Disk -PartitionStyle GPT
-          $workspacePartition = New-Partition -DiskNumber $disk.Number -Size 120GB
-          $tempPartition = New-Partition -DiskNumber $disk.Number -UseMaximumSize -AssignDriveLetter
-          Mark "partition"
-          $workspacePartition | Format-Volume -DevDrive -NewFileSystemLabel Workspace -Confirm:$false -Force | Out-Null
-          $tempPartition | Format-Volume -DevDrive -NewFileSystemLabel Temp -Confirm:$false -Force | Out-Null
-          Mark "format"
-          $workspacePartition | Add-PartitionAccessPath -AccessPath $env:GITHUB_WORKSPACE
-          $temp = "$($tempPartition.DriveLetter):\"
-          fsutil devdrv trust $env:GITHUB_WORKSPACE
-          fsutil devdrv trust $temp
-          Add-MpPreference -ExclusionPath $env:GITHUB_WORKSPACE, $temp
-          Mark "defender exclusions"
-          "TEMP=$temp" >> $env:GITHUB_ENV
-          "TMP=$temp" >> $env:GITHUB_ENV
-          "pnpm_config_store_dir=$env:GITHUB_WORKSPACE\.pnpm-store" >> $env:GITHUB_ENV
-          Mark "Dev Drive ready"
+          set -euo pipefail
+          start=$SECONDS
+          mark() { echo "[$((SECONDS - start))s] $1"; }
+          dp() { printf '%s\n' "$@" > "$RUNNER_TEMP/diskpart.txt"; diskpart //s "$(cygpath -w "$RUNNER_TEMP/diskpart.txt")"; }
+          dp "list disk"
+          disk=$(dp "list disk" | tr -d '\r' | awk '/^  Disk [0-9]+/ && $NF != "*" { print $2; exit }')
+          mark "list disk ($disk)"
+          if [[ -z "$disk" ]]; then echo "No raw disk; staying on C:."; exit 0; fi
+          dp "select disk $disk" "convert gpt" "create partition primary" "assign letter=D"
+          mark "partition"
+          echo Y | format.com D: //DevDrv //Q //V:Workspace
+          mark "format"
+          fsutil devdrv trust D:
+          mountvol "$(cygpath -w "$GITHUB_WORKSPACE")" "$(mountvol D: //L | tr -d ' \r')"
+          echo "pnpm_config_store_dir=D:\\.pnpm-store" >> "$GITHUB_ENV"
+          mark "Dev Drive ready"
 
       # This repository is public, so Git needs no credentials. checkout's
       # credential cleanup runs submodule foreach even with submodules disabled,
