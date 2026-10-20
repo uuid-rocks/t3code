@@ -1,6 +1,6 @@
 # TEMPORARY: prototype of a Linux-built Windows arm64 desktop + CLI, verified on
 # Windows arm64. Removed before merge.
-name: Win ARM xbuild bench
+name: Win ARM xbuild bench 8vcpu
 
 on:
   push:
@@ -99,7 +99,7 @@ jobs:
       clerk_cli_oauth_client_id: bench
       relay_url: https://relay.t3.codes
       label: Windows arm64
-      runner: blacksmith-32vcpu-ubuntu-2404
+      runner: blacksmith-8vcpu-ubuntu-2404
       verify_runner: windows-11-arm
       platform: win
       target: nsis
