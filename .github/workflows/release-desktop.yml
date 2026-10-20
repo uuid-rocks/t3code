@@ -709,7 +709,7 @@ jobs:
           if-no-files-found: error
 
   verify:
-    name: Verify ${{ inputs.label }}
+    name: Verify
     needs: [build]
     if: inputs.verify_runner != ''
     runs-on: ${{ inputs.verify_runner }}
