@@ -4,7 +4,7 @@ name: Win ARM xbuild bench
 
 on:
   push:
-    branches: [ci/win-arm-linux-build]
+    branches: [ci/win-arm-linux-build, "ci/win-arm-xb-*"]
   workflow_dispatch:
 
 permissions:
