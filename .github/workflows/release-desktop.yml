@@ -131,10 +131,18 @@ jobs:
           # the volume is only reachable through the workspace mount point.
           dp "select volume W" "remove letter=W" "assign mount=\"$(cygpath -w "$GITHUB_WORKSPACE")\""
           mark "mount"
-          MSYS2_ARG_CONV_EXCL='*' reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Exclusions\Paths" /v "$(cygpath -w "$GITHUB_WORKSPACE")" /t REG_SZ /d 0 /f
-          MSYS2_ARG_CONV_EXCL='*' reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Exclusions" /v Exclusions_Paths /t REG_DWORD /d 1 /f
           echo "pnpm_config_store_dir=$(cygpath -w "$GITHUB_WORKSPACE")\\.pnpm-store" >> "$GITHUB_ENV"
           mark "Dev Drive ready"
+
+      # Defender scans the new volume; the image only excludes C:\ and D:\.
+      # The first WMI call on these runners takes ~35s, so it runs alongside
+      # checkout and setup and the install waits for it.
+      - name: Exclude workspace from Defender
+        id: defender_exclusion
+        if: runner.os == 'Windows' && runner.arch == 'ARM64'
+        background: true
+        shell: powershell
+        run: Add-MpPreference -ExclusionPath $env:GITHUB_WORKSPACE
 
       # This repository is public, so Git needs no credentials. checkout's
       # credential cleanup runs submodule foreach even with submodules disabled,
@@ -205,6 +213,9 @@ jobs:
         with:
           name: release-dependency-verification
           path: ${{ runner.temp }}/pnpm-metadata
+
+      - wait: defender_exclusion
+        if: runner.os == 'Windows' && runner.arch == 'ARM64'
 
       - name: Install desktop dependencies
         env:
