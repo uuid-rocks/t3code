@@ -391,3 +391,109 @@ test("accepts V2 without comparing it to the V1 scenario", () => {
   current.scenario.id = "unrecognized";
   assert.throws(() => validateResult(current), /not supported/);
 });
+
+test("ignores a pull request from another repository in the CI run payload", async () => {
+  const outputs = {};
+  const fetchedPulls = [];
+  const listWorkflowRunArtifacts = () => {};
+  const listWorkflowRuns = () => {};
+  await resolve({
+    github: {
+      paginate: async (method) =>
+        method === listWorkflowRunArtifacts
+          ? [{ name: "thread-transfer-results", expired: false }]
+          : [],
+      rest: {
+        actions: { listWorkflowRunArtifacts, listWorkflowRuns },
+        pulls: {
+          get: async (input) => {
+            fetchedPulls.push(input.pull_number);
+            return { data: { head: { sha: "head-sha" }, base: { sha: "base-sha", ref: "main" } } };
+          },
+        },
+      },
+    },
+    context: {
+      repo: { owner: "uuid-rocks", repo: "t3code" },
+      payload: {
+        repository: { id: 1427029302, url: "https://api.github.com/repos/uuid-rocks/t3code" },
+        workflow_run: {
+          id: 2,
+          event: "pull_request",
+          workflow_id: 3,
+          head_sha: "head-sha",
+          head_branch: "feature-branch",
+          conclusion: "success",
+          pull_requests: [
+            {
+              number: 22428,
+              base: {
+                repo: { id: 1153130349, url: "https://api.github.com/repos/pingdotgg/t3code" },
+              },
+            },
+            {
+              number: 2,
+              base: {
+                repo: { id: 1427029302, url: "https://api.github.com/repos/uuid-rocks/t3code" },
+              },
+            },
+          ],
+        },
+      },
+    },
+    core: {
+      info: () => {},
+      setOutput: (key, value) => {
+        outputs[key] = value;
+      },
+    },
+  });
+
+  assert.deepEqual(fetchedPulls, [2]);
+  assert.equal(outputs.publish, "true");
+  assert.equal(outputs.pull_number, "2");
+});
+
+test("does not fall back to a payload pull request from another repository", async () => {
+  const outputs = {};
+  const fetchedPulls = [];
+  const listPullRequestsAssociatedWithCommit = () => {};
+  await resolve({
+    github: {
+      paginate: async (method) => {
+        assert.equal(method, listPullRequestsAssociatedWithCommit);
+        return [];
+      },
+      rest: {
+        repos: { listPullRequestsAssociatedWithCommit },
+        pulls: {
+          get: async (input) => {
+            fetchedPulls.push(input.pull_number);
+            return { data: {} };
+          },
+        },
+      },
+    },
+    context: {
+      repo: { owner: "uuid-rocks", repo: "t3code" },
+      payload: {
+        repository: { id: 1427029302 },
+        workflow_run: {
+          event: "pull_request",
+          head_sha: "head-sha",
+          head_branch: "feature-branch",
+          pull_requests: [{ number: 22428, base: { repo: { id: 1153130349 } } }],
+        },
+      },
+    },
+    core: {
+      info: () => {},
+      setOutput: (key, value) => {
+        outputs[key] = value;
+      },
+    },
+  });
+
+  assert.deepEqual(fetchedPulls, []);
+  assert.equal(outputs.publish, "false");
+});

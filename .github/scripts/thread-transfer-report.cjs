@@ -234,6 +234,15 @@ function findResultArtifact(artifacts) {
   return artifacts.find((artifact) => artifact.name === ARTIFACT_NAME && !artifact.expired);
 }
 
+// A fork's CI run is also attached to the upstream pull request that shares its
+// head commit. That pull request's number does not exist in this repository.
+function isPullInRepository(pull, repository) {
+  const baseRepo = pull.base?.repo;
+  if (!baseRepo) return true;
+  if (baseRepo.id !== undefined) return baseRepo.id === repository?.id;
+  return baseRepo.url === repository?.url;
+}
+
 async function resolve({ github, context, core }) {
   const source = context.payload.workflow_run;
   const { owner, repo } = context.repo;
@@ -242,7 +251,15 @@ async function resolve({ github, context, core }) {
     return;
   }
 
-  let pullNumber = source.pull_requests?.[0]?.number;
+  const repository = context.payload.repository;
+  const payloadPulls = source.pull_requests ?? [];
+  const ownPulls = payloadPulls.filter((pull) => isPullInRepository(pull, repository));
+  if (ownPulls.length < payloadPulls.length) {
+    core.info(
+      `Ignoring ${payloadPulls.length - ownPulls.length} pull request(s) that belong to another repository.`,
+    );
+  }
+  let pullNumber = ownPulls[0]?.number;
   if (!pullNumber) {
     let associated;
     try {
