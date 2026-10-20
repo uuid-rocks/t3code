@@ -122,13 +122,19 @@ jobs:
           disk=$(dp "list disk" | tr -d '\r' | awk '/^  Disk [0-9]+/ && $NF != "*" { print $2; exit }')
           mark "list disk ($disk)"
           if [[ -z "$disk" ]]; then echo "No raw disk; staying on C:."; exit 0; fi
-          dp "select disk $disk" "convert gpt" "create partition primary" "assign letter=D"
+          dp "select disk $disk" "convert gpt" "create partition primary" "assign letter=W"
           mark "partition"
-          cmd //c "echo Y| format D: /DevDrv /Q /V:Workspace"
+          cmd //c "echo Y| format W: /DevDrv /Q /V:Workspace"
           mark "format"
-          fsutil devdrv trust D:
-          mountvol "$(cygpath -w "$GITHUB_WORKSPACE")" "$(mountvol D: //L | tr -d ' \r')"
-          echo "pnpm_config_store_dir=D:\\.pnpm-store" >> "$GITHUB_ENV"
+          volume=$(mountvol W: //L | tr -d ' \r')
+          # A drive-letter root as the workspace makes pnpm skip the install, so
+          # the volume is only reachable through the workspace mount point.
+          mountvol W: //D
+          mountvol "$(cygpath -w "$GITHUB_WORKSPACE")" "$volume"
+          fsutil devdrv trust "$(cygpath -w "$GITHUB_WORKSPACE")"
+          MSYS2_ARG_CONV_EXCL='*' reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Exclusions\Paths" /v "$(cygpath -w "$GITHUB_WORKSPACE")" /t REG_SZ /d 0 /f
+          MSYS2_ARG_CONV_EXCL='*' reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Exclusions" /v Exclusions_Paths /t REG_DWORD /d 1 /f
+          echo "pnpm_config_store_dir=$(cygpath -w "$GITHUB_WORKSPACE")\\.pnpm-store" >> "$GITHUB_ENV"
           mark "Dev Drive ready"
 
       # This repository is public, so Git needs no credentials. checkout's
