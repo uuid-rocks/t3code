@@ -2247,7 +2247,7 @@ export const copyDirectoryPreservingSymlinks = Effect.fn("copyDirectoryPreservin
   },
 );
 
-const verifyPackagedBundleIsSelfContained = Effect.fn("verifyPackagedBundleIsSelfContained")(
+export const verifyPackagedBundleIsSelfContained = Effect.fn("verifyPackagedBundleIsSelfContained")(
   function* (input: { readonly asarPath: string; readonly verbose: boolean }) {
     const fs = yield* FileSystem.FileSystem;
     const path = yield* Path.Path;
@@ -3354,8 +3354,9 @@ export const verifyWindowsPrimaryFffNativeLoad = Effect.fn(
 });
 
 /**
- * Loads the packaged arm64/x64 natives, so it only runs on a host of the
- * target's own platform and architecture.
+ * Both probes load the packaged natives, so they run only on a host of the
+ * target's own platform and architecture. A cross build defers them to
+ * scripts/verify-windows-desktop-artifact.ts on such a host.
  */
 export const verifyWindowsPackagedRuntime = Effect.fn(
   "desktopArtifact.verifyWindowsPackagedRuntime",
@@ -3368,6 +3369,14 @@ export const verifyWindowsPackagedRuntime = Effect.fn(
   const path = yield* Path.Path;
   const asarPath = path.join(input.packagedAppDir, "resources", WINDOWS_SERVER_ASAR_RESOURCE);
   yield* verifyWindowsPrimaryFffNativeLoad({ ...input, asarPath });
+  const hostPlatform = yield* HostProcess.Platform;
+  const hostArchitecture = yield* HostProcess.Architecture;
+  if (hostPlatform !== "win32" || hostArchitecture !== input.targetArch) {
+    yield* Effect.log(
+      `[desktop-artifact] Skipped the bundle self-check on a ${hostPlatform}-${hostArchitecture} host.`,
+    );
+    return;
+  }
   yield* verifyPackagedBundleIsSelfContained({ asarPath, verbose: input.verbose });
 });
 
@@ -3584,20 +3593,12 @@ export const validateWindowsPackagedPayload = Effect.fn(
     });
   }
 
-  const hostPlatform = yield* HostProcess.Platform;
-  const hostArchitecture = yield* HostProcess.Architecture;
-  if (hostPlatform === "win32" && hostArchitecture === input.targetArch) {
-    yield* verifyWindowsPackagedRuntime({
-      packagedAppDir,
-      appExecutableName: input.appExecutableName,
-      targetArch: input.targetArch,
-      verbose: input.verbose ?? false,
-    });
-  } else {
-    yield* Effect.log(
-      `[desktop-artifact] Skipped the runtime probes on a ${hostPlatform}-${hostArchitecture} host; run scripts/verify-windows-desktop-artifact.ts on win32-${input.targetArch}.`,
-    );
-  }
+  yield* verifyWindowsPackagedRuntime({
+    packagedAppDir,
+    appExecutableName: input.appExecutableName,
+    targetArch: input.targetArch,
+    verbose: input.verbose ?? false,
+  });
 
   yield* Effect.log(
     `[desktop-artifact] Validated Windows payload (${String(fileCount)} files, ${String(unpackedFiles.length)} sidecar natives).`,

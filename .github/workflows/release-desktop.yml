@@ -235,14 +235,14 @@ jobs:
             exit $code
           }
 
-      # Built here rather than inside the desktop build so the CLI archive,
-      # which bundles the same binary, can be built and uploaded first.
       - name: Install cargo-xwin
         if: runner.os != 'Windows' && inputs.platform == 'win' && steps.resource_monitor_cache.outputs.cache-hit != 'true'
         uses: taiki-e/install-action@8cca0918f8471c33515202b73f56ab27f2bed283 # v2
         with:
           tool: cargo-xwin
 
+      # Built here rather than inside the desktop build so the CLI archive,
+      # which bundles the same binary, can be built and uploaded first.
       - name: Build resource monitor
         if: steps.resource_monitor_cache.outputs.cache-hit != 'true'
         shell: bash
