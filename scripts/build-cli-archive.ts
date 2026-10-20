@@ -505,7 +505,9 @@ const buildCliArchive = Effect.fn("buildCliArchive")(function* (input: {
   yield* fs.remove(archivePath, { force: true });
   if (input.platform === "win" && hostPlatform !== "win32") {
     yield* runCommand(
-      ChildProcess.make("zip", ["-q", "-r", "-X", archivePath, stem], { cwd: stageRoot }),
+      ChildProcess.make("zip", ["-q", "-r", "-X", path.resolve(archivePath), stem], {
+        cwd: stageRoot,
+      }),
       "zip",
     );
   } else if (input.platform === "win") {
