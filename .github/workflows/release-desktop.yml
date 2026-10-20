@@ -126,11 +126,11 @@ jobs:
           mark "partition"
           cmd //c "echo Y| format W: /DevDrv /Q /V:Workspace"
           mark "format"
+          fsutil devdrv trust W:
           # A drive-letter root as the workspace makes pnpm skip the install, so
           # the volume is only reachable through the workspace mount point.
           dp "select volume W" "remove letter=W" "assign mount=\"$(cygpath -w "$GITHUB_WORKSPACE")\""
           mark "mount"
-          fsutil devdrv trust "$(cygpath -w "$GITHUB_WORKSPACE")"
           MSYS2_ARG_CONV_EXCL='*' reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Exclusions\Paths" /v "$(cygpath -w "$GITHUB_WORKSPACE")" /t REG_SZ /d 0 /f
           MSYS2_ARG_CONV_EXCL='*' reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender\Exclusions" /v Exclusions_Paths /t REG_DWORD /d 1 /f
           echo "pnpm_config_store_dir=$(cygpath -w "$GITHUB_WORKSPACE")\\.pnpm-store" >> "$GITHUB_ENV"
