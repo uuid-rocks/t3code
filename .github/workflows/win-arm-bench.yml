@@ -107,25 +107,3 @@ jobs:
       rust_target: aarch64-pc-windows-msvc
       resource_key: win32-arm64
       cli_archive: true
-
-  win_arm64_base:
-    name: Win arm64 BASE
-    needs: [build_bundle]
-    uses: ./.github/workflows/bench-release-desktop-base.yml
-    with:
-      version: ${{ needs.build_bundle.outputs.version }}
-      ref: ${{ github.sha }}
-      release_channel: nightly
-      relay_client_tracing: false
-      clerk_publishable_key: pk_live_Y2xlcmsudDMuY29kZXMk
-      clerk_jwt_template: t3-relay
-      clerk_cli_oauth_client_id: bench
-      relay_url: https://relay.t3.codes
-      label: Windows arm64
-      runner: windows-11-arm
-      platform: win
-      target: nsis
-      arch: arm64
-      rust_target: aarch64-pc-windows-msvc
-      resource_key: win32-arm64
-      cli_archive: true
