@@ -1,6 +1,6 @@
 # TEMPORARY: prototype of a Linux-built Windows arm64 desktop + CLI, verified on
 # Windows arm64. Removed before merge.
-name: Win ARM xbuild bench
+name: Win ARM xbuild bench 32vcpu
 
 on:
   push:
