@@ -148,7 +148,7 @@ jobs:
       - name: Build CLI single-executable
         env:
           VP_NODE_VERSION: "26.8.2"
-        run: node apps/server/scripts/cli.ts build-exe --target win32-arm64 --verbose
+        run: node apps/server/scripts/cli.ts build-exe --target win-arm64 --verbose
       - name: Build CLI archive
         run: |
           mkdir -p "$RUNNER_TEMP/cli-resource-monitor/win32-arm64"
