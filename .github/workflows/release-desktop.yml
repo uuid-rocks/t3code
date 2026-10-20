@@ -160,24 +160,20 @@ jobs:
       # Put the .NET 8 release first for both workflow shells and electron-builder.
       - name: Use PowerShell 7.4 for Windows ARM builds
         if: inputs.platform == 'win' && runner.arch == 'ARM64'
-        shell: powershell
+        shell: bash
         run: |
-          $ErrorActionPreference = "Stop"
-          $ProgressPreference = "SilentlyContinue"
-          $version = "7.4.20"
-          $archive = Join-Path $env:RUNNER_TEMP "PowerShell-$version-win-arm64.zip"
-          $installDir = Join-Path $env:RUNNER_TEMP "powershell-$version-arm64"
-          Invoke-WebRequest -UseBasicParsing `
-            -Uri "https://github.com/PowerShell/PowerShell/releases/download/v$version/PowerShell-$version-win-arm64.zip" `
-            -OutFile $archive
-          $expectedHash = "67eff749d5dae357501c95a3eec1dcd93f669824e3ca2b1d2adcdecdebf04f35"
-          if ((Get-FileHash $archive -Algorithm SHA256).Hash -ne $expectedHash) {
-            throw "PowerShell archive checksum mismatch"
-          }
-          Expand-Archive -Path $archive -DestinationPath $installDir
-          $installDir | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
-          & "$installDir\pwsh.exe" -NoProfile -NonInteractive -Command '$PSVersionTable; [System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture'
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          set -euo pipefail
+          version="7.4.20"
+          archive="$RUNNER_TEMP/PowerShell-$version-win-arm64.zip"
+          install_dir="$RUNNER_TEMP/powershell-$version-arm64"
+          curl -fsSL --retry 3 -o "$archive" \
+            "https://github.com/PowerShell/PowerShell/releases/download/v$version/PowerShell-$version-win-arm64.zip"
+          echo "67eff749d5dae357501c95a3eec1dcd93f669824e3ca2b1d2adcdecdebf04f35  $archive" | sha256sum -c -
+          mkdir -p "$install_dir"
+          # Windows' bsdtar reads zip archives; Git Bash's GNU tar does not.
+          /c/Windows/System32/tar.exe -xf "$(cygpath -w "$archive")" -C "$(cygpath -w "$install_dir")"
+          cygpath -w "$install_dir" >> "$GITHUB_PATH"
+          "$install_dir/pwsh.exe" -NoProfile -NonInteractive -Command '$PSVersionTable; [System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture'
 
       - name: Verify Windows ARM PowerShell selection
         if: inputs.platform == 'win' && runner.arch == 'ARM64'
