@@ -3345,6 +3345,24 @@ export const verifyWindowsPrimaryFffNativeLoad = Effect.fn(
   );
 });
 
+/**
+ * Loads the packaged arm64/x64 natives, so it only runs on a host of the
+ * target's own platform and architecture.
+ */
+export const verifyWindowsPackagedRuntime = Effect.fn(
+  "desktopArtifact.verifyWindowsPackagedRuntime",
+)(function* (input: {
+  readonly packagedAppDir: string;
+  readonly appExecutableName: string;
+  readonly targetArch: typeof BuildArch.Type;
+  readonly verbose: boolean;
+}) {
+  const path = yield* Path.Path;
+  const asarPath = path.join(input.packagedAppDir, "resources", WINDOWS_SERVER_ASAR_RESOURCE);
+  yield* verifyWindowsPrimaryFffNativeLoad({ ...input, asarPath });
+  yield* verifyPackagedBundleIsSelfContained({ asarPath, verbose: input.verbose });
+});
+
 export const validateWindowsPackagedPayload = Effect.fn(
   "desktopArtifact.validateWindowsPackagedPayload",
 )(function* (input: {
@@ -3558,18 +3576,20 @@ export const validateWindowsPackagedPayload = Effect.fn(
     });
   }
 
-  yield* verifyWindowsPrimaryFffNativeLoad({
-    packagedAppDir,
-    asarPath,
-    appExecutableName: input.appExecutableName,
-    targetArch: input.targetArch,
-    verbose: input.verbose ?? false,
-  });
-
-  yield* verifyPackagedBundleIsSelfContained({
-    asarPath,
-    verbose: input.verbose ?? false,
-  });
+  const hostPlatform = yield* HostProcess.Platform;
+  const hostArchitecture = yield* HostProcess.Architecture;
+  if (hostPlatform === "win32" && hostArchitecture === input.targetArch) {
+    yield* verifyWindowsPackagedRuntime({
+      packagedAppDir,
+      appExecutableName: input.appExecutableName,
+      targetArch: input.targetArch,
+      verbose: input.verbose ?? false,
+    });
+  } else {
+    yield* Effect.log(
+      `[desktop-artifact] Skipped the runtime probes on a ${hostPlatform}-${hostArchitecture} host; run scripts/verify-windows-desktop-artifact.ts on win32-${input.targetArch}.`,
+    );
+  }
 
   yield* Effect.log(
     `[desktop-artifact] Validated Windows payload (${String(fileCount)} files, ${String(unpackedFiles.length)} sidecar natives).`,
