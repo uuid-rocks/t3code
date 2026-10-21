@@ -191,10 +191,19 @@ jobs:
   new_deploy_web:
     runs-on: blacksmith-2vcpu-ubuntu-2404
     steps:
+      - name: Checkout package.json
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: package.json
+          sparse-checkout-cone-mode: false
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version-file: package.json
+          cache: false
+          run-install: false
       - name: Alias channel
-        run: |
-          node --version
-          npx --yes vercel@53.1.1 --version
+        run: vp dlx vercel@53.1.1 --version
 
   # ---- Announce on Discord (local webhook) ----
   old_discord:
