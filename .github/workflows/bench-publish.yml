@@ -1,0 +1,273 @@
+name: Bench publish jobs
+
+on:
+  push:
+    branches: [bench/release-publish]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  VERSION: 0.1.2-nightly.20261021.9999
+  REF: ${{ github.sha }}
+
+jobs:
+  # ---- Publish GitHub Release: setup + manifest merge ----
+  old_release:
+    runs-on: blacksmith-8vcpu-ubuntu-2404
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            /*
+            !/.repos/
+          sparse-checkout-cone-mode: false
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version-file: package.json
+          cache: true
+          run-install: |
+            args:
+              - --filter=@t3tools/scripts...
+      - name: Merge manifests
+        run: |
+          set -euo pipefail
+          m="$RUNNER_TEMP/m"; mkdir -p "$m"
+          for a in x64 arm64; do
+            for p in win mac; do
+              printf 'version: 1.2.3\nfiles:\n  - url: T3-Code-1.2.3-%s-%s.bin\n    sha512: %s\n    size: 100\npath: T3-Code-1.2.3-%s-%s.bin\nsha512: %s\nreleaseDate: "2026-10-21T00:00:00.000Z"\n' \
+                "$p" "$a" "sha-$p-$a" "$p" "$a" "sha-$p-$a" > "$m/$p-$a.yml"
+            done
+          done
+          node scripts/merge-update-manifests.ts --platform mac "$m/mac-arm64.yml" "$m/mac-x64.yml"
+          node scripts/merge-update-manifests.ts --platform win "$m/win-x64.yml" "$m/win-arm64.yml" "$m/win.yml"
+          node --version
+          sha256sum "$m/mac-arm64.yml" "$m/win.yml"
+
+  prepare_publish:
+    runs-on: blacksmith-2vcpu-ubuntu-2404
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            /*
+            !/.repos/
+          sparse-checkout-cone-mode: false
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version-file: package.json
+          cache: true
+          run-install: |
+            args:
+              - --filter=@t3tools/scripts...
+      - name: Build the npm launcher
+        run: node scripts/build-npm-launcher.ts --version "$VERSION" --output-dir "$RUNNER_TEMP/npm-packages"
+      - name: Bundle publish scripts
+        run: |
+          set -euo pipefail
+          mkdir -p publish-tools
+          cp "$RUNNER_TEMP/npm-packages/t3.tgz" .github/scripts/mirror-play-apk.cjs publish-tools/
+          banner="import{createRequire as __cr}from'node:module';const require=__cr(import.meta.url);"
+          for script in merge-update-manifests notify-discord-release; do
+            scripts/node_modules/.bin/esbuild "scripts/$script.ts" --bundle --platform=node --format=esm \
+              --target=node20 --define:import.meta.main=true --banner:js="$banner" \
+              --outfile="publish-tools/$script.mjs"
+          done
+          ls -la publish-tools
+      - name: Upload publish tools
+        uses: actions/upload-artifact@v7
+        with:
+          name: publish-tools
+          path: publish-tools/*
+          if-no-files-found: error
+          retention-days: 1
+
+  new_release:
+    needs: [prepare_publish]
+    runs-on: blacksmith-8vcpu-ubuntu-2404
+    steps:
+      - name: Download publish tools
+        uses: actions/download-artifact@v8
+        with:
+          name: publish-tools
+          path: ${{ runner.temp }}/publish-tools
+      - name: Merge manifests
+        run: |
+          set -euo pipefail
+          m="$RUNNER_TEMP/m"; mkdir -p "$m"
+          for a in x64 arm64; do
+            for p in win mac; do
+              printf 'version: 1.2.3\nfiles:\n  - url: T3-Code-1.2.3-%s-%s.bin\n    sha512: %s\n    size: 100\npath: T3-Code-1.2.3-%s-%s.bin\nsha512: %s\nreleaseDate: "2026-10-21T00:00:00.000Z"\n' \
+                "$p" "$a" "sha-$p-$a" "$p" "$a" "sha-$p-$a" > "$m/$p-$a.yml"
+            done
+          done
+          node "$RUNNER_TEMP/publish-tools/merge-update-manifests.mjs" --platform mac "$m/mac-arm64.yml" "$m/mac-x64.yml"
+          node "$RUNNER_TEMP/publish-tools/merge-update-manifests.mjs" --platform win "$m/win-x64.yml" "$m/win-arm64.yml" "$m/win.yml"
+          node --version
+          sha256sum "$m/mac-arm64.yml" "$m/win.yml"
+      - name: mirror-play-apk loads
+        run: node -e 'require(process.argv[1])' "$RUNNER_TEMP/publish-tools/mirror-play-apk.cjs" || true
+
+  # ---- Publish CLI to npm (dry run) ----
+  old_publish_cli:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            /*
+            !/.repos/
+          sparse-checkout-cone-mode: false
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version-file: package.json
+          cache: true
+          run-install: |
+            args:
+              - --filter=t3...
+              - --filter=@t3tools/scripts...
+      - name: Build the npm launcher
+        run: node scripts/build-npm-launcher.ts --version "$VERSION" --output-dir npm-packages
+      - name: Publish the npm launcher
+        working-directory: npm-packages
+        run: |
+          npm --version
+          npm publish --access public --tag nightly --provenance --dry-run ./t3.tgz
+          mkdir x && tar -xzf t3.tgz -C x && (cd x && find . -type f -exec sha256sum {} + | sort -k2)
+
+  new_publish_cli:
+    needs: [prepare_publish]
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout package.json
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: package.json
+          sparse-checkout-cone-mode: false
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: package.json
+      - name: Download publish tools
+        uses: actions/download-artifact@v8
+        with:
+          name: publish-tools
+          path: ${{ runner.temp }}/publish-tools
+      - name: Publish the npm launcher
+        working-directory: ${{ runner.temp }}/publish-tools
+        run: |
+          node --version; npm --version
+          npm publish --access public --tag nightly --provenance --dry-run ./t3.tgz
+          mkdir x && tar -xzf t3.tgz -C x && (cd x && find . -type f -exec sha256sum {} + | sort -k2)
+
+  # ---- Deploy hosted web app (vercel CLI only) ----
+  old_deploy_web:
+    runs-on: blacksmith-2vcpu-ubuntu-2404
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            /*
+            !/.repos/
+          sparse-checkout-cone-mode: false
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version-file: package.json
+          cache: false
+          run-install: false
+      - name: Alias channel
+        run: vp dlx vercel@53.1.1 --version
+
+  new_deploy_web:
+    runs-on: blacksmith-2vcpu-ubuntu-2404
+    steps:
+      - name: Alias channel
+        run: |
+          node --version
+          npx --yes vercel@53.1.1 --version
+
+  # ---- Announce on Discord (local webhook) ----
+  old_discord:
+    runs-on: blacksmith-8vcpu-ubuntu-2404
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            /*
+            !/.repos/
+          sparse-checkout-cone-mode: false
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version-file: package.json
+          cache: true
+          run-install: |
+            args:
+              - --filter=@t3tools/scripts...
+      - name: Announce
+        run: |
+          set -euo pipefail
+          node -e 'require("http").createServer((q,s)=>{let b="";q.on("data",c=>b+=c);q.on("end",()=>{require("fs").writeFileSync(process.env.RUNNER_TEMP+"/body.json",b);s.writeHead(200,{"content-type":"application/json"});s.end("{\"id\":\"1\"}")})}).listen(8787)' &
+          sleep 1
+          printf '## What changed\n- a thing\n' > "$RUNNER_TEMP/notes.md"
+          DISCORD_WEBHOOK_URL=http://127.0.0.1:8787/api/webhooks/1/x node scripts/notify-discord-release.ts prerelease \
+            --role-id 123 --release-name "T3 Code v$VERSION" --release-version "$VERSION" --tag "v$VERSION" \
+            --release-url "https://github.com/pingdotgg/t3code/releases/tag/v$VERSION" --release-notes-file "$RUNNER_TEMP/notes.md"
+          jq -S 'del(.embeds[].timestamp)' "$RUNNER_TEMP/body.json" | sha256sum
+
+  new_discord:
+    needs: [prepare_publish]
+    runs-on: blacksmith-8vcpu-ubuntu-2404
+    steps:
+      - name: Download publish tools
+        uses: actions/download-artifact@v8
+        with:
+          name: publish-tools
+          path: ${{ runner.temp }}/publish-tools
+      - name: Announce
+        run: |
+          set -euo pipefail
+          node --version
+          node -e 'require("http").createServer((q,s)=>{let b="";q.on("data",c=>b+=c);q.on("end",()=>{require("fs").writeFileSync(process.env.RUNNER_TEMP+"/body.json",b);s.writeHead(200,{"content-type":"application/json"});s.end("{\"id\":\"1\"}")})}).listen(8787)' &
+          sleep 1
+          printf '## What changed\n- a thing\n' > "$RUNNER_TEMP/notes.md"
+          DISCORD_WEBHOOK_URL=http://127.0.0.1:8787/api/webhooks/1/x node "$RUNNER_TEMP/publish-tools/notify-discord-release.mjs" prerelease \
+            --role-id 123 --release-name "T3 Code v$VERSION" --release-version "$VERSION" --tag "v$VERSION" \
+            --release-url "https://github.com/pingdotgg/t3code/releases/tag/v$VERSION" --release-notes-file "$RUNNER_TEMP/notes.md"
+          jq -S 'del(.embeds[].timestamp)' "$RUNNER_TEMP/body.json" | sha256sum
+
+  # ---- AUR checkout ----
+  old_aur:
+    runs-on: blacksmith-8vcpu-ubuntu-2404
+    container:
+      image: archlinux:base-devel
+    steps:
+      - name: Install Arch packaging tools
+        run: pacman -Syu --noconfirm --needed git github-cli jq namcap openssh sudo
+      - name: Checkout packaging sources
+        uses: actions/checkout@v6
+      - run: ls packaging/aur/scripts/release.sh packaging/aur/t3code-nightly-bin/PKGBUILD
+
+  new_aur:
+    runs-on: blacksmith-8vcpu-ubuntu-2404
+    container:
+      image: archlinux:base-devel
+    steps:
+      - name: Install Arch packaging tools
+        run: pacman -Syu --noconfirm --needed git github-cli jq namcap openssh sudo
+      - name: Checkout packaging sources
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: packaging
+      - run: ls packaging/aur/scripts/release.sh packaging/aur/t3code-nightly-bin/PKGBUILD
