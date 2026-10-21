@@ -1149,6 +1149,20 @@ jobs:
       T3CODE_WEB_NIGHTLY_DOMAIN: ${{ vars.T3CODE_WEB_NIGHTLY_DOMAIN }}
       VERCEL_TEAM_SLUG: ${{ vars.VERCEL_TEAM_SLUG }}
     steps:
+      - name: Checkout package.json
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ needs.preflight.outputs.ref }}
+          sparse-checkout: package.json
+          sparse-checkout-cone-mode: false
+
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
+        with:
+          node-version-file: package.json
+          cache: false
+          run-install: false
+
       - name: Alias channel
         shell: bash
         run: |
@@ -1177,13 +1191,13 @@ jobs:
           vercel_scope_args=(--scope "${VERCEL_TEAM_SLUG:-$VERCEL_ORG_ID}")
 
           echo "Aliasing $DEPLOYMENT_URL to $channel_domain."
-          npx --yes vercel@53.1.1 alias set "$DEPLOYMENT_URL" "$channel_domain" \
+          vp dlx vercel@53.1.1 alias set "$DEPLOYMENT_URL" "$channel_domain" \
             --token "$VERCEL_TOKEN" \
             "${vercel_scope_args[@]}"
 
           if [[ "$channel_name" == "latest" && -n "$router_domain" && "$router_domain" != "$channel_domain" ]]; then
             echo "Aliasing $DEPLOYMENT_URL to router domain $router_domain."
-            npx --yes vercel@53.1.1 alias set "$DEPLOYMENT_URL" "$router_domain" \
+            vp dlx vercel@53.1.1 alias set "$DEPLOYMENT_URL" "$router_domain" \
               --token "$VERCEL_TOKEN" \
               "${vercel_scope_args[@]}"
           fi
