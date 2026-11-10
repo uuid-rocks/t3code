@@ -74,3 +74,5 @@ export function delayedStatusDeadline<A>(state: DelayedStatusState<A>): number |
 export function shownDelayedStatus<A>(state: DelayedStatusState<A>, key: string): A | null {
   return state.phase === "shown" && state.key === key ? state.value : null;
 }
+
+// bsv probe: leaf change
