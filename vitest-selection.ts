@@ -77,17 +77,35 @@ function selectionCounter(mode: string): Plugin {
 // BSV_MODE picks how @useblacksmith/vitest runs; see bsv/README-experiment.md.
 // The root config's plugins reach apps/server and the packages that borrow it
 // through --config, so only configs that do not extend it add these.
+// Inputs read by spawned child processes, keyed by the package directory vitest
+// runs from; globs are relative to that directory (the config root).
+const CHILD_PROCESS_DEPENDENCIES: Record<string, Record<string, string[]>> = {
+  "packages/effect-acp": {
+    "src/{client,protocol}.test.ts": ["test/fixtures/acp-mock-peer.ts", "src/**"],
+  },
+  "packages/effect-codex-app-server": {
+    "src/client.test.ts": ["test/fixtures/codex-app-server-mock-peer.ts"],
+  },
+  "apps/server": {
+    "src/cliCompileCache.test.ts": ["src/**", "../../packages/*/src/**", "package.json"],
+  },
+};
+
 export function testSelectionPlugins(): Plugin[] {
   const mode = process.env.BSV_MODE || "off";
+  const dependencies =
+    CHILD_PROCESS_DEPENDENCIES[
+      NodePath.relative(import.meta.dirname, process.cwd()).split(NodePath.sep).join("/")
+    ];
   // scripts/test-cached.ts runs one vitest per file and reports its own counts.
   const counter = process.env.T3_CACHED_TESTS ? [] : [selectionCounter(mode)];
   switch (mode) {
     case "off":
       return counter;
     case "select":
-      return [blacksmith(), ...counter];
+      return [blacksmith({ dependencies }), ...counter];
     case "shadow":
-      return [blacksmith({ shadow: true }), ...counter];
+      return [blacksmith({ shadow: true, dependencies }), ...counter];
     case "all":
       return [blacksmith({ runAllTests: true }), ...counter];
     default:
