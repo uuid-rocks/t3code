@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "types": ["node"],
+    "useDefineForClassFields": false,
     "lib": ["ESNext", "esnext.disposable"]
   },
   "include": ["src", "vite.config.ts", "scripts", "integration", "../../scripts/lib"]
