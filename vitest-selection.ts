@@ -44,6 +44,9 @@ class SelectionCounter {
       ` shard=${shard ? `${shard.index}/${shard.count}` : "-"}` +
       ` mode=${this.mode} selected=${testModules.length} total=${owned.length}`;
     console.log(line);
+    // bsv/perf/analyze.py compares these against the changed files' importers.
+    const files = testModules.map((module) => NodePath.relative(repo, module.moduleId)).sort();
+    console.log(`BSV_FILES root=${NodePath.relative(repo, root) || "."} files=${files.join(",")}`);
     if (process.env.GITHUB_STEP_SUMMARY) {
       NodeFS.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `\`${line}\`\n\n`);
     }

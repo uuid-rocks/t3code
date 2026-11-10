@@ -6,6 +6,12 @@ on:
     branches:
       - main
       - bsv/main
+  # bsv/perf: seeds the caches PRs into bsv/perf-base restore by exact base SHA.
+  workflow_dispatch:
+    inputs:
+      arm:
+        type: choice
+        options: [seed-a, seed-b]
 
 permissions:
   contents: read
@@ -15,13 +21,16 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 # Experiment switches; see bsv/README-experiment.md.
+# bsv/perf arms by PR head branch suffix: -a plugin, -b upstream-like, -c plugin + changes.
 env:
   # @useblacksmith/vitest mode: off, select, shadow or all (vitest-selection.ts).
-  BSV_MODE: select
+  BSV_MODE: ${{ (inputs.arm == 'seed-a' && 'all') || ((inputs.arm == 'seed-b' || endsWith(github.head_ref, '-b')) && 'off') || 'select' }}
   # "true" runs every test job and package whatever `changes` decides.
-  BSV_BYPASS_CHANGES: "true"
+  BSV_BYPASS_CHANGES: ${{ (endsWith(github.head_ref, '-b') || endsWith(github.head_ref, '-c')) && 'false' || 'true' }}
   # "true" runs apps/server through scripts/test-cached.ts with the plugin off.
-  BSV_SERVER_TEST_CACHED: "false"
+  BSV_SERVER_TEST_CACHED: ${{ (inputs.arm == 'seed-b' || endsWith(github.head_ref, '-b')) && 'true' || 'false' }}
+  # Stands in for upstream's remote task cache, which the fork cannot reach.
+  BSV_TASK_CACHE_KEY: bsv-task-cache-v1-${{ github.event.pull_request.base.sha || github.sha }}
 
 jobs:
   # Skips jobs a pull request cannot affect: a web change does not run the
@@ -274,6 +283,13 @@ jobs:
             node apps/server/node_modules/playwright-core/cli.js install-deps chromium
           fi
 
+      - name: Restore task cache
+        if: steps.changes.outputs.test_server != 'false' && env.BSV_SERVER_TEST_CACHED == 'true'
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: node_modules/.vite/task-cache
+          key: ${{ env.BSV_TASK_CACHE_KEY }}-${{ matrix.shard }}
+
       - name: Test
         if: steps.changes.outputs.test_server != 'false'
         env:
@@ -289,6 +305,13 @@ jobs:
           else
             cd apps/server && vp test run --shard "$SHARD"
           fi
+
+      - name: Save task cache
+        if: inputs.arm == 'seed-b' && steps.changes.outputs.test_server != 'false'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: node_modules/.vite/task-cache
+          key: ${{ env.BSV_TASK_CACHE_KEY }}-${{ matrix.shard }}
 
       - name: Upload test cache measurements
         if: always() && steps.changes.outputs.test_server != 'false' && env.BSV_SERVER_TEST_CACHED == 'true'
