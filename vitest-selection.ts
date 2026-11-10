@@ -86,6 +86,9 @@ const CHILD_PROCESS_DEPENDENCIES: Record<string, Record<string, string[]>> = {
   "packages/effect-codex-app-server": {
     "src/client.test.ts": ["test/fixtures/codex-app-server-mock-peer.ts"],
   },
+  "apps/web": {
+    "src/**/*.test.{ts,tsx}": ["../../.env", "../../.env.local"],
+  },
   "apps/server": {
     "src/cliCompileCache.test.ts": ["src/**", "../../packages/*/src/**", "package.json"],
   },
