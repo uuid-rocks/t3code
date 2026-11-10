@@ -10,11 +10,9 @@ import { HighlightedTokens } from "./HighlightedTokens";
 
 const WORD_CLASS_NAME = "inline-block max-w-full [overflow-wrap:anywhere]";
 
-let embeddedScriptsModule:
-  | Promise<typeof import("@t3tools/client-runtime/work-log/embedded-scripts")>
-  | undefined;
+let embeddedScriptsModule: Promise<typeof import("../../lib/embeddedScripts")> | undefined;
 function loadEmbeddedScripts() {
-  embeddedScriptsModule ??= import("@t3tools/client-runtime/work-log/embedded-scripts");
+  embeddedScriptsModule ??= import("../../lib/embeddedScripts");
   return embeddedScriptsModule;
 }
 
