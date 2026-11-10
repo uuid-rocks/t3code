@@ -1,0 +1,457 @@
+[@t3tools/web (renders) (chromium)] apps/web/test/appScenarios.renders.tsx
+[@t3tools/web (renders) (chromium)] apps/web/test/renderScenarios.renders.tsx
+[@t3tools/client-runtime] packages/client-runtime/src/handoff.test.ts
+[@t3tools/client-runtime] packages/client-runtime/src/modelTraits.test.ts
+[@t3tools/client-runtime] packages/client-runtime/src/state/contextWindow.test.ts
+[@t3tools/client-runtime] packages/client-runtime/src/state/entities.test.ts
+[@t3tools/client-runtime] packages/client-runtime/src/state/subagentRuntime.test.ts
+[@t3tools/client-runtime] packages/client-runtime/src/state/threadDetail.test.ts
+[@t3tools/client-runtime] packages/client-runtime/src/state/threadExecution.test.ts
+[@t3tools/client-runtime] packages/client-runtime/src/state/threads-atoms.test.ts
+[@t3tools/client-runtime] packages/client-runtime/src/state/threads-sync.test.ts
+[@t3tools/mobile (react)] apps/mobile/src/lib/filePreview.test.ts
+[@t3tools/mobile (react)] apps/mobile/src/state/use-thread-pr.demand.test.tsx
+[@t3tools/mobile (react)] apps/mobile/src/features/files/ZipArchiveView.test.tsx
+[@t3tools/mobile (react)] apps/mobile/src/features/threads/UsageLimitRecoveryCard.test.tsx
+[@t3tools/mobile (react)] apps/mobile/src/features/threads/new-task-flow-provider.test.tsx
+[@t3tools/mobile (react)] apps/mobile/src/features/threads/useThreadListV2.test.tsx
+[@t3tools/web (unit)] apps/web/src/authBootstrap.test.ts
+[@t3tools/web (unit)] apps/web/src/browserFaviconLogic.test.ts
+[@t3tools/web (unit)] apps/web/src/browserFaviconStore.test.ts
+[@t3tools/web (unit)] apps/web/src/browserHistoryStore.test.ts
+[@t3tools/web (unit)] apps/web/src/closedViewStore.test.ts
+[@t3tools/web (unit)] apps/web/src/composerDraftStore.test.ts
+[@t3tools/web (unit)] apps/web/src/diffFileActions.test.ts
+[@t3tools/web (unit)] apps/web/src/fileContextMenu.test.ts
+[@t3tools/web (unit)] apps/web/src/markdown-links.test.ts
+[@t3tools/web (unit)] apps/web/src/modelSelection.test.ts
+[@t3tools/web (unit)] apps/web/src/openVsxThemes.test.ts
+[@t3tools/web (unit)] apps/web/src/portDiscoveryState.test.ts
+[@t3tools/web (unit)] apps/web/src/promptStashStore.test.ts
+[@t3tools/web (unit)] apps/web/src/questionAttachments.test.ts
+[@t3tools/web (unit)] apps/web/src/remoteOpen.test.ts
+[@t3tools/web (unit)] apps/web/src/reopenClosedView.test.ts
+[@t3tools/web (unit)] apps/web/src/rightPanelStore.test.ts
+[@t3tools/web (unit)] apps/web/src/session-logic.runtime-diagnostics.test.ts
+[@t3tools/web (unit)] apps/web/src/session-logic.test.ts
+[@t3tools/web (unit)] apps/web/src/terminal-links.test.ts
+[@t3tools/web (unit)] apps/web/src/textGenerators.test.ts
+[@t3tools/web (unit)] apps/web/src/themeBoot.test.ts
+[@t3tools/web (unit)] apps/web/src/themePalette.test.ts
+[@t3tools/web (unit)] apps/web/src/threadRoutes.test.ts
+[@t3tools/web (unit)] apps/web/src/vscodeThemeImport.test.ts
+[@t3tools/web (unit)] apps/web/src/assets/longLivedAssetUrls.test.ts
+[@t3tools/web (unit)] apps/web/src/browser/BrowserProfileReporter.test.ts
+[@t3tools/web (unit)] apps/web/src/browser/browserLinkTarget.test.ts
+[@t3tools/web (unit)] apps/web/src/browser/desktopTabLifetime.test.ts
+[@t3tools/web (unit)] apps/web/src/components/ChatView.logic.test.ts
+[@t3tools/web (unit)] apps/web/src/components/CommandPalette.logic.test.ts
+[@t3tools/web (unit)] apps/web/src/components/HistorySwipeNavigation.test.ts
+[@t3tools/web (unit)] apps/web/src/components/RightPanelTabs.test.tsx
+[@t3tools/web (unit)] apps/web/src/components/Sidebar.drag.test.ts
+[@t3tools/web (unit)] apps/web/src/components/Sidebar.logic.test.ts
+[@t3tools/web (unit)] apps/web/src/components/ThreadStatusIndicators.test.ts
+[@t3tools/web (unit)] apps/web/src/components/ThreadTerminalDrawer.test.ts
+[@t3tools/web (unit)] apps/web/src/components/composerContextPresentation.test.ts
+[@t3tools/web (unit)] apps/web/src/components/composerInlineTokenPaste.test.ts
+[@t3tools/web (unit)] apps/web/src/connection/platform.test.ts
+[@t3tools/web (unit)] apps/web/src/hooks/showThreadUndoNotice.test.ts
+[@t3tools/web (unit)] apps/web/src/hooks/useDefaultTheme.test.ts
+[@t3tools/web (unit)] apps/web/src/hooks/useScratchProject.test.ts
+[@t3tools/web (unit)] apps/web/src/hooks/useSettings.test.ts
+[@t3tools/web (unit)] apps/web/src/hooks/useThreadActions.permissions.test.ts
+[@t3tools/web (unit)] apps/web/src/hooks/useThreadActions.test.ts
+[@t3tools/web (unit)] apps/web/src/hooks/useThreadActions.undo.test.ts
+[@t3tools/web (unit)] apps/web/src/lib/assistantCitationNavigation.test.ts
+[@t3tools/web (unit)] apps/web/src/lib/attachmentUploadQueue.test.ts
+[@t3tools/web (unit)] apps/web/src/lib/backgroundActivityReporter.test.ts
+[@t3tools/web (unit)] apps/web/src/lib/contextWindow.test.ts
+[@t3tools/web (unit)] apps/web/src/lib/discardComposerDraft.test.ts
+[@t3tools/web (unit)] apps/web/src/lib/imageCompression.test.ts
+[@t3tools/web (unit)] apps/web/src/lib/revealThreadTerminal.test.ts
+[@t3tools/web (unit)] apps/web/src/lib/runtime.test.ts
+[@t3tools/web (unit)] apps/web/src/lib/snapShotShortcut.test.ts
+[@t3tools/web (unit)] apps/web/src/lib/terminalFocus.test.ts
+[@t3tools/web (unit)] apps/web/src/lib/utils.test.ts
+[@t3tools/web (unit)] apps/web/src/shortcuts/chatRouteCommands.test.ts
+[@t3tools/web (unit)] apps/web/src/state/entities.relationshipShells.test.ts
+[@t3tools/web (unit)] apps/web/src/state/managedPolicy.test.ts
+[@t3tools/web (unit)] apps/web/src/state/primaryEnvironment.test.ts
+[@t3tools/web (unit)] apps/web/src/state/pullRequests.test.ts
+[@t3tools/web (unit)] apps/web/src/state/queries.filesystem.test.ts
+[@t3tools/web (unit)] apps/web/src/state/server.test.ts
+[@t3tools/web (unit)] apps/web/src/state/shell.test.ts
+[@t3tools/web (unit)] apps/web/src/state/threads.test.ts
+[@t3tools/web (unit)] apps/web/src/components/chat/ComposerCommandMenu.test.tsx
+[@t3tools/web (unit)] apps/web/src/components/chat/DiffStatLabel.test.ts
+[@t3tools/web (unit)] apps/web/src/components/chat/MessagesTimeline.active-tools.test.ts
+[@t3tools/web (unit)] apps/web/src/components/chat/MessagesTimeline.logic.test.ts
+[@t3tools/web (unit)] apps/web/src/components/chat/ProviderInstanceIcon.test.ts
+[@t3tools/web (unit)] apps/web/src/components/chat/ProviderStatusBanner.test.ts
+[@t3tools/web (unit)] apps/web/src/components/chat/ThreadErrorBanner.test.tsx
+[@t3tools/web (unit)] apps/web/src/components/chat/UsageLimitRecoveryBanner.test.tsx
+[@t3tools/web (unit)] apps/web/src/components/chat/citationProcedure.test.ts
+[@t3tools/web (unit)] apps/web/src/components/chat/compaction.logic.test.ts
+[@t3tools/web (unit)] apps/web/src/components/chat/composerAttachmentReferences.test.ts
+[@t3tools/web (unit)] apps/web/src/components/chat/composerProviderState.test.tsx
+[@t3tools/web (unit)] apps/web/src/components/chat/composerThreadImport.test.ts
+[@t3tools/web (unit)] apps/web/src/components/chat/optimisticUserMessages.test.ts
+[@t3tools/web (unit)] apps/web/src/components/chat/queuedMessageEdit.test.ts
+[@t3tools/web (unit)] apps/web/src/components/chat/timelineViewport.test.ts
+[@t3tools/web (unit)] apps/web/src/components/chat/usePromptSuggestion.test.ts
+[@t3tools/web (unit)] apps/web/src/components/clerk/clerkAppearance.test.ts
+[@t3tools/web (unit)] apps/web/src/components/device/DeviceSetup.test.ts
+[@t3tools/web (unit)] apps/web/src/components/files/fileSaveSessions.test.ts
+[@t3tools/web (unit)] apps/web/src/components/files/projectFilesQueryState.test.ts
+[@t3tools/web (unit)] apps/web/src/components/files/projectFilesQueryState.test.tsx
+[@t3tools/web (unit)] apps/web/src/components/preview/agentOpenedPreviews.test.ts
+[@t3tools/web (unit)] apps/web/src/components/preview/closePreviewSession.test.ts
+[@t3tools/web (unit)] apps/web/src/components/preview/openPreviewSession.test.ts
+[@t3tools/web (unit)] apps/web/src/components/preview/openTerminalLinkInPreview.test.ts
+[@t3tools/web (unit)] apps/web/src/components/preview/useDiscoveredLocalServers.test.ts
+[@t3tools/web (unit)] apps/web/src/components/preview/usePreviewBridge.test.ts
+[@t3tools/web (unit)] apps/web/src/components/pullRequest/filesViewedStore.test.ts
+[@t3tools/web (unit)] apps/web/src/components/pullRequest/pullRequestsRouteSearch.test.ts
+[@t3tools/web (unit)] apps/web/src/components/settings/AcpRegistryIcon.test.ts
+[@t3tools/web (unit)] apps/web/src/components/settings/EnvironmentIconPicker.test.ts
+[@t3tools/web (unit)] apps/web/src/components/settings/IntegrationsSettings.logic.test.ts
+[@t3tools/web (unit)] apps/web/src/components/settings/KeybindingsSettings.logic.test.ts
+[@t3tools/web (unit)] apps/web/src/components/settings/ProviderInstanceCard.test.ts
+[@t3tools/web (unit)] apps/web/src/components/settings/ProviderSettingsForm.test.ts
+[@t3tools/web (unit)] apps/web/src/components/settings/SecretsSettings.logic.test.ts
+[@t3tools/web (unit)] apps/web/src/components/settings/SettingInheritance.test.ts
+[@t3tools/web (unit)] apps/web/src/components/settings/ThemeSearchSection.test.ts
+[@t3tools/web (unit)] apps/web/src/components/settings/settingsSearch.test.ts
+[@t3tools/web (unit)] apps/web/src/components/sidebar/updateEverythingRun.test.ts
+[@t3tools/web (unit)] apps/web/src/components/ui/middle-truncate.test.ts
+[@t3tools/web (unit)] apps/web/src/components/usage/UsageProviderChart.test.ts
+[@t3tools/web (unit)] apps/web/src/environments/primary/bootstrap.test.ts
+[@t3tools/web (unit)] apps/web/src/terminal/ghostty/core.test.ts
+[@t3tools/web (unit)] apps/web/src/terminal/ghostty/surface.test.ts
+[@t3tools/web (unit)] apps/web/src/components/pullRequest/guide/PullRequestGuideRunCoordinator.test.ts
+[@t3tools/web (browser) (chromium)] apps/web/src/themePalette.browser.test.ts
+[@t3tools/web (browser) (chromium)] apps/web/src/browser/BrowserDeviceToolbar.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/browser/ElectronBrowserHost.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/browser/ServerBrowserSurface.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/cloud/useCloudLinkController.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/AddProjectToMachineDialog.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/AppRouteModal.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ChatMarkdown.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ChatMarkdown.permissions.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ChatView.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ChatView.logic.browser.test.ts
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ChatView.modelPick.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/CommandPalette.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/CommandPalette.composition.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/CommandPaletteContent.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ComposerPromptEditorTiptap.citationDraft.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ComposerPromptEditorTiptap.input.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ContextChip.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/DiffFilePathCopyButton.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/DiffPanel.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/HistorySwipeNavigation.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ProjectFavicon.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ProviderUpdatesAction.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ReopenClosedViewShortcut.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ServerUpdateAction.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/Sidebar.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/Sidebar.drag.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/Sidebar.logic.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/Sidebar.shortcuts.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ThreadNotificationCoordinator.badge.browser.test.ts
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ThreadStatusIndicators.linkedPr.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ThreadTerminalDrawer.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/UsageToggleShortcut.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/WorktreeBaseBranchPicker.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/projectScriptEditor.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/connection/runtime.browser.test.ts
+[@t3tools/web (browser) (chromium)] apps/web/src/hooks/useCommitOnBlur.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/hooks/useSettings.favorites.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/lib/openPullRequestLink.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/lib/resourceTelemetryState.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/lib/terminalFocus.browser.test.ts
+[@t3tools/web (browser) (chromium)] apps/web/src/lib/workspaceFocus.browser.test.ts
+[@t3tools/web (browser) (chromium)] apps/web/src/shortcuts/chatRouteCommands.browser.test.ts
+[@t3tools/web (browser) (chromium)] apps/web/src/shortcuts/commandPaletteCommands.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/shortcuts/dispatcher.browser.test.ts
+[@t3tools/web (browser) (chromium)] apps/web/src/speech/useDictationShortcut.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/speech/useEnvironmentSpeechInput.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/state/device.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/state/olderSettledShelf.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/AssistantCitationChip.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/BackgroundWorkDetails.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ChatHeader.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ChatMarkdownMedia.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ChildThreadApprovals.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ComposerBannerStack.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ComposerModelEffort.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ComposerPendingUserInputPanel.direction.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ComposerPendingUserInputPanel.navigation.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ComposerPermissionsSection.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ComposerStashMenu.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ExpandedImageDialog.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/HtmlRenderFrame.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/MarkdownCopy.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/MarkdownExternalLink.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/MarkdownThreadLink.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/MessageCopyButton.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/MessagesTimeline.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/OpenInPicker.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ProviderModelPicker.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ProviderModelPicker.composition.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/QueuedRunsControl.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ThreadAutomationsPanel.permissions.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ThreadDetailsCard.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ThreadDetailsPrRow.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ThreadRelationshipsControl.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ThreadServersPanel.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ThreadVisitWatermark.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/WorktreeSetupCard.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/timelineViewport.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/useChatShortcuts.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/useComposerContextImport.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/useComposerResume.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/useQueuedRunEdit.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/useThreadLifecycle.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/desktop/DesktopWebLinkCoordinator.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/desktop/SnapShotCoordinator.browser.test.ts
+[@t3tools/web (browser) (chromium)] apps/web/src/components/desktop/SshPasswordPromptDialog.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/device/DevicePanel.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/device/DeviceStreamView.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/device/DeviceToolsPanel.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/device/useDeviceControls.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/diffs/AnnotatableCodeView.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/diffs/DiffFileLoadingBoundary.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/files/AttachmentFilePreview.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/files/BrowserDocumentFrame.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/files/FileBrowserPanel.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/files/FileExplorerPane.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/files/FilePreviewPanel.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/files/PdfViewer.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/files/fileEditorDismissal.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/files/fileSaveSessions.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/guest/GuestPage.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/media/MediaVideoPlayer.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/onboarding/WelcomePage.import.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/preview/PreviewPanelShell.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/preview/PreviewView.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/LinkPullRequestDialog.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestActionsMenu.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestCodeTab.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestDetailPanel.permissions.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestGuideTab.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestLinkPreview.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestMarkdown.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestMarkdownEditor.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestReviewForm.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestStackMenu.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestSummaryTab.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestTimelineTab.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/useInlineActionConfirm.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/usePullRequestActions.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/usePullRequestIntentPrefetch.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/search/ProjectContentSearchDialog.composition.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/AboutVersionTitle.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/AcpRegistrySearchStep.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/AcpSessionManagementSection.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/AddCodexAccountDialog.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/AddEnvironmentDialog.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/AddProviderInstanceDialog.environment.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/AuthorizedClientsSettings.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/CaptureShortcutConfig.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/CliCommandSettingsRow.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/CloudVoiceConfiguration.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/EnvironmentRoutesList.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/KeybindingsSettings.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/ProjectSettingsPanel.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/ProviderInstanceCard.environment.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/ProviderSettingsPanel.environment.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/ProviderSetupSection.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/ScheduledTasksSettings.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/SecretInput.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/SecretSourceInput.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/SettingsSidebarNav.composition.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/SourceControlWritingSettings.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/StorageSettings.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/TelemetryExportSettings.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/ThemeEditorPanel.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/ThemeImportDialog.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/TypographySettings.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/VoiceSettingsPanel.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/colorPickers.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/useHostConnectionChecks.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/useProjectScriptSettings.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/useSnapShotShortcutRecorder.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/sidebar/SidebarDraftBlock.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/sidebar/SidebarProviderUpdatePill.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/sidebar/SidebarUpdatePill.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/sidebar/mainAppLocation.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/sidebar/routeReveal.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ui/middle-truncate.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ui/sidebar.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ui/toast.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/usage/UsageLimitsPooled.browser.test.tsx
+[t3] apps/server/integration/transferBudgetV2.integration.test.ts
+[t3] apps/server/src/http.test.ts
+[t3] apps/server/src/serverLogger.test.ts
+[t3] apps/server/src/serverRuntimeStartup.autoPull.test.ts
+[t3] apps/server/src/serverRuntimeStartup.test.ts
+[t3] apps/server/src/serverSettings.test.ts
+[t3] apps/server/src/storageCleanup.test.ts
+[t3] apps/server/src/ws.test.ts
+[t3] apps/server/src/assets/AssetAccess.test.ts
+[t3] apps/server/src/auth/McpOAuth.test.ts
+[t3] apps/server/src/auth/replayMarkers.test.ts
+[t3] apps/server/src/checkpointing/CheckpointDiffQuery.test.ts
+[t3] apps/server/src/cli/app.test.ts
+[t3] apps/server/src/cli/connect.test.ts
+[t3] apps/server/src/cli/pair.test.ts
+[t3] apps/server/src/cli/project.test.ts
+[t3] apps/server/src/cli/theme.test.ts
+[t3] apps/server/src/cloud/CloudLink.lifecycle.test.ts
+[t3] apps/server/src/cloud/CloudLink.test.ts
+[t3] apps/server/src/cloud/http.test.ts
+[t3] apps/server/src/git/GitManager.test.ts
+[t3] apps/server/src/git/GitWorkflowService.test.ts
+[t3] apps/server/src/git/linkCreatedPullRequest.test.ts
+[t3] apps/server/src/guest/GuestShareService.test.ts
+[t3] apps/server/src/guest/http.test.ts
+[t3] apps/server/src/mcp/McpDeviceToolkit.test.ts
+[t3] apps/server/src/mcp/McpHttpServer.test.ts
+[t3] apps/server/src/mcp/McpToolAccess.race.test.ts
+[t3] apps/server/src/mcp/McpToolAccess.test.ts
+[t3] apps/server/src/mcp/OrchestratorMcpService.activity.test.ts
+[t3] apps/server/src/mcp/OrchestratorMcpService.test.ts
+[t3] apps/server/src/mcp/OrchestratorMcpToolkit.integration.test.ts
+[t3] apps/server/src/mcp/TaskCancelNativeSubagent.integration.test.ts
+[t3] apps/server/src/mcp/TaskCancelUsageLimit.integration.test.ts
+[t3] apps/server/src/mcp/WorktreeMcpService.test.ts
+[t3] apps/server/src/mcp/linkOrigin.test.ts
+[t3] apps/server/src/mcp/threadAccess.test.ts
+[t3] apps/server/src/mcpApps/McpAppRequests.test.ts
+[t3] apps/server/src/observability/DefectReporter.test.ts
+[t3] apps/server/src/orchestration-v2/BackgroundWorkStop.integration.test.ts
+[t3] apps/server/src/orchestration-v2/CheckpointRestoreSafety.test.ts
+[t3] apps/server/src/orchestration-v2/CheckpointRollbackService.test.ts
+[t3] apps/server/src/orchestration-v2/CheckpointScopeOwnership.test.ts
+[t3] apps/server/src/orchestration-v2/ClaudeAutomaticDelivery.integration.test.ts
+[t3] apps/server/src/orchestration-v2/DelegatedCompletionDelivery.test.ts
+[t3] apps/server/src/orchestration-v2/DispatchModeLimit.test.ts
+[t3] apps/server/src/orchestration-v2/EffectWorker.test.ts
+[t3] apps/server/src/orchestration-v2/FoundationPersistence.test.ts
+[t3] apps/server/src/orchestration-v2/GuestShare.test.ts
+[t3] apps/server/src/orchestration-v2/IdleCompaction.test.ts
+[t3] apps/server/src/orchestration-v2/NativeChildWorkQuery.test.ts
+[t3] apps/server/src/orchestration-v2/OpenCode2OrchestratorV2.integration.test.ts
+[t3] apps/server/src/orchestration-v2/Orchestrator.control-reads.test.ts
+[t3] apps/server/src/orchestration-v2/Orchestrator.migration.test.ts
+[t3] apps/server/src/orchestration-v2/Orchestrator.receipt-race.test.ts
+[t3] apps/server/src/orchestration-v2/ProjectSettingsUpgrade.integration.test.ts
+[t3] apps/server/src/orchestration-v2/ProjectionRecovery.test.ts
+[t3] apps/server/src/orchestration-v2/ProjectionSettlement.test.ts
+[t3] apps/server/src/orchestration-v2/ProjectionStore.test.ts
+[t3] apps/server/src/orchestration-v2/ProviderContinuationService.test.ts
+[t3] apps/server/src/orchestration-v2/ProviderEventIngestor.test.ts
+[t3] apps/server/src/orchestration-v2/ProviderRuntimeRecoveryService.regression.test.ts
+[t3] apps/server/src/orchestration-v2/ProviderRuntimeRecoveryService.test.ts
+[t3] apps/server/src/orchestration-v2/ProviderTurnStartService.test.ts
+[t3] apps/server/src/orchestration-v2/PullRequestSyncReactor.test.ts
+[t3] apps/server/src/orchestration-v2/RemoteDelegatedTask.test.ts
+[t3] apps/server/src/orchestration-v2/RestartContinuation.test.ts
+[t3] apps/server/src/orchestration-v2/RunExecutionService.test.ts
+[t3] apps/server/src/orchestration-v2/RunFinalizationQueue.test.ts
+[t3] apps/server/src/orchestration-v2/RunFinalizationService.test.ts
+[t3] apps/server/src/orchestration-v2/SelectionRestart.integration.test.ts
+[t3] apps/server/src/orchestration-v2/SteeringCompletion.integration.test.ts
+[t3] apps/server/src/orchestration-v2/SubagentProjection.test.ts
+[t3] apps/server/src/orchestration-v2/ThreadFork.execution.test.ts
+[t3] apps/server/src/orchestration-v2/ThreadLaunchService.test.ts
+[t3] apps/server/src/orchestration-v2/ThreadManagementService.test.ts
+[t3] apps/server/src/orchestration-v2/ThreadMessageIntake.test.ts
+[t3] apps/server/src/orchestration-v2/ThreadPullRequestService.test.ts
+[t3] apps/server/src/orchestration-v2/ThreadSettlementService.test.ts
+[t3] apps/server/src/orchestration-v2/ThreadStop.test.ts
+[t3] apps/server/src/orchestration-v2/ThreadTitleRegenerationService.test.ts
+[t3] apps/server/src/orchestration-v2/UsageLimitRecoveryWorker.test.ts
+[t3] apps/server/src/orchestration-v2/WorktreeBranchSync.test.ts
+[t3] apps/server/src/orchestration-v2/boundedSnapshotTransport.test.ts
+[t3] apps/server/src/orchestration-v2/http.test.ts
+[t3] apps/server/src/orchestration-v2/runtimeLayer.test.ts
+[t3] apps/server/src/peer/PeerForwarding.test.ts
+[t3] apps/server/src/peer/PeerLinkRequests.test.ts
+[t3] apps/server/src/peer/PeerLinks.test.ts
+[t3] apps/server/src/peer/PeerMcpClient.test.ts
+[t3] apps/server/src/peer/RemoteDelegation.test.ts
+[t3] apps/server/src/policy/ManagedPolicy.test.ts
+[t3] apps/server/src/preview/ServerBrowserStream.test.ts
+[t3] apps/server/src/project/AgentSessionImporter.test.ts
+[t3] apps/server/src/project/ManagedProjectFolders.test.ts
+[t3] apps/server/src/project/ProjectService.test.ts
+[t3] apps/server/src/project/ProjectSetupScriptRunner.test.ts
+[t3] apps/server/src/provider/AgentContextBudget.test.ts
+[t3] apps/server/src/provider/ProviderInstanceRegistryHydration.test.ts
+[t3] apps/server/src/provider/ProviderRegistry.test.ts
+[t3] apps/server/src/provider/providerInstallation.test.ts
+[t3] apps/server/src/provider/userInputAttachments.test.ts
+[t3] apps/server/src/relay/AgentAwarenessRelay.test.ts
+[t3] apps/server/src/scheduledTasks/ScheduledTaskService.interval.test.ts
+[t3] apps/server/src/scheduledTasks/ScheduledTaskService.schedule.test.ts
+[t3] apps/server/src/scheduledTasks/ScheduledTaskService.test.ts
+[t3] apps/server/src/scheduledTasks/ScheduledTaskService.webhook.test.ts
+[t3] apps/server/src/scheduledTasks/webhookRoute.test.ts
+[t3] apps/server/src/secrets/SecretRequests.test.ts
+[t3] apps/server/src/terminal/Manager.test.ts
+[t3] apps/server/src/textGeneration/OpenCode2TextGeneration.test.ts
+[t3] apps/server/src/usage/UsageService.test.ts
+[t3] apps/server/src/vcs/VcsStatusBroadcaster.test.ts
+[t3] apps/server/src/mcp/toolkits/core.test.ts
+[t3] apps/server/src/orchestration-v2/Adapters/ClaudeAdapterV2.test.ts
+[t3] apps/server/src/orchestration-v2/Adapters/CodexAdapterV2.test.ts
+[t3] apps/server/src/orchestration-v2/Adapters/OpenCode2AdapterV2.test.ts
+[t3] apps/server/src/orchestration-v2/legacy/LegacyV1Cutover.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/AcpRegistryReplayFixtures.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/ClaudeReplayFixtures.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/CodexReplayFixtures.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/CursorReplayFixtures.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/FxReplayFixtures.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/GrokReplayFixtures.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/KiroReplayFixtures.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/MuseReplayFixtures.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/OpenCode2PendingSnapshots.evidence.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/OpenCodeReplayFixtures.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/OrchestratorReplayRecovery.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/OrchestratorReplayRestartBackgroundNote.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/PiReplayFixtures.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/ProviderReplayHarness.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/ProviderSwitch.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/ThreadFork.integration.test.ts
+[t3] apps/server/src/orchestration-v2/testkit/ThreadMergeBack.integration.test.ts
+[t3] apps/server/src/mcp/toolkits/device/handlers.test.ts
+[t3] apps/server/src/mcp/toolkits/orchestrator/tools.test.ts
+[t3] apps/server/src/mcp/toolkits/preview/handlers.test.ts
+[t3] apps/server/src/mcp/toolkits/preview/tools.test.ts
+[t3] apps/server/src/mcp/toolkits/previewControls/handlers.test.ts
+[t3] apps/server/src/mcp/toolkits/environment/handlers.test.ts
+[t3] apps/server/src/mcp/toolkits/project/handlers.test.ts
+[t3] apps/server/src/mcp/toolkits/pullRequests/handlers.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/lib/threadActivity.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/state/composer-attachment-uploads.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/state/entities.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/state/queued-run-edit.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/state/thread-outbox-removal.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/state/thread-task-permissions.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/state/threadOutboxDelivery.permissions.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/state/threadOutboxDelivery.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/state/threads.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/state/use-composer-drafts.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/features/threads/incomingShareImport.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/features/threads/pending-thread-feed.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/features/threads/subagent-card-presentation.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/features/threads/thread-settings-options.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/features/threads/thread-settings-sheet-state.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/features/threads/threadAgentsPresentation.test.ts
+[@t3tools/mobile (unit)] apps/mobile/src/features/updates/app-updates.test.ts
+[root] evals/mcp-tool-use/devices.test.ts
+[root] evals/mcp-tool-use/run.test.ts
+[root] packages/shared/src/orchestrationTiming.test.ts
+[root] packages/provider-muse/src/server/adapter.test.ts

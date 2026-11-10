@@ -1,0 +1,35 @@
+[@t3tools/web (renders) (chromium)] apps/web/test/appScenarios.renders.tsx
+[@t3tools/web (renders) (chromium)] apps/web/test/renderScenarios.renders.tsx
+[@t3tools/mobile (react)] apps/mobile/src/lib/filePreview.test.ts
+[@t3tools/web (unit)] apps/web/src/components/composerContextPresentation.test.ts
+[@t3tools/web (unit)] apps/web/src/components/pullRequest/pullRequestsRouteSearch.test.ts
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ChatMarkdown.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ChatMarkdown.permissions.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ChatView.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ChatView.modelPick.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/CommandPalette.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/CommandPalette.composition.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ComposerPromptEditorTiptap.citationDraft.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/ComposerPromptEditorTiptap.input.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/Sidebar.drag.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/Sidebar.shortcuts.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ComposerModelEffort.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/ComposerPermissionsSection.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/MessagesTimeline.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/QueuedRunsControl.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/chat/useComposerContextImport.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/files/AttachmentFilePreview.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/files/FilePreviewPanel.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/guest/GuestPage.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestActionsMenu.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestCodeTab.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestDetailPanel.permissions.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestGuideTab.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestMarkdown.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestMarkdownEditor.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestSummaryTab.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/pullRequest/PullRequestTimelineTab.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/AuthorizedClientsSettings.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/ProjectSettingsPanel.browser.test.tsx
+[@t3tools/web (browser) (chromium)] apps/web/src/components/settings/ProviderSettingsPanel.environment.browser.test.tsx
+[root] oxlint-plugin-t3code/rules/no-sparkles-icon.test.ts

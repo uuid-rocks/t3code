@@ -1,0 +1,11 @@
+id	sha	direction	area
+r01	9cd7a0479	forward	web (composer, browser test)
+r02	d290c1f1b	forward	leaf package (source-control-github)
+r03	f86e21f7c	forward	web + mobile + lint rule + root vite.config.ts
+r04	d756fed7a	forward	server orchestration
+r05	08af12da4	revert	packages/shared small fix + mobile test
+r06	cfb7cae2b	revert	packages/contracts + web hook
+r07	05020d6fa	revert	packages/client-runtime
+r08	5f2bb934d	revert	server persistence
+r09	d256170b3	revert	shared core across web + mobile
+r10	524a53183	revert	lockfile + web + mobile + client-runtime

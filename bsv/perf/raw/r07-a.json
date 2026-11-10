@@ -1,0 +1,2808 @@
+{
+  "conclusion": "success",
+  "event": "pull_request",
+  "head_branch": "bsv/perf-r07-a",
+  "head_sha": "1a6a95e77e3afc07c148e27b7ba63b1a79743aa4",
+  "jobs": {
+    "Changes": {
+      "bsv_job": null,
+      "changed": [],
+      "conclusion": "success",
+      "lines": [],
+      "restored": [],
+      "saved": [],
+      "seconds": 9.0,
+      "selections": [],
+      "steps": {
+        "Checkout": 2.0,
+        "Complete job": 0.0,
+        "Complete runner": 0.0,
+        "Detect affected jobs": 0.0,
+        "Post Checkout": 0.0,
+        "Set up job": 1.0,
+        "Set up runner": 1.0
+      },
+      "test_step_seconds": null,
+      "vcpu": 2
+    },
+    "Check": {
+      "bsv_job": null,
+      "changed": [],
+      "conclusion": "success",
+      "lines": [],
+      "restored": [],
+      "saved": [],
+      "seconds": 8.0,
+      "selections": [],
+      "steps": {
+        "Complete job": 0.0,
+        "Complete runner": 1.0,
+        "Require every job to pass": 0.0,
+        "Set up job": 2.0,
+        "Set up runner": 0.0
+      },
+      "test_step_seconds": null,
+      "vcpu": 2
+    },
+    "Test": {
+      "bsv_job": {
+        "label": "\"test\"",
+        "mode": "select",
+        "selected": "123",
+        "server_test_cached": "false",
+        "step_seconds": "39",
+        "total": "983",
+        "vitest_runs": "34"
+      },
+      "changed": [
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 1 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 1 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 1 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 3 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it"
+      ],
+      "conclusion": "success",
+      "lines": [
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-4a73b5d6f097-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348351.447586,
+          "t": 1794348351.815345
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-b3a12eecc211-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348351.819731,
+          "t": 1794348351.83618
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-5858dc307600-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348351.840223,
+          "t": 1794348351.84188
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-c47b8b1924f9-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348351.84188,
+          "t": 1794348351.84434
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348351.850376,
+          "t": 1794348351.946756
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/secret-provider-onepassword shard=- mode=select selected=0 total=2",
+          "prev_t": 1794348351.948267,
+          "t": 1794348351.949305
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/secret-provider-onepassword",
+          "t": 1794348351.949477
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348351.949477,
+          "t": 1794348351.960662
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/source-control-azure-devops shard=- mode=select selected=0 total=7",
+          "prev_t": 1794348351.962733,
+          "t": 1794348351.963947
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/source-control-azure-devops",
+          "t": 1794348351.964019
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348351.964019,
+          "t": 1794348351.983272
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/provider-fx shard=- mode=select selected=0 total=4",
+          "prev_t": 1794348351.985279,
+          "t": 1794348351.986057
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/provider-fx",
+          "t": 1794348351.986106
+        },
+        {
+          "msg": "[blacksmith] 1 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348351.986106,
+          "t": 1794348352.066761
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-4a73b5d6f097-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (4710 bytes)",
+          "prev_t": 1794348352.066761,
+          "t": 1794348352.239963
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-5858dc307600-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (5353 bytes)",
+          "prev_t": 1794348352.310773,
+          "t": 1794348352.310878
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-c47b8b1924f9-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (8421 bytes)",
+          "prev_t": 1794348352.310878,
+          "t": 1794348352.317666
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-e28dec724150-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348352.328957,
+          "t": 1794348352.621488
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-c6c916211676-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348352.625906,
+          "t": 1794348352.745121
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-c61a6cc2e095-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348352.748515,
+          "t": 1794348352.750416
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348352.755537,
+          "t": 1794348352.775104
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/effect-codex-app-server shard=- mode=select selected=0 total=5",
+          "prev_t": 1794348352.778594,
+          "t": 1794348352.778646
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/effect-codex-app-server",
+          "t": 1794348352.778688
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348352.778688,
+          "t": 1794348352.873494
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/contracts shard=- mode=select selected=0 total=32",
+          "prev_t": 1794348352.875194,
+          "t": 1794348352.876513
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/contracts",
+          "t": 1794348352.876557
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348352.876557,
+          "t": 1794348352.882427
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/provider-grok shard=- mode=select selected=0 total=5",
+          "prev_t": 1794348352.884227,
+          "t": 1794348352.885157
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/provider-grok",
+          "t": 1794348352.885206
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-e28dec724150-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (1398 bytes)",
+          "prev_t": 1794348352.885206,
+          "t": 1794348353.066559
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-c61a6cc2e095-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (5908 bytes)",
+          "prev_t": 1794348353.078028,
+          "t": 1794348353.183432
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-c6c916211676-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (8922 bytes)",
+          "prev_t": 1794348353.196152,
+          "t": 1794348353.247094
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-f916e06cdb86-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348353.282423,
+          "t": 1794348353.521426
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-aa8731bccc8d-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348353.527236,
+          "t": 1794348353.734048
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-4e703ddc0aff-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348353.737793,
+          "t": 1794348353.772919
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-4e703ddc0aff-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348353.772919,
+          "t": 1794348353.790187
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348353.793856,
+          "t": 1794348353.938768
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348353.938768,
+          "t": 1794348353.972127
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/provider-cursor shard=- mode=select selected=0 total=15",
+          "prev_t": 1794348353.973002,
+          "t": 1794348353.975019
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/provider-cursor",
+          "t": 1794348353.975067
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/shared shard=- mode=select selected=0 total=100",
+          "prev_t": 1794348353.994458,
+          "t": 1794348353.997239
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/shared",
+          "t": 1794348354.001295
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-aa8731bccc8d-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (29032 bytes)",
+          "prev_t": 1794348354.001295,
+          "t": 1794348354.436599
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-f916e06cdb86-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (99368 bytes)",
+          "prev_t": 1794348354.452395,
+          "t": 1794348354.472307
+        },
+        {
+          "msg": "[blacksmith] 1 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348354.496639,
+          "t": 1794348354.513771
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-f717c847be6d-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348354.586527,
+          "t": 1794348354.995239
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-b4a594259cdf-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348355.029039,
+          "t": 1794348355.13905
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348355.147463,
+          "t": 1794348355.333168
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/effect-acp shard=- mode=select selected=0 total=6",
+          "prev_t": 1794348355.346946,
+          "t": 1794348355.351113
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/effect-acp",
+          "t": 1794348355.355078
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348355.355078,
+          "t": 1794348355.407029
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/source-control-gitlab shard=- mode=select selected=0 total=11",
+          "prev_t": 1794348355.418874,
+          "t": 1794348355.421122
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/source-control-gitlab",
+          "t": 1794348355.422968
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-f717c847be6d-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (1657 bytes)",
+          "prev_t": 1794348355.422968,
+          "t": 1794348355.791284
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-b4a594259cdf-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (5842 bytes)",
+          "prev_t": 1794348355.810662,
+          "t": 1794348355.861264
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-2b034c49b410-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348356.224863,
+          "t": 1794348356.25567
+        },
+        {
+          "msg": "BSV_SELECTION root=apps/desktop shard=- mode=select selected=2 total=110",
+          "prev_t": 1794348356.276245,
+          "t": 1794348356.278815
+        },
+        {
+          "files": [
+            "apps/desktop/src/app/DesktopApp.test.ts",
+            "apps/desktop/src/app/DesktopConnectionCatalogStore.test.ts"
+          ],
+          "kind": "files",
+          "root": "apps/desktop",
+          "t": 1794348356.279114
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-52f5a0d0f1de-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348356.279114,
+          "t": 1794348356.395109
+        },
+        {
+          "msg": "[blacksmith] 1 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348356.409727,
+          "t": 1794348356.539451
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348356.539451,
+          "t": 1794348356.657495
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/provider-muse shard=- mode=select selected=0 total=10",
+          "prev_t": 1794348356.664875,
+          "t": 1794348356.667246
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/provider-muse",
+          "t": 1794348356.670424
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-b3a12eecc211-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (52370 bytes)",
+          "prev_t": 1794348356.670424,
+          "t": 1794348356.805504
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-52f5a0d0f1de-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (10102 bytes)",
+          "prev_t": 1794348356.835174,
+          "t": 1794348357.062994
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-fcb30268855d-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348357.079883,
+          "t": 1794348357.211927
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348357.224032,
+          "t": 1794348357.378626
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/source-control-cursor-origin shard=- mode=select selected=0 total=1",
+          "prev_t": 1794348357.38359,
+          "t": 1794348357.383695
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/source-control-cursor-origin",
+          "t": 1794348357.383762
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-3f875d128c84-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348357.383762,
+          "t": 1794348357.503663
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348357.509066,
+          "t": 1794348357.667941
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/source-control-bitbucket shard=- mode=select selected=0 total=6",
+          "prev_t": 1794348357.672015,
+          "t": 1794348357.672065
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/source-control-bitbucket",
+          "t": 1794348357.672122
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-fcb30268855d-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (4181 bytes)",
+          "prev_t": 1794348357.672122,
+          "t": 1794348357.718382
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-3f875d128c84-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (5376 bytes)",
+          "prev_t": 1794348357.81797,
+          "t": 1794348358.09695
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-0b3928e6f550-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348358.136674,
+          "t": 1794348358.261786
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348358.26888,
+          "t": 1794348358.55284
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/provider-core shard=- mode=select selected=0 total=22",
+          "prev_t": 1794348358.564393,
+          "t": 1794348358.565314
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/provider-core",
+          "t": 1794348358.565364
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-71b04d3b60bc-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348358.565364,
+          "t": 1794348358.681336
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348358.690949,
+          "t": 1794348358.960463
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-0b3928e6f550-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (15014 bytes)",
+          "prev_t": 1794348358.960463,
+          "t": 1794348358.97208
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/source-control-github shard=- mode=select selected=0 total=20",
+          "prev_t": 1794348358.97794,
+          "t": 1794348358.979256
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/source-control-github",
+          "t": 1794348358.979318
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-815de1069367-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348358.988943,
+          "t": 1794348359.381782
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-71b04d3b60bc-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (60787 bytes)",
+          "prev_t": 1794348359.385526,
+          "t": 1794348359.437651
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348359.471635,
+          "t": 1794348359.619784
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/provider-opencode shard=- mode=select selected=0 total=16",
+          "prev_t": 1794348359.623826,
+          "t": 1794348359.625117
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/provider-opencode",
+          "t": 1794348359.625177
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-27e2bdea7423-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348359.625177,
+          "t": 1794348359.90713
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-815de1069367-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (14201 bytes)",
+          "prev_t": 1794348359.919941,
+          "t": 1794348360.027074
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348360.039786,
+          "t": 1794348360.053218
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/provider-kiro shard=- mode=select selected=0 total=1",
+          "prev_t": 1794348360.054545,
+          "t": 1794348360.055813
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/provider-kiro",
+          "t": 1794348360.05587
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-27e2bdea7423-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (5221 bytes)",
+          "prev_t": 1794348360.05587,
+          "t": 1794348360.394501
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-b99f06bc8562-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348360.408093,
+          "t": 1794348360.428983
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-2f6fc67f79d6-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348360.432119,
+          "t": 1794348360.818249
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348360.823159,
+          "t": 1794348360.824507
+        },
+        {
+          "msg": "BSV_SELECTION root=evals shard=- mode=select selected=0 total=6",
+          "prev_t": 1794348360.828003,
+          "t": 1794348360.82896
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "evals",
+          "t": 1794348360.829022
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348360.829022,
+          "t": 1794348360.961286
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/source-control-core shard=- mode=select selected=0 total=5",
+          "prev_t": 1794348360.967327,
+          "t": 1794348360.967436
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/source-control-core",
+          "t": 1794348360.967495
+        },
+        {
+          "msg": "BSV_SELECTION root=infra/relay shard=- mode=select selected=1 total=36",
+          "prev_t": 1794348361.240398,
+          "t": 1794348361.242375
+        },
+        {
+          "files": ["infra/relay/src/http/Api.test.ts"],
+          "kind": "files",
+          "root": "infra/relay",
+          "t": 1794348361.242434
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-2f6fc67f79d6-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (4384 bytes)",
+          "prev_t": 1794348361.242434,
+          "t": 1794348361.297199
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-b99f06bc8562-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (42385 bytes)",
+          "prev_t": 1794348361.32663,
+          "t": 1794348361.394618
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-2b034c49b410-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (12322 bytes)",
+          "prev_t": 1794348361.538487,
+          "t": 1794348361.668158
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-ac363b2047f0-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348361.7795,
+          "t": 1794348361.904395
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-5a3a148819fa-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348361.91185,
+          "t": 1794348361.933395
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348361.93906,
+          "t": 1794348362.20155
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/provider-pi shard=- mode=select selected=0 total=7",
+          "prev_t": 1794348362.206484,
+          "t": 1794348362.207858
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/provider-pi",
+          "t": 1794348362.207901
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-2ce6444628c6-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348362.207901,
+          "t": 1794348362.231504
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348362.246905,
+          "t": 1794348362.371422
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/tailscale shard=- mode=select selected=0 total=1",
+          "prev_t": 1794348362.376088,
+          "t": 1794348362.376136
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/tailscale",
+          "t": 1794348362.376193
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348362.376193,
+          "t": 1794348362.455655
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/provider-acp-registry shard=- mode=select selected=0 total=5",
+          "prev_t": 1794348362.501967,
+          "t": 1794348362.503101
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/provider-acp-registry",
+          "t": 1794348362.50316
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-5a3a148819fa-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (20778 bytes)",
+          "prev_t": 1794348362.50316,
+          "t": 1794348362.617126
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-2ce6444628c6-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (821 bytes)",
+          "prev_t": 1794348362.640595,
+          "t": 1794348362.703201
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-80c950eea3e6-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348362.727022,
+          "t": 1794348363.016327
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-ac363b2047f0-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (112297 bytes)",
+          "prev_t": 1794348363.02735,
+          "t": 1794348363.064197
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-c69d18ed02bb-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348363.064197,
+          "t": 1794348363.104322
+        },
+        {
+          "msg": "[blacksmith] 3 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348363.104515,
+          "t": 1794348363.224987
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348363.224987,
+          "t": 1794348363.236868
+        },
+        {
+          "msg": "BSV_SELECTION root=infra/task-cache shard=- mode=select selected=0 total=11",
+          "prev_t": 1794348363.239104,
+          "t": 1794348363.239502
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "infra/task-cache",
+          "t": 1794348363.240851
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-c69d18ed02bb-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (5518 bytes)",
+          "prev_t": 1794348363.240851,
+          "t": 1794348363.598984
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-9858696f11f1-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348363.598984,
+          "t": 1794348363.626243
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348363.650571,
+          "t": 1794348363.762948
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/source-control-gitcafe shard=- mode=select selected=0 total=6",
+          "prev_t": 1794348363.765741,
+          "t": 1794348363.766776
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/source-control-gitcafe",
+          "t": 1794348363.766937
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-c73c22134610-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348363.766937,
+          "t": 1794348364.063039
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-9858696f11f1-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (5325 bytes)",
+          "prev_t": 1794348364.07123,
+          "t": 1794348364.114268
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348364.173915,
+          "t": 1794348364.239789
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/provider-acp shard=- mode=select selected=0 total=8",
+          "prev_t": 1794348364.24458,
+          "t": 1794348364.248755
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/provider-acp",
+          "t": 1794348364.248812
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-c73c22134610-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (5541 bytes)",
+          "prev_t": 1794348364.248812,
+          "t": 1794348364.656235
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-a5b33d739570-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348364.656235,
+          "t": 1794348364.671471
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348364.679089,
+          "t": 1794348364.975212
+        },
+        {
+          "msg": "BSV_SELECTION root=scripts shard=- mode=select selected=0 total=36",
+          "prev_t": 1794348364.990765,
+          "t": 1794348364.997668
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "scripts",
+          "t": 1794348364.998974
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-ad9e61051e42-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348364.998974,
+          "t": 1794348365.154736
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348365.159352,
+          "t": 1794348365.303049
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/ssh shard=- mode=select selected=0 total=4",
+          "prev_t": 1794348365.304419,
+          "t": 1794348365.306937
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/ssh",
+          "t": 1794348365.30698
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-a5b33d739570-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (28538 bytes)",
+          "prev_t": 1794348365.30698,
+          "t": 1794348365.459375
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-ad9e61051e42-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (2807 bytes)",
+          "prev_t": 1794348365.486308,
+          "t": 1794348365.649139
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-ad6d0265a64e-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348365.693431,
+          "t": 1794348365.972214
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-abd30751512e-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348365.979656,
+          "t": 1794348366.096352
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348366.104329,
+          "t": 1794348366.104403
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/secret-provider-core shard=- mode=select selected=0 total=1",
+          "prev_t": 1794348366.104483,
+          "t": 1794348366.104518
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/secret-provider-core",
+          "t": 1794348366.104565
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348366.122621,
+          "t": 1794348366.277551
+        },
+        {
+          "msg": "BSV_SELECTION root=oxlint-plugin-t3code shard=- mode=select selected=0 total=30",
+          "prev_t": 1794348366.280984,
+          "t": 1794348366.281022
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "oxlint-plugin-t3code",
+          "t": 1794348366.281075
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-ad6d0265a64e-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (4025 bytes)",
+          "prev_t": 1794348366.41239,
+          "t": 1794348366.465138
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-abd30751512e-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (21418 bytes)",
+          "prev_t": 1794348366.480199,
+          "t": 1794348366.653651
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-24913e5713d4-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348366.684811,
+          "t": 1794348366.915351
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348367.042566,
+          "t": 1794348367.138321
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/source-control-forgejo shard=- mode=select selected=0 total=6",
+          "prev_t": 1794348367.150939,
+          "t": 1794348367.156121
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "packages/source-control-forgejo",
+          "t": 1794348367.16045
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-24913e5713d4-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (7165 bytes)",
+          "prev_t": 1794348367.738652,
+          "t": 1794348367.75912
+        },
+        {
+          "msg": "BSV_SELECTION root=packages/client-runtime shard=- mode=select selected=36 total=156",
+          "prev_t": 1794348373.251571,
+          "t": 1794348373.267628
+        },
+        {
+          "files": [
+            "packages/client-runtime/src/connection/outdatedHostUpdate.test.ts",
+            "packages/client-runtime/src/connection/registry.test.ts",
+            "packages/client-runtime/src/operations/projects.test.ts",
+            "packages/client-runtime/src/providerSkills.test.ts",
+            "packages/client-runtime/src/relay/cloudAccountService.test.ts",
+            "packages/client-runtime/src/relay/discovery.test.ts",
+            "packages/client-runtime/src/rpc/session.test.ts",
+            "packages/client-runtime/src/state/assets.test.ts",
+            "packages/client-runtime/src/state/attachments.test.ts",
+            "packages/client-runtime/src/state/auth.test.ts",
+            "packages/client-runtime/src/state/commandPermissions.test.ts",
+            "packages/client-runtime/src/state/connections.test.ts",
+            "packages/client-runtime/src/state/fileMetadata.test.ts",
+            "packages/client-runtime/src/state/filesystem.test.ts",
+            "packages/client-runtime/src/state/olderSettledThreads.test.ts",
+            "packages/client-runtime/src/state/presentation.test.ts",
+            "packages/client-runtime/src/state/projectCommands.test.ts",
+            "packages/client-runtime/src/state/projectEntities.test.ts",
+            "packages/client-runtime/src/state/projectGrouping.test.ts",
+            "packages/client-runtime/src/state/pullRequests.test.ts",
+            "packages/client-runtime/src/state/runtime.test.ts",
+            "packages/client-runtime/src/state/server.test.ts",
+            "packages/client-runtime/src/state/serverUsage.test.ts",
+            "packages/client-runtime/src/state/shell-sync.test.ts",
+            "packages/client-runtime/src/state/terminal.test.ts",
+            "packages/client-runtime/src/state/threadCommands.test.ts",
+            "packages/client-runtime/src/state/threadFamilies.test.ts",
+            "packages/client-runtime/src/state/threadFeedback.test.ts",
+            "packages/client-runtime/src/state/threadShell.test.ts",
+            "packages/client-runtime/src/state/threadVisits.test.ts",
+            "packages/client-runtime/src/state/threads-atoms.test.ts",
+            "packages/client-runtime/src/state/threads-sync.test.ts",
+            "packages/client-runtime/src/state/usage.test.ts",
+            "packages/client-runtime/src/state/vcs.test.ts",
+            "packages/client-runtime/src/state/vcsAction.test.ts",
+            "packages/client-runtime/src/state/vcsStatusRevalidation.test.ts"
+          ],
+          "kind": "files",
+          "root": "packages/client-runtime",
+          "t": 1794348373.271526
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-80c950eea3e6-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (27422 bytes)",
+          "prev_t": 1794348373.642523,
+          "t": 1794348373.69506
+        },
+        {
+          "msg": "BSV_SELECTION root=apps/mobile shard=- mode=select selected=84 total=292",
+          "prev_t": 1794348389.185924,
+          "t": 1794348389.190924
+        },
+        {
+          "files": [
+            "apps/mobile/src/components/ComposerEditor.ios.test.tsx",
+            "apps/mobile/src/components/ProjectFavicon.test.tsx",
+            "apps/mobile/src/connection/environment-cache-store.test.ts",
+            "apps/mobile/src/connection/migration.test.ts",
+            "apps/mobile/src/connection/storage.test.ts",
+            "apps/mobile/src/features/agent-awareness/liveActivityPreferences.test.ts",
+            "apps/mobile/src/features/agent-awareness/remoteRegistration.test.ts",
+            "apps/mobile/src/features/cloud/CloudAuthProvider.test.ts",
+            "apps/mobile/src/features/cloud/dpop.test.ts",
+            "apps/mobile/src/features/cloud/linkEnvironment.test.ts",
+            "apps/mobile/src/features/cloud/managedRelayLayer.test.ts",
+            "apps/mobile/src/features/diffs/nativeReviewDiffSurface.test.tsx",
+            "apps/mobile/src/features/files/ZipArchiveView.test.tsx",
+            "apps/mobile/src/features/files/useFileTreeEntries.test.tsx",
+            "apps/mobile/src/features/home/homeThreadList.test.ts",
+            "apps/mobile/src/features/home/useThreadListActions.test.ts",
+            "apps/mobile/src/features/projects/AddProjectScreen.logic.test.ts",
+            "apps/mobile/src/features/projects/AddProjectScreen.test.ts",
+            "apps/mobile/src/features/pull-requests/guide/useReviewGuide.test.tsx",
+            "apps/mobile/src/features/pull-requests/pullRequestDiffHighlightFiles.test.ts",
+            "apps/mobile/src/features/pull-requests/usePullRequestDiff.test.tsx",
+            "apps/mobile/src/features/pull-requests/usePullRequestList.test.tsx",
+            "apps/mobile/src/features/review/nativeReviewDiffAdapter.test.ts",
+            "apps/mobile/src/features/review/reviewCommentSelection.test.ts",
+            "apps/mobile/src/features/settings/SettingsServerControlsRouteScreen.test.tsx",
+            "apps/mobile/src/features/sharing/incoming-share-inbox.test.ts",
+            "apps/mobile/src/features/sharing/incoming-share-model.test.ts",
+            "apps/mobile/src/features/sharing/incoming-share-storage.test.ts",
+            "apps/mobile/src/features/terminal/NativeTerminalSurface.test.tsx",
+            "apps/mobile/src/features/terminal/terminalOutputWriter.test.ts",
+            "apps/mobile/src/features/threads/NewTaskDraftRouteScreen.test.tsx",
+            "apps/mobile/src/features/threads/UsageLimitRecoveryCard.test.tsx",
+            "apps/mobile/src/features/threads/checkout-new-task-branch.test.ts",
+            "apps/mobile/src/features/threads/incomingShareImport.test.ts",
+            "apps/mobile/src/features/threads/new-task-flow-provider.test.tsx",
+            "apps/mobile/src/features/threads/new-task-project-selection.test.ts",
+            "apps/mobile/src/features/threads/pending-thread-feed.test.ts",
+            "apps/mobile/src/features/threads/provider-catalog-refresh.test.ts",
+            "apps/mobile/src/features/threads/thread-provider-instance.test.ts",
+            "apps/mobile/src/features/threads/thread-settings-sheet-state.test.ts",
+            "apps/mobile/src/features/threads/threadListV2.test.ts",
+            "apps/mobile/src/features/threads/use-composer-command-menu.test.ts",
+            "apps/mobile/src/features/threads/useThreadListV2.test.tsx",
+            "apps/mobile/src/features/updates/app-updates.test.ts",
+            "apps/mobile/src/features/usage/usageLimitsRefresh.test.ts",
+            "apps/mobile/src/lib/attachmentUpload.test.ts",
+            "apps/mobile/src/lib/composerAttachmentUploadQueue.test.ts",
+            "apps/mobile/src/lib/composerChipPresentation.test.ts",
+            "apps/mobile/src/lib/composerContext.test.ts",
+            "apps/mobile/src/lib/composerContextClipboard.test.ts",
+            "apps/mobile/src/lib/composerFiles.test.ts",
+            "apps/mobile/src/lib/composerImages.test.ts",
+            "apps/mobile/src/lib/enrichedLinkPresentation.test.ts",
+            "apps/mobile/src/lib/filePreview.test.ts",
+            "apps/mobile/src/lib/filePreviewGallery.test.ts",
+            "apps/mobile/src/lib/markdownHtml.test.ts",
+            "apps/mobile/src/lib/markdownInlineFileLinks.test.ts",
+            "apps/mobile/src/lib/mediaActions.test.ts",
+            "apps/mobile/src/lib/projectIcon.test.ts",
+            "apps/mobile/src/lib/projectThreadStartTurn.test.ts",
+            "apps/mobile/src/lib/storage.test.ts",
+            "apps/mobile/src/state/assets.test.ts",
+            "apps/mobile/src/state/attachments.test.ts",
+            "apps/mobile/src/state/composer-attachment-uploads.test.ts",
+            "apps/mobile/src/state/entities.test.ts",
+            "apps/mobile/src/state/pending-new-tasks-model.test.ts",
+            "apps/mobile/src/state/pending-thread-creation.test.ts",
+            "apps/mobile/src/state/queries.debounce.test.tsx",
+            "apps/mobile/src/state/queries.filesystem.test.ts",
+            "apps/mobile/src/state/queued-run-edit.test.ts",
+            "apps/mobile/src/state/remote-environment-projections.test.ts",
+            "apps/mobile/src/state/thread-order.test.ts",
+            "apps/mobile/src/state/thread-outbox-removal.test.ts",
+            "apps/mobile/src/state/thread-outbox.test.ts",
+            "apps/mobile/src/state/thread-task-permissions.test.ts",
+            "apps/mobile/src/state/threadOutboxDelivery.permissions.test.ts",
+            "apps/mobile/src/state/threadOutboxDelivery.test.ts",
+            "apps/mobile/src/state/threads.test.ts",
+            "apps/mobile/src/state/use-composer-drafts.test.ts",
+            "apps/mobile/src/state/use-selected-thread-git-actions.test.ts",
+            "apps/mobile/src/state/use-thread-pr.demand.test.tsx",
+            "apps/mobile/src/state/workspace-connection-atoms.test.ts",
+            "apps/mobile/src/state/workspaceModel.test.ts",
+            "apps/mobile/src/widgets/useSubscriptionUsage.test.ts"
+          ],
+          "kind": "files",
+          "root": "apps/mobile",
+          "t": 1794348389.191736
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-4e703ddc0aff-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (208058 bytes)",
+          "prev_t": 1794348389.191736,
+          "t": 1794348390.037098
+        },
+        {
+          "msg": "vp run: 34/34 successful. (Run `vp run --last-details` for full details)",
+          "prev_t": 1794348390.13194,
+          "t": 1794348390.132007
+        },
+        {
+          "msg": "BSV_JOB label=\"test\" mode=select server_test_cached=false vitest_runs=34 selected=123 total=983 step_seconds=39",
+          "prev_t": 1794348390.132007,
+          "t": 1794348390.161062
+        }
+      ],
+      "restored": [
+        {
+          "key": "blacksmith-vitest-v5-4a73b5d6f097-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.36775898933410645
+        },
+        {
+          "key": "blacksmith-vitest-v5-b3a12eecc211-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.016448974609375
+        },
+        {
+          "key": "blacksmith-vitest-v5-5858dc307600-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.0016570091247558594
+        },
+        {
+          "key": "blacksmith-vitest-v5-c47b8b1924f9-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.002460002899169922
+        },
+        {
+          "key": "blacksmith-vitest-v5-e28dec724150-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.29253101348876953
+        },
+        {
+          "key": "blacksmith-vitest-v5-c6c916211676-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.11921501159667969
+        },
+        {
+          "key": "blacksmith-vitest-v5-c61a6cc2e095-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.0019011497497558594
+        },
+        {
+          "key": "blacksmith-vitest-v5-f916e06cdb86-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.23900294303894043
+        },
+        {
+          "key": "blacksmith-vitest-v5-aa8731bccc8d-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.20681190490722656
+        },
+        {
+          "key": "blacksmith-vitest-v5-4e703ddc0aff-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.0351259708404541
+        },
+        {
+          "key": "blacksmith-vitest-v5-4e703ddc0aff-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.017267942428588867
+        },
+        {
+          "key": "blacksmith-vitest-v5-f717c847be6d-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.40871191024780273
+        },
+        {
+          "key": "blacksmith-vitest-v5-b4a594259cdf-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.11001110076904297
+        },
+        {
+          "key": "blacksmith-vitest-v5-2b034c49b410-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.030807018280029297
+        },
+        {
+          "key": "blacksmith-vitest-v5-52f5a0d0f1de-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.11599493026733398
+        },
+        {
+          "key": "blacksmith-vitest-v5-fcb30268855d-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.13204383850097656
+        },
+        {
+          "key": "blacksmith-vitest-v5-3f875d128c84-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.11990118026733398
+        },
+        {
+          "key": "blacksmith-vitest-v5-0b3928e6f550-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.12511205673217773
+        },
+        {
+          "key": "blacksmith-vitest-v5-71b04d3b60bc-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.11597204208374023
+        },
+        {
+          "key": "blacksmith-vitest-v5-815de1069367-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.3928389549255371
+        },
+        {
+          "key": "blacksmith-vitest-v5-27e2bdea7423-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.2819530963897705
+        },
+        {
+          "key": "blacksmith-vitest-v5-b99f06bc8562-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.020889997482299805
+        },
+        {
+          "key": "blacksmith-vitest-v5-2f6fc67f79d6-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.38613009452819824
+        },
+        {
+          "key": "blacksmith-vitest-v5-ac363b2047f0-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.12489509582519531
+        },
+        {
+          "key": "blacksmith-vitest-v5-5a3a148819fa-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.021544933319091797
+        },
+        {
+          "key": "blacksmith-vitest-v5-2ce6444628c6-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.023602962493896484
+        },
+        {
+          "key": "blacksmith-vitest-v5-80c950eea3e6-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.2893049716949463
+        },
+        {
+          "key": "blacksmith-vitest-v5-c69d18ed02bb-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.04012489318847656
+        },
+        {
+          "key": "blacksmith-vitest-v5-9858696f11f1-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.027259111404418945
+        },
+        {
+          "key": "blacksmith-vitest-v5-c73c22134610-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.29610204696655273
+        },
+        {
+          "key": "blacksmith-vitest-v5-a5b33d739570-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.015236139297485352
+        },
+        {
+          "key": "blacksmith-vitest-v5-ad9e61051e42-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.1557619571685791
+        },
+        {
+          "key": "blacksmith-vitest-v5-ad6d0265a64e-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.27878308296203613
+        },
+        {
+          "key": "blacksmith-vitest-v5-abd30751512e-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.11669611930847168
+        },
+        {
+          "key": "blacksmith-vitest-v5-24913e5713d4-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.23053979873657227
+        }
+      ],
+      "saved": [
+        {
+          "bytes": 4710,
+          "seconds_after_selection_line": 0.2539060115814209
+        },
+        {
+          "bytes": 5353,
+          "seconds_after_selection_line": 0.32482099533081055
+        },
+        {
+          "bytes": 8421,
+          "seconds_after_selection_line": 0.33160901069641113
+        },
+        {
+          "bytes": 1398,
+          "seconds_after_selection_line": 0.18140196800231934
+        },
+        {
+          "bytes": 5908,
+          "seconds_after_selection_line": 0.2982749938964844
+        },
+        {
+          "bytes": 8922,
+          "seconds_after_selection_line": 0.3619368076324463
+        },
+        {
+          "bytes": 29032,
+          "seconds_after_selection_line": 0.4393599033355713
+        },
+        {
+          "bytes": 99368,
+          "seconds_after_selection_line": 0.4750678539276123
+        },
+        {
+          "bytes": 1657,
+          "seconds_after_selection_line": 0.3701620101928711
+        },
+        {
+          "bytes": 5842,
+          "seconds_after_selection_line": 0.4401419162750244
+        },
+        {
+          "bytes": 52370,
+          "seconds_after_selection_line": 0.1382579803466797
+        },
+        {
+          "bytes": 10102,
+          "seconds_after_selection_line": 0.3957479000091553
+        },
+        {
+          "bytes": 4181,
+          "seconds_after_selection_line": 0.04631686210632324
+        },
+        {
+          "bytes": 5376,
+          "seconds_after_selection_line": 0.4248850345611572
+        },
+        {
+          "bytes": 15014,
+          "seconds_after_selection_line": 0.4067659378051758
+        },
+        {
+          "bytes": 60787,
+          "seconds_after_selection_line": 0.45839500427246094
+        },
+        {
+          "bytes": 14201,
+          "seconds_after_selection_line": 0.40195703506469727
+        },
+        {
+          "bytes": 5221,
+          "seconds_after_selection_line": 0.3386878967285156
+        },
+        {
+          "bytes": 4384,
+          "seconds_after_selection_line": 0.054824113845825195
+        },
+        {
+          "bytes": 42385,
+          "seconds_after_selection_line": 0.15224313735961914
+        },
+        {
+          "bytes": 12322,
+          "seconds_after_selection_line": 0.4257831573486328
+        },
+        {
+          "bytes": 20778,
+          "seconds_after_selection_line": 0.11402487754821777
+        },
+        {
+          "bytes": 821,
+          "seconds_after_selection_line": 0.20009994506835938
+        },
+        {
+          "bytes": 112297,
+          "seconds_after_selection_line": 0.5610959529876709
+        },
+        {
+          "bytes": 5518,
+          "seconds_after_selection_line": 0.3594820499420166
+        },
+        {
+          "bytes": 5325,
+          "seconds_after_selection_line": 0.347491979598999
+        },
+        {
+          "bytes": 5541,
+          "seconds_after_selection_line": 0.40748000144958496
+        },
+        {
+          "bytes": 28538,
+          "seconds_after_selection_line": 0.15243792533874512
+        },
+        {
+          "bytes": 2807,
+          "seconds_after_selection_line": 0.34220194816589355
+        },
+        {
+          "bytes": 4025,
+          "seconds_after_selection_line": 0.18411588668823242
+        },
+        {
+          "bytes": 21418,
+          "seconds_after_selection_line": 0.37262892723083496
+        },
+        {
+          "bytes": 7165,
+          "seconds_after_selection_line": 0.6029989719390869
+        },
+        {
+          "bytes": 27422,
+          "seconds_after_selection_line": 0.4274320602416992
+        },
+        {
+          "bytes": 208058,
+          "seconds_after_selection_line": 0.8461740016937256
+        }
+      ],
+      "seconds": 76.0,
+      "selections": [
+        {
+          "mode": "select",
+          "root": "packages/secret-provider-onepassword",
+          "selected": "0",
+          "shard": "-",
+          "total": "2"
+        },
+        {
+          "mode": "select",
+          "root": "packages/source-control-azure-devops",
+          "selected": "0",
+          "shard": "-",
+          "total": "7"
+        },
+        {
+          "mode": "select",
+          "root": "packages/provider-fx",
+          "selected": "0",
+          "shard": "-",
+          "total": "4"
+        },
+        {
+          "mode": "select",
+          "root": "packages/effect-codex-app-server",
+          "selected": "0",
+          "shard": "-",
+          "total": "5"
+        },
+        {
+          "mode": "select",
+          "root": "packages/contracts",
+          "selected": "0",
+          "shard": "-",
+          "total": "32"
+        },
+        {
+          "mode": "select",
+          "root": "packages/provider-grok",
+          "selected": "0",
+          "shard": "-",
+          "total": "5"
+        },
+        {
+          "mode": "select",
+          "root": "packages/provider-cursor",
+          "selected": "0",
+          "shard": "-",
+          "total": "15"
+        },
+        {
+          "mode": "select",
+          "root": "packages/shared",
+          "selected": "0",
+          "shard": "-",
+          "total": "100"
+        },
+        {
+          "mode": "select",
+          "root": "packages/effect-acp",
+          "selected": "0",
+          "shard": "-",
+          "total": "6"
+        },
+        {
+          "mode": "select",
+          "root": "packages/source-control-gitlab",
+          "selected": "0",
+          "shard": "-",
+          "total": "11"
+        },
+        {
+          "mode": "select",
+          "root": "apps/desktop",
+          "selected": "2",
+          "shard": "-",
+          "total": "110"
+        },
+        {
+          "mode": "select",
+          "root": "packages/provider-muse",
+          "selected": "0",
+          "shard": "-",
+          "total": "10"
+        },
+        {
+          "mode": "select",
+          "root": "packages/source-control-cursor-origin",
+          "selected": "0",
+          "shard": "-",
+          "total": "1"
+        },
+        {
+          "mode": "select",
+          "root": "packages/source-control-bitbucket",
+          "selected": "0",
+          "shard": "-",
+          "total": "6"
+        },
+        {
+          "mode": "select",
+          "root": "packages/provider-core",
+          "selected": "0",
+          "shard": "-",
+          "total": "22"
+        },
+        {
+          "mode": "select",
+          "root": "packages/source-control-github",
+          "selected": "0",
+          "shard": "-",
+          "total": "20"
+        },
+        {
+          "mode": "select",
+          "root": "packages/provider-opencode",
+          "selected": "0",
+          "shard": "-",
+          "total": "16"
+        },
+        {
+          "mode": "select",
+          "root": "packages/provider-kiro",
+          "selected": "0",
+          "shard": "-",
+          "total": "1"
+        },
+        {
+          "mode": "select",
+          "root": "evals",
+          "selected": "0",
+          "shard": "-",
+          "total": "6"
+        },
+        {
+          "mode": "select",
+          "root": "packages/source-control-core",
+          "selected": "0",
+          "shard": "-",
+          "total": "5"
+        },
+        {
+          "mode": "select",
+          "root": "infra/relay",
+          "selected": "1",
+          "shard": "-",
+          "total": "36"
+        },
+        {
+          "mode": "select",
+          "root": "packages/provider-pi",
+          "selected": "0",
+          "shard": "-",
+          "total": "7"
+        },
+        {
+          "mode": "select",
+          "root": "packages/tailscale",
+          "selected": "0",
+          "shard": "-",
+          "total": "1"
+        },
+        {
+          "mode": "select",
+          "root": "packages/provider-acp-registry",
+          "selected": "0",
+          "shard": "-",
+          "total": "5"
+        },
+        {
+          "mode": "select",
+          "root": "infra/task-cache",
+          "selected": "0",
+          "shard": "-",
+          "total": "11"
+        },
+        {
+          "mode": "select",
+          "root": "packages/source-control-gitcafe",
+          "selected": "0",
+          "shard": "-",
+          "total": "6"
+        },
+        {
+          "mode": "select",
+          "root": "packages/provider-acp",
+          "selected": "0",
+          "shard": "-",
+          "total": "8"
+        },
+        {
+          "mode": "select",
+          "root": "scripts",
+          "selected": "0",
+          "shard": "-",
+          "total": "36"
+        },
+        {
+          "mode": "select",
+          "root": "packages/ssh",
+          "selected": "0",
+          "shard": "-",
+          "total": "4"
+        },
+        {
+          "mode": "select",
+          "root": "packages/secret-provider-core",
+          "selected": "0",
+          "shard": "-",
+          "total": "1"
+        },
+        {
+          "mode": "select",
+          "root": "oxlint-plugin-t3code",
+          "selected": "0",
+          "shard": "-",
+          "total": "30"
+        },
+        {
+          "mode": "select",
+          "root": "packages/source-control-forgejo",
+          "selected": "0",
+          "shard": "-",
+          "total": "6"
+        },
+        {
+          "mode": "select",
+          "root": "packages/client-runtime",
+          "selected": "36",
+          "shard": "-",
+          "total": "156"
+        },
+        {
+          "mode": "select",
+          "root": "apps/mobile",
+          "selected": "84",
+          "shard": "-",
+          "total": "292"
+        }
+      ],
+      "steps": {
+        "Cache Electron download": 1.0,
+        "Checkout": 10.0,
+        "Complete job": 0.0,
+        "Complete runner": 0.0,
+        "Ensure Electron runtime is installed": 1.0,
+        "Finish installing browser secret helper build libraries": 6.0,
+        "Post Cache Electron download": 0.0,
+        "Post Checkout": 0.0,
+        "Post Setup Vite+": 0.0,
+        "Run ./.github/actions/setup-apt-mirrors": 0.0,
+        "Set up job": 0.0,
+        "Set up runner": 0.0,
+        "Setup Vite+": 12.0,
+        "Start installing browser secret helper build libraries": 0.0,
+        "Test": 39.0,
+        "Test preview artifact validation": 0.0,
+        "Test release checks": 1.0
+      },
+      "test_step_seconds": 39.0,
+      "vcpu": 8
+    },
+    "Test Server 1": {
+      "bsv_job": {
+        "label": "\"test_server 1/8\"",
+        "mode": "select",
+        "selected": "0",
+        "server_test_cached": "false",
+        "step_seconds": "2",
+        "total": "57",
+        "vitest_runs": "1"
+      },
+      "changed": [
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it"
+      ],
+      "conclusion": "success",
+      "lines": [
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-10dcbe8c4eca-1of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348328.960094,
+          "t": 1794348329.265208
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348329.267989,
+          "t": 1794348329.756742
+        },
+        {
+          "msg": "BSV_SELECTION root=apps/server shard=1/8 mode=select selected=0 total=57",
+          "prev_t": 1794348329.788544,
+          "t": 1794348329.797897
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "apps/server",
+          "t": 1794348329.797942
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-10dcbe8c4eca-1of8-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (283536 bytes)",
+          "prev_t": 1794348329.797942,
+          "t": 1794348330.436378
+        },
+        {
+          "msg": "BSV_JOB label=\"test_server 1/8\" mode=select server_test_cached=false vitest_runs=1 selected=0 total=57 step_seconds=2",
+          "prev_t": 1794348330.436378,
+          "t": 1794348330.453438
+        }
+      ],
+      "restored": [
+        {
+          "key": "blacksmith-vitest-v5-10dcbe8c4eca-1of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.3051140308380127
+        }
+      ],
+      "saved": [
+        {
+          "bytes": 283536,
+          "seconds_after_selection_line": 0.6384809017181396
+        }
+      ],
+      "seconds": 31.0,
+      "selections": [
+        {
+          "mode": "select",
+          "root": "apps/server",
+          "selected": "0",
+          "shard": "1/8",
+          "total": "57"
+        }
+      ],
+      "steps": {
+        "Cache Chromium": 0.0,
+        "Checkout": 8.0,
+        "Complete job": 0.0,
+        "Complete runner": 0.0,
+        "Detect affected jobs": 0.0,
+        "Detect transfer budget report": 0.0,
+        "Install missing Chromium system dependencies": 0.0,
+        "Post Cache Chromium": 0.0,
+        "Post Checkout": 0.0,
+        "Post Setup Vite+": 0.0,
+        "Resolve Playwright version": 0.0,
+        "Set up job": 1.0,
+        "Set up runner": 0.0,
+        "Setup Vite+": 13.0,
+        "Test": 2.0
+      },
+      "test_step_seconds": 2.0,
+      "vcpu": 4
+    },
+    "Test Server 2": {
+      "bsv_job": {
+        "label": "\"test_server 2/8\"",
+        "mode": "select",
+        "selected": "0",
+        "server_test_cached": "false",
+        "step_seconds": "1",
+        "total": "60",
+        "vitest_runs": "1"
+      },
+      "changed": [
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it"
+      ],
+      "conclusion": "success",
+      "lines": [
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-10dcbe8c4eca-2of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348324.207713,
+          "t": 1794348324.467148
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348324.469882,
+          "t": 1794348324.878757
+        },
+        {
+          "msg": "BSV_SELECTION root=apps/server shard=2/8 mode=select selected=0 total=60",
+          "prev_t": 1794348324.911029,
+          "t": 1794348324.917826
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "apps/server",
+          "t": 1794348324.91785
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-10dcbe8c4eca-2of8-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (324823 bytes)",
+          "prev_t": 1794348324.91785,
+          "t": 1794348325.605104
+        },
+        {
+          "msg": "BSV_JOB label=\"test_server 2/8\" mode=select server_test_cached=false vitest_runs=1 selected=0 total=60 step_seconds=1",
+          "prev_t": 1794348325.605104,
+          "t": 1794348325.623624
+        }
+      ],
+      "restored": [
+        {
+          "key": "blacksmith-vitest-v5-10dcbe8c4eca-2of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.25943517684936523
+        }
+      ],
+      "saved": [
+        {
+          "bytes": 324823,
+          "seconds_after_selection_line": 0.6872780323028564
+        }
+      ],
+      "seconds": 30.0,
+      "selections": [
+        {
+          "mode": "select",
+          "root": "apps/server",
+          "selected": "0",
+          "shard": "2/8",
+          "total": "60"
+        }
+      ],
+      "steps": {
+        "Cache Chromium": 1.0,
+        "Checkout": 11.0,
+        "Complete job": 0.0,
+        "Complete runner": 0.0,
+        "Detect affected jobs": 0.0,
+        "Detect transfer budget report": 0.0,
+        "Install missing Chromium system dependencies": 0.0,
+        "Post Cache Chromium": 0.0,
+        "Post Checkout": 0.0,
+        "Post Setup Vite+": 0.0,
+        "Resolve Playwright version": 0.0,
+        "Set up job": 2.0,
+        "Set up runner": 0.0,
+        "Setup Vite+": 8.0,
+        "Test": 1.0
+      },
+      "test_step_seconds": 1.0,
+      "vcpu": 4
+    },
+    "Test Server 3": {
+      "bsv_job": {
+        "label": "\"test_server 3/8\"",
+        "mode": "select",
+        "selected": "0",
+        "server_test_cached": "false",
+        "step_seconds": "2",
+        "total": "60",
+        "vitest_runs": "1"
+      },
+      "changed": [
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it"
+      ],
+      "conclusion": "success",
+      "lines": [
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-10dcbe8c4eca-3of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348332.762805,
+          "t": 1794348333.05688
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348333.059701,
+          "t": 1794348333.489475
+        },
+        {
+          "msg": "BSV_SELECTION root=apps/server shard=3/8 mode=select selected=0 total=60",
+          "prev_t": 1794348333.53322,
+          "t": 1794348333.54361
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "apps/server",
+          "t": 1794348333.543642
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-10dcbe8c4eca-3of8-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (326348 bytes)",
+          "prev_t": 1794348333.543642,
+          "t": 1794348334.073629
+        },
+        {
+          "msg": "BSV_JOB label=\"test_server 3/8\" mode=select server_test_cached=false vitest_runs=1 selected=0 total=60 step_seconds=2",
+          "prev_t": 1794348334.073629,
+          "t": 1794348334.093369
+        }
+      ],
+      "restored": [
+        {
+          "key": "blacksmith-vitest-v5-10dcbe8c4eca-3of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.29407501220703125
+        }
+      ],
+      "saved": [
+        {
+          "bytes": 326348,
+          "seconds_after_selection_line": 0.5300188064575195
+        }
+      ],
+      "seconds": 39.0,
+      "selections": [
+        {
+          "mode": "select",
+          "root": "apps/server",
+          "selected": "0",
+          "shard": "3/8",
+          "total": "60"
+        }
+      ],
+      "steps": {
+        "Cache Chromium": 0.0,
+        "Checkout": 18.0,
+        "Complete job": 0.0,
+        "Complete runner": 0.0,
+        "Detect affected jobs": 0.0,
+        "Detect transfer budget report": 0.0,
+        "Install missing Chromium system dependencies": 0.0,
+        "Post Cache Chromium": 0.0,
+        "Post Checkout": 0.0,
+        "Post Setup Vite+": 0.0,
+        "Resolve Playwright version": 1.0,
+        "Set up job": 1.0,
+        "Set up runner": 0.0,
+        "Setup Vite+": 10.0,
+        "Test": 2.0
+      },
+      "test_step_seconds": 2.0,
+      "vcpu": 4
+    },
+    "Test Server 4": {
+      "bsv_job": {
+        "label": "\"test_server 4/8\"",
+        "mode": "select",
+        "selected": "0",
+        "server_test_cached": "false",
+        "step_seconds": "2",
+        "total": "60",
+        "vitest_runs": "1"
+      },
+      "changed": [
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it"
+      ],
+      "conclusion": "success",
+      "lines": [
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-10dcbe8c4eca-4of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348327.983483,
+          "t": 1794348328.336447
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348328.341178,
+          "t": 1794348328.914459
+        },
+        {
+          "msg": "BSV_SELECTION root=apps/server shard=4/8 mode=select selected=0 total=60",
+          "prev_t": 1794348328.948996,
+          "t": 1794348328.956544
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "apps/server",
+          "t": 1794348328.956592
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-10dcbe8c4eca-4of8-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (337361 bytes)",
+          "prev_t": 1794348328.956592,
+          "t": 1794348329.595779
+        },
+        {
+          "msg": "BSV_JOB label=\"test_server 4/8\" mode=select server_test_cached=false vitest_runs=1 selected=0 total=60 step_seconds=2",
+          "prev_t": 1794348329.595779,
+          "t": 1794348329.620924
+        }
+      ],
+      "restored": [
+        {
+          "key": "blacksmith-vitest-v5-10dcbe8c4eca-4of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.352963924407959
+        }
+      ],
+      "saved": [
+        {
+          "bytes": 337361,
+          "seconds_after_selection_line": 0.6392350196838379
+        }
+      ],
+      "seconds": 33.0,
+      "selections": [
+        {
+          "mode": "select",
+          "root": "apps/server",
+          "selected": "0",
+          "shard": "4/8",
+          "total": "60"
+        }
+      ],
+      "steps": {
+        "Cache Chromium": 0.0,
+        "Checkout": 11.0,
+        "Complete job": 0.0,
+        "Complete runner": 1.0,
+        "Detect affected jobs": 0.0,
+        "Detect transfer budget report": 0.0,
+        "Install missing Chromium system dependencies": 0.0,
+        "Post Cache Chromium": 0.0,
+        "Post Checkout": 0.0,
+        "Post Setup Vite+": 0.0,
+        "Resolve Playwright version": 0.0,
+        "Set up job": 2.0,
+        "Set up runner": 0.0,
+        "Setup Vite+": 12.0,
+        "Test": 2.0
+      },
+      "test_step_seconds": 2.0,
+      "vcpu": 4
+    },
+    "Test Server 5": {
+      "bsv_job": {
+        "label": "\"test_server 5/8\"",
+        "mode": "select",
+        "selected": "0",
+        "server_test_cached": "false",
+        "step_seconds": "1",
+        "total": "61",
+        "vitest_runs": "1"
+      },
+      "changed": [
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it"
+      ],
+      "conclusion": "success",
+      "lines": [
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-10dcbe8c4eca-5of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348330.42767,
+          "t": 1794348330.662185
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348330.664471,
+          "t": 1794348331.062214
+        },
+        {
+          "msg": "BSV_SELECTION root=apps/server shard=5/8 mode=select selected=0 total=61",
+          "prev_t": 1794348331.090541,
+          "t": 1794348331.100074
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "apps/server",
+          "t": 1794348331.100115
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-10dcbe8c4eca-5of8-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (293436 bytes)",
+          "prev_t": 1794348331.100115,
+          "t": 1794348331.594617
+        },
+        {
+          "msg": "BSV_JOB label=\"test_server 5/8\" mode=select server_test_cached=false vitest_runs=1 selected=0 total=61 step_seconds=1",
+          "prev_t": 1794348331.594617,
+          "t": 1794348331.610362
+        }
+      ],
+      "restored": [
+        {
+          "key": "blacksmith-vitest-v5-10dcbe8c4eca-5of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.23451495170593262
+        }
+      ],
+      "saved": [
+        {
+          "bytes": 293436,
+          "seconds_after_selection_line": 0.49454283714294434
+        }
+      ],
+      "seconds": 36.0,
+      "selections": [
+        {
+          "mode": "select",
+          "root": "apps/server",
+          "selected": "0",
+          "shard": "5/8",
+          "total": "61"
+        }
+      ],
+      "steps": {
+        "Cache Chromium": 1.0,
+        "Checkout": 18.0,
+        "Complete job": 0.0,
+        "Complete runner": 0.0,
+        "Detect affected jobs": 0.0,
+        "Detect transfer budget report": 0.0,
+        "Install missing Chromium system dependencies": 0.0,
+        "Post Cache Chromium": 0.0,
+        "Post Checkout": 0.0,
+        "Post Setup Vite+": 0.0,
+        "Resolve Playwright version": 0.0,
+        "Set up job": 1.0,
+        "Set up runner": 0.0,
+        "Setup Vite+": 8.0,
+        "Test": 1.0
+      },
+      "test_step_seconds": 1.0,
+      "vcpu": 4
+    },
+    "Test Server 6": {
+      "bsv_job": {
+        "label": "\"test_server 6/8\"",
+        "mode": "select",
+        "selected": "0",
+        "server_test_cached": "false",
+        "step_seconds": "1",
+        "total": "62",
+        "vitest_runs": "1"
+      },
+      "changed": [
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it"
+      ],
+      "conclusion": "success",
+      "lines": [
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-10dcbe8c4eca-6of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348325.129845,
+          "t": 1794348325.466085
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348325.469226,
+          "t": 1794348326.058598
+        },
+        {
+          "msg": "BSV_SELECTION root=apps/server shard=6/8 mode=select selected=0 total=62",
+          "prev_t": 1794348326.120275,
+          "t": 1794348326.129678
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "apps/server",
+          "t": 1794348326.129718
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-10dcbe8c4eca-6of8-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (462173 bytes)",
+          "prev_t": 1794348326.129718,
+          "t": 1794348326.885805
+        },
+        {
+          "msg": "BSV_JOB label=\"test_server 6/8\" mode=select server_test_cached=false vitest_runs=1 selected=0 total=62 step_seconds=1",
+          "prev_t": 1794348326.885805,
+          "t": 1794348326.904969
+        }
+      ],
+      "restored": [
+        {
+          "key": "blacksmith-vitest-v5-10dcbe8c4eca-6of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.3362400531768799
+        }
+      ],
+      "saved": [
+        {
+          "bytes": 462173,
+          "seconds_after_selection_line": 0.756126880645752
+        }
+      ],
+      "seconds": 30.0,
+      "selections": [
+        {
+          "mode": "select",
+          "root": "apps/server",
+          "selected": "0",
+          "shard": "6/8",
+          "total": "62"
+        }
+      ],
+      "steps": {
+        "Cache Chromium": 1.0,
+        "Checkout": 11.0,
+        "Complete job": 0.0,
+        "Complete runner": 0.0,
+        "Detect affected jobs": 0.0,
+        "Detect transfer budget report": 0.0,
+        "Install missing Chromium system dependencies": 0.0,
+        "Post Cache Chromium": 1.0,
+        "Post Checkout": 0.0,
+        "Post Setup Vite+": 0.0,
+        "Resolve Playwright version": 0.0,
+        "Set up job": 1.0,
+        "Set up runner": 0.0,
+        "Setup Vite+": 10.0,
+        "Test": 1.0
+      },
+      "test_step_seconds": 1.0,
+      "vcpu": 4
+    },
+    "Test Server 7": {
+      "bsv_job": {
+        "label": "\"test_server 7/8\"",
+        "mode": "select",
+        "selected": "0",
+        "server_test_cached": "false",
+        "step_seconds": "1",
+        "total": "62",
+        "vitest_runs": "1"
+      },
+      "changed": [
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it"
+      ],
+      "conclusion": "success",
+      "lines": [
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-10dcbe8c4eca-7of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348329.23552,
+          "t": 1794348329.508982
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348329.512032,
+          "t": 1794348329.963589
+        },
+        {
+          "msg": "BSV_SELECTION root=apps/server shard=7/8 mode=select selected=0 total=62",
+          "prev_t": 1794348329.996372,
+          "t": 1794348330.005298
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "apps/server",
+          "t": 1794348330.005326
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-10dcbe8c4eca-7of8-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (269585 bytes)",
+          "prev_t": 1794348330.005326,
+          "t": 1794348330.600177
+        },
+        {
+          "msg": "BSV_JOB label=\"test_server 7/8\" mode=select server_test_cached=false vitest_runs=1 selected=0 total=62 step_seconds=1",
+          "prev_t": 1794348330.600177,
+          "t": 1794348330.61758
+        }
+      ],
+      "restored": [
+        {
+          "key": "blacksmith-vitest-v5-10dcbe8c4eca-7of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.27346205711364746
+        }
+      ],
+      "saved": [
+        {
+          "bytes": 269585,
+          "seconds_after_selection_line": 0.594879150390625
+        }
+      ],
+      "seconds": 36.0,
+      "selections": [
+        {
+          "mode": "select",
+          "root": "apps/server",
+          "selected": "0",
+          "shard": "7/8",
+          "total": "62"
+        }
+      ],
+      "steps": {
+        "Cache Chromium": 1.0,
+        "Checkout": 17.0,
+        "Complete job": 0.0,
+        "Complete runner": 0.0,
+        "Detect affected jobs": 0.0,
+        "Detect transfer budget report": 0.0,
+        "Install missing Chromium system dependencies": 0.0,
+        "Post Cache Chromium": 0.0,
+        "Post Checkout": 0.0,
+        "Post Setup Vite+": 0.0,
+        "Resolve Playwright version": 0.0,
+        "Set up job": 1.0,
+        "Set up runner": 0.0,
+        "Setup Vite+": 9.0,
+        "Test": 1.0
+      },
+      "test_step_seconds": 1.0,
+      "vcpu": 4
+    },
+    "Test Server 8": {
+      "bsv_job": {
+        "label": "\"test_server 8/8\"",
+        "mode": "select",
+        "selected": "0",
+        "server_test_cached": "false",
+        "step_seconds": "1",
+        "total": "62",
+        "vitest_runs": "1"
+      },
+      "changed": [
+        "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it"
+      ],
+      "conclusion": "success",
+      "lines": [
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-10dcbe8c4eca-8of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348325.470647,
+          "t": 1794348325.722973
+        },
+        {
+          "msg": "[blacksmith] 0 files changed since 4d2817b01d16, 0 test files not covered by it",
+          "prev_t": 1794348325.725413,
+          "t": 1794348326.064665
+        },
+        {
+          "msg": "BSV_SELECTION root=apps/server shard=8/8 mode=select selected=0 total=62",
+          "prev_t": 1794348326.089157,
+          "t": 1794348326.100441
+        },
+        {
+          "files": [],
+          "kind": "files",
+          "root": "apps/server",
+          "t": 1794348326.100482
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-10dcbe8c4eca-8of8-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (192845 bytes)",
+          "prev_t": 1794348326.100482,
+          "t": 1794348326.673662
+        },
+        {
+          "msg": "BSV_JOB label=\"test_server 8/8\" mode=select server_test_cached=false vitest_runs=1 selected=0 total=62 step_seconds=1",
+          "prev_t": 1794348326.673662,
+          "t": 1794348326.687151
+        }
+      ],
+      "restored": [
+        {
+          "key": "blacksmith-vitest-v5-10dcbe8c4eca-8of8-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.25232601165771484
+        }
+      ],
+      "saved": [
+        {
+          "bytes": 192845,
+          "seconds_after_selection_line": 0.57322096824646
+        }
+      ],
+      "seconds": 31.0,
+      "selections": [
+        {
+          "mode": "select",
+          "root": "apps/server",
+          "selected": "0",
+          "shard": "8/8",
+          "total": "62"
+        }
+      ],
+      "steps": {
+        "Cache Chromium": 1.0,
+        "Checkout": 11.0,
+        "Complete job": 0.0,
+        "Complete runner": 1.0,
+        "Detect affected jobs": 0.0,
+        "Detect transfer budget report": 0.0,
+        "Install missing Chromium system dependencies": 0.0,
+        "Post Cache Chromium": 0.0,
+        "Post Checkout": 0.0,
+        "Post Setup Vite+": 0.0,
+        "Resolve Playwright version": 0.0,
+        "Set up job": 2.0,
+        "Set up runner": 0.0,
+        "Setup Vite+": 9.0,
+        "Test": 1.0
+      },
+      "test_step_seconds": 1.0,
+      "vcpu": 4
+    },
+    "Test Web": {
+      "bsv_job": {
+        "label": "\"test_web\"",
+        "mode": "select",
+        "selected": "330",
+        "server_test_cached": "false",
+        "step_seconds": "129",
+        "total": "541",
+        "vitest_runs": "1"
+      },
+      "changed": [
+        "[blacksmith] 2 files changed since 4d2817b01d16, 193 test files not covered by it"
+      ],
+      "conclusion": "success",
+      "lines": [
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-d5581b886329-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348358.602779,
+          "t": 1794348361.4529
+        },
+        {
+          "msg": "[blacksmith] restored dependency cache blacksmith-vitest-v5-d5581b886329-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "prev_t": 1794348361.4529,
+          "t": 1794348361.455058
+        },
+        {
+          "msg": "[blacksmith] 2 files changed since 4d2817b01d16, 193 test files not covered by it",
+          "prev_t": 1794348361.466044,
+          "t": 1794348362.604744
+        },
+        {
+          "msg": "BSV_SELECTION root=apps/web shard=- mode=select selected=330 total=541",
+          "prev_t": 1794348485.693496,
+          "t": 1794348485.707966
+        },
+        {
+          "files": [
+            "apps/web/src/appearanceFonts.browser.test.ts",
+            "apps/web/src/assets/longLivedAssetUrls.test.ts",
+            "apps/web/src/authBootstrap.test.ts",
+            "apps/web/src/browser/BrowserDeviceToolbar.browser.test.tsx",
+            "apps/web/src/browser/BrowserProfileReporter.test.ts",
+            "apps/web/src/browser/ElectronBrowserHost.browser.test.tsx",
+            "apps/web/src/browser/ServerBrowserSurface.browser.test.tsx",
+            "apps/web/src/browser/browserLinkTarget.test.ts",
+            "apps/web/src/browser/browserViewportActions.test.ts",
+            "apps/web/src/browser/desktopTabLifetime.test.ts",
+            "apps/web/src/browserFaviconLogic.test.ts",
+            "apps/web/src/browserFaviconStore.test.ts",
+            "apps/web/src/browserHistoryStore.test.ts",
+            "apps/web/src/closedViewStore.test.ts",
+            "apps/web/src/cloud/linkEnvironment.test.ts",
+            "apps/web/src/cloud/managedAuth.test.ts",
+            "apps/web/src/cloud/useCloudLinkController.browser.test.tsx",
+            "apps/web/src/components/AddProjectToMachineDialog.browser.test.tsx",
+            "apps/web/src/components/AppRouteModal.browser.test.tsx",
+            "apps/web/src/components/ChatMarkdown.browser.test.tsx",
+            "apps/web/src/components/ChatMarkdown.permissions.browser.test.tsx",
+            "apps/web/src/components/ChatView.browser.test.tsx",
+            "apps/web/src/components/ChatView.logic.browser.test.ts",
+            "apps/web/src/components/ChatView.logic.test.ts",
+            "apps/web/src/components/ChatView.modelPick.browser.test.tsx",
+            "apps/web/src/components/CommandPalette.browser.test.tsx",
+            "apps/web/src/components/CommandPalette.composition.browser.test.tsx",
+            "apps/web/src/components/CommandPalette.logic.test.ts",
+            "apps/web/src/components/CommandPaletteContent.browser.test.tsx",
+            "apps/web/src/components/ComposerPromptEditorTiptap.citationDraft.browser.test.tsx",
+            "apps/web/src/components/ComposerPromptEditorTiptap.input.browser.test.tsx",
+            "apps/web/src/components/ContextChip.browser.test.tsx",
+            "apps/web/src/components/DiffFilePathCopyButton.browser.test.tsx",
+            "apps/web/src/components/DiffPanel.browser.test.tsx",
+            "apps/web/src/components/GitActionsControl.logic.test.ts",
+            "apps/web/src/components/GitHubStarPrompt.test.ts",
+            "apps/web/src/components/HistorySwipeNavigation.browser.test.tsx",
+            "apps/web/src/components/HistorySwipeNavigation.test.ts",
+            "apps/web/src/components/ProjectFavicon.browser.test.tsx",
+            "apps/web/src/components/ProviderUpdateLaunchNotification.logic.test.ts",
+            "apps/web/src/components/ProviderUpdatesAction.browser.test.tsx",
+            "apps/web/src/components/PullRequestThreadDialog.test.ts",
+            "apps/web/src/components/ReopenClosedViewShortcut.browser.test.tsx",
+            "apps/web/src/components/RightPanelTabs.test.tsx",
+            "apps/web/src/components/ServerUpdateAction.browser.test.tsx",
+            "apps/web/src/components/Sidebar.browser.test.tsx",
+            "apps/web/src/components/Sidebar.drag.browser.test.tsx",
+            "apps/web/src/components/Sidebar.drag.test.ts",
+            "apps/web/src/components/Sidebar.logic.browser.test.tsx",
+            "apps/web/src/components/Sidebar.logic.test.ts",
+            "apps/web/src/components/Sidebar.pointer.browser.test.tsx",
+            "apps/web/src/components/Sidebar.shortcuts.browser.test.tsx",
+            "apps/web/src/components/ThreadNotificationCoordinator.badge.browser.test.ts",
+            "apps/web/src/components/ThreadStatusIndicators.linkedPr.browser.test.tsx",
+            "apps/web/src/components/ThreadStatusIndicators.test.ts",
+            "apps/web/src/components/ThreadTerminalDrawer.browser.test.tsx",
+            "apps/web/src/components/ThreadTerminalDrawer.test.ts",
+            "apps/web/src/components/UsageToggleShortcut.browser.test.tsx",
+            "apps/web/src/components/WorktreeBaseBranchPicker.browser.test.tsx",
+            "apps/web/src/components/chat/AssistantCitationChip.browser.test.tsx",
+            "apps/web/src/components/chat/BackgroundWorkDetails.browser.test.tsx",
+            "apps/web/src/components/chat/ChatHeader.browser.test.tsx",
+            "apps/web/src/components/chat/ChatMarkdownMedia.browser.test.tsx",
+            "apps/web/src/components/chat/ChildThreadApprovals.browser.test.tsx",
+            "apps/web/src/components/chat/ComposerBannerStack.browser.test.tsx",
+            "apps/web/src/components/chat/ComposerCommandMenu.test.tsx",
+            "apps/web/src/components/chat/ComposerModelEffort.browser.test.tsx",
+            "apps/web/src/components/chat/ComposerPendingUserInputPanel.direction.browser.test.tsx",
+            "apps/web/src/components/chat/ComposerPendingUserInputPanel.navigation.browser.test.tsx",
+            "apps/web/src/components/chat/ComposerPermissionsSection.browser.test.tsx",
+            "apps/web/src/components/chat/ComposerStashMenu.browser.test.tsx",
+            "apps/web/src/components/chat/DiffStatLabel.test.ts",
+            "apps/web/src/components/chat/ExpandedImageDialog.browser.test.tsx",
+            "apps/web/src/components/chat/ExpandedImagePreview.test.ts",
+            "apps/web/src/components/chat/HtmlRenderFrame.browser.test.tsx",
+            "apps/web/src/components/chat/MarkdownCopy.browser.test.tsx",
+            "apps/web/src/components/chat/MarkdownExternalLink.browser.test.tsx",
+            "apps/web/src/components/chat/MarkdownMath.browser.test.tsx",
+            "apps/web/src/components/chat/MarkdownThreadLink.browser.test.tsx",
+            "apps/web/src/components/chat/MessageCopyButton.browser.test.tsx",
+            "apps/web/src/components/chat/MessagesTimeline.browser.test.tsx",
+            "apps/web/src/components/chat/MessagesTimeline.logic.test.ts",
+            "apps/web/src/components/chat/OpenInPicker.browser.test.tsx",
+            "apps/web/src/components/chat/ProviderInstanceIcon.test.ts",
+            "apps/web/src/components/chat/ProviderModelPicker.browser.test.tsx",
+            "apps/web/src/components/chat/ProviderModelPicker.composition.browser.test.tsx",
+            "apps/web/src/components/chat/ProviderStatusBanner.test.ts",
+            "apps/web/src/components/chat/QueuedRunsControl.browser.test.tsx",
+            "apps/web/src/components/chat/ThreadAutomationsPanel.permissions.browser.test.tsx",
+            "apps/web/src/components/chat/ThreadDetailsCard.browser.test.tsx",
+            "apps/web/src/components/chat/ThreadDetailsPrRow.browser.test.tsx",
+            "apps/web/src/components/chat/ThreadErrorBanner.test.tsx",
+            "apps/web/src/components/chat/ThreadRelationshipsControl.browser.test.tsx",
+            "apps/web/src/components/chat/ThreadServersPanel.browser.test.tsx",
+            "apps/web/src/components/chat/ThreadVisitWatermark.browser.test.tsx",
+            "apps/web/src/components/chat/UsageLimitRecoveryBanner.test.tsx",
+            "apps/web/src/components/chat/WorktreeSetupCard.browser.test.tsx",
+            "apps/web/src/components/chat/citationProcedure.test.ts",
+            "apps/web/src/components/chat/composerAttachmentFiles.test.ts",
+            "apps/web/src/components/chat/composerAttachmentReferences.test.ts",
+            "apps/web/src/components/chat/composerProviderState.test.tsx",
+            "apps/web/src/components/chat/composerThreadImport.test.ts",
+            "apps/web/src/components/chat/folderDrop.test.ts",
+            "apps/web/src/components/chat/optimisticUserMessages.test.ts",
+            "apps/web/src/components/chat/queuedMessageEdit.test.ts",
+            "apps/web/src/components/chat/threadContextDrag.browser.test.tsx",
+            "apps/web/src/components/chat/threadFindHighlights.browser.test.tsx",
+            "apps/web/src/components/chat/timelineMinimapWheel.browser.test.ts",
+            "apps/web/src/components/chat/timelineViewport.browser.test.tsx",
+            "apps/web/src/components/chat/timelineViewport.test.ts",
+            "apps/web/src/components/chat/useChatShortcuts.browser.test.tsx",
+            "apps/web/src/components/chat/useComposerContextImport.browser.test.tsx",
+            "apps/web/src/components/chat/useComposerMultilinePrompt.browser.test.tsx",
+            "apps/web/src/components/chat/useComposerResume.browser.test.tsx",
+            "apps/web/src/components/chat/usePromptSuggestion.test.ts",
+            "apps/web/src/components/chat/useQueuedRunEdit.browser.test.tsx",
+            "apps/web/src/components/chat/useThreadLifecycle.browser.test.tsx",
+            "apps/web/src/components/clerk/clerkAppearance.test.ts",
+            "apps/web/src/components/composerContextPresentation.test.ts",
+            "apps/web/src/components/composerInlineTokenPaste.test.ts",
+            "apps/web/src/components/desktop/DesktopWebLinkCoordinator.browser.test.tsx",
+            "apps/web/src/components/desktop/SnapShotCoordinator.browser.test.ts",
+            "apps/web/src/components/desktop/SshPasswordPromptDialog.browser.test.tsx",
+            "apps/web/src/components/device/DevicePanel.browser.test.tsx",
+            "apps/web/src/components/device/DeviceSetup.test.ts",
+            "apps/web/src/components/device/DeviceStreamView.browser.test.tsx",
+            "apps/web/src/components/device/DeviceToolsPanel.browser.test.tsx",
+            "apps/web/src/components/device/useDeviceControls.browser.test.tsx",
+            "apps/web/src/components/diffs/AnnotatableCodeView.browser.test.tsx",
+            "apps/web/src/components/diffs/DiffFileLoadingBoundary.browser.test.tsx",
+            "apps/web/src/components/diffs/codeViewContextExpansion.browser.test.ts",
+            "apps/web/src/components/diffs/codeViewSearch.browser.test.ts",
+            "apps/web/src/components/diffs/useReviewFilePatches.browser.test.tsx",
+            "apps/web/src/components/files/AttachmentFilePreview.browser.test.tsx",
+            "apps/web/src/components/files/BrowserDocumentFrame.browser.test.tsx",
+            "apps/web/src/components/files/FileBrowserPanel.browser.test.tsx",
+            "apps/web/src/components/files/FileExplorerPane.browser.test.tsx",
+            "apps/web/src/components/files/FilePreviewPanel.browser.test.tsx",
+            "apps/web/src/components/files/PdfViewer.browser.test.tsx",
+            "apps/web/src/components/files/fileEditorDismissal.browser.test.tsx",
+            "apps/web/src/components/files/fileSaveSessions.browser.test.tsx",
+            "apps/web/src/components/files/fileSaveSessions.test.ts",
+            "apps/web/src/components/files/projectFilesQueryState.test.ts",
+            "apps/web/src/components/files/projectFilesQueryState.test.tsx",
+            "apps/web/src/components/files/useDirectoryEntries.browser.test.tsx",
+            "apps/web/src/components/guest/GuestPage.browser.test.tsx",
+            "apps/web/src/components/guest/guestStream.logic.test.ts",
+            "apps/web/src/components/media/AttachmentImage.browser.test.tsx",
+            "apps/web/src/components/media/MediaActions.test.tsx",
+            "apps/web/src/components/media/MediaVideoPlayer.browser.test.tsx",
+            "apps/web/src/components/onboarding/WelcomePage.import.browser.test.tsx",
+            "apps/web/src/components/permissions/usePermissionStatus.browser.test.tsx",
+            "apps/web/src/components/preview/PreviewPanelShell.browser.test.tsx",
+            "apps/web/src/components/preview/PreviewView.browser.test.tsx",
+            "apps/web/src/components/preview/agentOpenedPreviews.test.ts",
+            "apps/web/src/components/preview/closePreviewSession.test.ts",
+            "apps/web/src/components/preview/openPreviewSession.test.ts",
+            "apps/web/src/components/preview/openTerminalLinkInPreview.test.ts",
+            "apps/web/src/components/preview/previewSessionSync.browser.test.ts",
+            "apps/web/src/components/preview/useDiscoveredLocalServers.test.ts",
+            "apps/web/src/components/preview/usePreviewBridge.test.ts",
+            "apps/web/src/components/projectScriptEditor.browser.test.tsx",
+            "apps/web/src/components/pullRequest/LinkPullRequestDialog.browser.test.tsx",
+            "apps/web/src/components/pullRequest/PullRequestActionsMenu.browser.test.tsx",
+            "apps/web/src/components/pullRequest/PullRequestCodeTab.browser.test.tsx",
+            "apps/web/src/components/pullRequest/PullRequestDetailPanel.permissions.browser.test.tsx",
+            "apps/web/src/components/pullRequest/PullRequestGuideTab.browser.test.tsx",
+            "apps/web/src/components/pullRequest/PullRequestLinkPreview.browser.test.tsx",
+            "apps/web/src/components/pullRequest/PullRequestMarkdown.browser.test.tsx",
+            "apps/web/src/components/pullRequest/PullRequestMarkdownEditor.browser.test.tsx",
+            "apps/web/src/components/pullRequest/PullRequestReviewForm.browser.test.tsx",
+            "apps/web/src/components/pullRequest/PullRequestStackMenu.browser.test.tsx",
+            "apps/web/src/components/pullRequest/PullRequestSummaryTab.browser.test.tsx",
+            "apps/web/src/components/pullRequest/PullRequestTimelineTab.browser.test.tsx",
+            "apps/web/src/components/pullRequest/filesViewedStore.test.ts",
+            "apps/web/src/components/pullRequest/guide/PullRequestGuideRunCoordinator.test.ts",
+            "apps/web/src/components/pullRequest/guide/useGuideDiffFiles.browser.test.tsx",
+            "apps/web/src/components/pullRequest/useInlineActionConfirm.browser.test.tsx",
+            "apps/web/src/components/pullRequest/usePullRequestActions.browser.test.tsx",
+            "apps/web/src/components/pullRequest/usePullRequestIntentPrefetch.browser.test.tsx",
+            "apps/web/src/components/search/ProjectContentSearchDialog.composition.browser.test.tsx",
+            "apps/web/src/components/settings/AboutVersionTitle.browser.test.tsx",
+            "apps/web/src/components/settings/AcpRegistryIcon.test.ts",
+            "apps/web/src/components/settings/AcpRegistrySearchStep.browser.test.tsx",
+            "apps/web/src/components/settings/AcpSessionManagementSection.browser.test.tsx",
+            "apps/web/src/components/settings/AddCodexAccountDialog.browser.test.tsx",
+            "apps/web/src/components/settings/AddEnvironmentDialog.browser.test.tsx",
+            "apps/web/src/components/settings/AddProviderInstanceDialog.environment.browser.test.tsx",
+            "apps/web/src/components/settings/AuthorizedClientsSettings.browser.test.tsx",
+            "apps/web/src/components/settings/CaptureShortcutConfig.browser.test.tsx",
+            "apps/web/src/components/settings/CliCommandSettingsRow.browser.test.tsx",
+            "apps/web/src/components/settings/CloudVoiceConfiguration.browser.test.tsx",
+            "apps/web/src/components/settings/EnvironmentIconPicker.test.ts",
+            "apps/web/src/components/settings/EnvironmentRoutesList.browser.test.tsx",
+            "apps/web/src/components/settings/IntegrationsSettings.logic.test.ts",
+            "apps/web/src/components/settings/KeybindingsSettings.browser.test.tsx",
+            "apps/web/src/components/settings/KeybindingsSettings.logic.test.ts",
+            "apps/web/src/components/settings/ProjectSettingsPanel.browser.test.tsx",
+            "apps/web/src/components/settings/ProjectSettingsPanel.logic.test.ts",
+            "apps/web/src/components/settings/ProviderInstanceCard.environment.browser.test.tsx",
+            "apps/web/src/components/settings/ProviderInstanceCard.test.ts",
+            "apps/web/src/components/settings/ProviderSettingsForm.test.ts",
+            "apps/web/src/components/settings/ProviderSettingsPanel.environment.browser.test.tsx",
+            "apps/web/src/components/settings/ProviderSetupSection.browser.test.tsx",
+            "apps/web/src/components/settings/ScheduledTasksSettings.browser.test.tsx",
+            "apps/web/src/components/settings/SecretInput.browser.test.tsx",
+            "apps/web/src/components/settings/SecretSourceInput.browser.test.tsx",
+            "apps/web/src/components/settings/SecretsSettings.logic.test.ts",
+            "apps/web/src/components/settings/SettingInheritance.test.ts",
+            "apps/web/src/components/settings/SettingsSidebarNav.composition.browser.test.tsx",
+            "apps/web/src/components/settings/SourceControlWritingSettings.browser.test.tsx",
+            "apps/web/src/components/settings/StorageSettings.browser.test.tsx",
+            "apps/web/src/components/settings/TelemetryExportSettings.browser.test.tsx",
+            "apps/web/src/components/settings/ThemeEditorPanel.browser.test.tsx",
+            "apps/web/src/components/settings/ThemeImportDialog.browser.test.tsx",
+            "apps/web/src/components/settings/ThemeSearchSection.test.ts",
+            "apps/web/src/components/settings/TypographySettings.browser.test.tsx",
+            "apps/web/src/components/settings/VoiceSettingsPanel.browser.test.tsx",
+            "apps/web/src/components/settings/colorPickers.browser.test.tsx",
+            "apps/web/src/components/settings/settingsSearch.test.ts",
+            "apps/web/src/components/settings/useHostConnectionChecks.browser.test.tsx",
+            "apps/web/src/components/settings/useProjectScriptSettings.browser.test.tsx",
+            "apps/web/src/components/settings/useSnapShotShortcutRecorder.browser.test.tsx",
+            "apps/web/src/components/sidebar/SidebarDraftBlock.browser.test.tsx",
+            "apps/web/src/components/sidebar/SidebarProviderUpdatePill.browser.test.tsx",
+            "apps/web/src/components/sidebar/SidebarUpdatePill.browser.test.tsx",
+            "apps/web/src/components/sidebar/mainAppLocation.browser.test.tsx",
+            "apps/web/src/components/sidebar/routeReveal.browser.test.tsx",
+            "apps/web/src/components/sidebar/updateEverythingRun.test.ts",
+            "apps/web/src/components/ui/middle-truncate.browser.test.tsx",
+            "apps/web/src/components/ui/middle-truncate.test.ts",
+            "apps/web/src/components/ui/sidebar.browser.test.tsx",
+            "apps/web/src/components/ui/toast.browser.test.tsx",
+            "apps/web/src/components/usage/UsageLimitsPooled.browser.test.tsx",
+            "apps/web/src/components/usage/UsageProviderChart.test.ts",
+            "apps/web/src/composer-list-split.browser.test.ts",
+            "apps/web/src/composer-logic.test.ts",
+            "apps/web/src/composerDraftStore.test.ts",
+            "apps/web/src/connection/platform.test.ts",
+            "apps/web/src/connection/runtime.browser.test.ts",
+            "apps/web/src/connection/storage.browser.test.ts",
+            "apps/web/src/connection/storage.test.ts",
+            "apps/web/src/contextMenuFallback.keyboard.browser.test.ts",
+            "apps/web/src/diffFileActions.test.ts",
+            "apps/web/src/editorPreferences.test.ts",
+            "apps/web/src/environmentGrouping.test.ts",
+            "apps/web/src/environments/primary/bootstrap.test.ts",
+            "apps/web/src/fileContextMenu.test.ts",
+            "apps/web/src/hooks/showThreadUndoNotice.test.ts",
+            "apps/web/src/hooks/useCommitOnBlur.browser.test.tsx",
+            "apps/web/src/hooks/useDeadline.browser.test.tsx",
+            "apps/web/src/hooks/useDefaultTheme.test.ts",
+            "apps/web/src/hooks/useEnvironmentDisconnectDelay.browser.test.tsx",
+            "apps/web/src/hooks/useLegendListRef.browser.test.tsx",
+            "apps/web/src/hooks/useLiveRefresh.browser.test.tsx",
+            "apps/web/src/hooks/useResizableWidth.browser.test.tsx",
+            "apps/web/src/hooks/useRightPanelSurfaceClose.browser.test.tsx",
+            "apps/web/src/hooks/useScratchProject.test.ts",
+            "apps/web/src/hooks/useSettings.favorites.browser.test.tsx",
+            "apps/web/src/hooks/useSettings.test.ts",
+            "apps/web/src/hooks/useStableCallback.browser.test.tsx",
+            "apps/web/src/hooks/useThreadActionMenu.test.ts",
+            "apps/web/src/hooks/useThreadActions.permissions.test.ts",
+            "apps/web/src/hooks/useThreadActions.test.ts",
+            "apps/web/src/hooks/useThreadActions.undo.test.ts",
+            "apps/web/src/hooks/useThreadVisitedMigration.test.ts",
+            "apps/web/src/lib/announce.browser.test.ts",
+            "apps/web/src/lib/assistantCitationNavigation.test.ts",
+            "apps/web/src/lib/attachmentUploadQueue.test.ts",
+            "apps/web/src/lib/backgroundActivityReporter.test.ts",
+            "apps/web/src/lib/contextWindow.test.ts",
+            "apps/web/src/lib/discardComposerDraft.test.ts",
+            "apps/web/src/lib/documentActivity.browser.test.ts",
+            "apps/web/src/lib/imageCompression.test.ts",
+            "apps/web/src/lib/openPullRequestLink.browser.test.tsx",
+            "apps/web/src/lib/projectPaths.test.ts",
+            "apps/web/src/lib/resourceTelemetryState.browser.test.tsx",
+            "apps/web/src/lib/revealThreadTerminal.test.ts",
+            "apps/web/src/lib/runtime.test.ts",
+            "apps/web/src/lib/sidebarTree.browser.test.ts",
+            "apps/web/src/lib/snapShotShortcut.test.ts",
+            "apps/web/src/lib/terminalFocus.browser.test.ts",
+            "apps/web/src/lib/terminalFocus.test.ts",
+            "apps/web/src/lib/threadContextAttachment.test.ts",
+            "apps/web/src/lib/utils.test.ts",
+            "apps/web/src/lib/workspaceFocus.browser.test.ts",
+            "apps/web/src/markdown-links.test.ts",
+            "apps/web/src/modelSelection.test.ts",
+            "apps/web/src/onboarding/projectImport.logic.test.ts",
+            "apps/web/src/openVsxThemes.test.ts",
+            "apps/web/src/portDiscoveryState.test.ts",
+            "apps/web/src/promptStashStore.test.ts",
+            "apps/web/src/providerSkillSearch.test.ts",
+            "apps/web/src/questionAttachments.test.ts",
+            "apps/web/src/remoteOpen.test.ts",
+            "apps/web/src/reopenClosedView.test.ts",
+            "apps/web/src/rightPanelStore.test.ts",
+            "apps/web/src/session-logic.test.ts",
+            "apps/web/src/shortcutModifierState.browser.test.ts",
+            "apps/web/src/shortcuts/chatRouteCommands.browser.test.ts",
+            "apps/web/src/shortcuts/chatRouteCommands.test.ts",
+            "apps/web/src/shortcuts/commandPaletteCommands.browser.test.tsx",
+            "apps/web/src/shortcuts/dispatcher.browser.test.ts",
+            "apps/web/src/speech/browserPcmCapture.browser.test.ts",
+            "apps/web/src/speech/useDictationShortcut.browser.test.tsx",
+            "apps/web/src/speech/useEnvironmentSpeechInput.browser.test.tsx",
+            "apps/web/src/state/device.browser.test.tsx",
+            "apps/web/src/state/entities.relationshipShells.test.ts",
+            "apps/web/src/state/managedPolicy.test.ts",
+            "apps/web/src/state/olderSettledShelf.browser.test.tsx",
+            "apps/web/src/state/primaryEnvironment.test.ts",
+            "apps/web/src/state/pullRequests.test.ts",
+            "apps/web/src/state/queries.filesystem.test.ts",
+            "apps/web/src/state/revisionedQuery.browser.test.tsx",
+            "apps/web/src/state/server.test.ts",
+            "apps/web/src/state/shell.test.ts",
+            "apps/web/src/state/sourceControlActions.test.ts",
+            "apps/web/src/state/terminalSessions.test.ts",
+            "apps/web/src/state/threads.test.ts",
+            "apps/web/src/terminal-links.test.ts",
+            "apps/web/src/terminal/ghostty/core.test.ts",
+            "apps/web/src/terminal/ghostty/surface.test.ts",
+            "apps/web/src/textGenerators.test.ts",
+            "apps/web/src/themeBoot.test.ts",
+            "apps/web/src/themePalette.browser.test.ts",
+            "apps/web/src/themePalette.test.ts",
+            "apps/web/src/threadRoutes.test.ts",
+            "apps/web/src/uiStateStore.test.ts",
+            "apps/web/src/vscodeThemeImport.test.ts",
+            "apps/web/src/worktreeCleanup.test.ts"
+          ],
+          "kind": "files",
+          "root": "apps/web",
+          "t": 1794348485.715002
+        },
+        {
+          "msg": "[blacksmith] saved dependency cache blacksmith-vitest-v5-d5581b886329-1of1-cf7d906e9986fe5021fd6c1d9c2ee9e321eb7817 (116282 bytes)",
+          "prev_t": 1794348485.715002,
+          "t": 1794348486.602898
+        },
+        {
+          "msg": "BSV_JOB label=\"test_web\" mode=select server_test_cached=false vitest_runs=1 selected=330 total=541 step_seconds=129",
+          "prev_t": 1794348486.99388,
+          "t": 1794348487.012218
+        }
+      ],
+      "restored": [
+        {
+          "key": "blacksmith-vitest-v5-d5581b886329-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 2.850121021270752
+        },
+        {
+          "key": "blacksmith-vitest-v5-d5581b886329-1of1-4d2817b01d1694b934fba089ff67f96d2ea179c2",
+          "seconds_after_previous_line": 0.0021581649780273438
+        }
+      ],
+      "saved": [
+        {
+          "bytes": 116282,
+          "seconds_after_selection_line": 0.8949317932128906
+        }
+      ],
+      "seconds": 173.0,
+      "selections": [
+        {
+          "mode": "select",
+          "root": "apps/web",
+          "selected": "330",
+          "shard": "-",
+          "total": "541"
+        }
+      ],
+      "steps": {
+        "Cache Chromium": 1.0,
+        "Checkout": 12.0,
+        "Complete job": 0.0,
+        "Complete runner": 0.0,
+        "Install missing Chromium system dependencies": 1.0,
+        "Post Cache Chromium": 0.0,
+        "Post Checkout": 0.0,
+        "Post Setup Vite+": 0.0,
+        "Resolve Playwright version": 0.0,
+        "Set up job": 1.0,
+        "Set up runner": 0.0,
+        "Setup Vite+": 23.0,
+        "Test": 129.0
+      },
+      "test_step_seconds": 129.0,
+      "vcpu": 8
+    }
+  },
+  "label": "r07-a",
+  "run_id": 42911151632,
+  "task_cache": {},
+  "url": "https://github.com/uuid-rocks/t3code/actions/runs/42911151632",
+  "wall_seconds": 214.0
+}
