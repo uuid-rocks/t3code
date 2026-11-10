@@ -3,6 +3,7 @@ import { defineConfig } from "vite-plus";
 import * as NodeURL from "node:url";
 import { remoteCacheUrl } from "./infra/task-cache/src/remoteCache.ts";
 import { cachedTestTasks } from "./scripts/lib/cached-tests.ts";
+import { testSelectionPlugins } from "./vitest-selection.ts";
 
 const TEST_EXCLUDE = [
   "**/.repos/**",
@@ -86,6 +87,7 @@ const taskCacheConfig = {
 };
 
 export default defineConfig({
+  plugins: testSelectionPlugins(),
   run: {
     cache: taskCacheConfig,
     tasks: {

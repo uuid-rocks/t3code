@@ -404,6 +404,9 @@ importers:
       '@types/node':
         specifier: 24.12.4
         version: 24.12.4
+      '@useblacksmith/vitest':
+        specifier: 0.4.0
+        version: 0.4.0(vitest@5.1.0)
       knip:
         specifier: 6.34.0
         version: 6.34.0
@@ -6981,6 +6984,11 @@ packages:
 
   '@ungap/structured-clone@1.3.1':
     resolution: {integrity: sha512-mUFwbeTqrVgDQxFveS+df2yfap6iuP20NAKAsBt5jDEoOTDew+zwLAOilHCeQJOVSvmgCX4ogqIrA0mnyr08yQ==}
+
+  '@useblacksmith/vitest@0.4.0':
+    resolution: {integrity: sha512-ZmlHN5dTqk1k9XYpWtDFLp9jF3exaVA7qr9YEAbz8ivTRg5RY5SsOL9oDQh8ja10Q40AaeK5yNiZBk2faJGPZw==}
+    peerDependencies:
+      vitest: '>=5.1.0'
 
   '@vercel/config@0.3.0':
     resolution: {integrity: sha512-Tf5k5y2F478oTiQcU5R8Ntix1UejE6NdduZnI7aa1XXxjCtifX1XdRS/D2uTjiQAwIL3pLa1LSAN80ABbba+TQ==}
@@ -16465,6 +16473,11 @@ snapshots:
       '@types/node': 24.12.4
 
   '@ungap/structured-clone@1.3.1': {}
+
+  '@useblacksmith/vitest@0.4.0(vitest@5.1.0)':
+    dependencies:
+      picomatch: 4.0.7
+      vitest: 5.1.0(@types/node@24.12.4)(@vitest/browser-playwright@5.1.0)(@vitest/browser-preview@5.1.0)(@vitest/ui@5.1.0)(@voidzero-dev/vite-plus-core@1.5.1(@types/node@24.12.4)(@volar/typescript@2.4.28(typescript@6.0.3))(esbuild@0.28.2)(jiti@2.7.0)(terser@5.48.0)(typescript@6.0.3)(unrun@0.2.39)(yaml@2.9.0))(@volar/typescript@2.4.28(typescript@6.0.3))(esbuild@0.28.2)(jiti@2.7.0)(jsdom@30.1.0(@noble/hashes@1.8.0))(terser@5.48.0)(typescript@6.0.3)(unrun@0.2.39)(yaml@2.9.0)
 
   '@vercel/config@0.3.0':
     dependencies:

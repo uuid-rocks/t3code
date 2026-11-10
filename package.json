@@ -64,6 +64,7 @@
     "@effect/tsgo": "0.67.1",
     "@shadcn/lint": "0.1.5",
     "@types/node": "catalog:",
+    "@useblacksmith/vitest": "0.4.0",
     "knip": "6.34.0",
     "vite-plus": "catalog:"
   },
