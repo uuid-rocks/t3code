@@ -14,6 +14,15 @@ concurrency:
   group: ci-${{ github.event.pull_request.number || github.sha }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
+# Experiment switches; see bsv/README-experiment.md.
+env:
+  # @useblacksmith/vitest mode: off, select, shadow or all (vitest-selection.ts).
+  BSV_MODE: select
+  # "true" runs every test job and package whatever `changes` decides.
+  BSV_BYPASS_CHANGES: "true"
+  # "true" runs apps/server through scripts/test-cached.ts with the plugin off.
+  BSV_SERVER_TEST_CACHED: "false"
+
 jobs:
   # Skips jobs a pull request cannot affect: a web change does not run the
   # server shards, a server change does not run the mobile tests.
@@ -121,6 +130,7 @@ jobs:
         env:
           TEST_PACKAGES: ${{ needs.changes.outputs.test_packages }}
         run: |
+          trap 'bash "$GITHUB_WORKSPACE/.github/scripts/bsv-report.sh" test "$SECONDS"' EXIT
           set -o pipefail
           filters=(--filter '!t3' --filter '!@t3tools/monorepo' --filter '!@t3tools/web')
           if [[ -n "$TEST_PACKAGES" ]]; then
@@ -187,7 +197,9 @@ jobs:
           fi
 
       - name: Test
-        run: vp run --filter @t3tools/web test
+        run: |
+          trap 'bash "$GITHUB_WORKSPACE/.github/scripts/bsv-report.sh" test_web "$SECONDS"' EXIT
+          vp run --filter @t3tools/web test
 
   # apps/server sets `fileParallelism: false`, so its test files run strictly
   # one at a time. Sharding spreads them over separate runners instead of
@@ -267,13 +279,19 @@ jobs:
         env:
           T3CODE_TRANSFER_BUDGET_REPORT_PATH: ${{ runner.temp }}/t3code-transfer-budget.md
           T3CODE_TRANSFER_BUDGET_RESULT_PATH: ${{ runner.temp }}/thread-transfer-result.json
-        run: >-
-          vp run test:cached -- --shard ${{ matrix.shard }}/${{ strategy.job-total }}
-          --uncached apps/server/integration/transferBudgetV2.integration.test.ts
-          --verify-hits 1 --report "${{ runner.temp }}/test-cache-${{ matrix.shard }}.json" apps/server
+          SHARD: ${{ matrix.shard }}/${{ strategy.job-total }}
+        run: |
+          trap 'bash "$GITHUB_WORKSPACE/.github/scripts/bsv-report.sh" "test_server $SHARD" "$SECONDS"' EXIT
+          if [[ "$BSV_SERVER_TEST_CACHED" == true ]]; then
+            BSV_MODE=off vp run test:cached -- --shard "$SHARD" \
+              --uncached apps/server/integration/transferBudgetV2.integration.test.ts \
+              --verify-hits 1 --report "${{ runner.temp }}/test-cache-${{ matrix.shard }}.json" apps/server
+          else
+            cd apps/server && vp test run --shard "$SHARD"
+          fi
 
       - name: Upload test cache measurements
-        if: always() && steps.changes.outputs.test_server != 'false'
+        if: always() && steps.changes.outputs.test_server != 'false' && env.BSV_SERVER_TEST_CACHED == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: test-cache-${{ matrix.shard }}
@@ -336,9 +354,9 @@ jobs:
                 or (.value.result == "skipped" and $gates[.key] == "false"))' > /dev/null
 
       # thread-transfer-report.yml reads this artifact after CI, so a run whose
-      # server tests ran must have produced it.
+      # server tests ran must have produced it. Plugin selection may skip the test.
       - name: Require transfer measurements
-        if: needs.test_server.result == 'success' && needs.changes.outputs.test_server != 'false'
+        if: needs.test_server.result == 'success' && needs.changes.outputs.test_server != 'false' && (env.BSV_SERVER_TEST_CACHED == 'true' || env.BSV_MODE != 'select')
         uses: actions/download-artifact@v8
         with:
           name: thread-transfer-results
