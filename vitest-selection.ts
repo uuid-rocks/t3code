@@ -85,6 +85,7 @@ const dependencies = {
     "../../package.json",
     "../../tsconfig.base.json",
     "../../packages/*/package.json",
+    "../*/package.json",
   ],
 };
 
