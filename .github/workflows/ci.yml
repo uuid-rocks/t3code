@@ -20,10 +20,10 @@ jobs:
         working-directory: packages/shared
         env:
           BSV_MODE: select
-        run: vp test run --config ../../vite.config.ts --dir . --exclude "**/nodeSqliteClient.test.ts" --maxWorkers 2
+        run: vp test run --config bsv-ci.config.ts --dir . --exclude "**/nodeSqliteClient.test.ts" --maxWorkers 2
       - name: Select ACP tests
         if: always() && !cancelled()
         working-directory: packages/effect-acp
         env:
           BSV_MODE: select
-        run: vp test run --config ../../vite.config.ts --dir . --maxWorkers 2
+        run: vp test run --config bsv-ci.config.ts --dir . --maxWorkers 2
