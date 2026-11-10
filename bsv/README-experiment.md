@@ -10,12 +10,24 @@ push to the fork's `main`.
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `bsv/main`            | PR base for every experiment. `ci.yml` keeps only `changes`, `test`, `test_web`, `test_server` and `check`, and runs on pushes to `bsv/main` so a merge seeds the plugin cache the way a push to `main` would. |
 | `bsv/vite-plus-1.5.1` | vite-plus 1.4.0 → 1.5.1 (Vitest 5.1.0), merged as PR #6.                                                                                                                                                       |
-| `bsv/plugin`          | Plugin wiring (`vitest-selection.ts`, config imports, CI switches, this file).                                                                                                                                 |
+| `bsv/plugin`          | Plugin wiring (`vitest-selection.ts`, config imports, CI switches, this file), merged as PR #8.                                                                                                                |
+| `bsv/probe-noop`      | Throwaway: README-only change (PR #10, closed).                                                                                                                                                                |
+| `bsv/probe-leaf`      | Throwaway: comment appended to `packages/client-runtime/src/delayedStatus.ts` (PR #11, closed).                                                                                                                |
 
 Experiments: branch off `bsv/main`, open a PR with
-`gh pr create -R uuid-rocks/t3code --base bsv/main`. A PR run can restore cache
-entries saved by pushes to `bsv/main` and by earlier runs of the same PR, never
-those of other PRs.
+`gh pr create -R uuid-rocks/t3code --base bsv/main`. `bsv/main` merges PRs with
+`gh pr merge -R uuid-rocks/t3code --merge`; each push to it runs CI in the
+current mode and saves cache entries under the pushed SHA.
+
+**Cache entries are not scoped by branch.** The plugin restores the newest entry
+under a key prefix (`blacksmith-vitest-v5-<root/projects hash>-<shard>-`), and on
+Blacksmith that lookup returns entries saved by any run in the repository, other
+PRs included. Seen in this repo: the push run on `bsv/main` restored PR #8's
+entries, and the no-op PR #10 restored entries the leaf PR #11 had saved a minute
+earlier, so it reran `delayedStatus.test.ts`. With several experiment PRs running
+at once, each run's baseline is whichever run saved last. The key's last segment
+is the head SHA the entry was saved at; check `restored dependency cache …-<sha>`
+in the log to see which run a selection was computed against.
 
 ## What is wired
 
@@ -201,13 +213,31 @@ record.
 - **apps/mobile is CommonJS.** Vite bundles its config to CJS, and interop wraps
   the ESM-only plugin's default export a second time (`default is not a
   function`). `vitest-selection.ts` unwraps it.
-- **Browser projects.** The plugin does not install `record-reads` in browser
-  projects. Expect `apps/web` browser/renders files to be selected on every run
-  until shown otherwise (review finding, unverified here).
+- **Browser projects always rerun.** Vitest records no dependencies for browser
+  tests, so the plugin treats them as uncovered: every select run logs
+  `193 test files not covered by it` for `apps/web` and runs all 193
+  browser/renders files (Test Web ≈ 50 s of its ≈ 55 s Test step).
 - **Transfer budget artifact.** `check` requires the `thread-transfer-results`
   artifact only when the transfer test is guaranteed to run (`BSV_MODE` is not
   `select`, or `test:cached` is on).
 - **`[skip ci]`** in a commit message suppresses push and PR runs for that head.
-- **Baseline before the plugin** (PR #6, run 42895681295, vite-plus 1.5.1,
-  test:cached + changes, all jobs ran): Test 125 s, Test Web 87 s, Test Server
-  105–145 s (Test step); jobs 125–190 s; run 217 s.
+
+## Reference runs
+
+Test step seconds (job seconds). All jobs ran in every run.
+
+| run                                                                          | what                                                             | Test      | Test Web | Test Server 1–8   | run wall |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------- | -------- | ----------------- | -------- |
+| [42895681295](https://github.com/uuid-rocks/t3code/actions/runs/42895681295) | PR #6: vite-plus 1.5.1, no plugin, test:cached + changes         | 125 (161) | 87 (125) | 105–145 (153–190) | 217      |
+| [42897551222](https://github.com/uuid-rocks/t3code/actions/runs/42897551222) | PR #8: shadow, empty cache (records everything; cold-cache cost) | 102 (134) | 80 (106) | 58–123 (87–151)   | 176      |
+| [42898138694](https://github.com/uuid-rocks/t3code/actions/runs/42898138694) | PR #8: select, cache from the shadow run                         | 11 (42)   | 58 (85)  | 1–2 (28–30)       | 126      |
+| [42898763432](https://github.com/uuid-rocks/t3code/actions/runs/42898763432) | push to `bsv/main` after merging #8: select                      | 14 (68)   | 54 (80)  | 2 (27–37)         | 123      |
+| [42899706908](https://github.com/uuid-rocks/t3code/actions/runs/42899706908) | PR #10 no-op README change: select                               | 11 (49)   | 47 (73)  | 1–2 (27–32)       | 115      |
+| [42899712142](https://github.com/uuid-rocks/t3code/actions/runs/42899712142) | PR #11 leaf change: select                                       | 11 (41)   | 52 (79)  | 1–2 (26–32)       | 121      |
+
+The shadow run is the cold-cache measurement: no entry existed, every test ran
+with dependency recording on, and it saved the first entries. The first select
+run on `bsv/main` was not cold, because it restored PR #8's entries (see above).
+Selection: no-op PR selected 0 of 983 in Test (plus 1 from the leaf PR's entry),
+0 in every server shard, 193 of 541 in Test Web; leaf PR selected exactly
+`src/delayedStatus.test.ts` (client-runtime 1 of 156), 0 in every server shard.
