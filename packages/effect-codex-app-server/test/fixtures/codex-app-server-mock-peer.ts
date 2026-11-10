@@ -1,4 +1,3 @@
-process.exit(1);
 import * as NodeOS from "node:os";
 
 let nextServerRequestId = 10_000;
