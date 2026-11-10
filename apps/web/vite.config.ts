@@ -22,6 +22,7 @@ import { loadRepoEnv } from "../../scripts/lib/public-config";
 import { thirdPartyLicensesPlugin } from "../../scripts/lib/third-party-licenses";
 import { tailwindPlugins } from "./vite/tailwind";
 import { warmBundledDevPlugin } from "./vite/warmBundledDev";
+import { testSelectionPlugins } from "../../vitest-selection";
 
 const repoEnv = loadRepoEnv();
 Object.assign(process.env, repoEnv);
@@ -283,6 +284,7 @@ export default defineConfig(() => {
       react({ compiler: true }),
       tailwindPlugins(bundledDev),
       warmBundledDevPlugin(),
+      ...testSelectionPlugins(),
     ],
     optimizeDeps: {
       include: [

@@ -56,6 +56,10 @@ runs:
           # main keeps a full run as the backstop for anything the gate misses.
           mode=(--full)
         fi
+        if [[ "${BSV_BYPASS_CHANGES:-}" == true ]]; then
+          echo "BSV_BYPASS_CHANGES is set. Running every job."
+          mode=(--full)
+        fi
 
         # --no-renames lists a rename as its old and new path: renaming a file out
         # of a package changes that package just like editing it. It also keeps
