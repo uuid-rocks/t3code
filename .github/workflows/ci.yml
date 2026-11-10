@@ -14,16 +14,16 @@ jobs:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup-ci-deps
         with:
-          install-args: --filter @t3tools/shared... --filter @t3tools/effect-acp...
+          install-args: --filter @t3tools/shared... --filter effect-acp...
           save-pnpm-store: "false"
       - name: Select shared tests
         working-directory: packages/shared
         env:
           BSV_MODE: select
-        run: vp test run --config ../../vite.config.ts --dir . --exclude "**/nodeSqliteClient.test.ts" --maxWorkers 2
+        run: vp test run --config bsv-ci.config.ts --dir . --exclude "**/nodeSqliteClient.test.ts" --maxWorkers 2
       - name: Select ACP tests
         if: always() && !cancelled()
         working-directory: packages/effect-acp
         env:
           BSV_MODE: select
-        run: vp test run --config ../../vite.config.ts --dir . --maxWorkers 2
+        run: vp test run --config bsv-ci.config.ts --dir . --maxWorkers 2

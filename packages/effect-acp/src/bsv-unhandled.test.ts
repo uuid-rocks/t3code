@@ -1,7 +1,7 @@
 import { setImmediate } from "node:timers/promises";
 import { expect, it } from "vite-plus/test";
 
-const unhandled = false;
+const unhandled = true;
 it("reports an unhandled error after a passing assertion", async () => {
   expect(true).toBe(true);
   if (unhandled) {
