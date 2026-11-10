@@ -110,6 +110,7 @@ export default defineConfig({
     environment: "node",
     // Fixture subprocesses must not inherit the outer task runner’s cache policy.
     env: { VP_REMOTE_CACHE: "off", VP_REMOTE_CACHE_URL: "" },
+    include: ["nomatch/**/*.test.ts"],
     exclude: TEST_EXCLUDE,
     hookTimeout: 60_000,
     testTimeout: 60_000,
