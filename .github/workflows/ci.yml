@@ -27,3 +27,15 @@ jobs:
         env:
           BSV_MODE: select
         run: vp test run --config bsv-ci.config.ts --dir . --maxWorkers 2
+      - name: Force shared positive control
+        if: always() && !cancelled()
+        working-directory: packages/shared
+        env:
+          BSV_MODE: all
+        run: vp test run --config bsv-ci.config.ts bsv-lifecycle.test.ts --maxWorkers 2
+      - name: Force ACP positive control
+        if: always() && !cancelled()
+        working-directory: packages/effect-acp
+        env:
+          BSV_MODE: all
+        run: vp test run --config bsv-ci.config.ts bsv-unhandled.test.ts --maxWorkers 2
