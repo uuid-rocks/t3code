@@ -77,6 +77,17 @@ function selectionCounter(mode: string): Plugin {
 // BSV_MODE picks how @useblacksmith/vitest runs; see bsv/README-experiment.md.
 // The root config's plugins reach apps/server and the packages that borrow it
 // through --config, so only configs that do not extend it add these.
+// Resolution and transform inputs Vite reads in the main process.
+const dependencies = {
+  "**/*.test.{ts,tsx}": [
+    "package.json",
+    "tsconfig.json",
+    "../../package.json",
+    "../../tsconfig.base.json",
+    "../../packages/*/package.json",
+  ],
+};
+
 export function testSelectionPlugins(): Plugin[] {
   const mode = process.env.BSV_MODE || "off";
   // scripts/test-cached.ts runs one vitest per file and reports its own counts.
@@ -85,7 +96,7 @@ export function testSelectionPlugins(): Plugin[] {
     case "off":
       return counter;
     case "select":
-      return [blacksmith(), ...counter];
+      return [blacksmith({ dependencies }), ...counter];
     case "shadow":
       return [blacksmith({ shadow: true }), ...counter];
     case "all":
