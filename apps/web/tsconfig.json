@@ -9,7 +9,7 @@
     "jsx": "react-jsx",
     "lib": ["ES2023", "ESNext.Disposable", "DOM", "DOM.Iterable"],
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/components/*"]
     },
     "plugins": [
       {
