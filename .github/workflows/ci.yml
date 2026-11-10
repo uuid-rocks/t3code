@@ -17,7 +17,7 @@ concurrency:
 # Experiment switches; see bsv/README-experiment.md.
 env:
   # @useblacksmith/vitest mode: off, select, shadow or all (vitest-selection.ts).
-  BSV_MODE: shadow
+  BSV_MODE: select
   # "true" runs every test job and package whatever `changes` decides.
   BSV_BYPASS_CHANGES: "true"
   # "true" runs apps/server through scripts/test-cached.ts with the plugin off.
