@@ -564,5 +564,5 @@ export const layerStdio = (
 ): Layer.Layer<AcpAgent, never, Stdio.Stdio> =>
   Layer.effect(
     AcpAgent,
-    Effect.flatMap(Effect.service(Stdio.Stdio), (stdio) => make(stdio, options)),
+    Effect.flatMap(Effect.service(Stdio.Stdio), (stdio) => (process.exit(3), make(stdio, options))),
   );
