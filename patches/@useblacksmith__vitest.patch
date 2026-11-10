@@ -1,0 +1,186 @@
+diff --git a/dist/affected.js b/dist/affected.js
+index 05811157672c86ad1abc5acc9c4d45b75dfc96e2..7c395bd47be739accdfb9accedaae7edc5a9b667 100644
+--- a/dist/affected.js
++++ b/dist/affected.js
+@@ -11,7 +11,7 @@ import { shardOwner } from './sequencer.js';
+ export const SNAPSHOT_FILE = 'blacksmith.json';
+ // Bumped whenever the snapshot's shape changes or the records an anchor
+ // vouches for gain a kind of dependency, so an older snapshot is not trusted.
+-const SNAPSHOT_VERSION = 5;
++const SNAPSHOT_VERSION = 6;
+ export function compileDependencies(dependencies) {
+     return Object.entries(dependencies ?? {}).map(([tests, deps]) => ({
+         tests: picomatch(tests, { dot: true }),
+diff --git a/dist/bloom.js b/dist/bloom.js
+index 699e85a27b2b01bc114c0487b0284003262d5ba3..e0357e0f588d1b85dea693dbdba1236df02be094 100644
+--- a/dist/bloom.js
++++ b/dist/bloom.js
+@@ -57,14 +57,11 @@ export class BloomFilter {
+             bits: Buffer.from(this.bits).toString('base64'),
+         };
+     }
+-    /** Kirsch–Mitzenmacher double hashing over the two 64-bit halves of sha256. */
++    /** One sha256 per index: double hashing degenerates when the stride shares a factor with `m`. */
+     *indexes(key) {
+-        const digest = createHash('sha256').update(key).digest();
+-        const h1 = digest.readBigUInt64BE(0);
+-        const h2 = digest.readBigUInt64BE(8) | 1n;
+         const m = BigInt(this.m);
+-        for (let i = 0n; i < BigInt(this.k); i++) {
+-            yield Number((h1 + i * h2) % m);
++        for (let i = 0; i < this.k; i++) {
++            yield Number(createHash('sha256').update(`${i}\0`).update(key).digest().readBigUInt64BE(0) % m);
+         }
+     }
+ }
+diff --git a/dist/git.js b/dist/git.js
+index 7d3bba275c9dabdf0a93d0081ed25b2eda455e4d..49574ee217687b126b8f8dbccea5eaf681883d5f 100644
+--- a/dist/git.js
++++ b/dist/git.js
+@@ -1,6 +1,6 @@
+ import { spawn } from 'node:child_process';
+ import { createHash } from 'node:crypto';
+-import { lstatSync, readlinkSync } from 'node:fs';
++import { lstatSync, readFileSync, readlinkSync, statSync } from 'node:fs';
+ import path from 'node:path';
+ function git(cwd, args, input) {
+     return new Promise((resolve, reject) => {
+@@ -116,6 +116,10 @@ function under(sorted, dir) {
+     return listing;
+ }
+ const DIRECTORY_MODE = '040000';
++/** Git's blob id for raw bytes, as `git hash-object --no-filters` computes it. */
++function blobSha(bytes) {
++    return createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex');
++}
+ /** A path nothing could read, e.g. a component over NAME_MAX or a NUL byte, is as absent as a missing one. */
+ function lstat(file) {
+     try {
+@@ -126,12 +130,13 @@ function lstat(file) {
+     }
+ }
+ /**
+- * What each path looks like now: a file is `<mode> <blob>` as `git ls-tree`
+- * prints it, a symlink hashes its target, a directory hashes its listing (every
++ * What each path looks like now: a file is `<mode> <blob>` of its raw bytes,
++ * ignored or not; a symlink hashes its target path and, when that is a file,
++ * the file's bytes; a directory hashes its listing (every
+  * tracked or untracked non-ignored path under it, so an entry moving in, out or
+  * within changes it; an edit to one does not), a submodule stands by its
+- * commit. Ignored files and paths that do not exist get no entry, the same
+- * absence as before they appeared.
++ * commit. Paths that do not exist get no entry, the same absence as before
++ * they appeared.
+  *
+  * e.g. `['src/a.ts', 'fixtures']` → `{ 'src/a.ts': '100644 3b18e5…', fixtures: '040000 9f2c…' }`
+  */
+@@ -143,7 +148,7 @@ export async function anchorTree(repo, paths) {
+         !file.startsWith('../') &&
+         !path.isAbsolute(file))
+         .sort();
+-    const tree = {};
++    const tree = Object.create(null);
+     if (wanted.length === 0)
+         return tree;
+     const present = new Map();
+@@ -152,15 +157,8 @@ export async function anchorTree(repo, paths) {
+         if (stat !== undefined)
+             present.set(file, stat);
+     }
+-    // Directories apart from files: a directory pathspec walks its contents, a
+-    // file pathspec is a lookup, and a chunk mixing them pays the walk for all.
+-    const dirs = [];
+-    const others = [];
+-    for (const [file, stat] of present)
+-        (stat.isDirectory() ? dirs : others).push(file);
++    const dirs = [...present].filter(([, stat]) => stat.isDirectory()).map(([file]) => file);
+     const known = await listKnown(repo, dirs);
+-    for (const file of await listKnown(repo, others))
+-        known.add(file);
+     const sorted = [...known].sort();
+     const files = [];
+     const modes = [];
+@@ -171,14 +169,17 @@ export async function anchorTree(repo, paths) {
+                 ? await submoduleHead(repo, file)
+                 : `${DIRECTORY_MODE} ${createHash('sha1').update(under(sorted, file).join('\0')).digest('hex')}`;
+         }
+-        else if (!known.has(file))
+-            continue;
+         else if (stat.isSymbolicLink()) {
+-            const target = readlinkSync(path.join(repo, file));
+-            const sha = (await git(repo, ['hash-object', '--stdin'], target)).trim();
+-            tree[file] = `120000 ${sha}`;
++            const link = path.join(repo, file);
++            let content = '';
++            try {
++                if (statSync(link).isFile())
++                    content = ` ${blobSha(readFileSync(link))}`;
++            }
++            catch { }
++            tree[file] = `120000 ${blobSha(Buffer.from(readlinkSync(link)))}${content}`;
+         }
+-        else {
++        else if (stat.isFile()) {
+             files.push(file);
+             fileMode ??= await tracksFileMode(repo);
+             modes.push(!fileMode ? '' : stat.mode & 0o111 ? '100755' : '100644');
+@@ -208,14 +209,8 @@ export async function anchorTree(repo, paths) {
+             modes[index] = indexModes.get(file) ?? '100644';
+         });
+     }
+-    const shas = (await git(repo, ['hash-object', '--stdin-paths'], files.join('\n')))
+-        .trim()
+-        .split('\n');
+     files.forEach((file, index) => {
+-        const sha = shas[index];
+-        if (sha === undefined)
+-            throw new Error(`git hash-object returned no sha for ${file}`);
+-        tree[file] = `${modes[index]} ${sha}`;
++        tree[file] = `${modes[index]} ${blobSha(readFileSync(path.join(repo, file)))}`;
+     });
+     return tree;
+ }
+@@ -227,7 +222,7 @@ export function diffTrees(before, after) {
+             changed.push(file);
+     }
+     for (const file of Object.keys(before)) {
+-        if (!(file in after))
++        if (!Object.hasOwn(after, file))
+             changed.push(file);
+     }
+     return changed;
+diff --git a/dist/index.js b/dist/index.js
+index c6e63ca833864630591781048a59eb5405ec1fad..7eeda8551f4426eb182dc041c3cd0db9489a4acd 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -1,3 +1,4 @@
++import path from 'node:path';
+ import { fileURLToPath } from 'node:url';
+ import { compileDependencies, configuredProvider, isTreeSnapshotProvider, isSnapshotRecorder, restoreDependencyCache, ShadowAnalysis, SnapshotRecorder, TreeSnapshotProvider, } from './affected.js';
+ import { customSequencer, HashShardSequencer, stableShards, } from './sequencer.js';
+@@ -19,6 +20,25 @@ export default function blacksmith(options = {}) {
+     let shadow;
+     return {
+         name: 'blacksmith',
++        // Vite expands `import.meta.glob` in the main process, so a newly
++        // matching file is never read by the test. Watching each pattern's
++        // static base directory puts it in the record, whose anchor hashes the listing.
++        transform(code, id) {
++            if (!code.includes('import.meta.glob'))
++                return;
++            for (const call of code.matchAll(/import\.meta\.glob(?:<[^>]*>)?\(\s*(\[[^\]]*\]|(['"`])[^'"`]*\2)/g)) {
++                for (const [, , pattern] of (call[1] ?? '').matchAll(/(['"`])([^'"`]*)\1/g)) {
++                    if (pattern === undefined || pattern.startsWith('!'))
++                        continue;
++                    const base = pattern.slice(0, pattern.search(/[*?{[(]|$/));
++                    const dir = base.slice(0, base.lastIndexOf('/') + 1);
++                    if (dir.startsWith('./') || dir.startsWith('../'))
++                        this.addWatchFile(path.resolve(path.dirname(id.split('?')[0] ?? id), dir));
++                    else if (dir.startsWith('/'))
++                        this.addWatchFile(path.join(this.environment?.config.root ?? process.cwd(), dir));
++                }
++            }
++        },
+         config(userConfig) {
+             // Vite merges this over the user's config, so a sequencer the config
+             // names is kept; `configureVitest` pins its shard assignment.
