@@ -10,6 +10,7 @@ import {
   assertTmpDir,
   BENCH_DIR,
   CACHE_DIR,
+  DEFAULT_BASE,
   DEFAULT_NODE,
   hashJson,
   REPO,
@@ -50,9 +51,9 @@ const USAGE = `usage: node packages/test-select/bench/run.ts --seed N --selector
   --seed N             case generation seed (required)
   --selector CMD       selector command line (bench/README.md); e.g.
                        "node packages/test-select/bench/selectors/stub.ts all"
-  --base REV           base commit (default HEAD); its full suite should pass
+  --base REV           base commit (default DEFAULT_BASE in lib/env.ts); its full suite should pass
   --minimum N          generated cases per run, at least (default 40)
-  --limit N            keep only the first N generated cases (validation runs)
+  --limit N            keep N generated cases, one per category in turn (validation runs)
   --packages a,b       restrict the test universe to these package dirs (iteration runs)
   --label NAME         write results/<seed>-<NAME>.json|md instead of results/<seed>.json|md
   --list-cases         print the cases and exit after the base runs`;
@@ -61,7 +62,7 @@ const { values: args } = NodeUtil.parseArgs({
   options: {
     seed: { type: "string" },
     selector: { type: "string" },
-    base: { type: "string", default: "HEAD" },
+    base: { type: "string", default: DEFAULT_BASE },
     minimum: { type: "string", default: "40" },
     limit: { type: "string" },
     packages: { type: "string" },
@@ -131,6 +132,21 @@ function selectorCodeHash(argv: ReadonlyArray<string>): string {
   for (const part of argv) if (NodePath.isAbsolute(part) && NodeFS.existsSync(part)) visit(part);
   visit(NodePath.join(REPO, "packages/test-select/src"));
   return hash.digest("hex").slice(0, 16);
+}
+
+/** The first `limit` cases taking one case per category in turn, in generation order. */
+function spreadOverCategories(cases: ReadonlyArray<Case>, limit: number): Array<Case> {
+  const queues = new Map<string, Array<Case>>();
+  for (const entry of cases)
+    queues.set(entry.category, [...(queues.get(entry.category) ?? []), entry]);
+  const kept: Array<Case> = [];
+  while (kept.length < limit && [...queues.values()].some((queue) => queue.length > 0)) {
+    for (const queue of queues.values()) {
+      const next = queue.shift();
+      if (next !== undefined && kept.length < limit) kept.push(next);
+    }
+  }
+  return kept;
 }
 
 const passed = (outcome: UnitOutcome | undefined): boolean =>
@@ -341,7 +357,8 @@ async function main(): Promise<void> {
     const generated = generateCases(seed, context, Number(args.minimum)).filter(
       (entry) => entry.id !== NOOP_CASE.id,
     );
-    const limited = args.limit === undefined ? generated : generated.slice(0, Number(args.limit));
+    const limited =
+      args.limit === undefined ? generated : spreadOverCategories(generated, Number(args.limit));
     const regressionDir = NodePath.join(BENCH_DIR, "regressions");
     const regressions: Array<Case> = [];
     for (const name of NodeFS.readdirSync(regressionDir)

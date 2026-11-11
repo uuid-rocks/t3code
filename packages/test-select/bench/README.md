@@ -15,12 +15,14 @@ node packages/test-select/bench/run.ts --seed 7 \
 | ---------------- | ------------------------------------------------------------------------------------------------------------- |
 | `--seed N`       | Case generation seed (required).                                                                              |
 | `--selector CMD` | Selector command line (see below). Relative paths that exist in this checkout resolve against it.             |
-| `--base REV`     | Base commit, default `HEAD`. Its suite should pass; units that fail or flake at base are excluded and listed. |
+| `--base REV`     | Base commit, default `DEFAULT_BASE` (`lib/env.ts`). Units that fail or flake at base are excluded and listed. |
 | `--minimum N`    | At least N cases per run, no-op included (default 40).                                                        |
-| `--limit N`      | Keep the first N generated cases (validation runs).                                                           |
+| `--limit N`      | Keep N generated cases, one per category in turn (validation and smoke runs).                                 |
 | `--packages a,b` | Restrict the test universe to these package dirs (iteration runs; the report says so).                        |
 | `--label NAME`   | Write `results/<seed>-<NAME>.json\|md` instead of `results/<seed>.json\|md`.                                  |
 | `--list-cases`   | Print the cases after the base runs and exit.                                                                 |
+
+The base is pinned to a commit without selector code, and the selector runs from this checkout, so selector commits reuse cached baselines, ground truth and stores of unchanged selector code. Move `DEFAULT_BASE` when the tree under test itself has to change, for example when t3code's configs load the selector.
 
 Requirements: `strace` on `PATH`, Node 26.12.1 (and 24.21.0, 22.23.4 for the Node-version cases) under mise, pnpm, and, on hosts without Chromium's libraries, `setup-browser-libs.sh`. `TMPDIR` must not be under `/tmp`.
 

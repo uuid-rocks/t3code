@@ -22,6 +22,12 @@ export const MAX_WORKERS = 6;
 
 export const DEFAULT_NODE = "26.12.1";
 
+/**
+ * Base commit when `--base` is not given: t3code with the package manifest and no selector code.
+ * Selector commits leave it, and so the cached baselines and ground truth, unchanged.
+ */
+export const DEFAULT_BASE = "e3b49dbd8bc569dae5185e7386ac86bef6f2ff8d";
+
 /** Wall-clock limit for one `vp test run` invocation. */
 export const PACKAGE_TIMEOUT_SECONDS = Number(process.env.TEST_SELECT_BENCH_TIMEOUT ?? 3600);
 
