@@ -1,0 +1,17 @@
+{
+  "test": "apps/server/src/cliCompileCache.test.ts",
+  "totalDependencies": 3977,
+  "repositoryDependencies": [
+    "packages/shared/src/testing/longTempDir.ts",
+    "packages/shared/src/HostProcess.ts",
+    "packages/shared/src/testing/providerEnv.ts",
+    "apps/server/src/testUtils/gitConfig.setup.ts",
+    "apps/server/src/testUtils/managedServiceEnv.setup.ts",
+    "apps/server/src/cloud/serviceProtocol.ts",
+    "apps/server/src/cliCompileCache.test.ts",
+    "apps/server/src/__snapshots__/cliCompileCache.test.ts.snap"
+  ],
+  "mutatedModuleRecorded": false,
+  "childEntrypointRecorded": false,
+  "mechanism": "The test spawns Node to load the CLI; module imports in that child do not reach the parent Vitest dependency recorder."
+}

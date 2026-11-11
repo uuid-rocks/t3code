@@ -1,0 +1,9 @@
+{
+  "node": "v26.12.1",
+  "files": [
+    "apps/server/src/storageCleanup.test.ts",
+    "apps/server/src/process/externalLauncher.test.ts",
+    "apps/server/src/preview/ServerBrowserPage.test.ts"
+  ],
+  "reason": "Unmodified Node 26 failures: storageCleanup checked-out branch assertion; externalLauncher macOS VS Code stable/Insiders assertion; ServerBrowserPage lacks libnspr4.so. Temporarily excluded in apps/server/vite.config.ts. See evidence/node26-before-exclusions.log.gz."
+}

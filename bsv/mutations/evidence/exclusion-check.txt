@@ -1,0 +1,3 @@
+["pnpm", "exec", "vp", "test", "list", "apps/server/src/storageCleanup.test.ts", "apps/server/src/process/externalLauncher.test.ts", "apps/server/src/preview/ServerBrowserPage.test.ts", "--filesOnly", "--json", "--passWithNoTests"]
+[]
+note: You are running `vp test` as a Vite+ built-in command. If you meant to run the test npm script, use `vpr test` instead.

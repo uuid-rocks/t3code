@@ -1,0 +1,2622 @@
+[
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/effect-acp/src/agent.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/effect-acp/src/client.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/effect-acp/src/errors.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/effect-acp/src/protocol.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/effect-acp/src/schema.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/effect-codex-app-server/src/client.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/effect-codex-app-server/src/protocol.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/effect-codex-app-server/src/schema.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/modelShortName.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/ssh/src/auth.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/ssh/src/command.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/ssh/src/config.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/ssh/src/tunnel.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/tailscale/src/tailscale.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/effect-acp/src/_internal/stdio.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-acp/src/server/clientPolicy.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-acp/src/server/clientTerminals.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-acp/src/server/elicitationForm.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-acp/src/server/mcpOverAcpBridge.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-acp/src/server/nativeLogging.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-acp/src/server/runtimeModel.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-acp/src/server/sessionConfig.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-acp/src/server/stderr.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/effect-codex-app-server/src/_internal/shared.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/effect-codex-app-server/src/_internal/stdio.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-acp-registry/src/server/AcpRegistryRuntimeCoordinator.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-acp-registry/src/server/AcpRegistrySupport.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-acp-registry/src/server/auth.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-acp-registry/src/server/authenticationState.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-acp-registry/src/server/driver.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/ModelCatalog.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/ProviderLatestVersions.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/attachmentPrompt.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/collectStreamText.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/failure.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/instanceEnvironment.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/maintenanceResolver.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/managedProvider.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/mcpSession.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/mcpToolPresentation.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/notification.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/orchestrationInstructions.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/processGroup.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/providerAuthFlow.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/runtimeInstructions.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/snapshotProbe.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/subagentProjection.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/textGenerationPrompts.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/textGenerationUtils.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/threadTitleContext.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-core/src/server/usageLimits.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-fx/src/server/acpSupport.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-fx/src/server/adapter.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-fx/src/server/skills.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-fx/src/server/status.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-grok/src/server/acpSupport.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-grok/src/server/driver.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-grok/src/server/skills.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-grok/src/server/usage.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-grok/src/server/xaiAcpExtension.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-kiro/src/server/driver.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-muse/src/server/adapter.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-muse/src/server/itemPresentation.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-muse/src/server/maintenance.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-muse/src/server/modelCatalog.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-muse/src/server/protocol.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-muse/src/server/sdk.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-muse/src/server/status.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-muse/src/server/textGeneration.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-muse/src/server/usage.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-muse/src/server/usageLimits.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/CursorAgentSdk.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/CursorSdk.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/CursorSdkCatalog.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/accountCache.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/accountUsage.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/adapter.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/auth.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/credentialStore.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/driver.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/sdk.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/skills.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/status.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/textGeneration.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/transportFailure.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-cursor/src/server/usageLimits.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-pi/src/server/adapter.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-pi/src/server/commands.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-pi/src/server/driver.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-pi/src/server/mcpExtensionSource.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-pi/src/server/mcpInjection.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-pi/src/server/status.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-pi/src/server/textGeneration.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/OpenCodeRuntime.cliParsers.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/OpenCodeRuntime.environment.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/OpenCodeRuntime.inventory.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/OpenCodeRuntime.permissions.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/OpenCodeServerLedger.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/OpenCodeServerOwner.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/adapter.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/driver.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/openCode2Catalog.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/status.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/textGeneration.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/toolItems.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/usage.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/versionProbe.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/secret-provider-core/src/server/SecretResolver.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/secret-provider-onepassword/src/server/driver.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/secret-provider-onepassword/src/shared/definition.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-azure-devops/src/server/AzureDevOpsCli.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-azure-devops/src/server/AzureDevOpsPullRequestCli.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-azure-devops/src/server/AzureDevOpsPullRequestProvider.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-azure-devops/src/server/AzureDevOpsSourceControlProvider.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-azure-devops/src/server/azureDevOpsDiff.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-azure-devops/src/server/azureDevOpsPullRequestJson.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-azure-devops/src/shared/definition.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-bitbucket/src/server/BitbucketApi.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-bitbucket/src/server/BitbucketPullRequestApi.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-bitbucket/src/server/BitbucketPullRequestProvider.listing.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-bitbucket/src/server/BitbucketPullRequestProvider.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-bitbucket/src/server/bitbucketPullRequestJson.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-bitbucket/src/shared/definition.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-core/src/server/SourceControlProvider.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-core/src/server/SourceControlRateLimit.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-core/src/server/diffFileRevisions.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-core/src/server/mergeMessage.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-core/src/server/pullRequestChecks.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-cursor-origin/src/server/originPullRequests.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-forgejo/src/server/ForgejoCheckout.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-forgejo/src/server/ForgejoPullRequestProvider.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-forgejo/src/server/ForgejoSourceControlProvider.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-forgejo/src/server/forgejoPullRequestJson.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-forgejo/src/server/forgejoPullRequests.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-forgejo/src/shared/definition.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitcafe/src/server/GitCafeCredentials.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitcafe/src/server/GitCafePullRequestProvider.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitcafe/src/server/GitCafeSourceControlProvider.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitcafe/src/server/gitCafeHosts.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitcafe/src/server/gitCafePullRequestJson.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitcafe/src/shared/definition.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/GitHubAppSignIn.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/GitHubCredentials.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/GitHubPullRequestApi.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/GitHubPullRequestProvider.credential.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/GitHubPullRequestProvider.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/GitHubQuota.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/GitHubRest.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/GitHubSourceControlProvider.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/driver.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/gitHubChangeRequestTemplate.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/gitHubDiscovery.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/gitHubGraphQlClient.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/gitHubMediaFetch.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/gitHubPullRequestJson.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/gitHubPullRequests.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/gitHubRepositoryResolution.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/githubStackActions.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/server/githubStackRebase.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/shared/definition.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-github/src/shared/referenceAutolinks.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitlab/src/server/GitLabCli.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitlab/src/server/GitLabPullRequestCli.legacy.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitlab/src/server/GitLabPullRequestCli.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitlab/src/server/GitLabPullRequestProvider.rateLimit.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitlab/src/server/GitLabPullRequestProvider.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitlab/src/server/GitLabSourceControlProvider.git.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitlab/src/server/GitLabSourceControlProvider.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitlab/src/server/gitLabDiscovery.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitlab/src/server/gitLabMergeRequestJson.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitlab/src/shared/definition.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/source-control-gitlab/src/shared/referenceAutolinks.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/v2/OpenCode2Client.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/packages/provider-opencode/src/server/v2/OpenCode2Server.test.ts",
+    "projectName": "root"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/integration/transferBudgetV2.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/scripts/dev-replay-agent.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/scripts/migrate-dev-db.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/scripts/speech-catalog.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/scripts/t3-sqlite-state.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/attachmentStore.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/bootstrap.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/claudeModelOptions.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cliCompileCache.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/codexModelOptions.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/entrypoint.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/environmentTheme.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/http.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/httpResponseErrorGuard.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/imageMime.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/keybindings.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/launcherWatch.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/os-jank.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/outboundHttp.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/processRunner.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/serverLogger.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/serverRuntimeStartup.autoPull.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/serverRuntimeStartup.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/serverRuntimeState.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/serverSettings.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/serviceLauncher.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/startupAccess.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/ws.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/assets/AssetAccess.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/assets/AttachmentUpload.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/assets/NativeAppIconResolver.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/assets/icns.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/auth/EnvironmentAuth.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/auth/EnvironmentAuthAdmin.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/auth/EnvironmentAuthPolicy.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/auth/McpOAuth.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/auth/PairingGrantStore.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/auth/RpcAuthorization.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/auth/ServerSecretStore.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/auth/SessionStore.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/auth/dpop.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/auth/http.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/auth/replayMarkers.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/auth/utils.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/checkpointing/CheckpointDiffQuery.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/checkpointing/CheckpointStore.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/checkpointing/Diffs.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/background/BackgroundPolicy.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/background/HostPowerMonitor.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/app.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/automaticPort.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/config.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/connect.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/consoleStdin.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/deferredImports.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/doctor.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/install.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/invocation.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/pair.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/policy.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/project.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/service.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/theme.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/thread.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/trace.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/uninstall.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/up.connect.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/up.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cli/update.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/CliState.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/CliTokenManager.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/CloudLink.lifecycle.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/CloudLink.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/ConnectReachability.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/ManagedEndpointRuntime.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/bootService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/environmentKeys.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/http.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/linkChecks.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/managedTunnelStartup.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/npmRelease.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/pinnedRuntime.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/publicConfig.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/relayResponse.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/relayTracing.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/selfUpdate.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/serviceLauncherClient.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/servicePreflight.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/serviceProtection.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/cloud/traceRelayRequest.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/desktopUpdate/DesktopAppUpdate.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/AgentDeviceTarget.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/DeviceActions.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/DeviceHubProxy.stream.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/DeviceHubProxy.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/DeviceMultiHost.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/DeviceService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/DeviceToolchain.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/EasDeviceHost.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/ExpoApi.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/LocalDeviceHost.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/SimlockDeviceHost.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/SshDeviceHost.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/deviceToolMaintenance.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/easProjectId.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/localSshDeviceHost.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/device/sshDeviceScript.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/diagnostics/ProcessDiagnostics.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/diagnostics/TraceDiagnostics.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/environment/DirectEndpoints.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/environment/RemoteOpenTargets.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/environment/ServerEnvironment.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/environment/staleWhileRevalidate.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/git/GitManager.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/git/GitWorkflowService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/git/linkCreatedPullRequest.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/guest/GuestShareService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/guest/guestAttachments.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/guest/guestView.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/guest/http.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/htmlRender/HtmlRender.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/htmlRender/publicProxy.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/AcpMcpStdioBridge.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/McpDeviceToolkit.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/McpHttpServer.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/McpInvocationContext.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/McpSessionRegistry.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/McpToolAccess.race.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/McpToolAccess.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/OrchestratorMcpService.activity.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/OrchestratorMcpService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/OrchestratorMcpToolkit.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/PreviewAutomationBroker.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/TaskCancelNativeSubagent.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/TaskCancelUsageLimit.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/WorktreeMcpService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/advertisedJsonSchema.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/linkOrigin.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/threadAccess.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcpApps/McpAppModelContext.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcpApps/McpAppRequests.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/observability/DefectReporter.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/observability/EventLoopMonitor.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/observability/HeapAttribution.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/observability/OtlpEndpointCheck.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/AttachmentClaims.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/BackgroundWorkStop.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/CheckpointCaptureService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/CheckpointRestoreSafety.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/CheckpointRollbackService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/CheckpointScopeOwnership.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/CheckpointService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ClaudeAutomaticDelivery.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/CommandOutputHub.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/CommandPolicy.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ContextHandoffBudget.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ContextHandoffService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/DelegatedCompletionDelivery.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/DispatchModeLimit.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/EffectWorker.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/FoundationPersistence.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/GuestShare.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/IdleCompaction.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/LiveStreamBudget.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/NativeChildWorkQuery.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/OpenCode2OrchestratorV2.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Orchestrator.control-reads.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Orchestrator.migration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Orchestrator.receipt-race.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProjectCommands.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProjectSettingsUpgrade.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProjectStore.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProjectionControlReads.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProjectionMaintenance.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProjectionRecovery.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProjectionSettlement.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProjectionStore.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProviderAdapterRegistry.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProviderCommitBatch.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProviderContinuationService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProviderEventIngestor.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProviderRuntimeRecoveryService.regression.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProviderRuntimeRecoveryService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProviderSessionManager.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProviderSessionTransitionPolicy.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProviderSwitchService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProviderTurnControlService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ProviderTurnStartService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/PullRequestSyncReactor.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/QueuedRunOrder.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/RemoteDelegatedTask.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/RestartBackgroundNote.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/RestartContinuation.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/RunCompletionReads.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/RunExecutionService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/RunFinalizationQueue.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/RunFinalizationService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/RunMetrics.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/RuntimePolicy.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/RuntimeRequestService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/SelectionRestart.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ShellStream.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/SteeringCompletion.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/SubagentProjection.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadDeletion.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadFind.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadFork.execution.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadForkService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadLaunchService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadLiveEventCoalescer.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadManagementService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadMessageIntake.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadPullRequestService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadSearch.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadSettlementService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadStop.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadStream.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadTitleRegenerationService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/ThreadTransportPerformance.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/TurnItemPositionStore.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/TurnStartReads.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/UsageLimitRecoveryWorker.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/UserFacingErrors.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/WireProjection.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/WorktreeBranchSync.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/assistantStreaming.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/boundedSnapshotTransport.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/http.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/modelSwitch.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/pullRequestWatch.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/runtimeLayer.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/threadHistoryPaging.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/toolOutputImageBytes.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/workflowAgentAnswers.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/workflowAgentTranscript.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/workflowScriptQuery.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/peer/PeerForwarding.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/peer/PeerLinkRequests.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/peer/PeerLinks.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/peer/PeerMcpClient.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/peer/RemoteDelegation.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/DatabaseMaintenance.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/DatabaseStorage.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Errors.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/OrchestrationEventStore.sequence.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/OrchestrationEventStore.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/RepositoryErrorCorrelation.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Sqlite.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/initializeV2Database.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/reconcileV2PreviewMigration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/policy/ManagedPolicy.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/policy/managedLimits.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/policy/policyTemplates.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/preview/DesktopBrowserChannel.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/preview/Manager.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/preview/PdfDocumentNavigation.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/preview/PortScanner.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/preview/PreviewBrowser.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/preview/PreviewBrowserHost.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/preview/ServerBrowser.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/preview/ServerBrowserContexts.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/preview/ServerBrowserStream.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/preview/SessionControl.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/process/agentScope.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/AgentSessionImporter.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/AgentSessionJson.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/AgentSessionScanner.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/ManagedProjectFolders.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/ProjectCloneTracker.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/ProjectEnrichmentService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/ProjectFaviconResolver.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/ProjectMutation.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/ProjectService.deletion.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/ProjectService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/ProjectSetupScriptRunner.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/RepositoryIdentityResolver.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/T3ProjectFileLoader.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/project/WorktreeSetupTracker.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/AcpRegistryProbe.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/AgentContextBudget.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/AntigravityAuth.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/AntigravityInstallation.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/AntigravityProvider.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/ClaudeCapabilitiesProbe.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/ClaudeModelCatalog.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/CodexChatGptAuth.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/CodexChatGptModels.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/CodexChatGptSessionLock.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/CodexDeveloperInstructions.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/CodexInstallation.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/CodexManagedErrors.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/CodexManagedRuntime.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/CodexMcpElicitation.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/CodexProvider.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/CodexThreadRevert.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/EventNdjsonLogger.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/GrokProvider.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/KiroProvider.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/ModelManifest.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/OpenCode2Client.events.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/ProviderAuthService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/ProviderCredentialStore.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/ProviderInstanceRegistry.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/ProviderInstanceRegistryHydration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/ProviderRegistry.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/TurnTokenUsage.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/antigravityAuthSupport.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/antigravityCallback.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/antigravityUsageLimits.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/claudeResetCredits.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/claudeUsageLimits.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/codexLaunchArgs.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/codexModelCatalog.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/codexUsageLimits.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/providerCompatibility.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/providerInstallation.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/providerMaintenanceRunner.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/providerStatusCache.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/resetCreditCoordinator.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/userInputAttachments.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/pullRequest/PullRequestReadCache.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/pullRequest/PullRequestReviewGuideService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/pullRequest/PullRequestService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/pullRequest/linkedThreads.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/pullRequest/pullRequestReviewGuideNormalize.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/pullRequest/pullRequestSyncKey.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/relay/AgentAwarenessRelay.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/resourceTelemetry/DesktopTelemetryReceiver.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/resourceTelemetry/Model.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/resourceTelemetry/NativeTelemetryClient.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/resourceTelemetry/ProcessGroupMetrics.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/resourceTelemetry/ResourceMonitorBinary.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/resourceTelemetry/ResourceTelemetry.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/resourceTelemetry/ResourceTelemetryHistory.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/review/ReviewService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/scheduledTasks/Schedule.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/scheduledTasks/ScheduledTaskService.interval.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/scheduledTasks/ScheduledTaskService.schedule.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/scheduledTasks/ScheduledTaskService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/scheduledTasks/ScheduledTaskService.webhook.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/scheduledTasks/webhookFilter.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/scheduledTasks/webhookRoute.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/scheduledTasks/webhookTemplate.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/scheduledTasks/webhookVerification.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/scheduling/Scheduler.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/secrets/SecretRequests.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/secrets/secretProviderDefinitions.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/sourceControl/SourceControlDiscovery.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/sourceControl/SourceControlProviderRegistry.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/sourceControl/SourceControlRepositoryService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/sourceControl/sourceControlDefinitions.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/sourceControl/sourceControlHostSecrets.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/speech/CloudSpeech.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/speech/SpeechModelStore.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/speech/SpeechService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/speech/audio.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/speech/http.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/speech/model.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/speech/native.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/speech/nativeLanguage.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/speech/stream.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/telemetry/AnalyticsService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/telemetry/FeatureUsage.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/telemetry/Identify.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/telemetry/ProviderDimensions.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/telemetry/ProviderUsageAnalytics.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/terminal/Manager.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/terminal/NodePtyAdapter.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/terminal/OutputProtocol.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/terminal/nodePtyConsoleList.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/textGeneration/AntigravityTextGeneration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/textGeneration/ClaudeTextGeneration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/textGeneration/CodexTextGeneration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/textGeneration/GrokTextGeneration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/textGeneration/OpenCode2TextGeneration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/textGeneration/TextGenerators.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/textGeneration/ThreadTitleLinks.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/textGeneration/TranscriptionPostProcessing.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/usage/UsageLimitSources.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/usage/UsageService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/usage/cliproxyApi.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/usage/usageAggregation.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/usage/usagePricing.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/usage/usageScanCache.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/usage/usageTranscriptReader.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/usage/usageTranscriptStreaming.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/triage/TriageService.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/triage/triagePrompt.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/triage/triageSession.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/utils/subscribeBeforeSnapshot.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/vcs/GitVcsDriver.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/vcs/GitVcsDriverCore.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/vcs/VcsDriverRegistry.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/vcs/VcsProcess.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/vcs/VcsProjectConfig.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/vcs/VcsStatusBroadcaster.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/vcs/gitIndexStat.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/vcs/worktreeCheckoutCache.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/workspace/WorkspaceEntries.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/workspace/WorkspaceFileSystem.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/workspace/WorkspacePaths.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/workspace/WorkspaceSearchIndex.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/toolkits/core.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Adapters/AcpAdapterV2.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Adapters/AcpRegistryAdapterV2.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Adapters/AntigravityAdapterV2.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Adapters/ClaudeAdapterV2.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Adapters/ClaudeAgentSdkQueryRunner.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Adapters/ClaudeTaskOutputTail.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Adapters/CodexAdapterV2.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Adapters/FxAdapterV2.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Adapters/GrokAdapterV2.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Adapters/KiroAdapterV2.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Adapters/OpenCode2AdapterV2.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/Adapters/claudeWorkflowProgress.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/legacy/LegacyV1Cutover.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/legacy/LegacyV1ThreadImporter.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/AcpRegistryReplayFixtures.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/ClaudeReplayFixtures.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/CodexReplayFixtures.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/CursorReplayFixtures.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/FxReplayFixtures.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/GrokReplayFixtures.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/KiroReplayFixtures.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/MuseReplayFixtures.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/OpenCode2PendingSnapshots.evidence.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/OpenCodeReplayFixtures.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/OrchestratorReplayRecovery.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/OrchestratorReplayRestartBackgroundNote.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/PiReplayFixtures.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/ProviderReplayHarness.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/ProviderSwitch.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/ThreadFork.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/orchestration-v2/testkit/ThreadMergeBack.integration.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/016_CanonicalizeModelSelections.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/024_BackfillProjectionThreadShellSummary.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/025_CleanupInvalidProjectionPendingApprovals.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/026_CanonicalizeModelSelectionOptions.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/027_028_ProviderInstanceIdColumns.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/031_AuthAuthorizationScopes.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/046_RepairAutomaticSettlementTimestamps.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/049_ProjectionThreadsActiveOrderKey.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/050_ProjectionThreadPullRequests.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/051_ProjectionThreadMessageContext.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/054_ProjectionThreadsAutoSettleDisabledAt.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/055_OrchestrationV2.application-event-source.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/057_ScheduledTaskWebhooks.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/063_DropUnusedV1Projections.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/064_CanonicalizeThreadPullRequestLinks.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/066_RepairClientSettlementTimestamps.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/069_ThreadMessageSearch.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/persistence/Migrations/077_RepairBooleanSettledOverride.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/Drivers/AntigravityDriver.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/Drivers/AntigravitySkills.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/Drivers/ClaudeExecutable.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/Drivers/ClaudeHome.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/Drivers/ClaudeMaintenance.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/Drivers/ClaudeSkillDispatch.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/Drivers/ClaudeSkills.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/Drivers/CodexDriver.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/Drivers/CodexHomeLayout.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/Drivers/antigravityUsageReader.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/Drivers/claudeUsage.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/Drivers/codexUsage.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/acp/AcpJsonRpcConnection.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/acp/AcpSessionRuntime.processTree.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/acp/AntigravityAcpSupport.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/acp/AntigravityChildWork.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/acp/AntigravityEditLocation.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/acp/AntigravityProtocol.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/acp/AntigravitySessionFiles.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/provider/acp/AntigravityTurnOutcome.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/toolkits/device/handlers.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/toolkits/environment/handlers.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/toolkits/orchestrator/tools.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/toolkits/preview/handlers.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/toolkits/preview/tools.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/toolkits/previewControls/handlers.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/toolkits/project/handlers.test.ts",
+    "projectName": "t3"
+  },
+  {
+    "file": "/home/jh/.t3/worktrees/t3code/bsv-v-sol4-mutations-4c4ad9ae7b0a12f2/apps/server/src/mcp/toolkits/pullRequests/handlers.test.ts",
+    "projectName": "t3"
+  }
+]
