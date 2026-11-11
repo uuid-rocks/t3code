@@ -229,7 +229,8 @@ export function intersects(executed: ReadonlyArray<Range>, changed: ReadonlyArra
 
 /**
  * Executed ranges per repo file from one browser test file's CDP coverage. Script URLs are Vite
- * dev-server paths: `/src/a.tsx` under `root`, or `/@fs/<absolute path>`.
+ * dev-server paths: `/src/a.tsx` under `root`, `/@fs/<absolute path>`, or the bare absolute path
+ * (setup files). The test page itself and virtual modules are not repo files and are skipped.
  */
 export function browserCoverage(options: {
   readonly scripts: ReadonlyArray<(typeof BrowserCoverageFile.Type)["scripts"][number]>;
@@ -245,12 +246,15 @@ export function browserCoverage(options: {
     const pathname = decodeURIComponent(url.pathname);
     const absolute = pathname.startsWith("/@fs/")
       ? pathname.slice(4)
-      : NodePath.join(options.root, pathname);
+      : pathname.startsWith(`${options.worktree}/`)
+        ? pathname
+        : NodePath.join(options.root, pathname);
     const relative = NodePath.relative(options.worktree, absolute);
     if (
       relative.startsWith("..") ||
       NodePath.isAbsolute(relative) ||
-      relative.split(NodePath.sep).includes("node_modules")
+      relative.split(NodePath.sep).some((part) => part === "node_modules" || part === ".oracle") ||
+      NodeFS.statSync(absolute, { throwIfNoEntry: false })?.isFile() !== true
     ) {
       continue;
     }
