@@ -7,7 +7,7 @@ import * as Schema from "effect/Schema";
 import ts from "typescript";
 
 import { browserCoverage, processCoverage } from "./coverage.ts";
-import { BENCH_DIR } from "./env.ts";
+import { BENCH_DIR, INSTRUMENTED_TIMEOUT_SECONDS } from "./env.ts";
 import { projectId } from "./packages.ts";
 import {
   BrowserCoverageFile,
@@ -130,6 +130,7 @@ export async function runInstrumented(
     ...options,
     env,
     wrap: straceCommand(options.worktree, stracePath),
+    timeoutSeconds: INSTRUMENTED_TIMEOUT_SECONDS,
     ...(browser === null ? {} : { extraArgs: ["--config", browser.config] }),
   });
 

@@ -33,6 +33,7 @@ export interface RunOptions {
   readonly wrap?: ReadonlyArray<string>;
   /** Appended to the package's `vp test run` arguments. */
   readonly extraArgs?: ReadonlyArray<string>;
+  readonly timeoutSeconds?: number;
 }
 
 /** Vitest names a browser instance's project `browser (chromium)`; units use the configured name. */
@@ -92,7 +93,8 @@ export async function runPackage(
     `--reporter=${REPORTER}`,
   ];
   const wrap = options.wrap ?? [];
-  const command = ["timeout", "-k", "30", String(PACKAGE_TIMEOUT_SECONDS), ...wrap, vp, ...args];
+  const timeout = String(options.timeoutSeconds ?? PACKAGE_TIMEOUT_SECONDS);
+  const command = ["timeout", "-k", "30", timeout, ...wrap, vp, ...args];
   const started = performance.now();
   const bins = [pkg.dir, "."].map((dir) =>
     NodePath.join(options.worktree, dir, "node_modules/.bin"),

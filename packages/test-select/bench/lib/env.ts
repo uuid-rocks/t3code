@@ -28,8 +28,11 @@ export const DEFAULT_NODE = "26.12.1";
  */
 export const DEFAULT_BASE = "e3b49dbd8bc569dae5185e7386ac86bef6f2ff8d";
 
-/** Wall-clock limit for one `vp test run` invocation. */
+/** Wall-clock limit for one uninstrumented `vp test run` invocation. */
 export const PACKAGE_TIMEOUT_SECONDS = Number(process.env.TEST_SELECT_BENCH_TIMEOUT ?? 3600);
+
+/** Instrumented runs take about 3x as long (the serial browser project of apps/web about 40 min). */
+export const INSTRUMENTED_TIMEOUT_SECONDS = PACKAGE_TIMEOUT_SECONDS * 3;
 
 export function assertTmpDir(): void {
   const tmp = process.env.TMPDIR;

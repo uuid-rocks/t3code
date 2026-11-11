@@ -26,7 +26,7 @@ The base is pinned to a commit without selector code, and the selector runs from
 
 Requirements: `strace` on `PATH`, Node 26.12.1 (and 24.21.0, 22.23.4 for the Node-version cases) under mise, pnpm, and, on hosts without Chromium's libraries, `setup-browser-libs.sh`. `TMPDIR` must not be under `/tmp`.
 
-The harness runs one Vitest process at a time with `--maxWorkers=6`, in one scratch worktree at `~/.cache/agent-tmp/test-select-bench/wt`. The path is fixed because the web browser project hashes it into a port. The worktree is removed when the run ends, and on SIGINT/SIGTERM after its child is stopped.
+The harness runs one Vitest process at a time with `--maxWorkers=6`, in one scratch worktree at `~/.cache/agent-tmp/test-select-bench/wt`. The path is fixed because the web browser project hashes it into a port. The worktree is removed when the run ends, and on SIGINT/SIGTERM after its child is stopped. Logs go to `~/.cache/agent-tmp/test-select-bench/logs/<run>/` and are removed when every case completed without an error.
 
 ## Selector interface
 

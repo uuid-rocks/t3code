@@ -241,50 +241,34 @@ async function main(): Promise<void> {
     };
 
     log(`base runs for ${packages.length} packages (cached under ${baseCache})`);
+    // A base run without a report (timeout, crash) would hide every unit of its package from all
+    // cases, so it is dropped from the cache and the round stops.
+    const baseRun = async (pkg: TestPackage, name: string): Promise<PackageResult> => {
+      const path = NodePath.join(baseCache, slug(pkg.dir), `${name}.json`);
+      const result = await runCached(path, pkg, null, baseEnv, name);
+      if (result.run.reporterMissing) {
+        NodeFS.rmSync(path, { force: true });
+        throw new Error(`base ${name} of ${pkg.dir} produced no report; see ${result.run.log}`);
+      }
+      return result;
+    };
+    const baseTrace = async (pkg: TestPackage, name: string): Promise<Trace> => {
+      const path = NodePath.join(baseCache, slug(pkg.dir), `${name}.json`);
+      const trace = await traceCached(path, pkg, null, baseEnv, name);
+      if (Object.keys(trace.outcomes).length === 0) {
+        NodeFS.rmSync(path, { force: true });
+        throw new Error(`base ${name} of ${pkg.dir} produced no report; see ${logDir}`);
+      }
+      return trace;
+    };
     const base1: Array<PackageResult> = [];
     const base2: Array<PackageResult> = [];
-    for (const pkg of packages)
-      base1.push(
-        await runCached(
-          NodePath.join(baseCache, slug(pkg.dir), "run1.json"),
-          pkg,
-          null,
-          baseEnv,
-          "base1",
-        ),
-      );
-    for (const pkg of packages)
-      base2.push(
-        await runCached(
-          NodePath.join(baseCache, slug(pkg.dir), "run2.json"),
-          pkg,
-          null,
-          baseEnv,
-          "base2",
-        ),
-      );
+    for (const pkg of packages) base1.push(await baseRun(pkg, "run1"));
+    for (const pkg of packages) base2.push(await baseRun(pkg, "run2"));
     const traces1: Array<Trace> = [];
     const traces2: Array<Trace> = [];
-    for (const pkg of packages)
-      traces1.push(
-        await traceCached(
-          NodePath.join(baseCache, slug(pkg.dir), "trace1.json"),
-          pkg,
-          null,
-          baseEnv,
-          "trace1",
-        ),
-      );
-    for (const pkg of packages)
-      traces2.push(
-        await traceCached(
-          NodePath.join(baseCache, slug(pkg.dir), "trace2.json"),
-          pkg,
-          null,
-          baseEnv,
-          "trace2",
-        ),
-      );
+    for (const pkg of packages) traces1.push(await baseTrace(pkg, "trace1"));
+    for (const pkg of packages) traces2.push(await baseTrace(pkg, "trace2"));
     const baseUnits: Record<string, UnitOutcome> = Object.assign(
       {},
       ...base1.map((result) => result.units),
@@ -681,6 +665,11 @@ async function main(): Promise<void> {
     const name = args.label === undefined ? String(seed) : `${seed}-${args.label}`;
     const paths = writeReport(NodePath.join(BENCH_DIR, "results"), name, report);
     log(`wrote ${paths.json} and ${paths.markdown}`);
+    if (results.every((result) => result.error === null)) {
+      NodeFS.rmSync(logDir, { recursive: true, force: true });
+    } else {
+      log(`logs of the failed cases are in ${logDir}`);
+    }
   } finally {
     workspace.close();
     NodeFS.rmSync(NodePath.join(SCRATCH_ROOT, "store"), { recursive: true, force: true });
