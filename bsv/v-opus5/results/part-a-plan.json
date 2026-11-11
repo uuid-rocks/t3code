@@ -1,0 +1,835 @@
+{
+  "seed": 5150517,
+  "commit": "4102828b5cbcd156fa7939d4729746b63fa046c3",
+  "pools": {
+    "source": 1812,
+    "recordedSource": 1789,
+    "browserOnly": 185,
+    "tests": 829,
+    "data": 6
+  },
+  "mutations": [
+    {
+      "id": "m01",
+      "stratum": "weighted",
+      "file": "packages/shared/src/HostProcess.ts",
+      "kind": "source",
+      "recordedImporters": 636,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 3705,
+        "end": 3750,
+        "before": "return new Set([...interfaces, ...resolved]);",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m02",
+      "stratum": "weighted",
+      "file": "packages/shared/src/threadPullRequests.ts",
+      "kind": "source",
+      "recordedImporters": 160,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 2539,
+        "end": 2727,
+        "before": "return threadSearchPullRequests(thread).flatMap((pullRequest) => [\n    `#${pullRequest.number}`,\n    ...pullRequest.references,\n    ...(pullRequest.title ? [pul",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m03",
+      "stratum": "weighted",
+      "file": "packages/contracts/src/desktopBrowser.ts",
+      "kind": "source",
+      "recordedImporters": 381,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "string",
+        "start": 879,
+        "end": 884,
+        "before": "\"cdp\"",
+        "after": "\"cdp_bsv\""
+      }
+    },
+    {
+      "id": "m04",
+      "stratum": "weighted",
+      "file": "packages/contracts/src/settingsSecretValue.ts",
+      "kind": "source",
+      "recordedImporters": 387,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 2387,
+        "end": 2465,
+        "before": "return Schema.resolveAnnotationsKey(schema)?.settingsSecretReference === true;",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m05",
+      "stratum": "weighted",
+      "file": "packages/contracts/src/mcpApps.ts",
+      "kind": "source",
+      "recordedImporters": 382,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 2911,
+        "end": 2952,
+        "before": "return \"This app cannot call that tool.\";",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m06",
+      "stratum": "weighted",
+      "file": "packages/contracts/src/orchestrationV2IdTable.ts",
+      "kind": "source",
+      "recordedImporters": 385,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 940,
+        "end": 953,
+        "before": "return value;",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m07",
+      "stratum": "weighted",
+      "file": "apps/web/src/state/entities.ts",
+      "kind": "source",
+      "recordedImporters": 33,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 8212,
+        "end": 8327,
+        "before": "return useAtomValue(\n    ref === null ? EMPTY_THREAD_HISTORY_ATOM : environmentThreadDetails.historyAtom(ref),\n  );",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m08",
+      "stratum": "weighted",
+      "file": "packages/shared/src/assistantCitations.ts",
+      "kind": "source",
+      "recordedImporters": 23,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 6205,
+        "end": 6296,
+        "before": "return `${text}\\n\\n<assistant_citations>\\n${description}\\n${data}\\n</assistant_citations>`;",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m09",
+      "stratum": "weighted",
+      "file": "packages/shared/src/advertisedEndpoint.ts",
+      "kind": "source",
+      "recordedImporters": 194,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 1703,
+        "end": 1770,
+        "before": "return fallback === \"mixed-content-blocked\" ? \"unknown\" : fallback;",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m10",
+      "stratum": "weighted",
+      "file": "packages/client-runtime/src/errors/network.ts",
+      "kind": "source",
+      "recordedImporters": 189,
+      "projects": ["client-runtime", "web"],
+      "mutation": {
+        "op": "string",
+        "start": 39,
+        "end": 152,
+        "before": "\"Your DNS or firewall may be blocking T3 Connect. Try another network, such as a different Wi-Fi or mobile data.\"",
+        "after": "\"Your DNS or firewall may be blocking T3 Connect. Try another network, such as a different Wi-Fi or mobile data._bsv\""
+      }
+    },
+    {
+      "id": "m11",
+      "stratum": "weighted",
+      "file": "packages/shared/src/hostClassification.ts",
+      "kind": "source",
+      "recordedImporters": 193,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 954,
+        "end": 1010,
+        "before": "return [high >>> 8, high & 0xff, low >>> 8, low & 0xff];",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m12",
+      "stratum": "weighted",
+      "file": "packages/client-runtime/src/state/olderSettledThreads.ts",
+      "kind": "source",
+      "recordedImporters": 74,
+      "projects": ["client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 5706,
+        "end": 5721,
+        "before": "return highest;",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m13",
+      "stratum": "weighted",
+      "file": "packages/contracts/src/chatAttachment.ts",
+      "kind": "source",
+      "recordedImporters": 394,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 862,
+        "end": 946,
+        "before": "return PROVIDER_SEND_TURN_SUPPORTED_IMAGE_MIME_TYPE_SET.has(mimeType.toLowerCase());",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m14",
+      "stratum": "weighted",
+      "file": "packages/contracts/src/composerContext.ts",
+      "kind": "source",
+      "recordedImporters": 385,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 8853,
+        "end": 8866,
+        "before": "return false;",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m15",
+      "stratum": "weighted",
+      "file": "packages/contracts/src/server.ts",
+      "kind": "source",
+      "recordedImporters": 383,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 35625,
+        "end": 35694,
+        "before": "return `Provider update failed for ${this.provider}: ${this.reason}`;",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m16",
+      "stratum": "weighted",
+      "file": "packages/client-runtime/src/state/shellCommands.ts",
+      "kind": "source",
+      "recordedImporters": 80,
+      "projects": ["client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 337,
+        "end": 510,
+        "before": "return {\n    openInEditor: createEnvironmentRpcCommand(runtime, {\n      label: \"environment-data:shell:open-in-editor\",\n      tag: WS_METHODS.shellOpenInEditor,",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m17",
+      "stratum": "weighted",
+      "file": "packages/client-runtime/src/pullRequestQuery.ts",
+      "kind": "source",
+      "recordedImporters": 68,
+      "projects": ["client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 963,
+        "end": 1114,
+        "before": "return names\n    .slice(0, MAX_QUALIFIER_VALUES)\n    .map((name) => name.slice(0, MAX_QUALIFIER_LENGTH).trim())\n    .filter((name) => name.length > 0);",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m18",
+      "stratum": "weighted",
+      "file": "packages/contracts/src/providerInstance.ts",
+      "kind": "source",
+      "recordedImporters": 397,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "operator",
+        "start": 2568,
+        "end": 2593,
+        "before": "typeof value === \"string\"",
+        "after": "typeof value !== \"string\""
+      }
+    },
+    {
+      "id": "m19",
+      "stratum": "weighted",
+      "file": "packages/contracts/src/providerSetup.ts",
+      "kind": "source",
+      "recordedImporters": 383,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 6268,
+        "end": 6287,
+        "before": "return this.detail;",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m20",
+      "stratum": "weighted",
+      "file": "packages/contracts/src/orchestrationDispatch.ts",
+      "kind": "source",
+      "recordedImporters": 382,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "string",
+        "start": 402,
+        "end": 411,
+        "before": "\"deleted\"",
+        "after": "\"deleted_bsv\""
+      }
+    },
+    {
+      "id": "m21",
+      "stratum": "weighted",
+      "file": "packages/contracts/src/speech.ts",
+      "kind": "source",
+      "recordedImporters": 388,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 3787,
+        "end": 3933,
+        "before": "return keys.every(Boolean) && new Set(keys).size === keys.length\n      ? true\n      : \"Dictionary terms and aliases must be unique and nonempty.\";",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m22",
+      "stratum": "weighted",
+      "file": "apps/web/src/hooks/useCopyToClipboard.ts",
+      "kind": "source",
+      "recordedImporters": 35,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 3701,
+        "end": 3713,
+        "before": "return true;",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m23",
+      "stratum": "weighted",
+      "file": "packages/client-runtime/src/state/threadHistoryController.ts",
+      "kind": "source",
+      "recordedImporters": 75,
+      "projects": ["client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 1837,
+        "end": 4042,
+        "before": "return ThreadHistoryController.of({\n      register: Effect.fn(\"ThreadHistoryController.register\")(\n        function (environmentId, threadId, handler) {\n       ",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m24",
+      "stratum": "weighted",
+      "file": "packages/contracts/src/previewCapture.ts",
+      "kind": "source",
+      "recordedImporters": 381,
+      "projects": ["contracts", "shared", "client-runtime", "web"],
+      "mutation": {
+        "op": "return",
+        "start": 977,
+        "end": 1107,
+        "before": "return `Preview capture timed out during ${this.stage}. Check the preview host's lock, display and window state before retrying.`;",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m25",
+      "stratum": "browser-only",
+      "file": "apps/web/src/components/Sidebar.tsx",
+      "kind": "source",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 79936,
+        "end": 79987,
+        "before": "return createSidebarCollisionDetection(() => true);",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m26",
+      "stratum": "browser-only",
+      "file": "apps/web/src/components/DiffPanel.tsx",
+      "kind": "source",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 21036,
+        "end": 21074,
+        "before": "return currentLoadDiffFiles(fileDiff);",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m27",
+      "stratum": "browser-only",
+      "file": "apps/web/src/components/AddProjectToMachineDialog.tsx",
+      "kind": "source",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 3217,
+        "end": 3303,
+        "before": "return request ? <AddProjectToMachineDialog key={session} request={request} /> : null;",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m28",
+      "stratum": "browser-only",
+      "file": "apps/web/src/components/chat/TimelineWorkEntryRow.logic.ts",
+      "kind": "source",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 1150,
+        "end": 1166,
+        "before": "return \"search\";",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m29",
+      "stratum": "browser-only",
+      "file": "apps/web/src/components/chat/ChangedFilesTree.tsx",
+      "kind": "source",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 2074,
+        "end": 5449,
+        "before": "return (\n    <div\n      className=\"@container/changed-files mt-4 rounded-lg bg-secondary dark:bg-input/20\"\n      data-changed-files-state=\"tree\"\n    >\n      <di",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m30",
+      "stratum": "browser-only",
+      "file": "apps/web/src/components/pullRequest/PullRequestSummaryTab.tsx",
+      "kind": "source",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 6541,
+        "end": 7016,
+        "before": "return (\n    <div className={cn(\"flex items-start gap-1\", className)}>\n      <PullRequestCommentBody\n        key={comment.id}\n        className=\"min-w-0 flex-1\"",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m31",
+      "stratum": "leaf",
+      "file": "apps/web/src/components/device/DeviceToolsPanel.tsx",
+      "kind": "source",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 14836,
+        "end": 15441,
+        "before": "return (\n    <form\n      className=\"flex gap-1.5\"\n      onSubmit={(event) => {\n        event.preventDefault();\n        submit();\n      }}\n    >\n      <Input\n   ",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m32",
+      "stratum": "leaf",
+      "file": "apps/web/src/hooks/useSidebarProjectGroups.ts",
+      "kind": "source",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 1988,
+        "end": 2080,
+        "before": "return sortSidebarV2ProjectGroups(unsortedGroups, threads, sortOrder, delegatedUnderParent);",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m33",
+      "stratum": "leaf",
+      "file": "apps/web/src/components/desktopUpdate.toast.tsx",
+      "kind": "source",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 757,
+        "end": 1232,
+        "before": "return (\n    <button\n      className=\"ml-2 inline cursor-pointer text-muted-foreground underline decoration-dotted underline-offset-4 transition-colors hover:te",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m34",
+      "stratum": "leaf",
+      "file": "apps/web/src/components/ProviderUpdatesAction.tsx",
+      "kind": "source",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 4545,
+        "end": 4576,
+        "before": "return { machines, updateAll };",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m35",
+      "stratum": "leaf",
+      "file": "apps/web/src/components/files/ProjectFilePicker.tsx",
+      "kind": "source",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 4969,
+        "end": 5003,
+        "before": "return <EmptyProjectFilePicker />;",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m36",
+      "stratum": "leaf",
+      "file": "apps/web/src/components/BranchPicker.tsx",
+      "kind": "source",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 7886,
+        "end": 8375,
+        "before": "return (\n    <ComboboxItem\n      disabled={disabled}\n      hideIndicator\n      key={itemValue}\n      index={index}\n      value={value ?? itemValue}\n      onClic",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m37",
+      "stratum": "leaf",
+      "file": "apps/web/src/components/settings/ProviderSettingsForm.tsx",
+      "kind": "source",
+      "recordedImporters": 4,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 13611,
+        "end": 14587,
+        "before": "return (\n    <div className=\"flex w-full min-w-0 items-start gap-2 @min-[32rem]/settings-row:w-80\">\n      <SecretSourceInput\n        id={inputId}\n        aria-d",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m38",
+      "stratum": "leaf",
+      "file": "apps/web/src/components/pullRequest/PullRequestCommentBody.tsx",
+      "kind": "source",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 888,
+        "end": 1021,
+        "before": "return observeResize(element, ([entry]) => {\n              if (entry) setOverflowing(entry.contentRect.height > 240);\n            });",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m39",
+      "stratum": "leaf",
+      "file": "apps/web/src/composer-logic.ts",
+      "kind": "source",
+      "recordedImporters": 3,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 1210,
+        "end": 1387,
+        "before": "return (\n    trigger?.kind === \"path\" &&\n    searchTarget.environmentId === environmentId &&\n    searchTarget.cwd === cwd &&\n    searchTarget.query === trigger.",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m40",
+      "stratum": "leaf",
+      "file": "apps/web/src/onboarding/firstRun.logic.ts",
+      "kind": "source",
+      "recordedImporters": 2,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 2981,
+        "end": 2993,
+        "before": "return true;",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m41",
+      "stratum": "test",
+      "file": "packages/client-runtime/src/work-log/embeddedScripts.test.ts",
+      "kind": "test",
+      "recordedImporters": 1,
+      "projects": ["client-runtime"],
+      "mutation": {
+        "op": "test-throw",
+        "start": 942,
+        "end": 942,
+        "before": "",
+        "after": " throw new Error(\"bsv-mutation\");"
+      }
+    },
+    {
+      "id": "m42",
+      "stratum": "test",
+      "file": "apps/web/src/components/chat/markdownStreamBlocks.test.tsx",
+      "kind": "test",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "test-throw",
+        "start": 1439,
+        "end": 1439,
+        "before": "",
+        "after": " throw new Error(\"bsv-mutation\");"
+      }
+    },
+    {
+      "id": "m43",
+      "stratum": "test",
+      "file": "apps/web/src/components/files/filePath.test.ts",
+      "kind": "test",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "test-throw",
+        "start": 317,
+        "end": 317,
+        "before": "",
+        "after": " throw new Error(\"bsv-mutation\");"
+      }
+    },
+    {
+      "id": "m44",
+      "stratum": "test",
+      "file": "packages/client-runtime/src/state/server.test.ts",
+      "kind": "test",
+      "recordedImporters": 1,
+      "projects": ["client-runtime"],
+      "mutation": {
+        "op": "test-throw",
+        "start": 24942,
+        "end": 24942,
+        "before": "",
+        "after": " throw new Error(\"bsv-mutation\");"
+      }
+    },
+    {
+      "id": "m45",
+      "stratum": "test",
+      "file": "apps/web/src/components/chat/useComposerContextImport.browser.test.tsx",
+      "kind": "test",
+      "recordedImporters": 0,
+      "projects": ["web"],
+      "mutation": {
+        "op": "test-throw",
+        "start": 2235,
+        "end": 2235,
+        "before": "",
+        "after": " throw new Error(\"bsv-mutation\");"
+      }
+    },
+    {
+      "id": "m46",
+      "stratum": "test",
+      "file": "apps/web/src/hooks/useThreadActions.undo.test.ts",
+      "kind": "test",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "test-throw",
+        "start": 4527,
+        "end": 4527,
+        "before": "",
+        "after": " throw new Error(\"bsv-mutation\");"
+      }
+    },
+    {
+      "id": "m47",
+      "stratum": "test",
+      "file": "packages/client-runtime/src/queuedRunEdit.test.ts",
+      "kind": "test",
+      "recordedImporters": 1,
+      "projects": ["client-runtime"],
+      "mutation": {
+        "op": "test-throw",
+        "start": 1217,
+        "end": 1217,
+        "before": "",
+        "after": " throw new Error(\"bsv-mutation\");"
+      }
+    },
+    {
+      "id": "m48",
+      "stratum": "test",
+      "file": "packages/client-runtime/src/platform/orchestrationCache.test.ts",
+      "kind": "test",
+      "recordedImporters": 1,
+      "projects": ["client-runtime"],
+      "mutation": {
+        "op": "test-throw",
+        "start": 1500,
+        "end": 1500,
+        "before": "",
+        "after": " throw new Error(\"bsv-mutation\");"
+      }
+    },
+    {
+      "id": "m49",
+      "stratum": "test",
+      "file": "packages/client-runtime/src/state/threadVisits.test.ts",
+      "kind": "test",
+      "recordedImporters": 1,
+      "projects": ["client-runtime"],
+      "mutation": {
+        "op": "test-throw",
+        "start": 2217,
+        "end": 2217,
+        "before": "",
+        "after": " throw new Error(\"bsv-mutation\");"
+      }
+    },
+    {
+      "id": "m50",
+      "stratum": "test",
+      "file": "apps/web/src/components/settings/AboutVersionTitle.browser.test.tsx",
+      "kind": "test",
+      "recordedImporters": 0,
+      "projects": ["web"],
+      "mutation": {
+        "op": "test-throw",
+        "start": 408,
+        "end": 408,
+        "before": "",
+        "after": " throw new Error(\"bsv-mutation\");"
+      }
+    },
+    {
+      "id": "m51",
+      "stratum": "data",
+      "file": "apps/web/src/terminal/ghostty/vendor/ghostty-write-pty.wasm",
+      "kind": "data",
+      "recordedImporters": 4,
+      "projects": ["web"],
+      "mutation": {
+        "op": "byte-flip",
+        "offset": 56
+      }
+    },
+    {
+      "id": "m52",
+      "stratum": "data",
+      "file": "apps/web/src/test-fixtures.ts",
+      "kind": "data",
+      "recordedImporters": 14,
+      "projects": ["web"],
+      "mutation": {
+        "op": "return",
+        "start": 6950,
+        "end": 7015,
+        "before": "return { threadId, runId, historyRunId, visibleTurnItems, time };",
+        "after": "return undefined as never;"
+      }
+    },
+    {
+      "id": "m53",
+      "stratum": "data",
+      "file": "packages/client-runtime/src/state/orchestrationV2TestFixtures.ts",
+      "kind": "data",
+      "recordedImporters": 20,
+      "projects": ["client-runtime", "web"],
+      "mutation": {
+        "op": "boolean",
+        "start": 1513,
+        "end": 1518,
+        "before": "false",
+        "after": "true"
+      }
+    },
+    {
+      "id": "m54",
+      "stratum": "data",
+      "file": "native/libghostty-vt/VERSION",
+      "kind": "data",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "version",
+        "start": 0,
+        "end": 40,
+        "before": "9f62873bf195e4d8a762d768a1405a5f2f7b1697",
+        "after": "9f62873bf195e4d8a762d768a1405a5f2f7b1697.1"
+      }
+    },
+    {
+      "id": "m55",
+      "stratum": "data",
+      "file": "native/libghostty-vt/include/ghostty/vt/key/event.h",
+      "kind": "data",
+      "recordedImporters": 1,
+      "projects": ["web"],
+      "mutation": {
+        "op": "number",
+        "start": 673,
+        "end": 674,
+        "before": "0",
+        "after": "1000"
+      }
+    }
+  ]
+}
