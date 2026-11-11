@@ -26,7 +26,7 @@ import {
 import { changedPaths, listFiles, resolveCommit, showFile, treeKey } from "./lib/git.ts";
 import { runInstrumented } from "./lib/instrument.ts";
 import { listTestPackages, packageOfProject } from "./lib/packages.ts";
-import { run as runProcess, terminateChildren } from "./lib/proc.ts";
+import { Interrupted, interrupt, run as runProcess } from "./lib/proc.ts";
 import { type CaseResult, type Report, writeReport } from "./lib/report.ts";
 import {
   type Case,
@@ -81,6 +81,9 @@ const argv = selectorArgv(selectorCommand).map((part) =>
     ? NodePath.join(REPO, part)
     : part,
 );
+
+/** Part of every cache key; bump it when how a package is run or observed changes. */
+const RUN_FORMAT = 2;
 
 const log = (line: string): void => {
   process.stdout.write(`[${new Date().toISOString().slice(11, 19)}] ${line}\n`);
@@ -142,11 +145,8 @@ async function main(): Promise<void> {
   const workspace = new Workspace(baseCommit, logDir);
   const started = new Date();
   const onSignal = (): void => {
-    terminateChildren();
-    setTimeout(() => {
-      workspace.close();
-      process.exit(130);
-    }, 2000);
+    log("interrupted; stopping the running test process");
+    interrupt();
   };
   process.on("SIGINT", onSignal);
   process.on("SIGTERM", onSignal);
@@ -155,7 +155,7 @@ async function main(): Promise<void> {
     workspace.open();
     await workspace.resetToBase(DEFAULT_NODE);
     const baseEnv = workspace.env(DEFAULT_NODE);
-    const baseKey = `${treeKey(baseCommit)}-${hashJson({ ...baseEnv, TMPDIR: "<tmp>" })}`;
+    const baseKey = `${treeKey(baseCommit)}-${hashJson({ ...baseEnv, TMPDIR: "<tmp>", RUN_FORMAT })}`;
     const baseCache = NodePath.join(CACHE_DIR, "base", baseKey);
     const allPackages = listTestPackages(workspace.dir);
     const wanted = args.packages
@@ -606,6 +606,7 @@ async function main(): Promise<void> {
           `case ${entry.id}: changed ${changed.size}, selected ${selectedKeys.size}, misses ${misses.length}, extras ${extras.length}`,
         );
       } catch (error) {
+        if (error instanceof Interrupted) throw error;
         const message = error instanceof Error ? (error.stack ?? error.message) : String(error);
         log(`case ${entry.id} failed: ${message}`);
         results.push({
@@ -834,4 +835,9 @@ async function groundTruth(options: {
   };
 }
 
-await main();
+try {
+  await main();
+} catch (error) {
+  if (!(error instanceof Interrupted)) throw error;
+  process.exitCode = 130;
+}

@@ -62,8 +62,9 @@ function scopedArgs(pkg: TestPackage, scope: Scope | null): ReadonlyArray<string
 }
 
 /**
- * Runs one package's test script the way CI does (`vp test run <args>` in the package directory,
- * `--maxWorkers=6`), with the oracle reporter added. Returns per-unit outcomes keyed by unit key.
+ * Runs one package's test script the way CI's `vp run test` does: `vp test run <args>` in the
+ * package directory with the package's and the root's `node_modules/.bin` first on `PATH`, plus
+ * `--maxWorkers=6` and the oracle reporter. Returns per-unit outcomes keyed by unit key.
  */
 export async function runPackage(
   pkg: TestPackage,
@@ -93,9 +94,16 @@ export async function runPackage(
   const wrap = options.wrap ?? [];
   const command = ["timeout", "-k", "30", String(PACKAGE_TIMEOUT_SECONDS), ...wrap, vp, ...args];
   const started = performance.now();
+  const bins = [pkg.dir, "."].map((dir) =>
+    NodePath.join(options.worktree, dir, "node_modules/.bin"),
+  );
   const result = await runLogged(command[0] ?? "timeout", command.slice(1), {
     cwd: NodePath.join(options.worktree, pkg.dir),
-    env: { ...options.env, ORACLE_REPORT: reportPath },
+    env: {
+      ...options.env,
+      PATH: [...bins, options.env.PATH ?? ""].join(":"),
+      ORACLE_REPORT: reportPath,
+    },
     logPath,
   });
   const seconds = (performance.now() - started) / 1000;

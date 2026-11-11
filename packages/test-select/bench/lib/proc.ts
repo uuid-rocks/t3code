@@ -46,9 +46,17 @@ export function check(
 }
 
 const active = new Set<NodeChildProcess.ChildProcess>();
+let interrupted = false;
 
-/** Sends SIGTERM to every running `runLogged` child, e.g. when the harness is interrupted. */
-export function terminateChildren(): void {
+export class Interrupted extends Error {
+  constructor() {
+    super("interrupted");
+  }
+}
+
+/** Stops every running `runLogged` child; it and every later `runLogged` call reject with `Interrupted`. */
+export function interrupt(): void {
+  interrupted = true;
   for (const child of active) child.kill("SIGTERM");
 }
 
@@ -58,6 +66,7 @@ export function runLogged(
   args: ReadonlyArray<string>,
   options: { readonly cwd: string; readonly env: NodeJS.ProcessEnv; readonly logPath: string },
 ): Promise<{ readonly status: number | null; readonly signal: string | null }> {
+  if (interrupted) return Promise.reject(new Interrupted());
   const fd = NodeFS.openSync(options.logPath, "a");
   return new Promise((resolve, reject) => {
     const child = NodeChildProcess.spawn(command, args, {
@@ -74,7 +83,8 @@ export function runLogged(
     child.on("exit", (status, signal) => {
       active.delete(child);
       NodeFS.closeSync(fd);
-      resolve({ status, signal });
+      if (interrupted) reject(new Interrupted());
+      else resolve({ status, signal });
     });
   });
 }
