@@ -1,0 +1,21 @@
+{
+  "id": "web-tsconfig-paths",
+  "category": "tsconfig",
+  "description": "apps/web tsconfig paths ~/* -> ./src/components/* (findings issue 2)",
+  "project": "apps/web#unit",
+  "edits": [
+    {
+      "op": "write",
+      "path": "apps/web/tsconfig.json",
+      "content": "{\n  \"extends\": \"../../tsconfig.base.json\",\n  \"compilerOptions\": {\n    \"composite\": true,\n    \"module\": \"Preserve\",\n    \"moduleResolution\": \"Bundler\",\n    \"erasableSyntaxOnly\": false,\n    \"verbatimModuleSyntax\": false,\n    \"jsx\": \"react-jsx\",\n    \"lib\": [\"ES2023\", \"ESNext.Disposable\", \"DOM\", \"DOM.Iterable\"],\n    \"paths\": {\n      \"~/*\": [\"./src/components/*\"]\n    },\n    \"plugins\": [\n      {\n        \"name\": \"@effect/language-service\",\n        // Diagnostic severities are deep-merged with tsconfig.base.json; list only web-specific overrides here.\n        \"diagnosticSeverity\": {\n          \"globalDate\": \"off\",\n          \"globalConsole\": \"off\",\n          \"globalRandom\": \"off\",\n          \"globalTimers\": \"off\",\n          \"globalFetch\": \"off\"\n        }\n      }\n    ]\n  },\n  \"include\": [\n    \"src\",\n    \"vite\",\n    \"vite.config.ts\",\n    \"vercel.ts\",\n    \"test\",\n    \"scripts/verify-built-boot.ts\",\n    \"scripts/warm-dep-cache.ts\",\n    \"../../scripts/lib/public-config.ts\",\n    \"../../scripts/lib/third-party-licenses.ts\"\n  ]\n}\n"
+    }
+  ],
+  "ignored": [],
+  "env": {
+    "set": {},
+    "unset": []
+  },
+  "node": null,
+  "install": false,
+  "expectStanding": false
+}

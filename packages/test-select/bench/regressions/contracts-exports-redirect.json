@@ -1,0 +1,21 @@
+{
+  "id": "contracts-exports-redirect",
+  "category": "`package.json`",
+  "description": "packages/contracts exports['.'].import points at src/settings.ts, lockfile unchanged (findings issue 2)",
+  "project": null,
+  "edits": [
+    {
+      "op": "write",
+      "path": "packages/contracts/package.json",
+      "content": "{\n  \"name\": \"@t3tools/contracts\",\n  \"version\": \"0.1.8\",\n  \"private\": true,\n  \"files\": [\n    \"dist\"\n  ],\n  \"type\": \"module\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./src/index.ts\",\n      \"import\": \"./src/settings.ts\"\n    },\n    \"./settings\": {\n      \"types\": \"./src/settings.ts\",\n      \"import\": \"./src/settings.ts\"\n    },\n    \"./relay\": {\n      \"types\": \"./src/relay.ts\",\n      \"import\": \"./src/relay.ts\"\n    }\n  },\n  \"scripts\": {\n    \"typecheck\": \"effect-tsgo tsrs --noEmit\",\n    \"test\": \"vp test run --config ../../vite.config.ts --dir .\"\n  },\n  \"dependencies\": {\n    \"effect\": \"catalog:\"\n  },\n  \"devDependencies\": {\n    \"@effect/vitest\": \"catalog:\",\n    \"vite-plus\": \"catalog:\"\n  }\n}\n"
+    }
+  ],
+  "ignored": [],
+  "env": {
+    "set": {},
+    "unset": []
+  },
+  "node": null,
+  "install": false,
+  "expectStanding": false
+}
