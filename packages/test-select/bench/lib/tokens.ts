@@ -92,7 +92,12 @@ function collect(node: ts.Node, file: ts.SourceFile, out: Array<Token>): void {
   if (children.length === 0) {
     if (node.kind === ts.SyntaxKind.EndOfFileToken) return;
     const start = node.getStart(file);
-    out.push({ text: file.text.slice(start, node.end), start, end: node.end });
+    // Template literals and JSX text read CRLF as LF.
+    out.push({
+      text: file.text.slice(start, node.end).replaceAll("\r\n", "\n"),
+      start,
+      end: node.end,
+    });
     return;
   }
   for (let index = 0; index < children.length; index++) {

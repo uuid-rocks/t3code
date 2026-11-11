@@ -168,7 +168,7 @@ function operatorsAt(
   return out;
 }
 
-function hasSyntaxErrors(path: string, text: string): boolean {
+export function hasSyntaxErrors(path: string, text: string): boolean {
   const result = ts.transpileModule(text, {
     fileName: path,
     reportDiagnostics: true,

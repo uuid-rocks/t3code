@@ -1,10 +1,20 @@
 import * as NodePath from "node:path";
 
 import { DEFAULT_NODE } from "./env.ts";
-import { type Mutation, mutateScript, pick, type Random, seededRandom, shuffle } from "./mutate.ts";
+import ts from "typescript";
+
+import {
+  hasSyntaxErrors,
+  type Mutation,
+  mutateScript,
+  pick,
+  type Random,
+  seededRandom,
+  shuffle,
+} from "./mutate.ts";
 import { packageOfProject } from "./packages.ts";
 import type { Case, FileEdit, Trace, Unit } from "./schema.ts";
-import { isScript, type Range } from "./tokens.ts";
+import { changedRanges, isScript, parse, type Range } from "./tokens.ts";
 
 /** What case generation reads about the base state. */
 export interface GenerationContext {
@@ -247,6 +257,19 @@ function readByUnits(context: GenerationContext, pattern: RegExp): Array<string>
   return [...out].toSorted();
 }
 
+/** End of the last top-level import declaration, or 0. */
+function afterImports(path: string, text: string): number {
+  const file = parse(path, text);
+  let end = 0;
+  for (const statement of file.statements)
+    if (ts.isImportDeclaration(statement)) end = statement.end;
+  return end;
+}
+
+/**
+ * A comment, whitespace or type-only edit of a file some unit executed. The edit must parse and
+ * leave runtime tokens unchanged (a comment line inside a template literal or JSX text would not).
+ */
 function commentEdit(
   random: Random,
   context: GenerationContext,
@@ -255,38 +278,42 @@ function commentEdit(
   const files = [...executed.keys()].filter(
     (file) => isScript(file) && !isTestFile(file) && context.tracked.has(file),
   );
-  const file = pick(random, files);
-  const text = file === undefined ? null : context.read(file);
-  if (file === undefined || text === null) return null;
-  const lines = text.split("\n");
-  const kind = Math.floor(random() * 5);
-  const at = Math.floor(random() * lines.length);
-  if (kind === 0) {
-    lines.splice(at, 0, "// test-select: comment-only edit");
-  } else if (kind === 1) {
-    lines.splice(at, 0, "", "");
-  } else if (kind === 2) {
-    const last = lines.findLastIndex((line) => /^import\s/.test(line));
-    lines.splice(last + 1, 0, "type TestSelectBenchAlias = { readonly a: number };");
-  } else if (kind === 3) {
-    const last = lines.findLastIndex((line) => /^import\s/.test(line));
-    lines.splice(
-      last + 1,
-      0,
-      `import type * as TestSelectBenchSelf from "./${NodePath.basename(file)}";`,
-    );
-  } else {
-    lines.push("export interface TestSelectBenchInterface {", "  readonly value: string;", "}");
+  for (const file of shuffle(random, files).slice(0, 20)) {
+    const text = context.read(file);
+    if (text === null) continue;
+    const kind = Math.floor(random() * 5);
+    const lineStarts = [0, ...[...text.matchAll(/\n/g)].map((match) => (match.index ?? 0) + 1)];
+    const lineStart = lineStarts[Math.floor(random() * lineStarts.length)] ?? 0;
+    const imports = afterImports(file, text);
+    const insert = (at: number, snippet: string): string =>
+      `${text.slice(0, at)}${snippet}${text.slice(at)}`;
+    const next =
+      kind === 0
+        ? insert(lineStart, "// test-select: comment-only edit\n")
+        : kind === 1
+          ? insert(lineStart, "\n\n")
+          : kind === 2
+            ? insert(imports, "\ntype TestSelectBenchAlias = { readonly a: number };\n")
+            : kind === 3
+              ? insert(
+                  imports,
+                  `\nimport type * as TestSelectBenchSelf from "./${NodePath.basename(file)}";\n`,
+                )
+              : `${text}\nexport interface TestSelectBenchInterface {\n  readonly value: string;\n}\n`;
+    if (hasSyntaxErrors(file, next)) continue;
+    const changed = changedRanges(file, text, next);
+    if (changed.base.length > 0 || changed.head.length > 0) continue;
+    const label =
+      ["comment line", "blank lines", "type alias", "import type", "interface"][kind] ?? "comment";
+    return makeCase({
+      id: "type-only",
+      category: "Comment, whitespace and type-only edits",
+      description: `${label} added to ${file}`,
+      edits: [{ op: "write", path: file, content: next }],
+      expectStanding: true,
+    });
   }
-  const label =
-    ["comment line", "blank lines", "type alias", "import type", "interface"][kind] ?? "comment";
-  return makeCase({
-    id: "type-only",
-    category: "Comment, whitespace and type-only edits",
-    description: `${label} added to ${file}${kind < 2 ? `:${at + 1}` : ""}`,
-    edits: [{ op: "write", path: file, content: lines.join("\n") }],
-    expectStanding: true,
-  });
+  return null;
 }
 
 /** One generator per non-code row of DESIGN.md §14.4; each returns `null` when its anchor is missing. */
