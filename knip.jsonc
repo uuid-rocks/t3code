@@ -43,6 +43,10 @@
       // knip run beside it in check:changed must not report.
       "ignore": ["npm-launcher/**", ".knip-test-*/**"],
     },
+    "packages/test-select": {
+      // The bench oracle's reporter and preload, and stub selectors, are loaded by path.
+      "entry": ["bench/run.ts", "bench/oracle/*.ts", "bench/selectors/*.ts"],
+    },
     "apps/server": {
       // Vite+ pack entries and the launcher used by installed background services.
       "entry": [
