@@ -133,6 +133,11 @@ export async function runInstrumented(
     timeoutSeconds: INSTRUMENTED_TIMEOUT_SECONDS,
     ...(browser === null ? {} : { extraArgs: ["--config", browser.config] }),
   });
+  // With -qq strace prints only errors, such as its output filter exiting early.
+  const straceError = /^strace: .*$/m.exec(NodeFS.readFileSync(run.log, "utf8"));
+  if (straceError !== null) {
+    throw new Error(`instrumented run of ${pkg.dir} lost tracer output: ${straceError[0]}`);
+  }
 
   const records = new Map<number, ProcessRecord>();
   const procDir = NodePath.join(oracleDir, "proc");
