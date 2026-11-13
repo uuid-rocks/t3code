@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/mobile/src/features/pull-requests/PullRequestControls.tsx fails on load");
 import { sourceControlClients } from "@t3tools/client-runtime/source-control-clients";
 import Animated from "react-native-reanimated";
 import { PR_ROW_LAYOUT } from "./pullRequestAnimations";
@@ -166,7 +167,7 @@ export function PullRequestActionToolbar(props: {
               >
                 <View pointerEvents="none">
                   <IconButton
-                    icon="sparkles"
+                    icon="ellipsis.bubble"
                     accessibilityLabel={`${shortLabel} agent actions`}
                     disabled={agent.disabled}
                   />
@@ -237,7 +238,7 @@ export function PullRequestActionToolbar(props: {
   const agentControl = showAgentControls ? (
     <Toolbar.Menu
       identifier="pull-request-agent"
-      icon="sparkles"
+      icon="ellipsis.bubble"
       title="AI helpers"
       accessibilityLabel={`${shortLabel} agent actions`}
       disabled={agent.disabled}
