@@ -31,6 +31,11 @@ jobs:
       - name: Select ACP tests
         working-directory: packages/effect-acp
         run: vp test run --config bsv-r1.config.ts --dir . --maxWorkers 3
+      - name: Dump effect-acp dependency snapshots (after Select ACP)
+        if: always() && !cancelled()
+        working-directory: packages/effect-acp
+        run: |
+          for f in node_modules/.vite/vitest/*/*.json; do echo "=== $f $(wc -c < "$f") bytes"; python3 -c 'import json,sys; d=json.load(open(sys.argv[1])); d.pop("results", None); print(json.dumps(d, sort_keys=True))' "$f" | cut -c1-200000; done
       - name: Select provider-core tests
         if: always() && !cancelled()
         working-directory: packages/provider-core
@@ -43,6 +48,11 @@ jobs:
         if: always() && !cancelled()
         working-directory: packages/effect-acp
         run: vp test run --config bsv-r1-cov.config.ts --dir . --maxWorkers 3
+      - name: Dump effect-acp dependency snapshots (after the coverage step)
+        if: always() && !cancelled()
+        working-directory: packages/effect-acp
+        run: |
+          for f in node_modules/.vite/vitest/*/*.json; do echo "=== $f $(wc -c < "$f") bytes"; python3 -c 'import json,sys; d=json.load(open(sys.argv[1])); d.pop("results", None); print(json.dumps(d, sort_keys=True))' "$f" | cut -c1-200000; done
       - name: Control ACP (runAllTests)
         if: always() && !cancelled()
         working-directory: packages/effect-acp
