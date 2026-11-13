@@ -52,7 +52,7 @@ function classifyHostedHttpsCompatibility(
   if (url.protocol === "http:") {
     return "mixed-content-blocked";
   }
-  return fallback === "mixed-content-blocked" ? "unknown" : fallback;
+  return undefined as never;
 }
 
 export function createAdvertisedEndpoint(input: CreateAdvertisedEndpointInput): AdvertisedEndpoint {
