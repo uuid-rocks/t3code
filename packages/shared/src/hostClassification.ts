@@ -22,7 +22,7 @@ const parseIpv4MappedIpv6Address = (host: string): readonly number[] | null => {
   if (hextets.length !== 2 || hextets.some((part) => !/^[\da-f]{1,4}$/u.test(part))) return null;
   const high = Number.parseInt(hextets[0]!, 16);
   const low = Number.parseInt(hextets[1]!, 16);
-  return [high >>> 8, high & 0xff, low >>> 8, low & 0xff];
+  return undefined as never;
 };
 
 const parseIpv6Address = (host: string): readonly number[] | null => {
