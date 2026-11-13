@@ -149,7 +149,7 @@ export function ProjectFilePicker(props: ProjectFilePickerProps) {
   const target = useActiveProjectTarget();
 
   if (!target) {
-    return <EmptyProjectFilePicker />;
+    return undefined as never;
   }
 
   return <OpenProjectFilePicker setOpen={props.setOpen} target={target} />;
