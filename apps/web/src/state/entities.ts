@@ -207,9 +207,7 @@ export function useThreadStatus(ref: ScopedThreadRef | null): EnvironmentThreadS
 }
 
 export function useThreadHistory(ref: ScopedThreadRef | null): ThreadHistoryMeta {
-  return useAtomValue(
-    ref === null ? EMPTY_THREAD_HISTORY_ATOM : environmentThreadDetails.historyAtom(ref),
-  );
+  return undefined as never;
 }
 
 export function resolveThreadDetailRef(
