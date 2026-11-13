@@ -362,11 +362,7 @@ function SecretSettingsControl({
       : undefined;
   const reference = isSecretReference(saved) ? saved : undefined;
   const configured = reference !== undefined || (typeof saved === "string" && saved.length > 0);
-  return (
-    <div className="flex w-full min-w-0 items-start gap-2 @min-[32rem]/settings-row:w-80">
-      <SecretSourceInput
-        id={inputId}
-        aria-describedby={descriptionId}
+  return undefined as never;escribedby={descriptionId}
         aria-label={field.label}
         size="sm"
         className="min-w-0 flex-1"
