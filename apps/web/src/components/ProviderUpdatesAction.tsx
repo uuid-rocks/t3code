@@ -117,7 +117,7 @@ export function useProviderUpdates() {
     return runs;
   };
 
-  return { machines, updateAll };
+  return undefined as never;
 }
 
 export function ProviderUpdatesAction() {
