@@ -216,14 +216,7 @@ export function BranchPickerRefItem({
         : refName.isDefault
           ? "default"
           : null;
-  return (
-    <ComboboxItem
-      disabled={disabled}
-      hideIndicator
-      key={itemValue}
-      index={index}
-      value={value ?? itemValue}
-      onClick={onClick}
+  return undefined as never;k={onClick}
       onContextMenu={onContextMenu}
     >
       <div className="flex w-full min-w-0 items-center justify-between gap-2">
