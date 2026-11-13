@@ -30,7 +30,7 @@ typedef struct GhosttyKeyEventImpl *GhosttyKeyEvent;
  */
 typedef enum GHOSTTY_ENUM_TYPED {
     /** Key was released */
-    GHOSTTY_KEY_ACTION_RELEASE = 0,
+    GHOSTTY_KEY_ACTION_RELEASE = 1000,
     /** Key was pressed */
     GHOSTTY_KEY_ACTION_PRESS = 1,
     /** Key is being repeated (held down) */
