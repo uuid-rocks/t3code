@@ -184,7 +184,7 @@ export class ProviderSetupError extends Schema.TaggedError<ProviderSetupError>()
   },
 ) {
   override get message(): string {
-    return this.detail;
+    return undefined as never;
   }
 }
 
