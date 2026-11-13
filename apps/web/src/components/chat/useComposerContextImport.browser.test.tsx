@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+ throw new Error("bsv-mutation");import { useEffect } from "react";
 import { type ComposerContextRecord, ComposerContextId, EnvironmentId } from "@t3tools/contracts";
 import { expect, it, vi } from "vite-plus/test";
 
