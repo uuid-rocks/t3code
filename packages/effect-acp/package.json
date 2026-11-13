@@ -49,6 +49,7 @@
     "@effect/platform-node": "catalog:",
     "@effect/vitest": "catalog:",
     "@types/node": "catalog:",
+    "@vitest/coverage-v8": "5.1.0",
     "vite-plus": "catalog:"
   }
 }
