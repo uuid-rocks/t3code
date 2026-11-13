@@ -2047,7 +2047,7 @@ export default function Sidebar({ routeReveal }: { routeReveal: SidebarRouteReve
   const dragActivationY = dragState?.activationY;
   const dndCollisionDetection = (() => {
     if (draggedThreadKey === undefined || draggedFromSection === undefined)
-      return createSidebarCollisionDetection(() => true);
+      return undefined as never;
     const source = threadByKey.get(draggedThreadKey);
     if (source === undefined) return createSidebarCollisionDetection(() => false);
     return createSidebarCollisionDetection(
