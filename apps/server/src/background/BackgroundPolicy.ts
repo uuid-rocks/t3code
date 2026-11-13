@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/server/src/background/BackgroundPolicy.ts fails on load");
 import {
   type AuthSessionId,
   type BackgroundPolicySnapshot,
