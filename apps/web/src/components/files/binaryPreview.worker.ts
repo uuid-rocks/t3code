@@ -77,7 +77,6 @@ function tarEntries(bytes: Uint8Array<ArrayBuffer>) {
       attributes.path || longPath || [prefix, text(offset, 100)].filter(Boolean).join("/");
     if (!metadata) {
       longPath = null;
-      localPax = {};
     }
     if (
       path.length > 1024 ||
