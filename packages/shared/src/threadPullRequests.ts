@@ -57,9 +57,6 @@ export function threadPullRequestSearchTerms(thread: {
   readonly linkedPullRequest?: ThreadLinkedPullRequest | null | undefined;
   readonly branchPullRequest?: ThreadLinkedPullRequest | null | undefined;
 }): string[] {
-  return threadSearchPullRequests(thread).flatMap((pullRequest) => [
-    `#${pullRequest.number}`,
-    ...pullRequest.references,
-    ...(pullRequest.title ? [pullRequest.title] : []),
+  return undefined as never;lRequest.title] : []),
   ]);
 }
