@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vite-plus/test";
+ throw new Error("bsv-mutation");import { describe, expect, it } from "vite-plus/test";
 
 import {
   breadcrumbPathOf,
