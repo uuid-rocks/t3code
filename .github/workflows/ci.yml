@@ -5,9 +5,23 @@ on:
   push:
     branches:
       - main
+  # bsv r3 harness: seed-a seeds the plugin entries (runAllTests), seed-b the stand-in task cache.
+  workflow_dispatch:
+    inputs:
+      arm:
+        type: choice
+        options: [seed-a, seed-b]
 
 permissions:
   contents: read
+
+# bsv r3 harness (fork-only). Arms by PR head branch suffix: -b today's CI (plugin off, test:cached),
+# -c plugin select mode with a `dependencies` rule that keeps transferBudgetV2 running, -n the same
+# without the rule.
+env:
+  BSV_MODE: ${{ (inputs.arm == 'seed-a' && 'all') || ((inputs.arm == 'seed-b' || endsWith(github.head_ref, '-b')) && 'off') || 'select' }}
+  # Stands in for upstream's remote task cache (VP_REMOTE_CACHE), which the fork cannot reach.
+  BSV_TASK_CACHE_KEY: bsv-task-cache-r3-${{ github.event.pull_request.base.sha || github.sha }}
 
 concurrency:
   group: ci-${{ github.event.pull_request.number || github.sha }}
@@ -498,20 +512,41 @@ jobs:
           key: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
           restore-keys: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
 
+      - name: Restore task cache
+        if: steps.changes.outputs.test_server != 'false' && env.BSV_MODE == 'off'
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: node_modules/.vite/task-cache
+          key: ${{ env.BSV_TASK_CACHE_KEY }}-${{ matrix.shard }}
+
       - name: Test
         if: steps.changes.outputs.test_server != 'false'
         env:
           T3CODE_TRANSFER_BUDGET_REPORT_PATH: ${{ runner.temp }}/t3code-transfer-budget.md
           T3CODE_TRANSFER_BUDGET_RESULT_PATH: ${{ runner.temp }}/thread-transfer-result.json
           T3CODE_TRANSFER_BUDGET_SCENARIOS_PATH: ${{ runner.temp }}/thread-transfer-scenarios.json
+          BSV_DEPS: ${{ endsWith(github.head_ref, '-n') && '{}' || '{"integration/transferBudgetV2.integration.test.ts":"../../**"}' }}
+          SHARD: ${{ matrix.shard }}/${{ strategy.job-total }}
         # One process per file spends ~2s starting before its tests run; one file per vCPU overlaps that.
-        run: >-
-          vp run test:cached -- --shard ${{ matrix.shard }}/${{ strategy.job-total }} --concurrency 4
-          --uncached apps/server/integration/transferBudgetV2.integration.test.ts
-          --verify-hits 1 apps/server
+        # bsv: with the plugin, one Vitest per shard runs 4 files at a time instead.
+        run: |
+          if [[ "$BSV_MODE" == off ]]; then
+            vp run test:cached -- --shard "$SHARD" --concurrency 4 \
+              --uncached apps/server/integration/transferBudgetV2.integration.test.ts \
+              --verify-hits 1 apps/server
+          else
+            cd apps/server && vp test run --shard "$SHARD" --fileParallelism --maxWorkers 4
+          fi
+
+      - name: Save task cache
+        if: inputs.arm == 'seed-b' && steps.changes.outputs.test_server != 'false'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: node_modules/.vite/task-cache
+          key: ${{ env.BSV_TASK_CACHE_KEY }}-${{ matrix.shard }}
 
       - name: Save Vitest module cache
-        if: github.event_name == 'push' && steps.changes.outputs.test_server != 'false'
+        if: (github.event_name == 'push' || inputs.arm == 'seed-b') && steps.changes.outputs.test_server != 'false'
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: node_modules/.vitest-cache
@@ -590,7 +625,7 @@ jobs:
   mobile_native_static_analysis:
     name: Mobile Native Static Analysis
     needs: changes
-    if: ${{ !cancelled() && needs.changes.outputs.mobile_native != 'false' }}
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.changes.outputs.mobile_native != 'false' }}
     runs-on: blacksmith-6vcpu-macos-26
     timeout-minutes: 10
     steps:
