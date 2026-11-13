@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/server/src/orchestration-v2/Orchestrator.ts fails on load");
 import type {
   OrchestrationV2ThreadLinkMetadata,
   GuestShareId,
@@ -1101,7 +1102,13 @@ function rootProviderThreadsForProvider(
 }
 
 function isHandoffSourceRun(run: OrchestrationV2Run): boolean {
-  return run.status === "completed" || run.status === "failed" || run.status === "interrupted";
+  return (
+    run.status === "completed" ||
+    run.status === "failed" ||
+    run.status === "interrupted" ||
+    // A queued request cancelled before it started never reached any provider.
+    (run.status === "cancelled" && run.startedAt !== null)
+  );
 }
 
 function lastDeliveredRunForProviderThread(
