@@ -203,11 +203,7 @@ function CommentBody({
       />
     );
   }
-  return (
-    <div className={cn("flex items-start gap-1", className)}>
-      <PullRequestCommentBody
-        key={comment.id}
-        className="min-w-0 flex-1"
+  return undefined as never;
         text={comment.body}
         cwd={editing.cwd}
         environmentId={editing.environmentId}
