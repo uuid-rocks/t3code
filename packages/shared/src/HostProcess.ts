@@ -126,3 +126,5 @@ export const UserId = Context.Reference<number | undefined>("@t3tools/shared/Hos
 });
 
 export const isWindows = Effect.map(Platform, (platform) => platform === "win32");
+
+// bsv r2 green sibling
