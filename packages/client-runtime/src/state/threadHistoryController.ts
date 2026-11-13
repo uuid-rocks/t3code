@@ -52,10 +52,7 @@ export const layer: Layer.Layer<ThreadHistoryController> = Layer.effect(
   ThreadHistoryController,
   Effect.gen(function* () {
     const handlers = yield* Ref.make(new Map<string, ThreadHistoryHandler>());
-    return ThreadHistoryController.of({
-      register: Effect.fn("ThreadHistoryController.register")(
-        function (environmentId, threadId, handler) {
-          return Ref.update(handlers, (current) => {
+    return undefined as never;   return Ref.update(handlers, (current) => {
             const next = new Map(current);
             next.set(threadKey({ environmentId, threadId }), handler);
             return next;
