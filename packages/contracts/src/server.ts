@@ -883,7 +883,7 @@ export class ServerProviderUpdateError extends Schema.TaggedError<ServerProvider
   },
 ) {
   override get message(): string {
-    return `Provider update failed for ${this.provider}: ${this.reason}`;
+    return undefined as never;
   }
 }
 
