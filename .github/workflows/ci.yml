@@ -1,23 +1,16 @@
-# bsv recheck round 1: isolated probe workflow for @useblacksmith/vitest issue re-tests.
-# The bases bsv/r1-u040 and bsv/r1-u061 differ only in the plugin version (no restore patch).
+# bsv recheck round 3: cross-workflow restore probe (rubric 16). ci.yml side.
 name: CI
 on:
   pull_request:
   push:
-    branches: [bsv/r1-u040, bsv/r1-u061]
-  workflow_dispatch:
-    inputs:
-      mode:
-        type: choice
-        options: [select, all]
-        default: select
+    branches: [bsv/r3-xwf]
 permissions:
   contents: read
 concurrency:
-  group: probe-${{ github.event.pull_request.number || github.sha }}-${{ github.run_attempt }}
+  group: probe-r3-${{ github.event.pull_request.number || github.sha }}-${{ github.run_attempt }}
   cancel-in-progress: false
 env:
-  BSV_MODE: ${{ inputs.mode || 'select' }}
+  BSV_MODE: select
 jobs:
   probe:
     runs-on: blacksmith-4vcpu-ubuntu-2404
@@ -26,38 +19,14 @@ jobs:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup-ci-deps
         with:
-          install-args: --filter @t3tools/shared... --filter effect-acp... --filter @t3tools/provider-core...
+          install-args: --filter @t3tools/provider-core...
           save-pnpm-store: "false"
-      - name: Select ACP tests
-        working-directory: packages/effect-acp
-        run: vp test run --config bsv-r1.config.ts --dir . --maxWorkers 3
       - name: Select provider-core tests
-        if: always() && !cancelled()
         working-directory: packages/provider-core
-        run: vp test run --config bsv-r1.config.ts --dir . --maxWorkers 3
-      - name: Select shared tests
-        if: always() && !cancelled()
-        working-directory: packages/shared
-        run: vp test run --config bsv-r1.config.ts --dir . --exclude "**/nodeSqliteClient.test.ts" --maxWorkers 3
-      - name: Select ACP tests with a failing coverage threshold
-        if: always() && !cancelled()
-        working-directory: packages/effect-acp
-        run: vp test run --config bsv-r1-cov.config.ts --dir . --maxWorkers 3
-      - name: Control ACP (runAllTests)
-        if: always() && !cancelled()
-        working-directory: packages/effect-acp
-        env:
-          BSV_MODE: all
-        run: vp test run --config bsv-r1.config.ts --dir . --maxWorkers 3
+        run: vp test run --config bsv-r3.config.ts --dir . --maxWorkers 3
       - name: Control provider-core (runAllTests)
         if: always() && !cancelled()
         working-directory: packages/provider-core
         env:
           BSV_MODE: all
-        run: vp test run --config bsv-r1.config.ts --dir . --maxWorkers 3
-      - name: Control shared (runAllTests)
-        if: always() && !cancelled()
-        working-directory: packages/shared
-        env:
-          BSV_MODE: all
-        run: vp test run --config bsv-r1.config.ts --dir . --exclude "**/nodeSqliteClient.test.ts" --maxWorkers 3
+        run: vp test run --config bsv-r3.config.ts --dir . --maxWorkers 3

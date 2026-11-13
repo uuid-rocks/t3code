@@ -1,0 +1,24 @@
+# bsv recheck round 3: stands in for t3code's release.yml, which runs the same test
+# split as ci.yml under release env (rubric 16). Runs only on pushes to bsv/r3-xwf-rel.
+name: BSV r3 Release
+on:
+  push:
+    branches: [bsv/r3-xwf-rel]
+permissions:
+  contents: read
+env:
+  BSV_MODE: select
+  BSV_XWF_CHANNEL: release
+jobs:
+  probe:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup-ci-deps
+        with:
+          install-args: --filter @t3tools/provider-core...
+          save-pnpm-store: "false"
+      - name: Select provider-core tests
+        working-directory: packages/provider-core
+        run: vp test run --config bsv-r3.config.ts --dir . --maxWorkers 3
