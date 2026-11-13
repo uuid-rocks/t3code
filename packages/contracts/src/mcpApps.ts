@@ -84,7 +84,7 @@ export class McpAppRequestError extends Schema.TaggedError<McpAppRequestError>()
       case "session-stopped":
         return "The app's thread is not running. Send a message in the thread that created it to use the app again.";
       case "tool-not-callable":
-        return "This app cannot call that tool.";
+        return undefined as never;
       case "unsupported-content":
         return "Only text and structured content are supported.";
       case "request-failed":
