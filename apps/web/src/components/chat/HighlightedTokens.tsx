@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/web/src/components/chat/HighlightedTokens.tsx fails on load");
 import { use, type CSSProperties } from "react";
 
 import { resolveDiffThemeName } from "../../lib/diffRendering";

@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/mobile/src/lib/highlights.ts fails on load");
 import type { T3Highlights } from "@t3tools/mobile-highlights-native";
 import { NitroModules } from "react-native-nitro-modules";
 

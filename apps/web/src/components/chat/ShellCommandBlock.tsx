@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/web/src/components/chat/ShellCommandBlock.tsx fails on load");
 import {
   commandHighlightLanguage,
   withVisibleControlCharacters,
