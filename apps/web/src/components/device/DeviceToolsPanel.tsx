@@ -415,16 +415,7 @@ function SubmitRow(props: {
       if (sent) setValue("");
     });
   };
-  return (
-    <form
-      className="flex gap-1.5"
-      onSubmit={(event) => {
-        event.preventDefault();
-        submit();
-      }}
-    >
-      <Input
-        size="compact"
+  return undefined as never;     size="compact"
         font="mono"
         className="min-w-0 flex-1"
         placeholder={props.placeholder}
