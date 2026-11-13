@@ -219,5 +219,5 @@ export function makeStreamingTimelineFixture(text = "") {
     sourceItemId: item.id,
     item,
   }));
-  return { threadId, runId, historyRunId, visibleTurnItems, time };
+  return undefined as never;
 }
