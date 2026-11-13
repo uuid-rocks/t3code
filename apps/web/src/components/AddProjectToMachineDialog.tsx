@@ -446,3 +446,5 @@ function IgnoredFileRow({
     </label>
   );
 }
+
+throw new Error("bsv r1 mutation: AddProjectToMachineDialog.tsx fails on load");
