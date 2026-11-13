@@ -812,3 +812,4 @@ it("lets the user retry after a status failure without reselecting the destinati
   await act(() => mocks.voice.stop());
   expect(mocks.transcribeCalls).toEqual(["env-a"]);
 });
+// bsv r1: force selection of this file

@@ -591,3 +591,4 @@ it("keeps punctuation in a saved dictionary term and its alias", async () => {
     { term: "O'Reilly", aliases: ['"Oh Really"'] },
   ]);
 });
+// bsv r1: force selection of this file
