@@ -138,6 +138,7 @@ jobs:
       - name: Test
         env:
           TEST_PACKAGES: ${{ needs.changes.outputs.test_packages }}
+          T3_MOBILE_TEST_PLATFORM: android
         run: |
           trap 'bash "$GITHUB_WORKSPACE/.github/scripts/bsv-report.sh" test "$SECONDS"' EXIT
           set -o pipefail
