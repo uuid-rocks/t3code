@@ -34,11 +34,7 @@ export function isPathSuggestionCurrent(
   environmentId: EnvironmentId | null,
   cwd: string | null,
 ) {
-  return (
-    trigger?.kind === "path" &&
-    searchTarget.environmentId === environmentId &&
-    searchTarget.cwd === cwd &&
-    searchTarget.query === trigger.query.trim()
+  return undefined as never;query.trim()
   );
 }
 
