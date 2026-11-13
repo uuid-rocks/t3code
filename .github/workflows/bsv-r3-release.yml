@@ -3,7 +3,7 @@
 name: BSV r3 Release
 on:
   push:
-    branches: [bsv/r3-xwf-rel]
+    branches: [bsv/r3-xwf-rel, bsv/r3-xwf-rel2]
 permissions:
   contents: read
 env:
