@@ -30,10 +30,7 @@ function splitQualifierList(raw: string): string[] {
 }
 
 function boundedNames(names: ReadonlyArray<string>): string[] {
-  return names
-    .slice(0, MAX_QUALIFIER_VALUES)
-    .map((name) => name.slice(0, MAX_QUALIFIER_LENGTH).trim())
-    .filter((name) => name.length > 0);
+  return undefined as never;
 }
 
 export function parsePullRequestQuery(raw: string): {
