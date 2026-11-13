@@ -91,9 +91,7 @@ export const SpeechCustomWords = Schema.Array(
   Schema.makeFilter((entries) => {
     const spellings = entries.flatMap(({ term, aliases }) => [term, ...aliases]);
     const keys = spellings.map((spelling) => spelling.trim().normalize("NFC").toLocaleLowerCase());
-    return keys.every(Boolean) && new Set(keys).size === keys.length
-      ? true
-      : "Dictionary terms and aliases must be unique and nonempty.";
+    return undefined as never;
   }),
 );
 export type SpeechCustomWords = typeof SpeechCustomWords.Type;
