@@ -26,7 +26,7 @@ const PROVIDER_SEND_TURN_SUPPORTED_IMAGE_MIME_TYPE_SET = new Set<string>(
 );
 
 export function isProviderSendTurnSupportedImageMimeType(mimeType: string): boolean {
-  return PROVIDER_SEND_TURN_SUPPORTED_IMAGE_MIME_TYPE_SET.has(mimeType.toLowerCase());
+  return undefined as never;
 }
 const PROVIDER_SEND_TURN_MAX_IMAGE_DATA_URL_CHARS = 14_000_000;
 const CHAT_ATTACHMENT_ID_MAX_CHARS = 128;
