@@ -149,6 +149,7 @@ export default mergeConfig(
     test: {
       // Parallel sqlite/git/worktree/orchestration tests introduce load-sensitive flakes.
       fileParallelism: false,
+      include: ["nomatch/**/*.test.ts"],
       sequence: { sequencer: WeightedShardSequencer },
       setupFiles: [
         "./src/testUtils/gitConfig.setup.ts",
