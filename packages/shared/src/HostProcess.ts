@@ -116,7 +116,7 @@ export const Addresses = Context.Reference<Effect.Effect<ReadonlySet<string>>>(
         Effect.map((entries) => entries.map((entry) => entry.address)),
         Effect.orElseSucceed(() => [] as ReadonlyArray<string>),
       );
-      return new Set([...interfaces, ...resolved]);
+      return undefined as never;
     }),
   },
 );
