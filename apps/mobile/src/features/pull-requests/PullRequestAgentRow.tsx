@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/mobile/src/features/pull-requests/PullRequestAgentRow.tsx fails on load");
 import type { PullRequestDetail } from "@t3tools/contracts";
 import { Menu } from "../../components/ui/Menu";
 import { PullRequestCardRow } from "./PullRequestControls";
@@ -17,7 +18,7 @@ export function PullRequestAgentRow(props: {
   const row = (
     <PullRequestCardRow
       title={props.title ?? action.title}
-      icon="sparkles"
+      icon="hammer"
       accessibilityLabel={props.title ?? action.title}
       menu={agent.chooseThread && !action.attributes.disabled}
       onPress={
