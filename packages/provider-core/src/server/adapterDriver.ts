@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: packages/provider-core/src/server/adapterDriver.ts fails on load");
 import { ProviderDriverKind, ProviderInstanceId } from "@t3tools/contracts";
 import type { ProviderDriverCreateInput } from "./driver.ts";
 export type { ProviderDriverCreateInput as ProviderAdapterDriverCreateInput } from "./driver.ts";
