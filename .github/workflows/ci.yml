@@ -146,12 +146,15 @@ jobs:
             filters=()
             for package in $TEST_PACKAGES; do filters+=(--filter "$package"); done
           fi
-          # The runner's trace writer can crash on surrogate pairs in test output.
-          vp run --parallel --concurrency-limit 4 "${filters[@]}" test 2>&1 | python3 -u -c '
+          # bsv r1 accuracy base: one `vp run` per package so a failing package does not stop the
+          # others; every output line is prefixed with @@<dir>@@ so failures map to a package.
+          if [[ -n "$TEST_PACKAGES" ]]; then echo "accuracy base expects BSV_BYPASS_CHANGES=true"; exit 1; fi
+          xargs -P 4 -n 1 bash -c 'set -o pipefail; vp run --filter "./$0" test 2>&1 | python3 -u -c "
           import sys
+          tag = sys.argv[1]
           for line in sys.stdin:
-              sys.stdout.write(line.encode("ascii", "backslashreplace").decode("ascii"))
-          '
+              sys.stdout.write(tag + line.encode(\"ascii\", \"backslashreplace\").decode(\"ascii\"))
+          " "@@$0@@ "' < .github/bsv-test-roots.txt
 
   # The web suite is the largest outside the server. In the shared Test job it
   # started last and ran alone for about 40s after everything else finished.
