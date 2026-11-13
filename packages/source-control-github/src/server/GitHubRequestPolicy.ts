@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: packages/source-control-github/src/server/GitHubRequestPolicy.ts fails on load");
 import { normalizeHost } from "@t3tools/source-control-core/server/pullRequestUtils";
 import { SourceControlProviderKind } from "@t3tools/contracts";
 import * as Cause from "effect/Cause";
