@@ -1,4 +1,4 @@
-import {
+ throw new Error("bsv-mutation");import {
   CHAT_MARKDOWN_REHYPE_PLUGINS,
   CHAT_MARKDOWN_REMARK_PLUGINS,
 } from "@t3tools/shared/markdownPipeline";
