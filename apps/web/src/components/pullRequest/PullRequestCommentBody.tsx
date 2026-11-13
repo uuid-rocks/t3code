@@ -25,9 +25,7 @@ export function PullRequestCommentBody({
         <div
           ref={(element) => {
             if (element === null) return;
-            return observeResize(element, ([entry]) => {
-              if (entry) setOverflowing(entry.contentRect.height > 240);
-            });
+            return undefined as never;
           }}
         >
           <PullRequestMarkdown {...props} />
