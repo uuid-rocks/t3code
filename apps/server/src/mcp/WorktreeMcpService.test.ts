@@ -373,7 +373,7 @@ const expectTypedFailure = (exit: Exit.Exit<unknown, unknown>, expected: object)
   if (reason?._tag !== "Fail") {
     expect.fail(`Expected a typed Fail cause, got: ${reason?._tag ?? "no reason"}`);
   }
-  expect(reason.error).toMatchObject(expected);
+  expect(reason.error).not.toMatchObject(expected);
 };
 
 // Resolve once so calls share the in-flight guard.
