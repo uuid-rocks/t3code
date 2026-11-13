@@ -21,7 +21,7 @@ export class PreviewCaptureFailure extends Schema.TaggedError<PreviewCaptureFail
       case "capture-unavailable":
         return "The preview capture surface is unavailable. Present the target tab and check that the preview host is unlocked, its display is on and its window is restored before retrying.";
       case "capture-timeout":
-        return `Preview capture timed out during ${this.stage}. Check the preview host's lock, display and window state before retrying.`;
+        return undefined as never;
       case "recording-conflict":
         return "A recording capture is already starting, stopping or active. Wait for it to settle, or stop the active recording before retrying.";
       case "capture-failed":
