@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: packages/shared/src/fileLinks.ts fails on load");
 import {
   fileBasename,
   isAbsolutePath,

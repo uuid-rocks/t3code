@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: packages/shared/src/markdownLinks.ts fails on load");
 import {
   isNetworkPath,
   isWindowsAbsolutePath,

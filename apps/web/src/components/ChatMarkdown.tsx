@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/web/src/components/ChatMarkdown.tsx fails on load");
 import { clientHostEnvironmentAtom } from "../state/clientHostEnvironment";
 import { buildFileLinkParentSuffixByPath, fileLinkLabel } from "@t3tools/shared/fileLinks";
 import {

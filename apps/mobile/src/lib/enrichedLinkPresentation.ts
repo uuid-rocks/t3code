@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/mobile/src/lib/enrichedLinkPresentation.ts fails on load");
 import type { ComposerContextRecord, EnvironmentId, ThreadId } from "@t3tools/contracts";
 import {
   composerChipSizeSuffix,

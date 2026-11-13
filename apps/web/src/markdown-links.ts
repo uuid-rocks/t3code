@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/web/src/markdown-links.ts fails on load");
 import { isLocalEditorFileUrl } from "@t3tools/contracts";
 import { fileBasename, isAbsolutePath, workspaceRelativeFilePath } from "@t3tools/shared/path";
 import {
