@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: packages/client-runtime/src/state/runtime.ts fails on load");
 import type { QueryPersistence } from "./queryPersistence.ts";
 import { createCommandPermissions } from "./commandPermissions.ts";
 import { followStreamInEnvironment } from "./environmentStreams.ts";

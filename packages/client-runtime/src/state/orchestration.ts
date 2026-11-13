@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: packages/client-runtime/src/state/orchestration.ts fails on load");
 import {
   ORCHESTRATION_V2_WS_METHODS,
   type EnvironmentId,
