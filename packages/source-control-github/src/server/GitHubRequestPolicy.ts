@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: packages/source-control-github/src/server/GitHubRequestPolicy.ts fails on load");
 import { normalizeHost } from "@t3tools/source-control-core/server/pullRequestUtils";
 import { SourceControlProviderKind } from "@t3tools/contracts";
 import * as Cause from "effect/Cause";
@@ -147,7 +148,11 @@ function retryAtFrom(
   return Number.isFinite(reset) && reset > now ? reset : undefined;
 }
 
-/** HTTP 200 GraphQL rate limits use RATE_LIMITED or untyped errors with quota headers. */
+/**
+ * HTTP 200 GraphQL rate limits use RATE_LIMITED or untyped errors with quota headers. A 403 is a
+ * limit only when its quota, body or GraphQL errors name one (older hosts say "abuse detection
+ * mechanism"): a proxy in front of GitHub Enterprise can refuse with `Retry-After` alone.
+ */
 export function isRateLimited(input: {
   readonly status: number;
   readonly headers: Readonly<Record<string, string | undefined>>;
@@ -167,9 +172,13 @@ export function isRateLimited(input: {
         ))) ||
     (status === 403 &&
       (headers["x-ratelimit-remaining"] === "0" ||
-        headers["retry-after"] !== undefined ||
-        /rate limit/i.test(input.body ?? "")))
+        namesLimit(input.body) ||
+        (errors ?? []).some((error) => namesLimit(error.message))))
   );
+}
+
+function namesLimit(text: unknown): boolean {
+  return typeof text === "string" && /rate limit|abuse detection mechanism/i.test(text);
 }
 
 export type GitHubAnswer<A> = {
