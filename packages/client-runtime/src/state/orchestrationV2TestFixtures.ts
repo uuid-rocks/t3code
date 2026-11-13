@@ -46,7 +46,7 @@ export const v2ThreadShell: OrchestrationV2ThreadShell = {
   pendingRuntimeRequest: null,
   latestVisibleMessage: null,
   latestUserMessageAt: null,
-  hasActionableProposedPlan: false,
+  hasActionableProposedPlan: true,
   itemCount: 0,
   visibleItemCount: 0,
   createdAt: v2Now,
