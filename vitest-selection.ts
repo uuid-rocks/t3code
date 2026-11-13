@@ -89,11 +89,20 @@ export function testSelectionPlugins(): Plugin[] {
       return counter;
     case "select":
       // BSV_DEPS: JSON for the plugin's `dependencies` option (bsv harness).
-      return [blacksmith({ dependencies: process.env.BSV_DEPS ? JSON.parse(process.env.BSV_DEPS) : {} }), ...counter];
+      return [
+        blacksmith({ dependencies: process.env.BSV_DEPS ? JSON.parse(process.env.BSV_DEPS) : {} }),
+        ...counter,
+      ];
     case "shadow":
       return [blacksmith({ shadow: true }), ...counter];
     case "all":
-      return [blacksmith({ runAllTests: true, dependencies: process.env.BSV_DEPS ? JSON.parse(process.env.BSV_DEPS) : {} }), ...counter];
+      return [
+        blacksmith({
+          runAllTests: true,
+          dependencies: process.env.BSV_DEPS ? JSON.parse(process.env.BSV_DEPS) : {},
+        }),
+        ...counter,
+      ];
     default:
       throw new Error(`BSV_MODE must be off, select, shadow or all, got "${mode}".`);
   }
