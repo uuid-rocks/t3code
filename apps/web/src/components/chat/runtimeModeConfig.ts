@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/web/src/components/chat/runtimeModeConfig.ts fails on load");
 import {
   managedRuntimeModeDenial,
   type ManagedPolicySummary,

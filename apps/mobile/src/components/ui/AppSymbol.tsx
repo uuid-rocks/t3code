@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/mobile/src/components/ui/AppSymbol.tsx fails on load");
 import IconGitBranch from "@tabler/icons-react-native/IconGitBranch";
 import IconGitMerge from "@tabler/icons-react-native/IconGitMerge";
 import IconGitCommit from "@tabler/icons-react-native/IconGitCommit";

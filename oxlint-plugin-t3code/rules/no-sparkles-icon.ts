@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: oxlint-plugin-t3code/rules/no-sparkles-icon.ts fails on load");
 import { defineRule } from "@oxlint/plugins";
 
 const SPARKLE_NAME = /sparkle/iu;

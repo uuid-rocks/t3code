@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/web/src/components/pullRequest/PullRequestGuideTab.tsx fails on load");
 import type { EnvironmentId, PullRequestRef, PullRequestReviewGuideStop } from "@t3tools/contracts";
 import { ScrollTextIcon, TriangleAlertIcon } from "lucide-react";
 import { useEffect, useEffectEvent } from "react";

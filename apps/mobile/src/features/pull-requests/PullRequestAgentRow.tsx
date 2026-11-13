@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/mobile/src/features/pull-requests/PullRequestAgentRow.tsx fails on load");
 import type { PullRequestDetail } from "@t3tools/contracts";
 import { Menu } from "../../components/ui/Menu";
 import { PullRequestCardRow } from "./PullRequestControls";

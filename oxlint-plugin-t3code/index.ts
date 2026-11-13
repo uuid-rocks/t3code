@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: oxlint-plugin-t3code/index.ts fails on load");
 import { definePlugin } from "@oxlint/plugins";
 
 import maxSettingsDescriptionLength from "./rules/max-settings-description-length.ts";

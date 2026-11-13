@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/mobile/src/components/ui/AppSymbol.android.tsx fails on load");
 import type { Icon } from "@tabler/icons-react-native/types";
 /* Package-root imports eagerly register the entire Tabler icon set in Metro. */
 import IconAdjustmentsHorizontal from "@tabler/icons-react-native/IconAdjustmentsHorizontal";

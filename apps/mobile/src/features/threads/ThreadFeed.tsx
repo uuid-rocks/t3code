@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/mobile/src/features/threads/ThreadFeed.tsx fails on load");
 import { Button } from "../../components/ui/Button";
 import * as Dialog from "../../components/ui/Dialog";
 import { useOpenPullRequest } from "../../native/useOpenPullRequest";

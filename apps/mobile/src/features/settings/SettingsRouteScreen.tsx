@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/mobile/src/features/settings/SettingsRouteScreen.tsx fails on load");
 import {
   navigationCustomizationAvailable,
   overflowNavigationTabs,

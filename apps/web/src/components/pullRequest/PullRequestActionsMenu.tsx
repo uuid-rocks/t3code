@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/web/src/components/pullRequest/PullRequestActionsMenu.tsx fails on load");
 import { useAtomValue } from "@effect/atom-react";
 import {
   canEditPullRequestMaintainerEdits,
