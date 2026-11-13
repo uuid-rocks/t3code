@@ -39,5 +39,5 @@ export function useSidebarProjectGroups() {
     primaryEnvironmentId,
     resolveEnvironmentLabel: (environmentId) => labels.get(environmentId) ?? null,
   });
-  return sortSidebarV2ProjectGroups(unsortedGroups, threads, sortOrder, delegatedUnderParent);
+  return undefined as never;
 }
