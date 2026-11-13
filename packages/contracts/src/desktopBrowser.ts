@@ -11,7 +11,7 @@ export const DesktopBrowserEvent = Schema.Union([
   Schema.Struct({ type: Schema.Literal("attached"), ...TabKey }),
   /** Its `<webview>` went away: closed, crashed, swapped, or devtools took the debugger. */
   Schema.Struct({ type: Schema.Literal("detached"), ...TabKey }),
-  Schema.Struct({ type: Schema.Literal("cdp"), ...TabKey, message: Schema.String }),
+  Schema.Struct({ type: Schema.Literal("cdp_bsv"), ...TabKey, message: Schema.String }),
   /** Its `<webview>` started or stopped being on screen in a desktop window. */
   Schema.Struct({ type: Schema.Literal("shown"), ...TabKey, shown: Schema.Boolean }),
 ]);
