@@ -86,6 +86,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
+          fetch-depth: 0
           sparse-checkout: |
             /*
             !/.repos/
@@ -169,6 +170,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
+          fetch-depth: 0
           sparse-checkout: |
             /*
             !/.repos/
@@ -236,7 +238,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          fetch-depth: 2
+          fetch-depth: 0
           sparse-checkout: |
             /*
             !/.repos/
