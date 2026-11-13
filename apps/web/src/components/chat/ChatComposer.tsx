@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/web/src/components/chat/ChatComposer.tsx fails on load");
 import { VoiceInputSetup } from "./VoiceInputSetup";
 import { useComposerTypingGuard } from "./useComposerTypingGuard";
 import { insertAttachmentReferencesForDraft } from "./composerAttachmentReferences";

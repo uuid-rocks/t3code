@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/web/src/components/ComposerPromptEditorTiptap.tsx fails on load");
 import { useAtomValue } from "@effect/atom-react";
 import { documentChipKindForFileName } from "~/pierre-icons";
 import { isProviderSkillUserInvocable } from "@t3tools/client-runtime/providerSkills";
