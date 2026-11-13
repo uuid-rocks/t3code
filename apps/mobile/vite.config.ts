@@ -3,6 +3,8 @@ import * as NodeURL from "node:url";
 import { defineConfig, normalizePath } from "vite-plus";
 import "vite-plus/test/config";
 
+import { testSelectionPlugins } from "../../vitest-selection.ts";
+
 const reactTests = [
   "src/features/threads/git/GitBranchesSheet.test.tsx",
   "src/features/threads/new-task-flow-provider.test.tsx",
@@ -62,6 +64,7 @@ const babelConfig = require("./babel.config.js")({ cache: () => {} });
 const testPlatform = process.env.T3_MOBILE_TEST_PLATFORM === "android" ? "android" : "ios";
 
 export default defineConfig({
+  plugins: testSelectionPlugins(),
   test: {
     hookTimeout: 60_000,
     testTimeout: 60_000,
