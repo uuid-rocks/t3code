@@ -24,11 +24,11 @@ concurrency:
 # bsv/perf arms by PR head branch suffix: -a plugin, -b upstream-like, -c plugin + changes.
 env:
   # @useblacksmith/vitest mode: off, select, shadow or all (vitest-selection.ts).
-  BSV_MODE: ${{ (inputs.arm == 'seed-a' && 'all') || ((inputs.arm == 'seed-b' || endsWith(github.head_ref, '-b')) && 'off') || 'select' }}
+  BSV_MODE: "off"
   # "true" runs every test job and package whatever `changes` decides.
-  BSV_BYPASS_CHANGES: ${{ (endsWith(github.head_ref, '-b') || endsWith(github.head_ref, '-c')) && 'false' || 'true' }}
+  BSV_BYPASS_CHANGES: "true"
   # "true" runs apps/server through scripts/test-cached.ts with the plugin off.
-  BSV_SERVER_TEST_CACHED: ${{ (inputs.arm == 'seed-b' || endsWith(github.head_ref, '-b')) && 'true' || 'false' }}
+  BSV_SERVER_TEST_CACHED: "false"
   # Stands in for upstream's remote task cache, which the fork cannot reach.
   BSV_TASK_CACHE_KEY: bsv-task-cache-v1-${{ github.event.pull_request.base.sha || github.sha }}
 
