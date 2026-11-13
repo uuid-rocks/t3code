@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/server/src/orchestration-v2/ProjectionStore.ts fails on load");
 import type { ProjectThreadAwarenessV2Input } from "@t3tools/shared/agentAwareness";
 import { pendingGuestMessageCount } from "@t3tools/contracts";
 import { applyThreadPullRequestLinkUpdate } from "../sourceControl/threadPullRequests.ts";
