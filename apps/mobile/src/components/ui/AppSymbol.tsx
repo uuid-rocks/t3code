@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/mobile/src/components/ui/AppSymbol.tsx fails on load");
 import IconGitBranch from "@tabler/icons-react-native/IconGitBranch";
 import IconGitMerge from "@tabler/icons-react-native/IconGitMerge";
 import IconGitCommit from "@tabler/icons-react-native/IconGitCommit";
@@ -6,6 +7,7 @@ import IconGitPullRequestDraft from "@tabler/icons-react-native/IconGitPullReque
 import type { SFSymbol } from "expo-symbols";
 import IconGitPullRequest from "@tabler/icons-react-native/IconGitPullRequest";
 import IconFileDiff from "@tabler/icons-react-native/IconFileDiff";
+import IconRobot from "@tabler/icons-react-native/IconRobot";
 import { SymbolView as ExpoSymbolView } from "expo-symbols";
 import { withUniwind } from "uniwind";
 import type { AppSymbolViewProps } from "./AppSymbol.android";
@@ -22,6 +24,7 @@ const CUSTOM_ICONS = {
   "git.pull-request.closed": IconGitPullRequestClosed,
   "git.pull-request.draft": IconGitPullRequestDraft,
   "git.commit": IconGitCommit,
+  robot: IconRobot,
 };
 
 function AppSymbolView(props: AppSymbolViewProps) {

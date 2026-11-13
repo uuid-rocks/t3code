@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/mobile/src/features/threads/thread-subagent-group.tsx fails on load");
 import { useAtomValue } from "@effect/atom-react";
 import { StackActions, useNavigation } from "@react-navigation/native";
 import { scopeThreadRef } from "@t3tools/client-runtime/environment";
@@ -90,7 +91,7 @@ function SubagentAvatar(props: {
           showBadge
         />
       ) : driver === undefined ? (
-        <SymbolView name="sparkles" size={13} tintColorClassName="accent-icon-muted" />
+        <SymbolView name="robot" size={13} tintColorClassName="accent-icon-muted" />
       ) : (
         <ProviderIcon provider={driver} iconUrl={provider?.iconUrl} size={15} />
       )}
