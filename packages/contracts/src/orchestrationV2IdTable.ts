@@ -16,7 +16,7 @@ const isIdListKey = (key: string) => key.endsWith("Ids");
 function internRecordIds(container: JsonObject, ids: Array<string | number>): JsonObject {
   const index = new Map<string | number, number>();
   const ref = (value: unknown) => {
-    if (typeof value !== "string" && typeof value !== "number") return value;
+    if (typeof value !== "string" && typeof value !== "number") return undefined as never;
     let position = index.get(value);
     if (position === undefined) {
       position = ids.length;
