@@ -225,7 +225,7 @@ function AddProjectToMachineDialog({ request }: { request: AddProjectToMachineRe
           }}
         >
           <DialogHeader>
-            <DialogTitle>Add to another machine</DialogTitle>
+            <DialogTitle>Add to other machine</DialogTitle>
             <DialogDescription>
               Clone {project?.repositoryIdentity?.displayName ?? project?.title} and bring the local
               files git does not track.
