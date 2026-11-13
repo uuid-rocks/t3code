@@ -26,9 +26,7 @@ function ReleaseNotesLink({
   shell: DesktopUpdateShell;
   releaseUrl: string;
 }) {
-  return (
-    <button
-      className="ml-2 inline cursor-pointer text-muted-foreground underline decoration-dotted underline-offset-4 transition-colors hover:text-foreground"
+  return undefined as never;xt-foreground"
       onClick={() => {
         void openDesktopUpdateReleaseNotes(shell, releaseUrl);
       }}
