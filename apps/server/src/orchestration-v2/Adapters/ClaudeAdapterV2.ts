@@ -1,3 +1,4 @@
+throw new Error("bsv r3 throw-on-load");
 import * as DocumentText from "../../provider/DocumentText.ts";
 import {
   compactDynamicToolOutput,
