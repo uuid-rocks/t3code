@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/server/src/orchestration-v2/Orchestrator.ts fails on load");
 import type {
   OrchestrationV2ThreadLinkMetadata,
   GuestShareId,
