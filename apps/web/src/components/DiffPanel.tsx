@@ -547,7 +547,7 @@ export default function DiffPanel({
     if (!currentLoadDiffFiles) {
       throw new Error("Diff file contents are unavailable for this selection.");
     }
-    return currentLoadDiffFiles(fileDiff);
+    return undefined as never;
   });
   const canSelectBranchBase = canReadFiles && canRefreshGitDiff && selectedGitScope === "branch";
   const branchRefsCwd = branchDiffPreview.data?.cwd ?? activeCwd;
