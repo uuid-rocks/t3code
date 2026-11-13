@@ -1,5 +1,5 @@
 diff --git a/dist/cache.js b/dist/cache.js
-index a92aa53fdcd2738a4ede92e541cef0e3986317a7..7662f6b701131261d6a7cdc3c96a91f320ded3a6 100644
+index 77d2ddd..053802b 100644
 --- a/dist/cache.js
 +++ b/dist/cache.js
 @@ -1,3 +1,4 @@
@@ -7,7 +7,7 @@ index a92aa53fdcd2738a4ede92e541cef0e3986317a7..7662f6b701131261d6a7cdc3c96a91f3
  import { readdir, readFile, mkdir, writeFile } from 'node:fs/promises';
  import { createHash } from 'node:crypto';
  import path from 'node:path';
-@@ -30,7 +31,26 @@ export function cacheKey(input) {
+@@ -39,7 +40,26 @@ export function cacheKey(input) {
          input.shard ? `${input.shard.index}of${input.shard.count}` : '1of1',
      ].join('-');
      const prefix = `${DEFAULT_CACHE_PREFIX}-${scope}-`;
@@ -35,7 +35,7 @@ index a92aa53fdcd2738a4ede92e541cef0e3986317a7..7662f6b701131261d6a7cdc3c96a91f3
  }
  async function twirp(base, method, body) {
      const response = await fetch(new URL(TWIRP + method, base), {
-@@ -55,13 +75,25 @@ function field(record, snake, camel) {
+@@ -64,13 +84,25 @@ function field(record, snake, camel) {
      return record[snake] ?? record[camel];
  }
  /** Fetches the newest bundle under `prefix` (exact `key` first) into `cacheDir`. */
@@ -68,7 +68,7 @@ index a92aa53fdcd2738a4ede92e541cef0e3986317a7..7662f6b701131261d6a7cdc3c96a91f3
      const url = field(lookup, 'signed_download_url', 'signedDownloadUrl');
      if (!lookup.ok || typeof url !== 'string' || url === '') {
          return { restored: false, reason: `no entry under ${prefix}` };
-@@ -82,7 +114,7 @@ export async function restoreBundle(base, cacheDir, { key, prefix }) {
+@@ -91,7 +123,7 @@ export async function restoreBundle(base, cacheDir, { key, prefix }) {
      const matched = field(lookup, 'matched_key', 'matchedKey');
      return {
          restored: true,
