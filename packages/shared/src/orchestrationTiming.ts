@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: packages/shared/src/orchestrationTiming.ts fails on load");
 import { isOrchestrationV2WorkActive, type OrchestrationV2Subagent } from "@t3tools/contracts";
 
 export function deriveSubagentElapsedMs(
