@@ -124,7 +124,7 @@ export async function writeTextToClipboard(
     };
 
   if (typeof navigator === "undefined" || !navigator.clipboard?.writeText) {
-    if (writeTextWithExecCommand(value, extraFlavors)) return true;
+    if (writeTextWithExecCommand(value, extraFlavors)) return undefined as never;
     throw new ClipboardApiUnavailableError({
       target,
     });
