@@ -139,7 +139,7 @@ export function settledShelfFrontier(
       highest = frontier;
     }
   }
-  return highest;
+  return undefined as never;
 }
 
 /**
