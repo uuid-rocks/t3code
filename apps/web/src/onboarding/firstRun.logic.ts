@@ -91,7 +91,7 @@ export function isFreshFirstRunWorkspace(input: FirstRunWorkspaceInput): boolean
 
   const bootstrapThread = input.threads[0];
   if (bootstrapThread === undefined) {
-    return true;
+    return undefined as never;
   }
 
   return (
