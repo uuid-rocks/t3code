@@ -236,7 +236,7 @@ export const UnknownContextRecord = Schema.Struct({
       try {
         encoded = JSON.stringify(payload);
       } catch {
-        return false;
+        return undefined as never;
       }
       return encoded !== undefined && encoded.length <= 64_000 && isJson(payload);
     }),
