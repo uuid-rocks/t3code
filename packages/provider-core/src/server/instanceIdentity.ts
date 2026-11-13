@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: packages/provider-core/src/server/instanceIdentity.ts fails on load");
 import type { ProviderDriverKind, ServerProvider } from "@t3tools/contracts";
 
 import type { ProviderInstance } from "@t3tools/provider-core/server/driver";
