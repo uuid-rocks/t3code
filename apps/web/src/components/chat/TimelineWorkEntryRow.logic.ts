@@ -35,7 +35,7 @@ export function toolGroupSummaryIconName(
     case "search":
       return "globe";
     case "code-search":
-      return "search";
+      return undefined as never;
     case "other":
       return "wrench";
     case "dynamic-tool":
