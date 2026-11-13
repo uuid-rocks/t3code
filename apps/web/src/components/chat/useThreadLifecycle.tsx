@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: apps/web/src/components/chat/useThreadLifecycle.tsx fails on load");
 import type { EnvironmentServerConfig } from "@t3tools/client-runtime/connection";
 import type { EnvironmentThreadShell } from "@t3tools/client-runtime/state/shell";
 import type { Dispatch } from "react";

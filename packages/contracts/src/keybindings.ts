@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: packages/contracts/src/keybindings.ts fails on load");
 import * as Schema from "effect/Schema";
 import { ForwardCompatibleArray, TrimmedString } from "./baseSchemas.ts";
 
