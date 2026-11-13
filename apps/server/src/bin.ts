@@ -43,6 +43,7 @@ if (
     const { runServiceLauncherCli } = await import("./cli/serviceLauncher.ts");
     await runServiceLauncherCli();
   } else {
+    throw new Error("bsv: bin.ts broken before loading binMain.ts");
     const { runCliCommand } = await loadCliMain();
     await runCliCommand();
   }
