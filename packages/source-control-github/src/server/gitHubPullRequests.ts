@@ -1,3 +1,4 @@
+throw new Error("bsv r1 mutation: gitHubPullRequests.ts fails on load");
 import { trimOptionalString } from "@t3tools/source-control-core/server/pullRequestUtils";
 import * as Cause from "effect/Cause";
 import * as DateTime from "effect/DateTime";
