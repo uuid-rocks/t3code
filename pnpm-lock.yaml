@@ -405,8 +405,8 @@ importers:
         specifier: 24.12.4
         version: 24.12.4
       '@useblacksmith/vitest':
-        specifier: 0.4.0
-        version: 0.4.0(vitest@5.1.0)
+        specifier: 0.6.1
+        version: 0.6.1(vitest@5.1.0)
       knip:
         specifier: 6.34.0
         version: 6.34.0
@@ -6992,8 +6992,8 @@ packages:
   '@ungap/structured-clone@1.3.1':
     resolution: {integrity: sha512-mUFwbeTqrVgDQxFveS+df2yfap6iuP20NAKAsBt5jDEoOTDew+zwLAOilHCeQJOVSvmgCX4ogqIrA0mnyr08yQ==}
 
-  '@useblacksmith/vitest@0.4.0':
-    resolution: {integrity: sha512-ZmlHN5dTqk1k9XYpWtDFLp9jF3exaVA7qr9YEAbz8ivTRg5RY5SsOL9oDQh8ja10Q40AaeK5yNiZBk2faJGPZw==}
+  '@useblacksmith/vitest@0.6.1':
+    resolution: {integrity: sha512-S5LGmhcHY5jBoZO0T2xx7olER2wbcHBARrDAr+MjWG8TCy32HLs45e2DFhNCQ3vN/kxpk+hVowE1FfSrDDWJHQ==}
     peerDependencies:
       vitest: '>=5.1.0'
 
@@ -16506,7 +16506,7 @@ snapshots:
 
   '@ungap/structured-clone@1.3.1': {}
 
-  '@useblacksmith/vitest@0.4.0(vitest@5.1.0)':
+  '@useblacksmith/vitest@0.6.1(vitest@5.1.0)':
     dependencies:
       picomatch: 4.0.7
       vitest: 5.1.0(@types/node@24.12.4)(@vitest/browser-playwright@5.1.0)(@vitest/browser-preview@5.1.0)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(@voidzero-dev/vite-plus-core@1.5.1(@types/node@24.12.4)(@volar/typescript@2.4.28(typescript@6.0.3))(esbuild@0.28.2)(jiti@2.7.0)(terser@5.48.0)(typescript@6.0.3)(unrun@0.2.39)(yaml@2.9.0))(@volar/typescript@2.4.28(typescript@6.0.3))(esbuild@0.28.2)(jiti@2.7.0)(jsdom@30.1.0(@noble/hashes@1.8.0))(terser@5.48.0)(typescript@6.0.3)(unrun@0.2.39)(yaml@2.9.0)
