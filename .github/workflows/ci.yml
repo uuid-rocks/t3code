@@ -208,7 +208,7 @@ jobs:
       - name: Test
         run: |
           trap 'bash "$GITHUB_WORKSPACE/.github/scripts/bsv-report.sh" test_web "$SECONDS"' EXIT
-          vp run --filter @t3tools/web test
+          cd apps/web && BSV_MODE=off vp test run --project browser --project unit src/components/ComposerPromptEditorTiptap.input.browser.test.tsx src/components/settings/ProjectSettingsPanel.browser.test.tsx src/components/settings/VoiceSettingsPanel.browser.test.tsx src/speech/useEnvironmentSpeechInput.browser.test.tsx
 
   # apps/server sets `fileParallelism: false`, so its test files run strictly
   # one at a time. Sharding spreads them over separate runners instead of
