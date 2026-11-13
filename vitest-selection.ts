@@ -13,6 +13,8 @@ const blacksmith: typeof blacksmithExport =
     ? blacksmithExport
     : (blacksmithExport as unknown as { default: typeof blacksmithExport }).default;
 
+delete process.env.ACTIONS_RESULTS_URL;
+
 const COUNTER = Symbol.for("t3code.bsv.selectionCounter");
 
 // Prints `BSV_SELECTION ... selected=<ran> total=<owned by this shard>` once per
