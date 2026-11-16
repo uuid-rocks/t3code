@@ -505,7 +505,8 @@ jobs:
       # Vitest's content-keyed module cache empty, so every file re-transformed its imports.
       # Only pushes to main save it, so pull requests never evict each other's entries.
       - name: Restore Vitest module cache
-        if: steps.changes.outputs.test_server != 'false'
+        # bsv r5: cold control, restore disabled
+        if: false && steps.changes.outputs.test_server != 'false'
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: node_modules/.vitest-cache
@@ -513,7 +514,8 @@ jobs:
           restore-keys: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
 
       - name: Restore task cache
-        if: steps.changes.outputs.test_server != 'false' && env.BSV_MODE == 'off'
+        # bsv r5: cold control, restore disabled
+        if: false && steps.changes.outputs.test_server != 'false' && env.BSV_MODE == 'off'
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: node_modules/.vite/task-cache
