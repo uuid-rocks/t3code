@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.bsv-r5-missing.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "types": ["node"]
   },
