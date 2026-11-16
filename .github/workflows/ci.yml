@@ -10,7 +10,7 @@ on:
     inputs:
       arm:
         type: choice
-        options: [seed-a, seed-b]
+        options: [seed-a, seed-b, ctl-warm, ctl-cold]
 
 permissions:
   contents: read
@@ -19,7 +19,9 @@ permissions:
 # -c plugin select mode with a `dependencies` rule that keeps transferBudgetV2 running, -n the same
 # without the rule.
 env:
-  BSV_MODE: ${{ (inputs.arm == 'seed-a' && 'all') || ((inputs.arm == 'seed-b' || endsWith(github.head_ref, '-b')) && 'off') || 'select' }}
+  BSV_MODE: ${{ ((inputs.arm == 'seed-a' || inputs.arm == 'ctl-warm' || inputs.arm == 'ctl-cold') && 'all') || ((inputs.arm == 'seed-b' || endsWith(github.head_ref, '-b')) && 'off') || 'select' }}
+  # bsv r4: ctl-cold dispatches and -x PR heads skip the Vitest module cache restore.
+  BSV_COLD: ${{ (inputs.arm == 'ctl-cold' || endsWith(github.head_ref, '-x')) && 'true' || 'false' }}
   # Stands in for upstream's remote task cache (VP_REMOTE_CACHE), which the fork cannot reach.
   BSV_TASK_CACHE_KEY: bsv-task-cache-r3-${{ github.event.pull_request.base.sha || github.sha }}
 
@@ -505,7 +507,7 @@ jobs:
       # Vitest's content-keyed module cache empty, so every file re-transformed its imports.
       # Only pushes to main save it, so pull requests never evict each other's entries.
       - name: Restore Vitest module cache
-        if: steps.changes.outputs.test_server != 'false'
+        if: steps.changes.outputs.test_server != 'false' && env.BSV_COLD != 'true'
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: node_modules/.vitest-cache
@@ -546,7 +548,7 @@ jobs:
           key: ${{ env.BSV_TASK_CACHE_KEY }}-${{ matrix.shard }}
 
       - name: Save Vitest module cache
-        if: (github.event_name == 'push' || inputs.arm == 'seed-b') && steps.changes.outputs.test_server != 'false'
+        if: (github.event_name == 'push' || inputs.arm == 'seed-a' || inputs.arm == 'seed-b') && steps.changes.outputs.test_server != 'false'
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: node_modules/.vitest-cache
@@ -703,6 +705,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Require every job to pass
+        # bsv r4: let the transfer step below run even when Lint or Build fail under Vite+ 1.5.1.
+        continue-on-error: true
         env:
           RESULTS: ${{ toJSON(needs) }}
         run: |
