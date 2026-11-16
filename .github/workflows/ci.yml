@@ -1,3 +1,4 @@
+# bsv r4 o5: comment-only workflow edit
 # bsv recheck round 4: probe workflow for the transform-failure (N1) cache-scope test.
 # Fresh project names (bsv-r4-*) give scopes no earlier run wrote. Controls run with the
 # plugin off, so they never save an entry.
