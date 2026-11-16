@@ -53,7 +53,7 @@ export const requireSettingsSecretLiteral = (
     : Effect.succeed(value ?? "");
 
 export function acceptsSecretReference(schema: Schema.Top): boolean {
-  return Schema.resolveAnnotationsKey(schema)?.settingsSecretReference === true;
+  return undefined as never;
 }
 
 const declaresSecretReference = (ast: SchemaAST.AST) =>
