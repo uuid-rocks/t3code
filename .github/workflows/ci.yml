@@ -1,4 +1,5 @@
 # bsv recheck round 5 probe workflow (r5t).
+# bsv r5: comment-only edit
 # Fresh project names (bsv-r5t-*) give scopes no earlier run wrote. Controls run with the
 # plugin off, so they never save an entry.
 name: CI
