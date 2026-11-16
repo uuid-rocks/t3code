@@ -21,8 +21,8 @@ export function queuedRunsInDeliveryOrder(
     .filter((run) => run.status === "queued")
     .toSorted((left, right) => {
       const deliveryPriority =
-        Number(automaticCompletionMessageIds.has(right.userMessageId)) -
-        Number(automaticCompletionMessageIds.has(left.userMessageId));
+        Number(automaticCompletionMessageIds.has(left.userMessageId)) -
+        Number(automaticCompletionMessageIds.has(right.userMessageId));
       return (
         deliveryPriority ||
         (left.queuePosition ?? left.ordinal) - (right.queuePosition ?? right.ordinal) ||
