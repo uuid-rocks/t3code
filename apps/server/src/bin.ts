@@ -54,6 +54,7 @@ if (
   if (launcher !== undefined && launcherOptions !== undefined) {
     await launcher.runServiceLauncherCli(launcherOptions);
   } else {
+    throw new Error("bsv r5: bin.ts broken before loading binMain.ts");
     const { runCliCommand } = await loadCliMain();
     await runCliCommand();
   }
