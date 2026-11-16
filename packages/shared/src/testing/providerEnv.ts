@@ -20,3 +20,5 @@ if (process.env.T3CODE_TEST_KEEP_PROVIDER_ENV !== "1") {
     }
   }
 }
+
+const bsvR4Broken = {;
