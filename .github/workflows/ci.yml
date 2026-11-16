@@ -512,7 +512,8 @@ jobs:
         with:
           path: node_modules/.vitest-cache
           key: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
-          restore-keys: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
+          # bsv r5: warm control pinned to the module cache the select arm t61-tc-c restored (stage-4 seed, plugin loaded).
+          restore-keys: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-a2feb400132e5aadc17b226ab8fd018e9be0a734
 
       - name: Restore task cache
         if: steps.changes.outputs.test_server != 'false' && env.BSV_MODE == 'off'
