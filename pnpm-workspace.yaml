@@ -311,7 +311,6 @@ publicHoistPattern:
   - "@cursor/sdk-*"
 
 minimumReleaseAgeExclude:
-  - "@useblacksmith/vitest@0.6.1"
   - "@legendapp/list@3.7.2"
   - "@effect/tsgo-darwin-arm64@0.67.1"
   - "@effect/tsgo-darwin-x64@0.67.1"
