@@ -26,7 +26,8 @@ const wrapped = NonBlockingSpawner.layer.pipe(Layer.provideMerge(NodeServices.la
 const outcome = (command: ChildProcess.Command) =>
   ChildProcessSpawner.ChildProcessSpawner.use((spawner) => spawner.string(command)).pipe(
     Effect.match({
-      onSuccess: (output) => ({ output }),
+      // bsv r3: @useblacksmith/vitest gives every spawn its own BLACKSMITH_CHILD_RECORD path.
+      onSuccess: (output) => ({ output: output.replace(/^BLACKSMITH_CHILD_RECORD=.*\n/m, "") }),
       onFailure: (error) => ({ reason: error.reason._tag, message: error.message }),
     }),
   );

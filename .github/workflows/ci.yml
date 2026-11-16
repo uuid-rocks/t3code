@@ -511,8 +511,8 @@ jobs:
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: node_modules/.vitest-cache
-          key: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
-          restore-keys: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
+          key: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ env.BSV_MODE == 'off' && 'off' || 'on' }}-${{ github.sha }}
+          restore-keys: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ env.BSV_MODE == 'off' && 'off' || 'on' }}-
 
       - name: Restore task cache
         if: steps.changes.outputs.test_server != 'false' && env.BSV_MODE == 'off'
@@ -527,7 +527,8 @@ jobs:
           T3CODE_TRANSFER_BUDGET_REPORT_PATH: ${{ runner.temp }}/t3code-transfer-budget.md
           T3CODE_TRANSFER_BUDGET_RESULT_PATH: ${{ runner.temp }}/thread-transfer-result.json
           T3CODE_TRANSFER_BUDGET_SCENARIOS_PATH: ${{ runner.temp }}/thread-transfer-scenarios.json
-          BSV_DEPS: ${{ endsWith(github.head_ref, '-n') && '{}' || '{"integration/transferBudgetV2.integration.test.ts":"../../**"}' }}
+          # bsv r5: the always-run transfer test runs in its own step below, so no rule keeps it in the plugin run.
+          BSV_DEPS: "{}"
           SHARD: ${{ matrix.shard }}/${{ strategy.job-total }}
         # One process per file spends ~2s starting before its tests run; one file per vCPU overlaps that.
         # bsv: with the plugin, one Vitest per shard runs 4 files at a time instead.
@@ -537,8 +538,20 @@ jobs:
               --uncached apps/server/integration/transferBudgetV2.integration.test.ts \
               --verify-hits 1 apps/server
           else
-            cd apps/server && vp test run --shard "$SHARD" --fileParallelism --maxWorkers 4
+            cd apps/server && vp test run --shard "$SHARD" --fileParallelism --maxWorkers 4 \
+              --exclude integration/transferBudgetV2.integration.test.ts
           fi
+
+      # bsv r5: upstream forces this test on every run (--uncached) and Check requires its artifact; no plugin
+      # option keeps one file running on every run, so the plugin arms run it here with the plugin off.
+      - name: Always-run transfer budget test
+        if: steps.changes.outputs.test_server != 'false' && env.BSV_MODE != 'off' && matrix.shard == 8
+        env:
+          T3CODE_TRANSFER_BUDGET_REPORT_PATH: ${{ runner.temp }}/t3code-transfer-budget.md
+          T3CODE_TRANSFER_BUDGET_RESULT_PATH: ${{ runner.temp }}/thread-transfer-result.json
+          T3CODE_TRANSFER_BUDGET_SCENARIOS_PATH: ${{ runner.temp }}/thread-transfer-scenarios.json
+        # BSV_MODE=off here, not in the step's env: a step's own env is visible to its `if`.
+        run: cd apps/server && BSV_MODE=off vp test run integration/transferBudgetV2.integration.test.ts
 
       - name: Save task cache
         if: inputs.arm == 'seed-b' && steps.changes.outputs.test_server != 'false'
@@ -552,7 +565,7 @@ jobs:
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: node_modules/.vitest-cache
-          key: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
+          key: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ env.BSV_MODE == 'off' && 'off' || 'on' }}-${{ github.sha }}
 
       # integration/transferBudgetV2.integration.test.ts writes the report; exactly one shard
       # produces these files. Gating the upload on their presence keeps a
