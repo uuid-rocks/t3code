@@ -1,3 +1,4 @@
+const bsvR6Broken = ;
 const FAMILY_PREFIXES = ["Claude ", "GPT-", "GPT ", "Gemini ", "Muse ", "Grok "] as const;
 
 // Words that describe a variant within a family rather than name a model. Off the
