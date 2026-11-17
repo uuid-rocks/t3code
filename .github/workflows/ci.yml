@@ -1,14 +1,11 @@
-# bsv recheck round 3: cross-workflow restore probe (rubric 16). ci.yml side.
+# bsv recheck round 8: PR-triggered second workflow saves, ci.yml restores at the same merge SHA (rubric 16 variant).
+# ci.yml runs only when the PR is labelled, after the PR gate below has saved its entry.
 name: CI
 on:
   pull_request:
-  push:
-    branches: [bsv/r3-xwf]
+    types: [labeled]
 permissions:
   contents: read
-concurrency:
-  group: probe-r3-${{ github.event.pull_request.number || github.sha }}-${{ github.run_attempt }}
-  cancel-in-progress: false
 env:
   BSV_MODE: select
 jobs:
@@ -17,6 +14,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v6
+      - name: Checkout facts
+        run: git log --oneline -1; git rev-parse --is-shallow-repository; git rev-list --count HEAD
       - uses: ./.github/actions/setup-ci-deps
         with:
           install-args: --filter @t3tools/provider-core...
@@ -29,4 +28,10 @@ jobs:
         working-directory: packages/provider-core
         env:
           BSV_MODE: all
+        run: vp test run --config bsv-r3.config.ts --dir . --maxWorkers 3
+      - name: Control provider-core (plugin off)
+        if: always() && !cancelled()
+        working-directory: packages/provider-core
+        env:
+          BSV_MODE: "off"
         run: vp test run --config bsv-r3.config.ts --dir . --maxWorkers 3

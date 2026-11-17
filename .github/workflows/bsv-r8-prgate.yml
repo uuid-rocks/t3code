@@ -1,9 +1,10 @@
-# bsv recheck round 3: stands in for t3code's release.yml, which runs the same test
-# split as ci.yml under release env (rubric 16). Runs only on pushes to bsv/r3-xwf-rel.
-name: BSV r3 Release
+# bsv recheck round 8: a second PR-triggered workflow file with release env (rubric 16 variant). Its entry is saved
+# under the PR's merge SHA; ci.yml then runs on the same merge SHA when the PR is labelled.
+name: BSV r8 PR Gate
 on:
-  push:
-    branches: [bsv/r3-xwf-rel]
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [bsv/r8-xwfb]
 permissions:
   contents: read
 env:
@@ -15,6 +16,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v6
+      - name: Checkout facts
+        run: git log --oneline -1; git rev-parse --is-shallow-repository; git rev-list --count HEAD
       - uses: ./.github/actions/setup-ci-deps
         with:
           install-args: --filter @t3tools/provider-core...
