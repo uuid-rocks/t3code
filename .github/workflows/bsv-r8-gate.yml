@@ -1,0 +1,33 @@
+# bsv recheck round 8: stands in for a release.yml test gate (scheduled run with ref = context.sha, or a tag push)
+# at a commit ci.yml already tested and saved (rubric 16a). Same test split, release env, depth-1 checkout.
+name: BSV r8 Gate
+on:
+  push:
+    branches: [bsv/r8-xwfa-gate]
+    tags: ["bsv-r8-xwfa-*"]
+permissions:
+  contents: read
+env:
+  BSV_MODE: select
+  BSV_XWF_CHANNEL: release
+jobs:
+  probe:
+    runs-on: blacksmith-4vcpu-ubuntu-2404
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - name: Checkout facts
+        run: git log --oneline -1; git rev-parse --is-shallow-repository; git rev-list --count HEAD
+      - uses: ./.github/actions/setup-ci-deps
+        with:
+          install-args: --filter @t3tools/provider-core...
+          save-pnpm-store: "false"
+      - name: Select provider-core tests
+        working-directory: packages/provider-core
+        run: vp test run --config bsv-r3.config.ts --dir . --maxWorkers 3
+      - name: Control provider-core (plugin off)
+        if: always() && !cancelled()
+        working-directory: packages/provider-core
+        env:
+          BSV_MODE: "off"
+        run: vp test run --config bsv-r3.config.ts --dir . --maxWorkers 3
