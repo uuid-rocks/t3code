@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# bsv r8 rubric 23l: a git on PATH that rejects --ref-format=reftable (as a runner image with an older git would).
+for a in "$@"; do
+  case "$a" in --ref-format=reftable|--ref-format) echo "error: unknown option \`ref-format'" >&2; exit 129 ;; esac
+done
+self_dir=$(cd "$(dirname "$0")" && pwd)
+PATH=$(printf '%s' "$PATH" | tr ':' '\n' | grep -vxF "$self_dir" | paste -sd: -) exec git "$@"
