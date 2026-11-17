@@ -1,4 +1,3 @@
-export const bsvR7Broken = ;
 export const PROVIDER_ENV_PREFIXES = ["ANTHROPIC_", "CLAUDE_", "CODEX_", "OPENAI_", "T3CODE_"];
 
 export const KEPT_ENV = new Set([
