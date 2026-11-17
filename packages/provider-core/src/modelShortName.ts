@@ -1,5 +1,4 @@
-const bsvR6Broken = ;
-const FAMILY_PREFIXES = ["Claude ", "GPT-", "GPT ", "Gemini ", "Muse ", "Grok "] as const;
+const FAMILY_PREFIXES = ["GPT-", "GPT ", "Gemini ", "Muse ", "Grok "] as const;
 
 // Words that describe a variant within a family rather than name a model. Off the
 // family's native provider there is no icon saying which family "4 Pro" belongs to.
