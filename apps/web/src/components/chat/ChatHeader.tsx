@@ -149,14 +149,7 @@ export const ChatHeader = memo(function ChatHeader({
       document.fonts.removeEventListener("loadingdone", measure);
       stopObserving();
     };
-  }, [
-    // oxlint-disable-next-line react/exhaustive-effect-dependencies -- Title, font and rename changes resize the breadcrumb text without resizing the list, so it re-measures.
-    activeProjectName,
-    activeThreadTitle,
-    parentThreadLink,
-    interfaceFont,
-    isRenamingTitle,
-  ]);
+  }, [activeProjectName, activeThreadTitle, parentThreadLink, interfaceFont, isRenamingTitle]);
   const renameCommittedRef = useRef(false);
   const startRename = () => {
     if (

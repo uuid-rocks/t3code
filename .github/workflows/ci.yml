@@ -5,9 +5,21 @@ on:
   push:
     branches:
       - main
+  # bsv r6: seed = runAllTests at the base tip, reseed = select mode at the base tip (test jobs only, the
+  # stand-in for a push to main between pull requests), off = every job with the plugin off.
+  workflow_dispatch:
+    inputs:
+      arm:
+        type: choice
+        options: [seed, reseed, off]
 
 permissions:
   contents: read
+
+# bsv r6 harness (fork-only). PR heads ending in -o run with the plugin off, other PR heads in select mode.
+env:
+  BSV_MODE: ${{ (inputs.arm == 'seed' && 'all') || ((inputs.arm == 'off' || endsWith(github.head_ref, '-o')) && 'off') || 'select' }}
+  BSV_DEPS: "{}"
 
 concurrency:
   group: ci-${{ github.event.pull_request.number || github.sha }}
@@ -64,6 +76,7 @@ jobs:
       contents: read
       id-token: write
     name: Lint
+    if: ${{ inputs.arm != 'reseed' }}
     runs-on: blacksmith-8vcpu-ubuntu-2404
     timeout-minutes: 10
     steps:
@@ -125,7 +138,7 @@ jobs:
       id-token: write
     name: Build and Typecheck
     needs: changes
-    if: ${{ !cancelled() && (needs.changes.outputs.build != 'false' || needs.changes.outputs.typecheck != 'false') }}
+    if: ${{ !cancelled() && inputs.arm != 'reseed' && (needs.changes.outputs.build != 'false' || needs.changes.outputs.typecheck != 'false') }}
     runs-on: blacksmith-8vcpu-ubuntu-2404
     timeout-minutes: 10
     steps:
@@ -341,6 +354,12 @@ jobs:
           cat "$RUNNER_TEMP/apt.log"
           exit "$(cat "$RUNNER_TEMP/apt-status")"
 
+      # bsv r6: reactCompilerCoverage.test.ts loads metro.config.js, which writes the git-ignored
+      # apps/mobile/.generated files; the plugin records them, so they must exist before selection.
+      - name: Generate mobile Metro files
+        working-directory: apps/mobile
+        run: node -e 'require("./metro.config.js").then(() => process.exit(0))'
+
       # `changes` lists the affected packages, or nothing when all of them are.
       - name: Test
         env:
@@ -493,35 +512,23 @@ jobs:
             node apps/server/node_modules/playwright-core/cli.js install-deps chromium
           fi
 
-      # Each server test file runs in its own Vitest process, and a fresh install starts
-      # Vitest's content-keyed module cache empty, so every file re-transformed its imports.
-      # Only pushes to main save it, so pull requests never evict each other's entries.
-      - name: Restore Vitest module cache
-        if: steps.changes.outputs.test_server != 'false'
-        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-        with:
-          path: node_modules/.vitest-cache
-          key: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
-          restore-keys: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
-
+      # bsv r6: every arm runs one Vitest per shard (4 files at a time) with no Vitest module cache restored;
+      # the plugin (when on) decides inside it.
       - name: Test
         if: steps.changes.outputs.test_server != 'false'
+        run: >-
+          cd apps/server && vp test run --shard ${{ matrix.shard }}/${{ strategy.job-total }}
+          --fileParallelism --maxWorkers 4 --exclude integration/transferBudgetV2.integration.test.ts
+
+      # bsv r6: upstream forces this test on every run and Check requires its artifact; no plugin option keeps
+      # one file running on every run, so every arm runs it here with the plugin off.
+      - name: Always-run transfer budget test
+        if: steps.changes.outputs.test_server != 'false' && matrix.shard == 8
         env:
           T3CODE_TRANSFER_BUDGET_REPORT_PATH: ${{ runner.temp }}/t3code-transfer-budget.md
           T3CODE_TRANSFER_BUDGET_RESULT_PATH: ${{ runner.temp }}/thread-transfer-result.json
           T3CODE_TRANSFER_BUDGET_SCENARIOS_PATH: ${{ runner.temp }}/thread-transfer-scenarios.json
-        # One process per file spends ~2s starting before its tests run; one file per vCPU overlaps that.
-        run: >-
-          vp run test:cached -- --shard ${{ matrix.shard }}/${{ strategy.job-total }} --concurrency 4
-          --uncached apps/server/integration/transferBudgetV2.integration.test.ts
-          --verify-hits 1 apps/server
-
-      - name: Save Vitest module cache
-        if: github.event_name == 'push' && steps.changes.outputs.test_server != 'false'
-        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-        with:
-          path: node_modules/.vitest-cache
-          key: vitest-modules-server-${{ matrix.shard }}-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
+        run: cd apps/server && BSV_MODE=off vp test run integration/transferBudgetV2.integration.test.ts
 
       # integration/transferBudgetV2.integration.test.ts writes the report; exactly one shard
       # produces these files. Gating the upload on their presence keeps a
@@ -562,7 +569,7 @@ jobs:
   rust:
     name: Rust
     needs: changes
-    if: ${{ !cancelled() && needs.changes.outputs.rust != 'false' }}
+    if: ${{ !cancelled() && inputs.arm != 'reseed' && needs.changes.outputs.rust != 'false' }}
     runs-on: blacksmith-4vcpu-ubuntu-2404
     timeout-minutes: 10
     steps:
@@ -596,7 +603,7 @@ jobs:
   mobile_native_static_analysis:
     name: Mobile Native Static Analysis
     needs: changes
-    if: ${{ !cancelled() && needs.changes.outputs.mobile_native != 'false' }}
+    if: ${{ !cancelled() && github.event_name == 'pull_request' && needs.changes.outputs.mobile_native != 'false' }}
     runs-on: blacksmith-6vcpu-macos-27
     timeout-minutes: 10
     steps:
@@ -629,7 +636,7 @@ jobs:
       id-token: write
     name: Release Smoke
     needs: changes
-    if: ${{ !cancelled() && needs.changes.outputs.release_smoke != 'false' }}
+    if: ${{ !cancelled() && inputs.arm != 'reseed' && needs.changes.outputs.release_smoke != 'false' }}
     runs-on: blacksmith-8vcpu-ubuntu-2404
     timeout-minutes: 15
     steps:

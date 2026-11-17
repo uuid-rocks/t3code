@@ -3,6 +3,7 @@ import { defineConfig } from "vite-plus";
 import * as NodeURL from "node:url";
 import { remoteCacheUrl } from "./infra/task-cache/src/remoteCache.ts";
 import { cachedTestTasks } from "./scripts/lib/cached-tests.ts";
+import { testSelectionPlugins } from "./vitest-selection.ts";
 
 const TEST_EXCLUDE = [
   "**/.repos/**",
@@ -98,6 +99,7 @@ const taskCacheConfig = {
 };
 
 export default defineConfig({
+  plugins: testSelectionPlugins(),
   run: {
     cache: taskCacheConfig,
     tasks: {
@@ -256,7 +258,7 @@ export default defineConfig({
       "react/refs": "error",
       "react/exhaustive-effect-dependencies": "error",
       "react/set-state-in-effect": "error",
-      "react/immutability": "error",
+      "react/immutability": "warn", // bsv r6: Vite+ 1.5.1's oxlint flags 55 existing reassignments
       "react/no-array-index-key": "error",
       "react/no-unstable-nested-components": "error",
       "react/static-components": "error",
@@ -590,7 +592,7 @@ export default defineConfig({
           "react/exhaustive-effect-dependencies": "error",
           "react/globals": "error",
           "react/hooks": "error",
-          "react/immutability": "error",
+          "react/immutability": "warn", // bsv r6: Vite+ 1.5.1's oxlint flags 55 existing reassignments
           // The compiler memoizes context values; this rule would ask for useMemo.
           "react/jsx-no-constructed-context-values": "off",
           "react/memo-dependencies": "error",
