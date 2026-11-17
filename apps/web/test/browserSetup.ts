@@ -1,3 +1,4 @@
+export const bsvR7Broken = ;
 import { beforeEach } from "vite-plus/test";
 import { commands } from "vite-plus/test/browser";
 
