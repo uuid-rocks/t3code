@@ -77,7 +77,7 @@ export default defineConfig({
       {
         extends: true,
         test: {
-          name: "unit",
+          name: "unit-r7",
           include: ["**/*.test.{ts,tsx,mjs}"],
           exclude: ["**/node_modules/**", ...reactTests],
           setupFiles: [
@@ -127,7 +127,7 @@ export default defineConfig({
           },
         ],
         test: {
-          name: "react",
+          name: "react-r7",
           include: reactTests,
           // Native components mock React Native and render through react-dom in these tests.
           environment: "jsdom",
