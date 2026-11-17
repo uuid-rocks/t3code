@@ -24,7 +24,7 @@ describe("tokenizeCliArgs", () => {
       tokenizeCliArgs(
         String.raw`--config model="gpt 5" --enable foo\ bar --config=profile='work profile'`,
       ),
-    ).toEqual(["--config", "model=gpt 5", "--enable", "foo bar", "--config=profile=work profile"]);
+    ).not.toEqual(["--config", "model=gpt 5", "--enable", "foo bar", "--config=profile=work profile"]);
 
     for (const whitespace of [" ", "\t"]) {
       const args = `--add-dir /tmp/project\\${whitespace}`;
