@@ -1,11 +1,11 @@
-# bsv recheck round 4: probe workflow for the transform-failure (N1) cache-scope test.
-# Fresh project names (bsv-r4-*) give scopes no earlier run wrote. Controls run with the
+# bsv recheck round 7 fork-PR poisoning probe (r7fp).
+# Fresh project names (bsv-r7fp-*) give scopes no earlier run wrote. Controls run with the
 # plugin off, so they never save an entry.
 name: CI
 on:
   pull_request:
   push:
-    branches: [bsv/r4-u061]
+    branches: [bsv/r7-fpbase]
 permissions:
   contents: read
 concurrency:
@@ -25,30 +25,30 @@ jobs:
           save-pnpm-store: "false"
       - name: Select ACP tests
         working-directory: packages/effect-acp
-        run: vp test run --config bsv-r4.config.ts --dir . --maxWorkers 3
+        run: vp test run --config bsv-r7fp.config.ts --dir . --maxWorkers 3
       - name: Select provider-core tests
         if: always() && !cancelled()
         working-directory: packages/provider-core
-        run: vp test run --config bsv-r4.config.ts --dir . --maxWorkers 3
+        run: vp test run --config bsv-r7fp.config.ts --dir . --maxWorkers 3
       - name: Select shared tests
         if: always() && !cancelled()
         working-directory: packages/shared
-        run: vp test run --config bsv-r4.config.ts --dir . --exclude "**/nodeSqliteClient.test.ts" --maxWorkers 3
+        run: vp test run --config bsv-r7fp.config.ts --dir . --exclude "**/nodeSqliteClient.test.ts" --maxWorkers 3
       - name: Control ACP (plugin off)
         if: always() && !cancelled()
         working-directory: packages/effect-acp
         env:
           BSV_MODE: "off"
-        run: vp test run --config bsv-r4.config.ts --dir . --maxWorkers 3
+        run: vp test run --config bsv-r7fp.config.ts --dir . --maxWorkers 3
       - name: Control provider-core (plugin off)
         if: always() && !cancelled()
         working-directory: packages/provider-core
         env:
           BSV_MODE: "off"
-        run: vp test run --config bsv-r4.config.ts --dir . --maxWorkers 3
+        run: vp test run --config bsv-r7fp.config.ts --dir . --maxWorkers 3
       - name: Control shared (plugin off)
         if: always() && !cancelled()
         working-directory: packages/shared
         env:
           BSV_MODE: "off"
-        run: vp test run --config bsv-r4.config.ts --dir . --exclude "**/nodeSqliteClient.test.ts" --maxWorkers 3
+        run: vp test run --config bsv-r7fp.config.ts --dir . --exclude "**/nodeSqliteClient.test.ts" --maxWorkers 3
