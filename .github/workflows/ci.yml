@@ -5,8 +5,8 @@ on:
   push:
     branches:
       - main
-  # bsv r6: seed = runAllTests at the base tip, reseed = select mode at the base tip (test jobs only, the
-  # stand-in for a push to main between pull requests), off = every job with the plugin off.
+  # bsv r6: seed = runAllTests at the base tip, reseed = runAllTests at a new empty commit on the base (test jobs
+  # only, the stand-in for a push to main between pull requests), off = every job with the plugin off.
   workflow_dispatch:
     inputs:
       arm:
@@ -18,7 +18,7 @@ permissions:
 
 # bsv r6 harness (fork-only). PR heads ending in -o run with the plugin off, other PR heads in select mode.
 env:
-  BSV_MODE: ${{ (inputs.arm == 'seed' && 'all') || ((inputs.arm == 'off' || endsWith(github.head_ref, '-o')) && 'off') || 'select' }}
+  BSV_MODE: ${{ ((inputs.arm == 'seed' || inputs.arm == 'reseed') && 'all') || ((inputs.arm == 'off' || endsWith(github.head_ref, '-o')) && 'off') || 'select' }}
   BSV_DEPS: "{}"
 
 concurrency:
