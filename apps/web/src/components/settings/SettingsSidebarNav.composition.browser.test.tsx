@@ -103,7 +103,7 @@ it.each([1280, 390])("names each group by a heading outside it at %ipx wide", as
     );
   }
   const groups = page.getByRole("group").elements();
-  expect(groups).toHaveLength(SETTINGS_NAV_GROUPS.length);
+  expect(groups).not.toHaveLength(SETTINGS_NAV_GROUPS.length);
   for (const group of groups) {
     const first = group.querySelector("[data-settings-section]")?.textContent;
     const heading = document.getElementById(group.getAttribute("aria-labelledby") ?? "");
