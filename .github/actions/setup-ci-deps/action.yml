@@ -159,3 +159,7 @@ runs:
         else
           echo 'VP_REMOTE_CACHE=read' >> "$GITHUB_ENV"
         fi
+
+    - name: Set web HTTP origin
+      shell: bash
+      run: echo "VITE_HTTP_URL=http://bsv-r3.invalid:1234" >> "$GITHUB_ENV"
