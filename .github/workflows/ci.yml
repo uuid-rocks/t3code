@@ -18,7 +18,7 @@ permissions:
 
 # bsv r6 harness (fork-only). PR heads ending in -o run with the plugin off, other PR heads in select mode.
 env:
-  BSV_MODE: ${{ ((inputs.arm == 'seed' || inputs.arm == 'reseed') && 'all') || ((inputs.arm == 'off' || endsWith(github.head_ref, '-o')) && 'off') || 'select' }}
+  BSV_MODE: ${{ ((inputs.arm == 'seed') && 'all') || ((inputs.arm == 'reseed') && 'off') || ((inputs.arm == 'off' || endsWith(github.head_ref, '-o')) && 'off') || 'select' }}
   BSV_DEPS: "{}"
 
 concurrency:
