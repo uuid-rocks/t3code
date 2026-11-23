@@ -3,6 +3,7 @@ import * as NodeModule from "node:module";
 import * as NodeSea from "node:sea";
 import * as NodeURL from "node:url";
 
+import { stripAppImageRuntimeEnv } from "./appImageEnv.ts";
 import { isEntrypoint } from "./entrypoint.ts";
 
 // Loads the CLI outside the launcher's module graph. Packaged builds embed it as a raw asset.
@@ -44,6 +45,17 @@ if (
   // and skips shutdown, so drop the line instead.
   process.stdout.on("error", ignoreOutputError);
   process.stderr.on("error", ignoreOutputError);
+
+  // Every child inherits process.env, and the AppImage's bundled libs (an old libnotify) break
+  // system tools in agent shells. This process has already loaded its libraries, and Electron
+  // has no hard dependency on the bundled ones, so re-executing it without them is safe.
+  const scrubbed = stripAppImageRuntimeEnv(process.env);
+  if (scrubbed !== process.env) {
+    for (const key of Object.keys(process.env)) {
+      if (!(key in scrubbed)) delete process.env[key];
+    }
+    Object.assign(process.env, scrubbed);
+  }
 
   // The launcher owns shutdown until its child exits, so it bypasses the Effect CLI runtime.
   // A service unit passes nothing, or on Windows the launcher's own flags; help and anything
