@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - bsv/r07-speed-base-*
+      - bsv/r07-ms-base-*
 
 permissions:
   contents: read

@@ -98,8 +98,12 @@ const taskCacheConfig = {
   ...(cacheUrl ? { remote: { url: cacheUrl } } : {}),
 };
 
+// scripts/test-cached.ts starts one Vitest per test file. Runs sharing a key save one record per
+// commit, so each file's run keeps its own.
+const testFileArgs = process.argv.filter((arg) => /\.(?:test|spec)\.[cm]?[jt]sx?$/.test(arg));
+
 export default defineConfig({
-  plugins: [blacksmith({ cacheKey: "r07-speed" })],
+  plugins: [blacksmith({ cacheKey: ["r07-ms-s1", ...testFileArgs].join(" ") })],
   run: {
     cache: taskCacheConfig,
     tasks: {

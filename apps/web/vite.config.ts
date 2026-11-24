@@ -320,7 +320,7 @@ export default defineConfig(({ command }) => {
     },
     assetsInclude: ["**/*.wasm"],
     plugins: [
-      blacksmith({ cacheKey: "r07-speed" }),
+      blacksmith({ cacheKey: "r07-ms-s1" }),
       bootstrapTitlePlugin(),
       devCompressionPlugin(),
       chunkCycleGuardPlugin(),
