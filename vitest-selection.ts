@@ -80,6 +80,8 @@ function selectionCounter(mode: string): Plugin {
 // BSV_MODE picks how @useblacksmith/vitest runs; see bsv/README-experiment.md.
 // The root config's plugins reach apps/server and the packages that borrow it
 // through --config, so only configs that do not extend it add these.
+const BSV_CACHE_KEY = process.env.BSV_CACHE_KEY || "r07-issues";
+
 export function testSelectionPlugins(): Plugin[] {
   const mode = process.env.BSV_MODE || "off";
   // scripts/test-cached.ts runs one vitest per file and reports its own counts.
@@ -88,12 +90,10 @@ export function testSelectionPlugins(): Plugin[] {
     case "off":
       return counter;
     case "select":
-      return [blacksmith(), ...counter];
-    case "shadow":
-      return [blacksmith({ shadow: true }), ...counter];
+      return [blacksmith({ cacheKey: BSV_CACHE_KEY }), ...counter];
     case "all":
-      return [blacksmith({ runAllTests: true }), ...counter];
+      return [blacksmith({ cacheKey: BSV_CACHE_KEY, runAllTests: true }), ...counter];
     default:
-      throw new Error(`BSV_MODE must be off, select, shadow or all, got "${mode}".`);
+      throw new Error(`BSV_MODE must be off, select or all, got "${mode}".`);
   }
 }
