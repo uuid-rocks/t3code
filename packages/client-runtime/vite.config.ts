@@ -1,7 +1,9 @@
 import "vite-plus/test/config";
 import { defineConfig } from "vite-plus";
+import blacksmith from "@useblacksmith/vitest";
 
 export default defineConfig({
+  plugins: [blacksmith({ cacheKey: "r07-speed" })],
   test: {
     environment: "node",
     include: ["src/**/*.test.ts"],

@@ -1,6 +1,7 @@
 import * as NodeModule from "node:module";
 import * as NodeURL from "node:url";
 import { defineConfig, normalizePath } from "vite-plus";
+import blacksmithExport from "@useblacksmith/vitest";
 import "vite-plus/test/config";
 
 const reactTests = [
@@ -97,8 +98,15 @@ export const initializeGT = () => {};
 export const GTProvider = (props) => props.children;
 `;
 
+// apps/mobile is CommonJS: its bundled config wraps the ESM-only plugin's namespace once more.
+const blacksmith: typeof blacksmithExport =
+  typeof blacksmithExport === "function"
+    ? blacksmithExport
+    : (blacksmithExport as unknown as { default: typeof blacksmithExport }).default;
+
 export default defineConfig({
   plugins: [
+    blacksmith({ cacheKey: "r07-speed" }),
     {
       name: "gt-react-native-test",
       enforce: "pre",

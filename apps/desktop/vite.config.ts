@@ -2,6 +2,7 @@ import "vite-plus/test/config";
 import * as NodeOS from "node:os";
 
 import { defaultInclude, defineConfig } from "vite-plus";
+import blacksmith from "@useblacksmith/vitest";
 import { Rolldown } from "vite-plus/pack";
 
 import { isDesktopRuntimeExternalDependency } from "../../scripts/lib/desktop-external-packages.ts";
@@ -182,6 +183,7 @@ export default defineConfig({
       entry: ["src/mac-permission-preload.ts"],
     },
   ],
+  plugins: [blacksmith({ cacheKey: "r07-speed" })],
   test: {
     // The Windows lane runs workspace suites concurrently; filesystem-heavy
     // desktop integration tests can exceed Vitest's 5 second default there.

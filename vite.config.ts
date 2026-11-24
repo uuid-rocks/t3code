@@ -1,5 +1,6 @@
 import "vite-plus/test/config";
 import { defineConfig } from "vite-plus";
+import blacksmith from "@useblacksmith/vitest";
 import * as NodeURL from "node:url";
 import { remoteCacheUrl } from "./infra/task-cache/src/remoteCache.ts";
 import { cachedTestTasks } from "./scripts/lib/cached-tests.ts";
@@ -98,6 +99,7 @@ const taskCacheConfig = {
 };
 
 export default defineConfig({
+  plugins: [blacksmith({ cacheKey: "r07-speed" })],
   run: {
     cache: taskCacheConfig,
     tasks: {
