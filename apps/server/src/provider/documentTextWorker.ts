@@ -5,7 +5,6 @@ import * as NodeUtil from "node:util";
 import { characterEntities } from "character-entities";
 import { SaxesParser } from "saxes";
 import * as Yauzl from "yauzl";
-import { terminalOutputCollapseRedraws } from "@t3tools/shared/terminalOutput";
 
 const MAX_INPUT = 16 * 1024 * 1024;
 const MAX_EXPANDED = 32 * 1024 * 1024;
@@ -428,10 +427,9 @@ function* notebook(source: string): Generator<string, void> {
         if (typeof line === "string") yield line;
       }
   }
-  function outputText(value: unknown, stream = false): string {
-    // Notebook fragments can split a terminal escape sequence or a CRLF pair.
-    const plain = NodeUtil.stripVTControlCharacters([...lines(value)].join(""));
-    return stream ? terminalOutputCollapseRedraws(plain) : plain;
+  function outputText(value: unknown): string {
+    // Notebook fragments can split a terminal escape sequence.
+    return NodeUtil.stripVTControlCharacters([...lines(value)].join(""));
   }
   for (const [index, cell] of book.cells.entries()) {
     if (index >= 10_000) throw new Truncation("Notebook cell limit");
@@ -444,8 +442,7 @@ function* notebook(source: string): Generator<string, void> {
       yield "\nOutput:\n";
       for (const output of cell.outputs) {
         if (!output || typeof output !== "object") continue;
-        if ("text" in output)
-          yield outputText(output.text, "output_type" in output && output.output_type === "stream");
+        if ("text" in output) yield outputText(output.text);
         else if (
           "data" in output &&
           output.data &&
