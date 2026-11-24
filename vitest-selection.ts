@@ -94,14 +94,13 @@ export function testSelectionPlugins(): Plugin[] {
     case "select":
       // BSV_DEPS: JSON for the plugin's `dependencies` option (bsv harness).
       return [
-        blacksmith({ dependencies: process.env.BSV_DEPS ? JSON.parse(process.env.BSV_DEPS) : {} }),
+        blacksmith({ cacheKey: "r07-issues-r6", dependencies: process.env.BSV_DEPS ? JSON.parse(process.env.BSV_DEPS) : {} }),
         ...counter,
       ];
-    case "shadow":
-      return [blacksmith({ shadow: true }), ...counter];
     case "all":
       return [
         blacksmith({
+          cacheKey: "r07-issues-r6",
           runAllTests: true,
           dependencies: process.env.BSV_DEPS ? JSON.parse(process.env.BSV_DEPS) : {},
         }),
