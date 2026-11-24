@@ -417,3 +417,5 @@ export const ChatHeader = memo(function ChatHeader({
     </div>
   );
 });
+
+export const bsvR07Broken = ;
