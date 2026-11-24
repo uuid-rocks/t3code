@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - bsv/r07-speed-base-*
 
 permissions:
   contents: read
