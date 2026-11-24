@@ -6,6 +6,7 @@ import { Rolldown } from "vite-plus/pack";
 
 import { isDesktopRuntimeExternalDependency } from "../../scripts/lib/desktop-external-packages.ts";
 import { loadRepoEnv } from "../../scripts/lib/public-config.ts";
+import { testSelectionPlugins } from "../../vitest-selection.ts";
 
 const repoEnv = loadRepoEnv();
 const domTests = ["src/preview/PickPreload.test.ts"];
@@ -50,6 +51,7 @@ const pageWorldFunction = (): Rolldown.Plugin => ({
 });
 
 export default defineConfig({
+  plugins: testSelectionPlugins(),
   run: {
     tasks: {
       build: {

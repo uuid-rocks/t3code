@@ -2,6 +2,7 @@ import * as NodeModule from "node:module";
 import * as NodeURL from "node:url";
 import { defineConfig, normalizePath } from "vite-plus";
 import "vite-plus/test/config";
+import { testSelectionPlugins } from "../../vitest-selection.ts";
 
 const reactTests = [
   "src/features/browser/LocalPreviewRouteScreen.test.tsx",
@@ -99,6 +100,7 @@ export const GTProvider = (props) => props.children;
 
 export default defineConfig({
   plugins: [
+    ...testSelectionPlugins(),
     {
       name: "gt-react-native-test",
       enforce: "pre",
