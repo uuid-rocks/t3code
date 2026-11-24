@@ -10,6 +10,7 @@ interface CachedTestTask {
   cache:
     | false
     | {
+        untrackedEnv: Array<string>;
         input: Array<string | { auto: true }>;
         output: Array<string>;
       };
@@ -134,6 +135,13 @@ export function cachedTestTasks(
         cache: uncached.includes(group[0]!)
           ? false
           : {
+              // @useblacksmith/vitest finds its dependency cache through these.
+              untrackedEnv: [
+                "ACTIONS_RESULTS_URL",
+                "ACTIONS_CACHE_MODE",
+                "GITHUB_WORKFLOW_REF",
+                "GITHUB_REPOSITORY",
+              ],
               // Vitest reads and rewrites these caches while running otherwise unchanged tests.
               input: [
                 { auto: true },
