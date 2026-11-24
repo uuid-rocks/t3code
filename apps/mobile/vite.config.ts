@@ -106,7 +106,7 @@ const blacksmith: typeof blacksmithExport =
 
 export default defineConfig({
   plugins: [
-    blacksmith({ cacheKey: "r07-speed" }),
+    blacksmith({ cacheKey: "r07-srv-k2" }),
     {
       name: "gt-react-native-test",
       enforce: "pre",
