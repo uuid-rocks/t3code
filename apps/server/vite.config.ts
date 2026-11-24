@@ -2,6 +2,7 @@ import "vite-plus/test/config";
 // @effect-diagnostics-next-line nodeBuiltinImport:off -- tsdown needs the asset path when it reads this config.
 import * as NodePath from "node:path";
 import { defineConfig, mergeConfig } from "vite-plus";
+import blacksmith from "@useblacksmith/vitest";
 
 import baseConfig from "../../vite.config.ts";
 import { loadRepoEnv } from "../../scripts/lib/public-config.ts";
@@ -76,12 +77,22 @@ const packExecutableTargets = packExecutableTarget
 // The root config's `projects` route repo-root runs to package configs,
 // including this one. Inheriting them would make this config a container.
 const { projects: _rootTestProjects, ...baseTestConfig } = baseConfig.test ?? {};
-// Workspace cache configuration is invalid on a package config.
-const { run: _rootRunConfig, ...basePackageConfig } = baseConfig;
+// Workspace cache configuration is invalid on a package config. This config adds its own plugin.
+const { run: _rootRunConfig, plugins: _rootPlugins, ...basePackageConfig } = baseConfig;
+
+// scripts/test-cached.ts starts one Vitest per server test file.
+const file = process.argv.find((arg) => /\.(test|spec)\.[cm]?[jt]sx?$/.test(arg));
 
 export default mergeConfig(
   { ...basePackageConfig, test: baseTestConfig },
   defineConfig({
+    // sharded-tests.ts loads this config with --shard i/8 to list a shard's files.
+    plugins: [
+      blacksmith({
+        ...(file ? { cacheKey: `r07-ms-c3 ${file}` } : {}),
+        ...(process.argv.includes("--shard") ? {} : { maxShards: 1 }),
+      }),
+    ],
     run: {
       tasks: {
         build: {
