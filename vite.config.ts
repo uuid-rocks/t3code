@@ -99,7 +99,7 @@ const taskCacheConfig = {
 };
 
 export default defineConfig({
-  plugins: [blacksmith({ cacheKey: "r07-speed" })],
+  plugins: [blacksmith({ cacheKey: "r07-speed-r9" })],
   run: {
     cache: taskCacheConfig,
     tasks: {
