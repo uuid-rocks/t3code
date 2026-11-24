@@ -183,7 +183,7 @@ export default defineConfig({
       entry: ["src/mac-permission-preload.ts"],
     },
   ],
-  plugins: [blacksmith({ cacheKey: "r07-speed" })],
+  plugins: [blacksmith({ cacheKey: "r07-speed-r8" })],
   test: {
     // The Windows lane runs workspace suites concurrently; filesystem-heavy
     // desktop integration tests can exceed Vitest's 5 second default there.
